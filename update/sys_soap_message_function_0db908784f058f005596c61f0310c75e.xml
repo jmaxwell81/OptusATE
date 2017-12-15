@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_soap_message_function">
+    <sys_soap_message_function action="INSERT_OR_UPDATE">
+        <authentication_type>basic</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile display_value="OptusATE_SIT">f933c0304f058f005596c61f0310c7c3</basic_auth_profile>
+        <basic_auth_user/>
+        <certificate/>
+        <enable_mutual_auth>false</enable_mutual_auth>
+        <envelope><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ate="http://www.optus.com.au/ATE/">
+   <soapenv:Header>
+      <ate:SoapHeaderMsg>
+         <ate:ContextId>${SoapHeaderMsg.ContextId}</ate:ContextId>
+      </ate:SoapHeaderMsg>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ate:ATERequest attachmentInfo="${ATERequest}" attachmentData="${ATERequest}" ignoreEmptyElements="true">
+         <ate:model query="${ATERequest.model}">
+            <ate:instance query="${model.instance}" uniquequery="${model.instance}" recordid="${model.instance}">
+               <ate:MessageType>${instance.MessageType}</ate:MessageType>
+               <!--Optional:-->
+               <ate:MessageAction>${instance.MessageAction}</ate:MessageAction>
+               <ate:MessageStatus>${instance.MessageStatus}</ate:MessageStatus>
+               <ate:MessageDate>${instance.MessageDate}</ate:MessageDate>
+               <ate:MessageCompany>${instance.MessageCompany}</ate:MessageCompany>
+               <!--Optional:-->
+               <ate:CustomerTicketID>${instance.CustomerTicketID}</ate:CustomerTicketID>
+               <!--Optional:-->
+               <ate:ManagedTicketID>${instance.ManagedTicketID}</ate:ManagedTicketID>
+               <!--Optional:-->
+               <ate:CSNSTicketID>${instance.CSNSTicketID}</ate:CSNSTicketID>
+               <!--Optional:-->
+               <ate:BriefDescription type="Array">
+                  <!--Zero or more repetitions:-->
+                  <ate:BriefDescription>${BriefDescription.BriefDescription}</ate:BriefDescription>
+               </ate:BriefDescription>
+               <!--Optional:-->
+               <ate:WorkLog type="Array">
+                  <!--Zero or more repetitions:-->
+                  <ate:WorkLog>${WorkLog.WorkLog}</ate:WorkLog>
+               </ate:WorkLog>
+               <!--Optional:-->
+               <ate:Priority>${instance.Priority}</ate:Priority>
+               <!--Optional:-->
+               <ate:AssignmentGroup>${instance.AssignmentGroup}</ate:AssignmentGroup>
+               <!--Optional:-->
+               <ate:OpenTime>${instance.OpenTime}</ate:OpenTime>
+               <!--Optional:-->
+               <ate:ConfigItemID>${instance.ConfigItemID}</ate:ConfigItemID>
+               <!--Optional:-->
+               <ate:Category>${instance.Category}</ate:Category>
+               <!--Optional:-->
+               <ate:SubCategory>${instance.SubCategory}</ate:SubCategory>
+               <!--Optional:-->
+               <ate:ProductType>${instance.ProductType}</ate:ProductType>
+               <!--Optional:-->
+               <ate:ProblemType>${instance.ProblemType}</ate:ProblemType>
+               <!--Optional:-->
+               <ate:ContactKey>${instance.ContactKey}</ate:ContactKey>
+               <!--Optional:-->
+               <ate:FirstName>${instance.FirstName}</ate:FirstName>
+               <!--Optional:-->
+               <ate:LastName>${instance.LastName}</ate:LastName>
+               <!--Optional:-->
+               <ate:EmailAddress>${instance.EmailAddress}</ate:EmailAddress>
+               <!--Optional:-->
+               <ate:PhoneNumber>${instance.PhoneNumber}</ate:PhoneNumber>
+               <!--Optional:-->
+               <ate:MobileNumber>${instance.MobileNumber}</ate:MobileNumber>
+               <!--Optional:-->
+               <ate:CostCentre>${instance.CostCentre}</ate:CostCentre>
+               <!--Optional:-->
+               <ate:WorkStationPort>${instance.WorkStationPort}</ate:WorkStationPort>
+               <!--Optional:-->
+               <ate:Location>${instance.Location}</ate:Location>
+               <!--Optional:-->
+               <ate:AttachName>${instance.AttachName}</ate:AttachName>
+               <!--Optional:-->
+               <ate:ClosureCode>${instance.ClosureCode}</ate:ClosureCode>
+               <!--Optional:-->
+               <ate:ErrorMessage>${instance.ErrorMessage}</ate:ErrorMessage>
+               <!--Optional:-->
+               <ate:CustomerTicketStatus>${instance.CustomerTicketStatus}</ate:CustomerTicketStatus>
+               <!--Optional:-->
+               <ate:Integrator>${instance.Integrator}</ate:Integrator>
+               <!--Optional:-->
+               <ate:UniqueID>${instance.UniqueID}</ate:UniqueID>
+               <!--Optional:-->
+               <ate:DowntimeStart>${instance.DowntimeStart}</ate:DowntimeStart>
+               <!--Optional:-->
+               <ate:DowntimeEnd>${instance.DowntimeEnd}</ate:DowntimeEnd>
+               <!--Optional:-->
+               <ate:PlannedStart>${instance.PlannedStart}</ate:PlannedStart>
+               <!--Optional:-->
+               <ate:PlannedEnd>${instance.PlannedEnd}</ate:PlannedEnd>
+               <!--Optional:-->
+               <ate:CloseTime>${instance.CloseTime}</ate:CloseTime>
+               <!--Optional:-->
+               <ate:Impact>${instance.Impact}</ate:Impact>
+               <!--Optional:-->
+               <ate:Urgency>${instance.Urgency}</ate:Urgency>
+               <!--Optional:-->
+               <ate:CustomerParentID>${instance.CustomerParentID}</ate:CustomerParentID>
+               <!--Optional:-->
+               <ate:CSNSParentID>${instance.CSNSParentID}</ate:CSNSParentID>
+               <!--Optional:-->
+               <ate:extensions>
+                  <!--Zero or more repetitions:-->
+                  <ate:extensions>
+                     <!--Optional:-->
+                     <ate:ExtensionsFieldName>${extensions.ExtensionsFieldName}</ate:ExtensionsFieldName>
+                     <!--Optional:-->
+                     <ate:ExtensionsFieldValue>${extensions.ExtensionsFieldValue}</ate:ExtensionsFieldValue>
+                  </ate:extensions>
+               </ate:extensions>
+               <!--Optional:-->
+               <ate:UpdateDescription type="Array">
+                  <!--Zero or more repetitions:-->
+                  <ate:UpdateDescription>${UpdateDescription.UpdateDescription}</ate:UpdateDescription>
+               </ate:UpdateDescription>
+               <!--Optional:-->
+               <ate:attachments>
+                  <!--Zero or more repetitions:-->
+                  <ate:attachment href="${attachments.attachment}" contentId="${attachments.attachment}" action="${attachments.attachment}" name="${attachments.attachment}" type="${attachments.attachment}" len="${attachments.attachment}" charset="${attachments.attachment}" attachmentType="${attachments.attachment}">cid:185720196920</ate:attachment>
+               </ate:attachments>
+            </ate:instance>
+            <!--Optional:-->
+            <ate:messages>
+               <!--Zero or more repetitions:-->
+               <ate:message severity="${messages.message}" module="${messages.message}">${messages.message}</ate:message>
+            </ate:messages>
+         </ate:model>
+      </ate:ATERequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></envelope>
+        <function_name>sendTicketEvent</function_name>
+        <key_store/>
+        <key_store_alias/>
+        <key_store_password/>
+        <lock>false</lock>
+        <protocol_profile/>
+        <qualified_name>OptusEventOut [ sendTicketEvent ]</qualified_name>
+        <soap_action>http://optus.com.au/OptusAutomaticTicketExchange</soap_action>
+        <soap_endpoint>https://sit.obapi.optus.com.au/ate/process/ticketexchange/inbound</soap_endpoint>
+        <soap_message display_value="OptusEventOut">16ccd06d4fd8c3005596c61f0310c765</soap_message>
+        <strip_whitespace>false</strip_whitespace>
+        <sys_class_name>sys_soap_message_function</sys_class_name>
+        <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+        <sys_created_on>2017-09-04 03:54:28</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>0db908784f058f005596c61f0310c75e</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>sendTicketEvent</sys_name>
+        <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
+        <sys_update_name>sys_soap_message_function_0db908784f058f005596c61f0310c75e</sys_update_name>
+        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2017-09-04 05:32:50</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_ws_security>false</use_ws_security>
+        <ws_security_type/>
+        <ws_security_username_profile/>
+        <ws_security_x509_profile/>
+    </sys_soap_message_function>
+</record_update>

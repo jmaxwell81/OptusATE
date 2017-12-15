@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_view">
+    <sys_ui_view action="INSERT_OR_UPDATE">
+        <group/>
+        <hidden>false</hidden>
+        <name>sys_popup,RPTc03d6d5aeba312009add4d3df106fe26</name>
+        <roles/>
+        <sys_class_name>sys_ui_view</sys_class_name>
+        <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+        <sys_created_on>2017-09-06 01:10:32</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>cf57b9d14fc103405596c61f0310c734</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Sys_popup,rptc03d6d5aeba312009add4d3df106fe26</sys_name>
+        <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
+        <sys_update_name>sys_ui_view_cf57b9d14fc103405596c61f0310c734</sys_update_name>
+        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2017-09-06 01:10:32</sys_updated_on>
+        <title>Sys_popup,rptc03d6d5aeba312009add4d3df106fe26</title>
+        <user/>
+    </sys_ui_view>
+</record_update>

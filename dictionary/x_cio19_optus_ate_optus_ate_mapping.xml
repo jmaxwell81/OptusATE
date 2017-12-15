@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Optus_ATE_Mapping" max_length="40" name="x_cio19_optus_ate_optus_ate_mapping" type="collection">
+        <element choice="1" label="Company" max_length="50" name="u_company" type="string">
+            <choice>
+                <element label="Optus" value="Optus"/>
+                <element label="TCC" value="TCC"/>
+            </choice>
+        </element>
+        <element label="Default" max_length="50" name="u_default" type="string"/>
+        <element label="Order" max_length="50" name="u_order" type="string"/>
+        <element label="Source field" max_length="50" name="u_source_field" type="string"/>
+        <element label="Source value" max_length="50" name="u_source_value" type="string"/>
+        <element label="Target value" max_length="50" name="u_target_value" type="string"/>
+        <element label="Ticket category" max_length="50" name="u_ticket_category" type="string"/>
+    </element>
+</database>

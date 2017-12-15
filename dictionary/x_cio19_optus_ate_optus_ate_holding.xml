@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Optus_ATE_Holding" max_length="40" name="x_cio19_optus_ate_optus_ate_holding" sizeclass="5279" type="collection">
+        <element display="true" label="Assignment Group" max_length="80" name="assignment_group" type="string"/>
+        <element label="Attachment1" max_length="800" name="attachment1" reference="sys_attachment" type="reference"/>
+        <element label="Attachments" max_length="400000000" name="attachments" type="string"/>
+        <element label="AttachName" max_length="300" name="attachname" type="string"/>
+        <element label="Brief Description" max_length="4000" name="brief_description" type="data_structure"/>
+        <element label="Category" max_length="250" name="category" type="string"/>
+        <element label="CloseTime" max_length="40" name="closetime" type="glide_date_time"/>
+        <element label="Closure code" max_length="40" name="closure_code" type="string"/>
+        <element label="Configuration Item ID" max_length="255" name="configuration_item_id" type="string"/>
+        <element label="ContactKey" max_length="150" name="contactkey" type="string"/>
+        <element label="Cost Centre" max_length="255" name="cost_centre" type="string"/>
+        <element label="CSNSParentID" max_length="255" name="csnsparentid" type="string"/>
+        <element label="CSNSTicketID" max_length="40" name="csnsticketid" type="string"/>
+        <element label="CSNSTicketStatus" max_length="255" name="csnsticketstatus" type="string"/>
+        <element label="CustomerParentID" max_length="255" name="customerparentid" type="string"/>
+        <element label="CustomerTicketID" max_length="40" name="customerticketid" type="string"/>
+        <element label="Customer Status" max_length="40" name="customer_status" type="string"/>
+        <element label="DownTimeEnd" max_length="40" name="downtimeend" type="glide_date_time"/>
+        <element label="DownTimeStart" max_length="40" name="downtimestart" type="glide_date_time"/>
+        <element label="EmailAddress" max_length="100" name="emailaddress" type="string"/>
+        <element label="ErrorMessageDescription" max_length="255" name="errormessagedescription" type="string"/>
+        <element label="FirstName" max_length="50" name="firstname" type="string"/>
+        <element label="Impact" max_length="40" name="impact" type="integer"/>
+        <element label="LastName" max_length="50" name="lastname" type="string"/>
+        <element label="Location" max_length="255" name="location" type="string"/>
+        <element default="TCC" label="MessageCompany" max_length="255" name="messagecompany" type="string"/>
+        <element label="MessageDate" max_length="40" name="messagedate" type="glide_date_time"/>
+        <element label="MessageStatus" max_length="255" name="messagestatus" type="string"/>
+        <element label="MessageType" max_length="40" name="messagetype" type="integer"/>
+        <element label="MobileNumber" max_length="40" name="mobilenumber" type="string"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="OpenTime" max_length="40" name="opentime" type="glide_date_time"/>
+        <element label="PhoneNumber" max_length="40" name="phonenumber" type="string"/>
+        <element label="PlannedEnd" max_length="40" name="plannedend" type="glide_date_time"/>
+        <element label="PlannedStart" max_length="40" name="plannedstart" type="glide_date_time"/>
+        <element label="Priority" max_length="40" name="priority" type="integer"/>
+        <element label="ProblemType" max_length="40" name="problemtype" type="string"/>
+        <element label="ProductType" max_length="40" name="producttype" type="string"/>
+        <element label="SubCategory" max_length="40" name="subcategory" type="string"/>
+        <element label="Third Party Ticket ID" max_length="40" name="third_party_ticket_id" type="string"/>
+        <element label="UniqueID" max_length="255" name="uniqueid" type="string"/>
+        <element label="UpdateDescrption" max_length="80" name="updatedescrption" type="data_structure"/>
+        <element label="Urgency" max_length="40" name="urgency" type="integer"/>
+        <element label="WorkLog" max_length="80" name="worklog" type="data_structure"/>
+        <element label="WorkStationPort" max_length="40" name="workstationport" type="string"/>
+    </element>
+</database>

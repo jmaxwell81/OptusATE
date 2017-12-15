@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_soap_message">
+    <sys_soap_message action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <authentication_type>basic</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile display_value="OptusATE_SIT">f933c0304f058f005596c61f0310c7c3</basic_auth_profile>
+        <basic_auth_user/>
+        <description>Non Prod (TAC)	mulesoftAPIGateway</description>
+        <download_wsdl>true</download_wsdl>
+        <enable_mutual_auth>false</enable_mutual_auth>
+        <name>OptusEventOut</name>
+        <protocol_profile/>
+        <sys_class_name>sys_soap_message</sys_class_name>
+        <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+        <sys_created_on>2017-07-31 06:27:54</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>16ccd06d4fd8c3005596c61f0310c765</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>OptusEventOut</sys_name>
+        <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
+        <sys_update_name>sys_soap_message_16ccd06d4fd8c3005596c61f0310c765</sys_update_name>
+        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2017-09-04 03:54:28</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <wsdl>https://sit.obapi.optus.com.au/ate/process/ticketexchange/inbound?wsdl</wsdl>
+        <wsdl_xml><![CDATA[<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ate="http://www.optus.com.au/ATE/" targetNamespace="http://www.optus.com.au/ATE/">
+  <wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.optus.com.au/ATE/" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.optus.com.au/ATE/">
+			
+  <xsd:simpleType name="StringType">
+				
+    <xsd:annotation>
+					
+      <xsd:documentation>This is a basic String Type</xsd:documentation>
+				
+    </xsd:annotation>
+				
+    <xsd:restriction base="xsd:string"/>
+			
+  </xsd:simpleType>
+			
+  <xsd:simpleType name="DecimalType">
+				
+    <xsd:annotation>
+					
+      <xsd:documentation>This is a basic Decimal Type</xsd:documentation>
+				
+    </xsd:annotation>
+				
+    <xsd:restriction base="xsd:decimal"/>
+			
+  </xsd:simpleType>
+			
+  <xsd:simpleType name="BoolanType">
+				
+    <xsd:annotation>
+					
+      <xsd:documentation>This is a basic Boolean Type</xsd:documentation>
+				
+    </xsd:annotation>
+				
+    <xsd:restriction base="xsd:string"/>
+			
+  </xsd:simpleType>
+			
+  <xsd:simpleType name="DateTimeType">
+				
+    <xsd:annotation>
+					
+      <xsd:documentation>This is a basic Date Time Type</xsd:documentation>
+				
+    </xsd:annotation>
+				
+    <xsd:restriction base="xsd:dateTime"/>
+			
+  </xsd:simpleType>
+			
+  <xsd:simpleType name="DateType">
+				
+    <xsd:annotation>
+					
+      <xsd:documentation>This is a basic Date Type</xsd:documentation>
+				
+    </xsd:annotation>
+				
+    <xsd:restriction base="xsd:date"/>
+			
+  </xsd:simpleType>
+			
+  <xsd:simpleType name="TimeType">
+				
+    <xsd:annotation>
+					
+      <xsd:documentation>This is a basic Time Type</xsd:documentation>
+				
+    </xsd:annotation>
+				
+    <xsd:restriction base="xsd:time"/>
+			
+  </xsd:simpleType>
+			
+  <xsd:simpleType name="DurationType">
+				
+    <xsd:annotation>
+					
+      <xsd:documentation>This is a basic Duration Type</xsd:documentation>
+				
+    </xsd:annotation>
+				
+    <xsd:restriction base="xsd:duration"/>
+			
+  </xsd:simpleType>
+			
+  <xsd:simpleType name="IntType">
+				
+    <xsd:annotation>
+					
+      <xsd:documentation>This is a basic Integer Type</xsd:documentation>
+				
+    </xsd:annotation>
+				
+    <xsd:restriction base="xsd:int"/>
+			
+  </xsd:simpleType>
+			
+  <xsd:simpleType name="ShortType">
+				
+    <xsd:annotation>
+					
+      <xsd:documentation>This is a basic Short Type</xsd:documentation>
+				
+    </xsd:annotation>
+				
+    <xsd:restriction base="xsd:short"/>
+			
+  </xsd:simpleType>
+			
+  <xsd:simpleType name="LongType">
+				
+    <xsd:annotation>
+					
+      <xsd:documentation>This is a basic Integer Type</xsd:documentation>
+				
+    </xsd:annotation>
+				
+    <xsd:restriction base="xsd:long"/>
+			
+  </xsd:simpleType>
+			
+  <xsd:simpleType name="ByteType">
+				
+    <xsd:annotation>
+					
+      <xsd:documentation>This is a basic Byte Type</xsd:documentation>
+				
+    </xsd:annotation>
+				
+    <xsd:restriction base="xsd:byte"/>
+			
+  </xsd:simpleType>
+			
+  <xsd:simpleType name="FloatType">
+				
+    <xsd:annotation>
+					
+      <xsd:documentation>This is a Float Byte Type</xsd:documentation>
+				
+    </xsd:annotation>
+				
+    <xsd:restriction base="xsd:float"/>
+			
+  </xsd:simpleType>
+			
+  <xsd:simpleType name="DoubleType">
+				
+    <xsd:annotation>
+					
+      <xsd:documentation>This is a basic Double Type</xsd:documentation>
+				
+    </xsd:annotation>
+				
+    <xsd:restriction base="xsd:double"/>
+			
+  </xsd:simpleType>
+			
+  <xsd:simpleType name="Base64Type">
+				
+    <xsd:annotation>
+					
+      <xsd:documentation>This is a basic Byte Type</xsd:documentation>
+				
+    </xsd:annotation>
+				
+    <xsd:restriction base="xsd:base64Binary"/>
+			
+  </xsd:simpleType>
+			
+  <xsd:complexType name="ArrayType">
+				
+    <xsd:attribute fixed="Array" name="type" type="xsd:string" use="required"/>
+			
+  </xsd:complexType>
+			
+  <xsd:complexType name="StructureType">
+				
+    <xsd:attribute fixed="Structure" name="type" type="xsd:string" use="required"/>
+			
+  </xsd:complexType>
+			
+  <xsd:complexType name="AttachmentType">
+				
+    <xsd:simpleContent>
+					
+      <xsd:extension base="xsd:base64Binary">
+						
+        <xsd:attribute name="href" type="xsd:string" use="optional"/>
+						
+        <xsd:attribute name="contentId" type="xsd:string" use="optional"/>
+						
+        <xsd:attribute name="action" type="xsd:string" use="optional"/>
+						
+        <xsd:attribute name="name" type="xsd:string" use="required"/>
+						
+        <xsd:attribute name="type" type="xsd:string" use="required"/>
+						
+        <xsd:attribute name="len" type="xsd:int" use="optional"/>
+						
+        <xsd:attribute name="charset" type="xsd:string" use="optional"/>
+						
+        <xsd:attribute name="attachmentType" type="xsd:string" use="optional"/>
+					
+      </xsd:extension>
+				
+    </xsd:simpleContent>
+			
+  </xsd:complexType>
+			
+  <xsd:complexType name="AttachmentsType">
+				
+    <xsd:sequence>
+					
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="attachment" type="AttachmentType"/>
+				
+    </xsd:sequence>
+			
+  </xsd:complexType>
+			
+  <xsd:complexType name="MessageType">
+				
+    <xsd:simpleContent>
+					
+      <xsd:extension base="StringType">
+						
+        <xsd:attribute name="severity" use="optional"/>
+						
+        <xsd:attribute name="module" type="xsd:string" use="optional"/>
+					
+      </xsd:extension>
+				
+    </xsd:simpleContent>
+			
+  </xsd:complexType>
+			
+  <xsd:complexType name="MessagesType">
+				
+    <xsd:sequence>
+					
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="message" type="MessageType"/>
+				
+    </xsd:sequence>
+			
+  </xsd:complexType>
+			
+  <xsd:simpleType name="StatusType">
+				
+    <xsd:restriction base="xsd:string">
+					
+      <xsd:enumeration value="SUCCESS"/>
+					
+      <xsd:enumeration value="FAILURE"/>
+				
+    </xsd:restriction>
+			
+  </xsd:simpleType>
+			
+  <xsd:complexType name="Fault">
+				
+    <xsd:annotation>
+					
+      <xsd:documentation>SOAP Fault Message</xsd:documentation>
+				
+    </xsd:annotation>
+				
+    <xsd:sequence>
+					
+      <xsd:element name="faultcode" type="xsd:string"/>
+					
+      <xsd:element name="faultstring" type="xsd:string"/>
+					
+      <xsd:element name="detail" type="xsd:string"/>
+				
+    </xsd:sequence>
+			
+  </xsd:complexType>
+			
+  <xsd:element name="SoapHeaderMsg">
+				
+    <xsd:annotation>
+					
+      <xsd:documentation>This is the common header request element used as a SOAP Header message across different web services</xsd:documentation>
+				
+    </xsd:annotation>
+				
+    <xsd:complexType>
+					
+      <xsd:sequence>
+						
+        <xsd:element maxOccurs="1" minOccurs="1" name="ContextId" type="xsd:string"/>
+					
+      </xsd:sequence>
+				
+    </xsd:complexType>
+			
+  </xsd:element>
+			
+  <xsd:complexType name="OptEventInInstanceType">
+				
+    <xsd:sequence>
+					
+      <xsd:element maxOccurs="1" minOccurs="1" name="MessageType" type="xsd:int"/>
+					
+      <xsd:element minOccurs="0" name="MessageAction" nillable="true" type="xsd:string"/>
+					
+      <xsd:element maxOccurs="1" minOccurs="1" name="MessageStatus" type="xsd:string"/>
+					
+      <xsd:element maxOccurs="1" minOccurs="1" name="MessageDate" type="xsd:dateTime"/>
+					
+      <xsd:element maxOccurs="1" minOccurs="1" name="MessageCompany" type="xsd:string"/>
+					
+      <xsd:element minOccurs="0" name="CustomerTicketID" nillable="true" type="xsd:string"/>
+					
+      <xsd:element minOccurs="0" name="ManagedTicketID" nillable="true" type="xsd:string"/>
+					
+      <xsd:element minOccurs="0" name="CSNSTicketID" nillable="true" type="xsd:string"/>
+					
+      <xsd:element minOccurs="0" name="BriefDescription">
+						
+        <xsd:complexType>
+							
+          <xsd:complexContent>
+								
+            <xsd:extension base="ArrayType">
+									
+              <xsd:sequence>
+										
+                <xsd:element maxOccurs="unbounded" minOccurs="0" name="BriefDescription" type="xsd:string"/>
+									
+              </xsd:sequence>
+								
+            </xsd:extension>
+							
+          </xsd:complexContent>
+						
+        </xsd:complexType>
+					
+      </xsd:element>
+					
+      <xsd:element minOccurs="0" name="WorkLog">
+						
+        <xsd:complexType>
+							
+          <xsd:complexContent>
+								
+            <xsd:extension base="ArrayType">
+									
+              <xsd:sequence>
+										
+                <xsd:element maxOccurs="unbounded" minOccurs="0" name="WorkLog" type="xsd:string"/>
+									
+              </xsd:sequence>
+								
+            </xsd:extension>
+							
+          </xsd:complexContent>
+						
+        </xsd:complexType>
+					
+      </xsd:element>
+					
+      <xsd:element minOccurs="0" name="Priority" nillable="true" type="xsd:int"/>
+					
+      <xsd:element minOccurs="0" name="AssignmentGroup" nillable="true" type="xsd:string"/>
+					
+      <xsd:element minOccurs="0" name="OpenTime" nillable="true" type="xsd:dateTime"/>
+					
+      <xsd:element minOccurs="0" name="ConfigItemID" nillable="true" type="xsd:string"/>
+					
+      <xsd:element minOccurs="0" name="Category" nillable="true" type="xsd:string"/>
+					
+      <xsd:element minOccurs="0" name="SubCategory" nillable="true" type="xsd:string"/>
+					
+      <xsd:element minOccurs="0" name="ProductType" nillable="true" type="xsd:string"/>
+					
+      <xsd:element minOccurs="0" name="ProblemType" nillable="true" type="xsd:string"/>
+					
+      <xsd:element minOccurs="0" name="ContactKey" nillable="true" type="xsd:string"/>
+					
+      <xsd:element minOccurs="0" name="FirstName" nillable="true" type="xsd:string"/>
+					
+      <xsd:element minOccurs="0" name="LastName" nillable="true" type="xsd:string"/>
+					
+      <xsd:element minOccurs="0" name="EmailAddress" nillable="true" type="xsd:string"/>
+					
+      <xsd:element minOccurs="0" name="PhoneNumber" nillable="true" type="xsd:string"/>
+					
+      <xsd:element minOccurs="0" name="MobileNumber" nillable="true" type="xsd:string"/>
+					
+      <xsd:element minOccurs="0" name="CostCentre" nillable="true" type="xsd:string"/>
+					
+      <xsd:element minOccurs="0" name="WorkStationPort" nillable="true" type="xsd:string"/>
+					
+      <xsd:element minOccurs="0" name="Location" nillable="true" type="xsd:string"/>
+					
+      <xsd:element minOccurs="0" name="AttachName" nillable="true" type="xsd:string"/>
+					
+      <xsd:element minOccurs="0" name="ClosureCode" nillable="true" type="xsd:string"/>
+					
+      <xsd:element minOccurs="0" name="ErrorMessage" nillable="true" type="xsd:string"/>
+					
+      <xsd:element minOccurs="0" name="CustomerTicketStatus" nillable="true" type="xsd:string"/>
+					
+      <xsd:element minOccurs="0" name="Integrator" nillable="true" type="xsd:string"/>
+					
+      <xsd:element minOccurs="0" name="UniqueID" type="xsd:string"/>
+					
+      <xsd:element minOccurs="0" name="DowntimeStart" nillable="true" type="xsd:dateTime"/>
+					
+      <xsd:element minOccurs="0" name="DowntimeEnd" nillable="true" type="xsd:dateTime"/>
+					
+      <xsd:element minOccurs="0" name="PlannedStart" nillable="true" type="xsd:dateTime"/>
+					
+      <xsd:element minOccurs="0" name="PlannedEnd" nillable="true" type="xsd:dateTime"/>
+					
+      <xsd:element minOccurs="0" name="CloseTime" nillable="true" type="xsd:dateTime"/>
+					
+      <xsd:element minOccurs="0" name="Impact" nillable="true" type="xsd:int"/>
+					
+      <xsd:element minOccurs="0" name="Urgency" nillable="true" type="xsd:int"/>
+					
+      <xsd:element minOccurs="0" name="CustomerParentID" nillable="true" type="xsd:string"/>
+					
+      <xsd:element minOccurs="0" name="CSNSParentID" nillable="true" type="xsd:string"/>
+					
+      <xsd:element minOccurs="0" name="extensions" type="ExtensionArrayType"/>
+					
+      <xsd:element minOccurs="0" name="UpdateDescription">
+						
+        <xsd:complexType>
+							
+          <xsd:complexContent>
+								
+            <xsd:extension base="ArrayType">
+									
+              <xsd:sequence>
+										
+                <xsd:element maxOccurs="unbounded" minOccurs="0" name="UpdateDescription" type="xsd:string"/>
+									
+              </xsd:sequence>
+								
+            </xsd:extension>
+							
+          </xsd:complexContent>
+						
+        </xsd:complexType>
+					
+      </xsd:element>
+					
+      <xsd:element minOccurs="0" name="attachments" nillable="true" type="AttachmentsType"/>
+				
+    </xsd:sequence>
+				
+    <xsd:attribute name="query" type="xsd:string" use="optional"/>
+				
+    <xsd:attribute name="uniquequery" type="xsd:string" use="optional"/>
+				
+    <xsd:attribute name="recordid" type="xsd:string" use="optional"/>
+			
+  </xsd:complexType>
+			
+  <xsd:complexType name="OptEventInModelType">
+				
+    <xsd:sequence>
+					
+      <xsd:element name="instance" type="OptEventInInstanceType"/>
+					
+      <xsd:element minOccurs="0" name="messages" type="MessagesType"/>
+				
+    </xsd:sequence>
+				
+    <xsd:attribute name="query" type="xsd:string" use="optional"/>
+			
+  </xsd:complexType>
+			
+  <xsd:complexType name="ExtensionArrayType">
+				
+    <xsd:sequence>
+					
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="extensions" type="ExtensionType"/>
+				
+    </xsd:sequence>
+			
+  </xsd:complexType>
+			
+  <xsd:complexType name="ExtensionType">
+				
+    <xsd:sequence>
+					
+      <xsd:element minOccurs="0" name="ExtensionsFieldName" type="xsd:string"/>
+					
+      <xsd:element minOccurs="0" name="ExtensionsFieldValue" type="xsd:string"/>
+				
+    </xsd:sequence>
+			
+  </xsd:complexType>
+			
+  <xsd:element name="ATERequest">
+				
+    <xsd:complexType>
+					
+      <xsd:sequence>
+						
+        <xsd:element name="model" type="OptEventInModelType"/>
+					
+      </xsd:sequence>
+					
+      <xsd:attribute name="attachmentInfo" type="xsd:boolean" use="optional"/>
+					
+      <xsd:attribute name="attachmentData" type="xsd:boolean" use="optional"/>
+					
+      <xsd:attribute default="true" name="ignoreEmptyElements" type="xsd:boolean" use="optional"/>
+				
+    </xsd:complexType>
+			
+  </xsd:element>
+			
+  <xsd:element name="ATEResponse">
+				
+    <xsd:complexType>
+					
+      <xsd:sequence>
+						
+        <xsd:element name="model" type="OptEventInModelType"/>
+						
+        <xsd:element minOccurs="0" name="messages" type="MessagesType"/>
+					
+      </xsd:sequence>
+					
+      <xsd:attribute name="status" type="StatusType" use="required"/>
+					
+      <xsd:attribute name="message" type="xsd:string" use="required"/>
+					
+      <xsd:attribute name="schemaRevisionDate" type="xsd:date" use="required"/>
+					
+      <xsd:attribute name="schemaRevisionLevel" type="xsd:int" use="required"/>
+					
+      <xsd:attribute name="returnCode" type="xsd:decimal" use="optional"/>
+					
+      <xsd:attribute name="query" type="xsd:string" use="optional"/>
+				
+    </xsd:complexType>
+			
+  </xsd:element>
+		
+</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ATEResponseMsg">
+    <wsdl:part element="ate:ATEResponse" name="ATEResponseMsg">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SoapHeader">
+    <wsdl:part element="ate:SoapHeaderMsg" name="headers">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SoapFaultMsg">
+    <wsdl:part name="fault" type="ate:Fault">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ATERequestMsg">
+    <wsdl:part element="ate:ATERequest" name="ATERequestMsg">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="OptusAutomaticTicketExchangeService">
+    <wsdl:operation name="sendTicketEvent">
+      <wsdl:input message="ate:ATERequestMsg">
+    </wsdl:input>
+      <wsdl:output message="ate:ATEResponseMsg">
+    </wsdl:output>
+      <wsdl:fault message="ate:SoapFaultMsg" name="Fault">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OptusAutomaticTicketExchangeServiceSoapBinding" type="ate:OptusAutomaticTicketExchangeService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="sendTicketEvent">
+      <soap:operation soapAction="http://optus.com.au/OptusAutomaticTicketExchange" style="document"/>
+      <wsdl:input>
+        <soap:header message="ate:SoapHeader" part="headers" use="literal">
+          <soap:headerfault message="ate:SoapHeader" part="headers" use="literal"/>
+        </soap:header>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Fault">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="Fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OptusAutomaticTicketExchangeService">
+    <wsdl:port binding="ate:OptusAutomaticTicketExchangeServiceSoapBinding" name="OptusAutomaticTicketExchangeServicePort">
+      <soap:address location="http://localhost:9100/process/ticketexchange/inbound"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></wsdl_xml>
+    </sys_soap_message>
+</record_update>

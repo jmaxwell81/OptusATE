@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_ui_section caption="" section_id="8c35eb964f1c87005596c61f0310c77e" sys_domain="global" table="x_cio19_optus_ate_tcceventin" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>0</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>cc35eb964f1c87005596c61f0310c783</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>number</element>
+            <position>1</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>c435eb964f1c87005596c61f0310c784</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>assignmentgroup</element>
+            <position>2</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>4835eb964f1c87005596c61f0310c784</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>attachment_binary_information</element>
+            <position>3</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>c835eb964f1c87005596c61f0310c784</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>attachment_file_name</element>
+            <position>4</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>4c35eb964f1c87005596c61f0310c784</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>brief_description</element>
+            <position>5</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>cc35eb964f1c87005596c61f0310c784</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>closetime</element>
+            <position>6</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>4035eb964f1c87005596c61f0310c785</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>closure_code</element>
+            <position>7</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>c035eb964f1c87005596c61f0310c785</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>configuration_item_id</element>
+            <position>8</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>4435eb964f1c87005596c61f0310c785</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>contact_information</element>
+            <position>9</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>c435eb964f1c87005596c61f0310c785</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>cost_centre</element>
+            <position>10</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>4835eb964f1c87005596c61f0310c785</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>csnsparentid</element>
+            <position>11</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>c835eb964f1c87005596c61f0310c785</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>csnsticketid</element>
+            <position>12</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>4c35eb964f1c87005596c61f0310c785</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>csnsticketstatus</element>
+            <position>13</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>cc35eb964f1c87005596c61f0310c785</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>customerparentid</element>
+            <position>14</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>4035eb964f1c87005596c61f0310c786</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>customerticketid</element>
+            <position>15</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>c035eb964f1c87005596c61f0310c786</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>customer_status</element>
+            <position>16</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>4435eb964f1c87005596c61f0310c786</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>downtimeend</element>
+            <position>17</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>c435eb964f1c87005596c61f0310c786</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>downtimestart</element>
+            <position>18</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>4835eb964f1c87005596c61f0310c786</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>emailaddress</element>
+            <position>19</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>c835eb964f1c87005596c61f0310c786</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>errormessagedescription</element>
+            <position>20</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>4c35eb964f1c87005596c61f0310c786</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>firstname</element>
+            <position>21</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>cc35eb964f1c87005596c61f0310c786</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>impact</element>
+            <position>22</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>4035eb964f1c87005596c61f0310c787</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>23</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>c035eb964f1c87005596c61f0310c787</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>lastname</element>
+            <position>24</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>4435eb964f1c87005596c61f0310c787</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>location</element>
+            <position>25</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>c435eb964f1c87005596c61f0310c787</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>messagecompany</element>
+            <position>26</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>4835eb964f1c87005596c61f0310c787</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>messagedate</element>
+            <position>27</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>c835eb964f1c87005596c61f0310c787</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>messagestatus</element>
+            <position>28</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>4c35eb964f1c87005596c61f0310c787</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>messagetype</element>
+            <position>29</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>cc35eb964f1c87005596c61f0310c787</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>mobilenumber</element>
+            <position>30</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>4035eb964f1c87005596c61f0310c788</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>opentime</element>
+            <position>31</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>c035eb964f1c87005596c61f0310c788</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>phonenumber</element>
+            <position>32</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>4435eb964f1c87005596c61f0310c788</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>plannedend</element>
+            <position>33</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>c435eb964f1c87005596c61f0310c788</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>plannedstart</element>
+            <position>34</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>4835eb964f1c87005596c61f0310c788</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>priority</element>
+            <position>35</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>c835eb964f1c87005596c61f0310c788</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>problemtype</element>
+            <position>36</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>4c35eb964f1c87005596c61f0310c788</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>producttype</element>
+            <position>37</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>cc35eb964f1c87005596c61f0310c788</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>subcategory</element>
+            <position>38</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>4035eb964f1c87005596c61f0310c789</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>uniqueid</element>
+            <position>39</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>c035eb964f1c87005596c61f0310c789</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>updatedescrption</element>
+            <position>40</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>4435eb964f1c87005596c61f0310c789</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>urgency</element>
+            <position>41</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>c435eb964f1c87005596c61f0310c789</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>worklog</element>
+            <position>42</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>4835eb964f1c87005596c61f0310c789</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>workstationport</element>
+            <position>43</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>c835eb964f1c87005596c61f0310c789</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>category</element>
+            <position>44</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>4c35eb964f1c87005596c61f0310c789</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>third_party_ticket_id</element>
+            <position>45</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>cc35eb964f1c87005596c61f0310c789</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>46</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_id>4035eb964f1c87005596c61f0310c78a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_cio19_optus_ate_tcceventin" sys_domain="global" view="Default view">8c35eb964f1c87005596c61f0310c77e</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>x_cio19_optus_ate_tcceventin</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-08-03 04:57:12</sys_created_on>
+            <sys_customer_update>true</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>8c35eb964f1c87005596c61f0310c77e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_cio19_optus_ate_tcceventin</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
+            <sys_update_name>sys_ui_section_8c35eb964f1c87005596c61f0310c77e</sys_update_name>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-08-03 04:57:12</sys_updated_on>
+            <sys_user/>
+            <title>true</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

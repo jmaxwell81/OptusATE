@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="ApplicationVariables" max_length="40" name="x_cio19_optus_ate_applicationvariables" type="collection">
+        <element choice="3" label="Environment" max_length="10" name="environment" type="choice">
+            <choice>
+                <element label="DEV" value="DEV"/>
+                <element label="PROD" value="PROD"/>
+                <element label="UAT" value="UAT"/>
+            </choice>
+        </element>
+        <element label="OptusWSDL" max_length="255" name="optuswsdl" type="string"/>
+        <element display="true" label="Password" max_length="50" name="password" type="password"/>
+        <element label="UserName" max_length="50" name="username" type="string"/>
+    </element>
+</database>

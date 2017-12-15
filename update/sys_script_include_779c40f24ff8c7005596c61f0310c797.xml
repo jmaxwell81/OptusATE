@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_cio19_optus_ate.tcc_table_mapping</api_name>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>tcc_table_mapping</name>
+        <script><![CDATA[var tcc_table_mapping = Class.create();
+tcc_table_mapping.prototype = {
+	initialize: function() {
+	},
+	/**
+ 	* OBCR 399 many to many mapping
+ 	* Added in the following 3 functions to allow for the many to many mapping of the assignment groups
+ 	* This includes the general mapping function, general default mapping value and then the wrapper for the assignment group
+ 	* full mapping of inbound values to get the Optus value
+ 	*/
+
+	getMappedInBoundValue : function(messagecompany, sourceField, sourceValue, currentOptusValue, ticketCategory, currentTicket) {
+		
+		gs.debug("getMappedInBoundValue enter (" + company + "," + sourceField + "," + sourceValue + "," + currentOptusValue + "," +  ticketCategory +")","ATEValueMatchingHelper" );
+		var inBoundMappingTableName = 'x_cio19_optus_ate_optus_ate_mapping';
+	
+		company = this.getMappedCompany(messagecompany);
+		
+		/*
+ 		* 1. Find based on source and current value
+ 		*/
+		var inMapping = new GlideRecord(inBoundMappingTableName);
+		inMapping.addQuery('u_company', company);
+		inMapping.addQuery('u_ticket_category', ticketCategory);
+		inMapping.addQuery('u_source_field', sourceField);
+		inMapping.addQuery('u_source_value', sourceValue);
+		inMapping.addQuery('u_target_value', currentOptusValue);
+		inMapping.orderBy("u_order"); //Will ensure always get the first mapping
+		inMapping.query();
+		if(inMapping.next()){
+			// Here we have matched the target value as already mapped as the current value
+			return inMapping.u_target_value;
+		}
+		
+		/*
+ 		* 2. Find just based on the source value
+ 		*/
+		inMapping = new GlideRecord(inBoundMappingTableName);
+		inMapping.addQuery('u_company', company);
+		inMapping.addQuery('u_ticket_categtory', ticketCategory);
+		inMapping.addQuery('u_source_field', sourceField);
+		inMapping.addQuery('u_source_value', sourceValue);
+		inMapping.orderBy("u_order"); //Will ensure always get the first mapping
+		inMapping.query();
+		if(inMapping.next()){
+			// Here we have matched the target value as the first mapping
+			return inMapping.u_target_value;
+		}
+		
+		/*
+ 		* 3. legacy compatibility - check without the ticketCategory
+ 		*/
+		inMapping = new GlideRecord(inBoundMappingTableName);
+		inMapping.addQuery('u_company', company);
+		inMapping.addQuery('u_source_field', sourceField);
+		inMapping.addQuery('u_source_value', sourceValue);
+		inMapping.orderBy("u_order"); //Will ensure always get the first mapping
+		inMapping.query();
+		if(inMapping.next()){
+			// Here we have matched the target value as the first mapping
+			return inMapping.u_target_value;
+		}
+		
+		/*
+ 		* 4. We have not found a mapping - check to see if the currentValue is not null
+ 		*/
+		if (!currentOptusValue.nil()){
+			// Use the current value if we have not found any other mapping
+			return currentOptusValue;
+		}
+		
+		/*
+ 		* 5. Did not map, so get default value
+ 		*/
+		return this._getDefaultInBoundValueUpdate(company, sourceField, ticketCategory);
+	},
+	
+	
+	
+	/**
+ 	* _getDefaultInBoundValueUpdate : Get the default value for this field for this company
+ 	* Params:
+ 	*  company - the company we are doing the code mapping for, e.g., SUNCORP
+ 	*  sourceField - the ServiceNow field that we are doing the mapping, e.g., status
+ 	*  ticketCategory - this is used so that we can have different mappings for incident, change and request, e.g., incident
+ 	*/
+	_getDefaultInBoundValueUpdate : function(company, sourceField, ticketCategory) {
+		gs.debug("_getDefaultInBoundValueUpdate enter", "ATEValueMatchingHelper");
+		var inBoundMappingTableName = 'x_cio19_optus_ate_optus_ate_mapping';
+		/*
+ 		* 1. Find using the ticket type
+ 		*/
+		var inMapping = new GlideRecord(inBoundMappingTableName);
+		inMapping.addQuery('u_company', company);
+		inMapping.addQuery('u_ticket_category', ticketCategory);
+		inMapping.addQuery('u_source_field', sourceField);
+		inMapping.addQuery('u_default', true);
+		inMapping.query();
+		if(inMapping.next()){
+			return inMapping.u_target_value;
+		}
+		
+		/*
+ 		* 2. Compatibility - Find without using the ticket type
+ 		*/
+		var inMapping2 = new GlideRecord(inBoundMappingTableName);
+		inMapping2.addQuery('u_company', company);
+		inMapping2.addQuery('u_source_field', sourceField);
+		inMapping2.addQuery('u_default', true);
+		inMapping2.query();
+		if(inMapping2.next()){
+			return inMapping2.u_target_value;
+		}
+		gs.debug("_getDefaultInBoundValueUpdate - could not find a default for (" + company + "," + sourceField + "," + ticketCategory +")","ATEValueMatchingHelper" );
+		
+		return "";
+	},
+getMappedCompany: function(messagecompany, sourceField){
+	gs.debug("getMappedCompany Enter", "ATEValueMatchingHelper");
+	var inBoundMappingTableName = 'x_cio19_optus_ate_optus_ate_mapping';
+	
+	var inMapping = new GlideRecord(inBoundMappingTableName);
+		inMapping.addQuery('u_company', company);
+		inMapping.addQuery('u_source_field', sourceField);
+		inMapping.addQuery('u_default', true);
+		inMapping.query();
+		if(inMapping.next()){
+			return inMapping.u_target_value;
+		}
+},
+	
+	
+	type: 'tcc_table_mapping'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+        <sys_created_on>2017-08-28 23:02:50</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>779c40f24ff8c7005596c61f0310c797</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>tcc_table_mapping</sys_name>
+        <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
+        <sys_update_name>sys_script_include_779c40f24ff8c7005596c61f0310c797</sys_update_name>
+        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2017-11-23 00:44:50</sys_updated_on>
+    </sys_script_include>
+</record_update>

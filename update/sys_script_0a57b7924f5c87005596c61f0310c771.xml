@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>false</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_cio19_optus_ate_optus_ate_holding</collection>
+        <condition>current.messagetype==28 &amp;&amp; current.messagecompany=='Optus PMSD'</condition>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="x_cio19_optus_ate_optus_ate_holding">messagetype=28^messagecompany=Optus PMSD^EQ<item endquery="false" field="messagetype" goto="false" newquery="false" operator="=" or="false" value="28"/>
+            <item endquery="false" field="messagecompany" goto="false" newquery="false" operator="=" or="false" value="Optus PMSD"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>ATE_HealthCheck_28</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+	
+var inc = new GlideRecord('x_cio19_optus_ate_optus_ate_holding');
+	//inc.initialize();
+inc.addQuery('sys_id',current.uniqueid);
+
+inc.query(); 
+
+while (inc.next()) {
+	inc.messagestatus = "Processed ACK";
+	inc.update();
+}	
+
+	
+try {
+
+	var s = new sn_ws.SOAPMessageV2('x_cio19_optus_ate.OptusEventOut', 'sendTicketEvent');
+
+	
+	//override authentication profile
+	//authentication type ='basic'
+	//r.setAuthentication(authentication type,profile name);
+	s.setStringParameterNoEscape('insert.messagecompany','TOCC_IMT');
+	s.setStringParameterNoEscape('insert.messagedate',current.created);
+	s.setStringParameterNoEscape('insert.messagestatus','Processed ACK');
+	s.setStringParameterNoEscape('insert.messagetype','28');
+	s.setStringParameterNoEscape('insert.uniqueid',current.sys_id);
+	
+	
+	var response = s.execute();
+	var responseBody = response.getBody();
+	var status = response.getStatusCode();
+}
+catch(ex) {
+	var message = ex.getMessage();
+	
+}
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+        <sys_created_on>2017-08-03 06:17:27</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0a57b7924f5c87005596c61f0310c771</sys_id>
+        <sys_mod_count>195</sys_mod_count>
+        <sys_name>ATE_HealthCheck_28</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
+        <sys_update_name>sys_script_0a57b7924f5c87005596c61f0310c771</sys_update_name>
+        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2017-09-05 00:30:52</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=0a57b7924f5c87005596c61f0310c771"/>
+</record_update>

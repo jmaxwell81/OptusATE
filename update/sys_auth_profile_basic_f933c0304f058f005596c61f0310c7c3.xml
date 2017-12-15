@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_auth_profile_basic">
+    <sys_auth_profile_basic action="INSERT_OR_UPDATE">
+        <name>OptusATE_SIT</name>
+        <password>3nicA6RcVRk36hGGa3xIW0YOnd67sulPxheOQNnwPB8=</password>
+        <sys_class_name>sys_auth_profile_basic</sys_class_name>
+        <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+        <sys_created_on>2017-09-04 03:26:43</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>f933c0304f058f005596c61f0310c7c3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>OptusATE_SIT</sys_name>
+        <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
+        <sys_update_name>sys_auth_profile_basic_f933c0304f058f005596c61f0310c7c3</sys_update_name>
+        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2017-09-04 03:26:43</sys_updated_on>
+        <username>optusate</username>
+    </sys_auth_profile_basic>
+</record_update>
