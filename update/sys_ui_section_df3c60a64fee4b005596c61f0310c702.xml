@@ -107,7 +107,7 @@
             <sys_class_name>sys_ui_section</sys_class_name>
             <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
             <sys_created_on>2017-11-23 06:28:54</sys_created_on>
-            <sys_customer_update>true</sys_customer_update>
+            <sys_customer_update>false</sys_customer_update>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
             <sys_id>df3c60a64fee4b005596c61f0310c702</sys_id>

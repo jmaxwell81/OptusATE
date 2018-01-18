@@ -12,7 +12,7 @@
             <sys_class_name>sys_documentation</sys_class_name>
             <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
             <sys_created_on>2017-08-31 23:01:28</sys_created_on>
-            <sys_customer_update>true</sys_customer_update>
+            <sys_customer_update>false</sys_customer_update>
             <sys_id>3bd9e36b4fbc8b005596c61f0310c7e3</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>Optus_ATE_Mapping</sys_name>

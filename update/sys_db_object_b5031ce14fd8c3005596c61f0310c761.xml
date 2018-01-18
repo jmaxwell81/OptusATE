@@ -21,7 +21,7 @@
         <sys_class_name>sys_db_object</sys_class_name>
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
         <sys_created_on>2017-07-31 05:47:25</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>b5031ce14fd8c3005596c61f0310c761</sys_id>
         <sys_mod_count>7</sys_mod_count>
         <sys_name>Optus_ATE_Holding</sys_name>

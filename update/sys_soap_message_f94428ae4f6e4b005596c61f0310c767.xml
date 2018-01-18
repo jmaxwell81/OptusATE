@@ -14,7 +14,7 @@
         <sys_class_name>sys_soap_message</sys_class_name>
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
         <sys_created_on>2017-11-23 05:55:49</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>f94428ae4f6e4b005596c61f0310c767</sys_id>
         <sys_mod_count>2</sys_mod_count>
         <sys_name>OptusEventOut_DEV</sys_name>

@@ -5,7 +5,7 @@
         <sys_class_name>sys_properties_category</sys_class_name>
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
         <sys_created_on>2017-11-23 04:52:53</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>ee1690e64f2e4b005596c61f0310c7b4</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Optus ATE</sys_name>

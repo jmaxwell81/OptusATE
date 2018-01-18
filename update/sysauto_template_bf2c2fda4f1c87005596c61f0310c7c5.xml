@@ -16,7 +16,7 @@
         <sys_class_name>sysauto_template</sys_class_name>
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
         <sys_created_on>2017-08-03 05:36:00</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>bf2c2fda4f1c87005596c61f0310c7c5</sys_id>
         <sys_mod_count>13</sys_mod_count>
         <sys_name>Optus_Heartbeat_27</sys_name>

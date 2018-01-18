@@ -14,7 +14,7 @@
         <sys_class_name>sys_soap_message</sys_class_name>
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
         <sys_created_on>2017-08-02 05:01:31</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>548c1a0e4f900700aab4a3b11310c7ca</sys_id>
         <sys_mod_count>15</sys_mod_count>
         <sys_name>ATE_27_TEST</sys_name>

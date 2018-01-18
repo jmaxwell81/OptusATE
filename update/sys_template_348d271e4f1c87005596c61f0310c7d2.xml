@@ -15,7 +15,7 @@
         <sys_class_name>sys_template</sys_class_name>
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
         <sys_created_on>2017-08-03 05:34:47</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>348d271e4f1c87005596c61f0310c7d2</sys_id>
         <sys_mod_count>21</sys_mod_count>
         <sys_name>Optus_ATE_27</sys_name>

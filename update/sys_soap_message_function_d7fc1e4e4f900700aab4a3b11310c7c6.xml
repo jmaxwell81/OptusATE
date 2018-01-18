@@ -156,7 +156,7 @@
         <sys_class_name>sys_soap_message_function</sys_class_name>
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
         <sys_created_on>2017-08-02 05:03:17</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>d7fc1e4e4f900700aab4a3b11310c7c6</sys_id>
         <sys_mod_count>2</sys_mod_count>
         <sys_name>getKeys</sys_name>

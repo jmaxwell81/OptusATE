@@ -7,7 +7,7 @@
         <sys_class_name>sys_properties_category_m2m</sys_class_name>
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
         <sys_created_on>2017-11-23 05:53:08</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>870424ae4f6e4b005596c61f0310c7bb</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>x_cio19_optus_ate.Environment.Optus ATE</sys_name>

@@ -4,7 +4,22 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>import_set_run</element>
-            <list_id display_value="sys_import_set_row" element="NULL" name="sys_import_set_row" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">368716124f66b280aab4a3b11310c778</list_id>
+            <list_id display_value="sys_import_set_row" element="NULL" name="sys_import_set_row" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">21f7529e4feefac0a022c61f0310c788</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>rbd@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-05-07 23:29:56</sys_created_on>
+            <sys_id>69f7529e4feefac0a022c61f0310c788</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>rbd@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-05-07 23:29:56</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>import_set_run</element>
+            <list_id display_value="sys_import_set_row" element="NULL" name="sys_import_set_row" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">21f7529e4feefac0a022c61f0310c788</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>0</position>
@@ -19,7 +34,7 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>template_import_log</element>
-            <list_id display_value="sys_import_set_row" element="NULL" name="sys_import_set_row" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">368716124f66b280aab4a3b11310c778</list_id>
+            <list_id display_value="sys_import_set_row" element="NULL" name="sys_import_set_row" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">21f7529e4feefac0a022c61f0310c788</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>1</position>
@@ -30,6 +45,21 @@
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>rbd@townsville.qld.gov.au</sys_updated_by>
             <sys_updated_on>2017-05-07 23:28:05</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>template_import_log</element>
+            <list_id display_value="sys_import_set_row" element="NULL" name="sys_import_set_row" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">21f7529e4feefac0a022c61f0310c788</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>rbd@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2017-05-07 23:29:56</sys_created_on>
+            <sys_id>edf7529e4feefac0a022c61f0310c788</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>rbd@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2017-05-07 23:29:56</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
@@ -50,7 +80,7 @@
             <sys_id>ca5b58f64f98c7005596c61f0310c704</sys_id>
             <sys_mod_count>4</sys_mod_count>
             <sys_name>x_cio19_optus_ate_tcceventin</sys_name>
-            <sys_package/>
+            <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
             <sys_policy/>
             <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
             <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>

@@ -8,7 +8,7 @@
         <sys_class_name>sys_number</sys_class_name>
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
         <sys_created_on>2017-08-04 01:08:31</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>7b6af7624f58c7005596c61f0310c7e8</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>OPT-ATE</sys_name>

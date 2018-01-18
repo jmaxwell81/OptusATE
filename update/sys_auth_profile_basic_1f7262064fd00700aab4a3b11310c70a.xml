@@ -6,7 +6,7 @@
         <sys_class_name>sys_auth_profile_basic</sys_class_name>
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
         <sys_created_on>2017-08-02 05:28:01</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>1f7262064fd00700aab4a3b11310c70a</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>OptusATE</sys_name>

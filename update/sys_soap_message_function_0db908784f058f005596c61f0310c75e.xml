@@ -147,7 +147,7 @@
         <sys_class_name>sys_soap_message_function</sys_class_name>
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
         <sys_created_on>2017-09-04 03:54:28</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>0db908784f058f005596c61f0310c75e</sys_id>
         <sys_mod_count>2</sys_mod_count>
         <sys_name>sendTicketEvent</sys_name>

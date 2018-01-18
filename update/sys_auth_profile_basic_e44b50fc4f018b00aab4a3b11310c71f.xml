@@ -6,7 +6,7 @@
         <sys_class_name>sys_auth_profile_basic</sys_class_name>
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
         <sys_created_on>2017-09-04 05:11:51</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>e44b50fc4f018b00aab4a3b11310c71f</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>OptusEventIn_DEV</sys_name>

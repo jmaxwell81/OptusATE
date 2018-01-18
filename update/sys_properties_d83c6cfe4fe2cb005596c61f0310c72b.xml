@@ -11,7 +11,7 @@
         <sys_class_name>sys_properties</sys_class_name>
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
         <sys_created_on>2017-11-24 01:07:23</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>d83c6cfe4fe2cb005596c61f0310c72b</sys_id>
         <sys_mod_count>1</sys_mod_count>
         <sys_name>x_cio19_optus_ate.Optus_PROD_Environment_WSDL_Username</sys_name>

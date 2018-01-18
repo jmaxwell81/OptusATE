@@ -8,7 +8,7 @@
         <sys_class_name>sys_number</sys_class_name>
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
         <sys_created_on>2017-08-03 00:06:49</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>12b2a65e4f1887005596c61f0310c77b</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>TCC-ATE</sys_name>

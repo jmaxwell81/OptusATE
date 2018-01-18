@@ -6,13 +6,8 @@
         <array_denormalized>false</array_denormalized>
         <attributes/>
         <audit>false</audit>
-        <calculation><![CDATA[(function calculatedFieldValue(current) {
-
-	// Add your code here
-	return '';  // return the calculated value
-
-})(current);]]></calculation>
-        <choice/>
+        <calculation/>
+        <choice>0</choice>
         <choice_field/>
         <choice_table/>
         <column_label>Attachment1</column_label>
@@ -33,7 +28,7 @@
         <foreign_database/>
         <internal_type display_value="Reference">reference</internal_type>
         <mandatory>false</mandatory>
-        <max_length>800</max_length>
+        <max_length>32</max_length>
         <name>x_cio19_optus_ate_optus_ate_holding</name>
         <next_element/>
         <primary>false</primary>
@@ -50,19 +45,19 @@
         <spell_check>false</spell_check>
         <staged>false</staged>
         <sys_class_name>sys_dictionary</sys_class_name>
-        <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
-        <sys_created_on>2017-08-31 04:51:16</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
-        <sys_id>60207b5b4fb88700aab4a3b11310c757</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2018-01-18 00:01:00</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>c37c6fd84f7747005596c61f0310c739</sys_id>
+        <sys_mod_count>0</sys_mod_count>
         <sys_name>Attachment1</sys_name>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_dictionary_x_cio19_optus_ate_optus_ate_holding_attachment1</sys_update_name>
-        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2017-11-21 03:21:06</sys_updated_on>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2018-01-18 00:01:00</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

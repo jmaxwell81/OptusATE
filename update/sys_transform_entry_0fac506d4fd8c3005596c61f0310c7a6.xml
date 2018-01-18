@@ -19,7 +19,7 @@
         <sys_class_name>sys_transform_entry</sys_class_name>
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
         <sys_created_on>2017-07-31 06:25:42</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>0fac506d4fd8c3005596c61f0310c7a6</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>worklog</sys_name>
