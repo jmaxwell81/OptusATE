@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
     <element label="Optus_ATE_Holding" max_length="40" name="x_cio19_optus_ate_optus_ate_holding" type="collection">
+        <element label="AssignmentGroup" max_length="40" name="assignmentgroup" type="string"/>
         <element display="true" label="Assignment Group" max_length="80" name="assignment_group" type="string"/>
         <element label="Attachment1" max_length="32" name="attachment1" reference="sys_attachment" type="reference"/>
         <element label="Attachments" max_length="400000000" name="attachments" type="string"/>
+        <element label="AttachmentBinary" max_length="40" name="attachment_binary_information" type="string"/>
+        <element label="AttachmentFileName" max_length="40" name="attachment_file_name" type="string"/>
         <element label="AttachName" max_length="300" name="attachname" type="string"/>
         <element label="Brief Description" max_length="4000" name="brief_description" type="data_structure"/>
         <element label="Category" max_length="250" name="category" type="string"/>
@@ -11,6 +14,7 @@
         <element label="Closure code" max_length="40" name="closure_code" type="string"/>
         <element label="Configuration Item ID" max_length="255" name="configuration_item_id" type="string"/>
         <element label="ContactKey" max_length="150" name="contactkey" type="string"/>
+        <element label="ContactInformation" max_length="40" name="contact_information" type="string"/>
         <element label="Cost Centre" max_length="255" name="cost_centre" type="string"/>
         <element label="CSNSParentID" max_length="255" name="csnsparentid" type="string"/>
         <element label="CSNSTicketID" max_length="40" name="csnsticketid" type="string"/>
@@ -46,5 +50,8 @@
         <element label="Urgency" max_length="40" name="urgency" type="integer"/>
         <element label="WorkLog" max_length="80" name="worklog" type="data_structure"/>
         <element label="WorkStationPort" max_length="40" name="workstationport" type="string"/>
+        <index name="index">
+            <element name="attachment1"/>
+        </index>
     </element>
 </database>

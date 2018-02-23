@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_properties_category_m2m">
+    <sys_properties_category_m2m action="INSERT_OR_UPDATE">
+        <category display_value="Optus ATE">ee1690e64f2e4b005596c61f0310c7b4</category>
+        <order>1100</order>
+        <property display_value="x_cio19_optus_ate.Debug" name="x_cio19_optus_ate.Debug">7711654c4f681f00aab4a3b11310c7ee</property>
+        <sys_class_name>sys_properties_category_m2m</sys_class_name>
+        <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+        <sys_created_on>2018-02-23 02:02:25</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>3881a94c4f681f00aab4a3b11310c7ee</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_cio19_optus_ate.Debug.Optus ATE</sys_name>
+        <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
+        <sys_update_name>sys_properties_category_m2m_3881a94c4f681f00aab4a3b11310c7ee</sys_update_name>
+        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2018-02-23 02:02:25</sys_updated_on>
+    </sys_properties_category_m2m>
+</record_update>

@@ -4,152 +4,152 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>number</element>
-            <list_id display_value="x_cio19_optus_ate_optus_ate_holding" element="NULL" name="x_cio19_optus_ate_optus_ate_holding" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">d3b177d04fb747005596c61f0310c7d9</list_id>
+            <list_id display_value="x_cio19_optus_ate_optus_ate_holding" element="NULL" name="x_cio19_optus_ate_optus_ate_holding" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">292dc1eddb94970073ab787dbf9619b5</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>0</position>
             <sum>false</sum>
-            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
-            <sys_created_on>2018-01-18 00:23:57</sys_created_on>
-            <sys_id>13b177d04fb747005596c61f0310c7da</sys_id>
+            <sys_created_by>a_aap@corporate.townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-02-15 06:08:39</sys_created_on>
+            <sys_id>292dc1eddb94970073ab787dbf9619b6</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-            <sys_updated_on>2018-01-18 00:23:57</sys_updated_on>
+            <sys_updated_by>a_aap@corporate.townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-02-15 06:08:39</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>assignment_group</element>
-            <list_id display_value="x_cio19_optus_ate_optus_ate_holding" element="NULL" name="x_cio19_optus_ate_optus_ate_holding" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">d3b177d04fb747005596c61f0310c7d9</list_id>
+            <list_id display_value="x_cio19_optus_ate_optus_ate_holding" element="NULL" name="x_cio19_optus_ate_optus_ate_holding" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">292dc1eddb94970073ab787dbf9619b5</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>1</position>
             <sum>false</sum>
-            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
-            <sys_created_on>2018-01-18 00:23:57</sys_created_on>
-            <sys_id>1bb177d04fb747005596c61f0310c7da</sys_id>
+            <sys_created_by>a_aap@corporate.townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-02-15 06:08:39</sys_created_on>
+            <sys_id>a92dc1eddb94970073ab787dbf9619b6</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-            <sys_updated_on>2018-01-18 00:23:57</sys_updated_on>
+            <sys_updated_by>a_aap@corporate.townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-02-15 06:08:39</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>attachment1</element>
-            <list_id display_value="x_cio19_optus_ate_optus_ate_holding" element="NULL" name="x_cio19_optus_ate_optus_ate_holding" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">d3b177d04fb747005596c61f0310c7d9</list_id>
+            <list_id display_value="x_cio19_optus_ate_optus_ate_holding" element="NULL" name="x_cio19_optus_ate_optus_ate_holding" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">292dc1eddb94970073ab787dbf9619b5</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>2</position>
             <sum>false</sum>
-            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
-            <sys_created_on>2018-01-18 00:23:57</sys_created_on>
-            <sys_id>9bb177d04fb747005596c61f0310c7da</sys_id>
+            <sys_created_by>a_aap@corporate.townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-02-15 06:08:39</sys_created_on>
+            <sys_id>2d2dc1eddb94970073ab787dbf9619b6</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-            <sys_updated_on>2018-01-18 00:23:57</sys_updated_on>
+            <sys_updated_by>a_aap@corporate.townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-02-15 06:08:39</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>attachments</element>
-            <list_id display_value="x_cio19_optus_ate_optus_ate_holding" element="NULL" name="x_cio19_optus_ate_optus_ate_holding" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">d3b177d04fb747005596c61f0310c7d9</list_id>
+            <list_id display_value="x_cio19_optus_ate_optus_ate_holding" element="NULL" name="x_cio19_optus_ate_optus_ate_holding" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">292dc1eddb94970073ab787dbf9619b5</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>3</position>
             <sum>false</sum>
-            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
-            <sys_created_on>2018-01-18 00:23:57</sys_created_on>
-            <sys_id>1fb177d04fb747005596c61f0310c7da</sys_id>
+            <sys_created_by>a_aap@corporate.townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-02-15 06:08:39</sys_created_on>
+            <sys_id>ad2dc1eddb94970073ab787dbf9619b6</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-            <sys_updated_on>2018-01-18 00:23:57</sys_updated_on>
+            <sys_updated_by>a_aap@corporate.townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-02-15 06:08:39</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>attachname</element>
-            <list_id display_value="x_cio19_optus_ate_optus_ate_holding" element="NULL" name="x_cio19_optus_ate_optus_ate_holding" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">d3b177d04fb747005596c61f0310c7d9</list_id>
+            <list_id display_value="x_cio19_optus_ate_optus_ate_holding" element="NULL" name="x_cio19_optus_ate_optus_ate_holding" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">292dc1eddb94970073ab787dbf9619b5</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>4</position>
             <sum>false</sum>
-            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
-            <sys_created_on>2018-01-18 00:23:57</sys_created_on>
-            <sys_id>9fb177d04fb747005596c61f0310c7da</sys_id>
+            <sys_created_by>a_aap@corporate.townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-02-15 06:08:39</sys_created_on>
+            <sys_id>212dc1eddb94970073ab787dbf9619b7</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-            <sys_updated_on>2018-01-18 00:23:57</sys_updated_on>
+            <sys_updated_by>a_aap@corporate.townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-02-15 06:08:39</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>brief_description</element>
-            <list_id display_value="x_cio19_optus_ate_optus_ate_holding" element="NULL" name="x_cio19_optus_ate_optus_ate_holding" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">d3b177d04fb747005596c61f0310c7d9</list_id>
+            <list_id display_value="x_cio19_optus_ate_optus_ate_holding" element="NULL" name="x_cio19_optus_ate_optus_ate_holding" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">292dc1eddb94970073ab787dbf9619b5</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>5</position>
             <sum>false</sum>
-            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
-            <sys_created_on>2018-01-18 00:23:57</sys_created_on>
-            <sys_id>13b177d04fb747005596c61f0310c7db</sys_id>
+            <sys_created_by>a_aap@corporate.townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-02-15 06:08:39</sys_created_on>
+            <sys_id>a12dc1eddb94970073ab787dbf9619b7</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-            <sys_updated_on>2018-01-18 00:23:57</sys_updated_on>
+            <sys_updated_by>a_aap@corporate.townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-02-15 06:08:39</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>category</element>
-            <list_id display_value="x_cio19_optus_ate_optus_ate_holding" element="NULL" name="x_cio19_optus_ate_optus_ate_holding" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">d3b177d04fb747005596c61f0310c7d9</list_id>
+            <list_id display_value="x_cio19_optus_ate_optus_ate_holding" element="NULL" name="x_cio19_optus_ate_optus_ate_holding" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">292dc1eddb94970073ab787dbf9619b5</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>6</position>
             <sum>false</sum>
-            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
-            <sys_created_on>2018-01-18 00:23:57</sys_created_on>
-            <sys_id>93b177d04fb747005596c61f0310c7db</sys_id>
+            <sys_created_by>a_aap@corporate.townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-02-15 06:08:39</sys_created_on>
+            <sys_id>252dc1eddb94970073ab787dbf9619b7</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-            <sys_updated_on>2018-01-18 00:23:57</sys_updated_on>
+            <sys_updated_by>a_aap@corporate.townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-02-15 06:08:39</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>closetime</element>
-            <list_id display_value="x_cio19_optus_ate_optus_ate_holding" element="NULL" name="x_cio19_optus_ate_optus_ate_holding" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">d3b177d04fb747005596c61f0310c7d9</list_id>
+            <list_id display_value="x_cio19_optus_ate_optus_ate_holding" element="NULL" name="x_cio19_optus_ate_optus_ate_holding" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">292dc1eddb94970073ab787dbf9619b5</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>7</position>
             <sum>false</sum>
-            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
-            <sys_created_on>2018-01-18 00:23:57</sys_created_on>
-            <sys_id>17b177d04fb747005596c61f0310c7db</sys_id>
+            <sys_created_by>a_aap@corporate.townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-02-15 06:08:39</sys_created_on>
+            <sys_id>a52dc1eddb94970073ab787dbf9619b7</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-            <sys_updated_on>2018-01-18 00:23:57</sys_updated_on>
+            <sys_updated_by>a_aap@corporate.townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-02-15 06:08:39</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>closure_code</element>
-            <list_id display_value="x_cio19_optus_ate_optus_ate_holding" element="NULL" name="x_cio19_optus_ate_optus_ate_holding" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">d3b177d04fb747005596c61f0310c7d9</list_id>
+            <list_id display_value="x_cio19_optus_ate_optus_ate_holding" element="NULL" name="x_cio19_optus_ate_optus_ate_holding" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">292dc1eddb94970073ab787dbf9619b5</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>8</position>
             <sum>false</sum>
-            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
-            <sys_created_on>2018-01-18 00:23:57</sys_created_on>
-            <sys_id>97b177d04fb747005596c61f0310c7db</sys_id>
+            <sys_created_by>a_aap@corporate.townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-02-15 06:08:39</sys_created_on>
+            <sys_id>292dc1eddb94970073ab787dbf9619b7</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-            <sys_updated_on>2018-01-18 00:23:57</sys_updated_on>
+            <sys_updated_by>a_aap@corporate.townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-02-15 06:08:39</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>configuration_item_id</element>
-            <list_id display_value="x_cio19_optus_ate_optus_ate_holding" element="NULL" name="x_cio19_optus_ate_optus_ate_holding" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">d3b177d04fb747005596c61f0310c7d9</list_id>
+            <list_id display_value="x_cio19_optus_ate_optus_ate_holding" element="NULL" name="x_cio19_optus_ate_optus_ate_holding" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">292dc1eddb94970073ab787dbf9619b5</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>9</position>
             <sum>false</sum>
-            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
-            <sys_created_on>2018-01-18 00:23:57</sys_created_on>
-            <sys_id>1bb177d04fb747005596c61f0310c7db</sys_id>
+            <sys_created_by>a_aap@corporate.townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-02-15 06:08:39</sys_created_on>
+            <sys_id>a92dc1eddb94970073ab787dbf9619b7</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-            <sys_updated_on>2018-01-18 00:23:57</sys_updated_on>
+            <sys_updated_by>a_aap@corporate.townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-02-15 06:08:39</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
@@ -163,11 +163,11 @@
             <sum>false</sum>
             <sys_class_name>sys_ui_list</sys_class_name>
             <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
-            <sys_created_on>2017-11-21 05:02:37</sys_created_on>
+            <sys_created_on>2018-02-23 01:29:10</sys_created_on>
             <sys_customer_update>false</sys_customer_update>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>ff450afd4f6ec700aab4a3b11310c780</sys_id>
+            <sys_id>a5e959844f681f00aab4a3b11310c718</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>x_cio19_optus_ate_optus_ate_holding</sys_name>
             <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -176,8 +176,8 @@
             <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
             <sys_update_name>sys_ui_list_x_cio19_optus_ate_optus_ate_holding_null</sys_update_name>
             <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-            <sys_updated_on>2017-11-21 05:02:37</sys_updated_on>
-            <sys_user display_value="Leon Storey">1d8b25ce4f6ee240a022c61f0310c7d4</sys_user>
+            <sys_updated_on>2018-02-23 01:29:10</sys_updated_on>
+            <sys_user/>
             <view display_value="Default view" name="NULL">Default view</view>
             <view_name/>
         </sys_ui_list>

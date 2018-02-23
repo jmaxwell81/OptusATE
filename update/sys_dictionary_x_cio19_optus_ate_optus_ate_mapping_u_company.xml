@@ -53,7 +53,7 @@
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
         <sys_created_on>2017-08-31 23:06:39</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_id>b37c6fd84f7747005596c61f0310c7cb</sys_id>
+        <sys_id>d3d32281db9c170073ab787dbf961951</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Company</sys_name>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -62,7 +62,7 @@
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_dictionary_x_cio19_optus_ate_optus_ate_mapping_u_company</sys_update_name>
         <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2018-01-18 00:01:44</sys_updated_on>
+        <sys_updated_on>2018-02-13 23:10:50</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

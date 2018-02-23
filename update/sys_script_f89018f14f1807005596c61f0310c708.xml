@@ -13,7 +13,7 @@
         <change_fields>false</change_fields>
         <client_callable>false</client_callable>
         <collection>x_cio19_optus_ate_optus_ate_holding</collection>
-        <condition>current.messagetype==27 &amp;&amp; current.messagecompany=='TOCC_IMT'</condition>
+        <condition/>
         <description/>
         <execute_function>false</execute_function>
         <filter_condition table="x_cio19_optus_ate_optus_ate_holding">messagetype=27^messagecompany=TOCC_IMT^EQ<item endquery="false" field="messagetype" goto="false" newquery="false" operator="=" or="false" value="27"/>
@@ -34,7 +34,7 @@
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 try {
 
-	var s = new sn_ws.SOAPMessageV2('x_cio19_optus_ate.OptusEventOut', 'sendTicketEvent');
+	var s = new sn_ws.SOAPMessageV2('x_cio19_optus_ate.OptusEventOut_DEV', 'sendTicketEvent');
 
 	
 	//override authentication profile
@@ -45,15 +45,76 @@ try {
 	s.setStringParameterNoEscape('instance.messagestatus','Pending');
 	s.setStringParameterNoEscape('instance.messagetype','27');
 	s.setStringParameterNoEscape('instance.uniqueid',current.sys_id);
+	/*
+	 s.setStringParameterNoEscape('instance.PhoneNumber', '');
+ s.setStringParameterNoEscape('model.instance', '');
+ s.setStringParameterNoEscape('instance.ClosureCode', '');
+ s.setStringParameterNoEscape('messages.message', '');
+ s.setStringParameterNoEscape('instance.MessageType', '');
+ s.setStringParameterNoEscape('instance.Integrator', '');
+ s.setStringParameterNoEscape('instance.UniqueID', '');
+ s.setStringParameterNoEscape('ATERequest', '');
+ s.setStringParameterNoEscape('instance.AttachName', '');
+ s.setStringParameterNoEscape('WorkLog.WorkLog', '');
+ s.setStringParameterNoEscape('instance.Priority', '');
+ s.setStringParameterNoEscape('instance.MessageDate', '');
+ s.setStringParameterNoEscape('BriefDescription.BriefDescription', '');
+ s.setStringParameterNoEscape('instance.LastName', '');
+ s.setStringParameterNoEscape('instance.MessageStatus', '');
+ s.setStringParameterNoEscape('instance.CustomerTicketID', '');
+ s.setStringParameterNoEscape('UpdateDescription.UpdateDescription', '');
+ s.setStringParameterNoEscape('instance.ErrorMessage', '');
+ s.setStringParameterNoEscape('instance.OpenTime', '');
+ s.setStringParameterNoEscape('instance.CustomerParentID', '');
+ s.setStringParameterNoEscape('instance.CSNSParentID', '');
+ s.setStringParameterNoEscape('instance.DowntimeEnd', '');
+ s.setStringParameterNoEscape('instance.Category', '');
+ s.setStringParameterNoEscape('extensions.ExtensionsFieldValue', '');
+ s.setStringParameterNoEscape('instance.Impact', '');
+ s.setStringParameterNoEscape('attachments.attachment', '');
+ s.setStringParameterNoEscape('instance.SubCategory', '');
+ s.setStringParameterNoEscape('instance.CostCentre', '');
+ s.setStringParameterNoEscape('instance.AssignmentGroup', '');
+ s.setStringParameterNoEscape('extensions.ExtensionsFieldName', '');
+ s.setStringParameterNoEscape('ATERequest.model', '');
+ s.setStringParameterNoEscape('instance.DowntimeStart', '');
+ s.setStringParameterNoEscape('instance.FirstName', '');
+ s.setStringParameterNoEscape('instance.Urgency', '');
+ s.setStringParameterNoEscape('instance.ProblemType', '');
+ s.setStringParameterNoEscape('instance.MessageAction', '');
+ s.setStringParameterNoEscape('instance.CustomerTicketStatus', '');
+ s.setStringParameterNoEscape('instance.ProductType', '');
+ s.setStringParameterNoEscape('instance.ManagedTicketID', '');
+ s.setStringParameterNoEscape('instance.PlannedEnd', '');
+ s.setStringParameterNoEscape('instance.ConfigItemID', '');
+ s.setStringParameterNoEscape('instance.MessageCompany', '');
+ s.setStringParameterNoEscape('SoapHeaderMsg.ContextId', '');
+ s.setStringParameterNoEscape('instance.Location', '');
+ s.setStringParameterNoEscape('instance.EmailAddress', '');
+ s.setStringParameterNoEscape('instance.WorkStationPort', '');
+ s.setStringParameterNoEscape('instance.CloseTime', '');
+ s.setStringParameterNoEscape('instance.PlannedStart', '');
+ s.setStringParameterNoEscape('instance.MobileNumber', '');
+ s.setStringParameterNoEscape('instance.CSNSTicketID', '');
+ s.setStringParameterNoEscape('instance.ContactKey', '');
 	
+	
+	*/
 	
 	var response = s.execute();
 	var responseBody = response.getBody();
 	var status = response.getStatusCode();
+	
+	if (gs.getProperty('x_cio19_optus_ate.Debug')=='True'){
+		gs.info('OPTUS ATE BR-27 RESPONSE: ' +responseBody+', '+response+', '+status);
+	}
+	
 }
 catch(ex) {
 	var message = ex.getMessage();
-	
+	if (gs.getProperty('x_cio19_optus_ate.Debug')=='True'){
+	gs.error('OPTUS_ATE ATE_HealthCheck_27: '+message);
+	}
 }
 })(current, previous);
 ]]></script>
@@ -64,7 +125,7 @@ catch(ex) {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f89018f14f1807005596c61f0310c708</sys_id>
-        <sys_mod_count>68</sys_mod_count>
+        <sys_mod_count>85</sys_mod_count>
         <sys_name>ATE_HealthCheck_27</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -73,7 +134,7 @@ catch(ex) {
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_f89018f14f1807005596c61f0310c708</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2017-10-23 22:57:15</sys_updated_on>
+        <sys_updated_on>2018-02-23 04:20:05</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

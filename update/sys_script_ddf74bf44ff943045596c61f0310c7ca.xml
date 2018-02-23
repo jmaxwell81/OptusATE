@@ -7,7 +7,7 @@
         <action_insert>true</action_insert>
         <action_query>false</action_query>
         <action_update>false</action_update>
-        <active>false</active>
+        <active>true</active>
         <add_message>false</add_message>
         <advanced>true</advanced>
         <change_fields>false</change_fields>
@@ -37,15 +37,24 @@
 
  s.setStringParameterNoEscape('insert.uniqueid', '123456');
  s.setStringParameterNoEscape('insert.messagedate', '2017-08-04 09:59:00');
- s.setStringParameterNoEscape('insert.messagecompany', 'TCC');
+ s.setStringParameterNoEscape('insert.messagecompany', 'Optus PMSD');
  s.setStringParameterNoEscape('insert.messagetype', '28');
  s.setStringParameterNoEscape('insert.messagestatus', 'New');
+	
+	
  var response = s.execute();
  var responseBody = response.getBody(); 
  var status = response.getStatusCode();
+	
+		if (gs.getProperty('x_cio19_optus_ate.Debug')=='True'){
+		gs.info('OPTUS ATE BR-LOOP RESPONSE: ' +responseBody+', '+response+', '+status);
+	}
 }
 catch(ex) { 
  var message = ex.getMessage();
+		if (gs.getProperty('x_cio19_optus_ate.Debug')=='True'){
+	gs.error('OPTUS_ATE ATE_HealthCheck_Loop: '+message);
+	}
 }]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
@@ -54,7 +63,7 @@ catch(ex) {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>ddf74bf44ff943045596c61f0310c7ca</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>ATE_HealthCheck_Loop</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -63,7 +72,7 @@ catch(ex) {
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_ddf74bf44ff943045596c61f0310c7ca</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2017-10-12 01:04:48</sys_updated_on>
+        <sys_updated_on>2018-02-23 04:51:20</sys_updated_on>
         <template/>
         <when>async</when>
     </sys_script>
