@@ -2,14 +2,14 @@
 <record_update table="sys_properties_category_m2m">
     <sys_properties_category_m2m action="INSERT_OR_UPDATE">
         <category display_value="Optus ATE">ee1690e64f2e4b005596c61f0310c7b4</category>
-        <order>1000</order>
+        <order>1200</order>
         <property display_value="x_cio19_optus_ate.Optus_PROD_Environment_WSDL_Password" name="x_cio19_optus_ate.Optus_PROD_Environment_WSDL_Password">ea6c6c764f26cb005596c61f0310c7f2</property>
         <sys_class_name>sys_properties_category_m2m</sys_class_name>
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
         <sys_created_on>2017-11-24 01:08:49</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>9c9c283a4f26cb005596c61f0310c793</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>x_cio19_optus_ate.Optus_PROD_Environment_WSDL_Password.Optus ATE</sys_name>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
         <sys_policy/>
@@ -17,6 +17,6 @@
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_properties_category_m2m_9c9c283a4f26cb005596c61f0310c793</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-02-23 02:02:22</sys_updated_on>
+        <sys_updated_on>2018-02-28 03:42:38</sys_updated_on>
     </sys_properties_category_m2m>
 </record_update>

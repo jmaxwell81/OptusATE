@@ -13,11 +13,11 @@
         <change_fields>false</change_fields>
         <client_callable>false</client_callable>
         <collection>x_cio19_optus_ate_optus_ate_holding</collection>
-        <condition>current.messagetype==28 &amp;&amp; current.messagecompany=='Optus PMSD'</condition>
+        <condition>current.messagetype==27 &amp;&amp; current.messagecompany=='TCC'</condition>
         <description/>
         <execute_function>false</execute_function>
-        <filter_condition table="x_cio19_optus_ate_optus_ate_holding">messagetype=28^messagecompany=Optus PMSD^EQ<item endquery="false" field="messagetype" goto="false" newquery="false" operator="=" or="false" value="28"/>
-            <item endquery="false" field="messagecompany" goto="false" newquery="false" operator="=" or="false" value="Optus PMSD"/>
+        <filter_condition table="x_cio19_optus_ate_optus_ate_holding">messagetype=27^messagecompany=TCC^EQ<item endquery="false" field="messagetype" goto="false" newquery="false" operator="=" or="false" value="27"/>
+            <item endquery="false" field="messagecompany" goto="false" newquery="false" operator="=" or="false" value="TCC"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </filter_condition>
         <is_rest>false</is_rest>
@@ -35,7 +35,7 @@
 
 	
 var inc = new GlideRecord('x_cio19_optus_ate_optus_ate_holding');
-	//inc.initialize();
+//inc.initialize();
 inc.addQuery('sys_id',current.uniqueid);
 
 inc.query(); 
@@ -67,13 +67,22 @@ try {
 		if (gs.getProperty('x_cio19_optus_ate.Debug')=='True'){
 		gs.info('OPTUS ATE BR-28 RESPONSE: ' +responseBody+', '+response+', '+status);
 	}
+		if(status!='200'){
+		//Send email notification "OPTUS ATE Heartbeat response not recieved"
+	gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_optus_ate.Alert_Notifications'),'OPTUS ATE BR-28 RESPONSE: ' +responseBody+', '+response+', '+status);
+		
+				  
+	}
 	
 }
 catch(ex) {
 	var message = ex.getMessage();
 		if (gs.getProperty('x_cio19_optus_ate.Debug')=='True'){
 	gs.error('OPTUS_ATE ATE_HealthCheck_28: '+message);
+		
 	}
+gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_optus_ate.Alert_Notifications'),'OPTUS ATE BR-28 RESPONSE: ' +message);
+	
 	
 }
 
@@ -85,7 +94,7 @@ catch(ex) {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>0a57b7924f5c87005596c61f0310c771</sys_id>
-        <sys_mod_count>196</sys_mod_count>
+        <sys_mod_count>205</sys_mod_count>
         <sys_name>ATE_HealthCheck_28</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -94,7 +103,7 @@ catch(ex) {
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_0a57b7924f5c87005596c61f0310c771</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-02-23 04:21:27</sys_updated_on>
+        <sys_updated_on>2018-02-28 02:53:48</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

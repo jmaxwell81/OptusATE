@@ -42,24 +42,29 @@ Purpose: On insert of record in Incident table where Assignment group is for Opt
 var EnvWSDL='';
 var EnvUsername='';
 var EnvPassword='';
-var url="";
-url = gs.getProperty('glide.servlet.uri');
-if (url.indexOf("dev")>-1){
-	gs.info("DEV Environment: " + url);
+var instance='';
+var outgoing_api='';
+
+instance = gs.getProperty('instance_name');
+if (instance.indexOf("dev")>-1){
+	gs.info("OPTUS ATE: DEV Environment: " + instance);
 	EnvWSDL=gs.getProperty("x_cio19_optus_ate.Optus_DEV_Environment_WSDL_Endpoint");
 	EnvUsername=gs.getProperty("x_cio19_optus_ate.Optus_DEV_Environment_WSDL_Username");
 	EnvPassword=gs.getProperty("x_cio19_optus_ate.Optus_DEV_Environment_WSDL_Password");
+	outgoing_api=gs.getProperty("x_cio19_optus_ate.outgoing_API_DEV");
 }else{
-	if (url.indexOf("uat")>-1){
-	gs.info("UAT Environment: " + url);
+	if (instance.indexOf("uat")>-1){
+	gs.info("OPTUS ATE: UAT Environment: " + instance);
 	EnvWSDL=gs.getProperty("x_cio19_optus_ate.Optus_UAT_Environment_WSDL_Endpoint");
 	EnvUsername=gs.getProperty("x_cio19_optus_ate.Optus_UAT_Environment_WSDL_Username");
 	EnvPassword=gs.getProperty("x_cio19_optus_ate.Optus_UAT_Environment_WSDL_Password");
+	outgoing_api=gs.getProperty("x_cio19_optus_ate.outgoing_API_UAT");
 }else{
-	gs.info("PROD Environment: " + url);
+	gs.info("OPTUS ATE: PROD Environment: " + instance);
 	EnvWSDL=gs.getProperty("x_cio19_optus_ate.Optus_PROD_Environment_WSDL_Endpoint");
 	EnvUsername=gs.getProperty("x_cio19_optus_ate.Optus_PROD_Environment_WSDL_Username");
 	EnvPassword=gs.getProperty("x_cio19_optus_ate.Optus_PROD_Environment_WSDL_Password");
+	outgoing_api=gs.getProperty("x_cio19_optus_ate.outgoing_API_PROD");
 }
 }
 
@@ -67,7 +72,7 @@ if (url.indexOf("dev")>-1){
 
 //Checks if application is enabled, inserts record into the holding table else puts info in syslog
 var isenabled='';
-isenabled=gs.getProperty("x_cio19_optus_ate.Enabled");
+isenabled=gs.getProperty('x_cio19_optus_ate.Enabled');
 if (isenabled == 'true'){
 
 	(function executeRule(current, previous /*null when async*/) {
@@ -109,11 +114,11 @@ try {
 		}
 	}
 	else{
-		gs.info('No Attachment');
+		gs.info('OPTUS ATE 21: No Attachment');
 	}
 }
 	catch(att_err){
-		gs.error("insert attachment failed",att_err);
+		gs.error("OPTUS ATE 21: insert attachment failed",att_err);
 		
 	}
 	
@@ -137,13 +142,13 @@ try {
 	inc21.lastname = inc_requestor.last_name;
 	}
 	catch(det){
-		gs.error("Insert Detail Failed",det);
+		gs.error("OPTUS ATE 21: Insert Detail Failed",det);
 	}
 	
 	//Get Location from reference table
 	inc_location.get(current.location);
 	inc21.location = inc_location.name;
-	inc21.messagecompany = 'TTC';
+	inc21.messagecompany = 'TCC';
 	inc21.messagedate = current.opened_at;
 	try{
 	//Get Status Label
@@ -166,7 +171,7 @@ try {
 	inc21.priority = current.priority;
 	}
 	catch(inc){
-		gs.error("Failed incident detail",inc);
+		gs.error("OPTUS ATE 21: Failed incident detail",inc);
 	}
 	
 	
@@ -199,23 +204,23 @@ try {
 	inc21.configuration_item_id=inc_configItem.name;
 	}
 	catch(prob){
-		gs.error("Problem insert failed",prob);
+		gs.error("OPTUS ATE 21: Problem insert failed",prob);
 	}
 	//inc21.CustomerParentID = '';
 	//inc21.CSNSParentID = '';
 	
 	//inc21.updateWithReferences();
 	inc21.insert();
-	gs.info('ATE_21 incident '+current.number+' inserted into holding table');
+	gs.info('OPTUS ATE 21: incident '+current.number+' inserted into holding table');
 }
 	
 	catch(ex)
 	{
-		gs.error('ATE_21 Insert '+current.number+' into holding table failed?',ex.message);
+		gs.error('OPTUS ATE 21: Insert '+current.number+' into holding table failed?',ex.message);
 	}
 })(current, previous);
 }else{
-	gs.info("Optus ATE Application is not enabled");
+	gs.info("OPTUS ATE 21: Application is not enabled");
 }
 ]]></script>
         <sys_class_name>sys_script</sys_class_name>
@@ -225,7 +230,7 @@ try {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>a916dff54fe443405596c61f0310c7e1</sys_id>
-        <sys_mod_count>237</sys_mod_count>
+        <sys_mod_count>244</sys_mod_count>
         <sys_name>INC_Holding_21</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -234,7 +239,7 @@ try {
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_a916dff54fe443405596c61f0310c7e1</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2017-11-24 06:17:04</sys_updated_on>
+        <sys_updated_on>2018-02-28 04:34:52</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

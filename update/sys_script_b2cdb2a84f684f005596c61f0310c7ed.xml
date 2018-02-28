@@ -16,10 +16,7 @@
         <condition>current.messagetype=='21' &amp;&amp; current.assignment_group=='Optus PMSD'</condition>
         <description/>
         <execute_function>false</execute_function>
-        <filter_condition table="x_cio19_optus_ate_optus_ate_holding">messagetype=21^assignment_group=Optus PMSD^EQ<item endquery="false" field="messagetype" goto="false" newquery="false" operator="=" or="false" value="21"/>
-            <item endquery="false" field="assignment_group" goto="false" newquery="false" operator="=" or="false" value="Optus PMSD"/>
-            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
-        </filter_condition>
+        <filter_condition/>
         <is_rest>false</is_rest>
         <message/>
         <name>ATE_TCC_OpenReq_21</name>
@@ -34,7 +31,20 @@
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 
 	try { 
- var s = new sn_ws.SOAPMessageV2('x_cio19_optus_ate.OptusEventOut', 'sendTicketEvent');
+	instance=gs.getProperty('instance_name');
+	if (instance.indexOf('dev')>-1){
+		outgoing_api = gs.getProperty('x_cio19_optus_ate.outgoing_API_DEV');
+	}else{
+	if (instance.indexOf("uat")>-1){
+		outgoing_api=gs.getProperty('x_cio19_optus_ate.outgoing_API_UAT');
+	}else{
+	outgoing_api=gs.getProperty('x_cio19_optus_ate.outgoing_API_PROD');
+	}}
+	if (gs.getProperty('x_cio19_optus_ate.Debug')=='True'){
+		gs.info("OPTUS ATE Environment: " + instance+', '+outgoing_api);
+		}	
+		
+ var s = new sn_ws.SOAPMessageV2(outgoing_api, 'sendTicketEvent');
 
 //override authentication profile 
 //authentication type ='basic'
@@ -55,7 +65,7 @@ try{
  s.setStringParameterNoEscape('extensions.ExtensionsFieldName', '');
 }
 		catch(a){
-			gs.error("Error at a",a);
+			gs.error("OPTUS ATE 21: Error at a",a);
 		}
 		
 try{
@@ -68,6 +78,7 @@ try{
  s.setStringParameterNoEscape('instance.MobileNumber', current.mobilenumber);
  s.setStringParameterNoEscape('instance.ConfigItemID', current.configuration_item_id);
  s.setStringParameterNoEscape('instance.ProductType', current.producttype);
+s.setStringParameterNoEscape('instance.company', current.company);
 
 	var mapCategory=new tcc_table_mapping();
 	mapCategory.getMappedInBoundValue(current.messagecompany,'category',current.category);		
@@ -75,7 +86,7 @@ try{
 //s.setStringParameterNoEscape('instance.Category', current.category);
 }
 		catch(b){
-			gs.error("Error at b",b);
+			gs.error("OPTUS ATE 21: Error at b",b);
 		}
 		
 try{		
@@ -93,9 +104,10 @@ try{
  s.setStringParameterNoEscape('instance.ProblemType', current.problemtype);
  s.setStringParameterNoEscape('instance.DowntimeEnd', current.downtimeend);
  s.setStringParameterNoEscape('instance.EmailAddress', current.emailaddress);
+	s.setStringParameterNoEscape('instance.company', current.company);
 }
 		catch(c){
-			gs.error("Error at c",c);
+			gs.error("OPTUS ATE 21: Error at c",c);
 		}
 		
 try{
@@ -118,24 +130,29 @@ s.setStringParameterNoEscape('instance.Priority', mapPriority);
  s.setStringParameterNoEscape('instance.MessageDate', current.messagedate);
  s.setStringParameterNoEscape('instance.PlannedStart', current.plannedstart);
  s.setStringParameterNoEscape('instance.SubCategory', current.subcategory);
+	s.setStringParameterNoEscape('instance.company', current.company);
  s.setStringParameterNoEscape('instance.AttachName', current.attachment_file_name);
  s.setStringParameterNoEscape('incident.attachments', 'href="${attachments.attachment}" contentId="${attachments.attachment}" action="${attachments.attachment}" name="${attachments.attachment}" type="${attachments.attachment}" len="${attachments.attachment}" charset="${attachments.attachment}" attachmentType="${attachments.attachment}">cid:2251074713');
 }
 		catch(d){
-			gs.error("Error at d",d);
+			gs.error("OPTUS ATE 21: Error at d",d);
 		}
 	
 var response = s.execute();
  var responseBody = response.getBody(); 
  var status = response.getStatusCode();
-		gs.info('ATE_TCC_OpenReq_21 Sent');
-		gs.debug(responseBody);
+	if (gs.getProperty('x_cio19_optus_ate.Debug')=='True'){
+		gs.info('OPTUS ATE BR-21 OPEN REQUEST: ' +responseBody+', '+response+', '+status);
+	}
+		
+		
+		
 }
 catch(ex) { 
 // var message = JSON.parse(ex.message());
-	gs.error("Send to Optus ATE Failed ",ex);
+	gs.error('OPTUS ATE BR-21 OPEN REQUEST: ',ex.message);
 	//gs.debug('ATE_TCC_OpenReq_21 Not Sent');
-	gs.info(responseBody);
+gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_optus_ate.Alert_Notifications'),'OPTUS ATE BR-21 OPEN REQUEST: ' +ex.message);
 }
 
 })(current, previous);]]></script>
@@ -146,7 +163,7 @@ catch(ex) {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>b2cdb2a84f684f005596c61f0310c7ed</sys_id>
-        <sys_mod_count>37</sys_mod_count>
+        <sys_mod_count>44</sys_mod_count>
         <sys_name>ATE_TCC_OpenReq_21</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -155,7 +172,7 @@ catch(ex) {
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_b2cdb2a84f684f005596c61f0310c7ed</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2017-11-22 22:31:09</sys_updated_on>
+        <sys_updated_on>2018-02-28 06:23:10</sys_updated_on>
         <template/>
         <when>async</when>
     </sys_script>

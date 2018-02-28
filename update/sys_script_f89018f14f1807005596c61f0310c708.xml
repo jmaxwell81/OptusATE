@@ -33,8 +33,19 @@
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 try {
-
-	var s = new sn_ws.SOAPMessageV2('x_cio19_optus_ate.OptusEventOut_DEV', 'sendTicketEvent');
+instance=gs.getProperty('instance_name');
+	if (instance.indexOf('dev')>-1){
+		outgoing_api = gs.getProperty('x_cio19_optus_ate.outgoing_API_DEV');
+	}else{
+	if (instance.indexOf("uat")>-1){
+		outgoing_api=gs.getProperty('x_cio19_optus_ate.outgoing_API_UAT');
+	}else{
+	outgoing_api=gs.getProperty('x_cio19_optus_ate.outgoing_API_PROD');
+	}}
+	if (gs.getProperty('x_cio19_optus_ate.Debug')=='True'){
+		gs.info("OPTUS ATE Environment: " + instance+', '+outgoing_api);
+		}
+	var s = new sn_ws.SOAPMessageV2(outgoing_api, 'sendTicketEvent');
 
 	
 	//override authentication profile
@@ -109,12 +120,20 @@ try {
 		gs.info('OPTUS ATE BR-27 RESPONSE: ' +responseBody+', '+response+', '+status);
 	}
 	
+	if(status!='200'){
+		//Send email notification "OPTUS ATE Heartbeat not recieved"
+	gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_optus_ate.Alert_Notifications'),responseBody+', '+response+', '+status);
+		
+				  
+	}
+	
 }
 catch(ex) {
 	var message = ex.getMessage();
 	if (gs.getProperty('x_cio19_optus_ate.Debug')=='True'){
 	gs.error('OPTUS_ATE ATE_HealthCheck_27: '+message);
 	}
+	gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_optus_ate.Alert_Notifications'),'OPTUS_ATE ATE_HealthCheck_27: ' +message);
 }
 })(current, previous);
 ]]></script>
@@ -125,7 +144,7 @@ catch(ex) {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f89018f14f1807005596c61f0310c708</sys_id>
-        <sys_mod_count>85</sys_mod_count>
+        <sys_mod_count>95</sys_mod_count>
         <sys_name>ATE_HealthCheck_27</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -134,7 +153,7 @@ catch(ex) {
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_f89018f14f1807005596c61f0310c708</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-02-23 04:20:05</sys_updated_on>
+        <sys_updated_on>2018-02-28 04:12:31</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

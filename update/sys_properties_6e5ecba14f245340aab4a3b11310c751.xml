@@ -2,29 +2,29 @@
 <record_update table="sys_properties">
     <sys_properties action="INSERT_OR_UPDATE">
         <choices/>
-        <description>Enable Debug  log prefix "OPTUS_ATE: "</description>
+        <description>Email address to send notifications to e.g . heartbeat failure</description>
         <ignore_cache>false</ignore_cache>
         <is_private>false</is_private>
-        <name>x_cio19_optus_ate.Debug</name>
+        <name>x_cio19_optus_ate.Alert_Notifications</name>
         <read_roles/>
-        <suffix>Debug</suffix>
+        <suffix>Alert_Notifications</suffix>
         <sys_class_name>sys_properties</sys_class_name>
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
-        <sys_created_on>2018-02-23 02:01:42</sys_created_on>
+        <sys_created_on>2018-02-28 01:50:39</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_id>7711654c4f681f00aab4a3b11310c7ee</sys_id>
-        <sys_mod_count>1</sys_mod_count>
-        <sys_name>x_cio19_optus_ate.Debug</sys_name>
+        <sys_id>6e5ecba14f245340aab4a3b11310c751</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>x_cio19_optus_ate.Alert_Notifications</sys_name>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
-        <sys_update_name>sys_properties_7711654c4f681f00aab4a3b11310c7ee</sys_update_name>
+        <sys_update_name>sys_properties_6e5ecba14f245340aab4a3b11310c751</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-02-28 04:48:35</sys_updated_on>
-        <type>boolean</type>
-        <value>true</value>
+        <sys_updated_on>2018-02-28 02:53:28</sys_updated_on>
+        <type>string</type>
+        <value>leon_storey@hotmail.com,leon.storey@townsville.qld.gov.au</value>
         <write_roles/>
     </sys_properties>
-    <sys_translated_text action="delete_multiple" query="documentkey=7711654c4f681f00aab4a3b11310c7ee"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=6e5ecba14f245340aab4a3b11310c751"/>
 </record_update>
