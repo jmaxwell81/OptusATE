@@ -19,11 +19,14 @@ tcc_table_mapping.prototype = {
  	*/
 
 	getMappedInBoundValue : function(messagecompany, sourceField, sourceValue, currentOptusValue, ticketCategory, currentTicket) {
-		
-		gs.debug("getMappedInBoundValue enter (" + company + "," + sourceField + "," + sourceValue + "," + currentOptusValue + "," +  ticketCategory +")","ATEValueMatchingHelper" );
+try{
+		if(gs.getProperty('x_cio19_optus_ate.Debug')=='True'){
+		gs.debug("OPTUS ATE: getMappedInBoundValue enter (" + messagecompany + "," + sourceField + "," + sourceValue + "," + currentOptusValue + "," +  ticketCategory +")","ATEValueMatchingHelper" );
+		}
+	
 		var inBoundMappingTableName = 'x_cio19_optus_ate_optus_ate_mapping';
 	
-		company = this.getMappedCompany(messagecompany);
+		var company = this.getMappedCompany(messagecompany,sourceField);
 		
 		/*
  		* 1. Find based on source and current value
@@ -81,7 +84,16 @@ tcc_table_mapping.prototype = {
 		/*
  		* 5. Did not map, so get default value
  		*/
-		return this._getDefaultInBoundValueUpdate(company, sourceField, ticketCategory);
+		return this._getDefaultInBoundValueUpdate(messagecompany, sourceField, ticketCategory);
+
+}
+	catch(ex) {
+	//var message = ex.getMessage();
+	if (gs.getProperty('x_cio19_optus_ate.Debug')=='True'){
+	gs.error('OPTUS_ATE getMappedInBoundValue: '+ex);
+	}
+	gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_optus_ate.Alert_Notifications'),'OPTUS_ATE getMappedInBoundValue: ' +ex);
+}
 	},
 	
 	
@@ -94,7 +106,11 @@ tcc_table_mapping.prototype = {
  	*  ticketCategory - this is used so that we can have different mappings for incident, change and request, e.g., incident
  	*/
 	_getDefaultInBoundValueUpdate : function(company, sourceField, ticketCategory) {
-		gs.debug("_getDefaultInBoundValueUpdate enter", "ATEValueMatchingHelper");
+		
+try{		
+		if (gs.getProperty('x_cio19_optus_ate.Debug')=='True'){
+		gs.debug("OPTUS ATE: _getDefaultInBoundValueUpdate enter", "ATEValueMatchingHelper");
+		}
 		var inBoundMappingTableName = 'x_cio19_optus_ate_optus_ate_mapping';
 		/*
  		* 1. Find using the ticket type
@@ -120,22 +136,45 @@ tcc_table_mapping.prototype = {
 		if(inMapping2.next()){
 			return inMapping2.u_target_value;
 		}
-		gs.debug("_getDefaultInBoundValueUpdate - could not find a default for (" + company + "," + sourceField + "," + ticketCategory +")","ATEValueMatchingHelper" );
-		
+		if (gs.getProperty('x_cio19_optus_ate.Debug')=='True'){
+		gs.debug("OPTUS ATE: _getDefaultInBoundValueUpdate - could not find a default for (" + company + "," + sourceField + "," + ticketCategory +")","ATEValueMatchingHelper" );
+		}
 		return "";
+	}
+	catch(ex) {
+	//var message = ex.getMessage();
+	if (gs.getProperty('x_cio19_optus_ate.Debug')=='True'){
+	gs.error('OPTUS_ATE _getDefaultInBoundValueUpdate: '+ex);
+	}
+	gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_optus_ate.Alert_Notifications'),'OPTUS_ATE _getDefaultInBoundValueUpdate: ' +ex);
+}
+	
+	
 	},
 getMappedCompany: function(messagecompany, sourceField){
-	gs.debug("getMappedCompany Enter", "ATEValueMatchingHelper");
+try{	
+	if(gs.getProperty('x_cio19_optus_ate.Debug')=='True'){
+	gs.debug("OPTUS ATE: getMappedCompany Enter", "ATEValueMatchingHelper");
+	}
 	var inBoundMappingTableName = 'x_cio19_optus_ate_optus_ate_mapping';
 	
 	var inMapping = new GlideRecord(inBoundMappingTableName);
-		inMapping.addQuery('u_company', company);
+		inMapping.addQuery('u_company', messagecompany);
 		inMapping.addQuery('u_source_field', sourceField);
 		inMapping.addQuery('u_default', true);
 		inMapping.query();
 		if(inMapping.next()){
 			return inMapping.u_target_value;
 		}
+		}
+	catch(ex) {
+	//var message = ex.getMessage();
+	if (gs.getProperty('x_cio19_optus_ate.Debug')=='True'){
+	gs.error('OPTUS_ATE getMappedCompany: '+ex);
+	}
+	gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_optus_ate.Alert_Notifications'),'OPTUS_ATE getMappedCompany: ' +ex);
+}
+	
 },
 	
 	
@@ -146,7 +185,7 @@ getMappedCompany: function(messagecompany, sourceField){
         <sys_created_on>2017-08-28 23:02:50</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>779c40f24ff8c7005596c61f0310c797</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>17</sys_mod_count>
         <sys_name>tcc_table_mapping</sys_name>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
         <sys_policy>read</sys_policy>
@@ -154,6 +193,6 @@ getMappedCompany: function(messagecompany, sourceField){
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_include_779c40f24ff8c7005596c61f0310c797</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2017-11-23 00:44:50</sys_updated_on>
+        <sys_updated_on>2018-03-01 01:43:35</sys_updated_on>
     </sys_script_include>
 </record_update>
