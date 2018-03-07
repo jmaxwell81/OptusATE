@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element extends="sys_import_set_row" label="Optus_SubCat_Map" max_length="40" name="optus_subcat_map" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Cat" max_length="40" name="u_cat" type="string"/>
+        <element attributes="import_attribute_name=Company,edge_encryption_enabled=true" label="Company" max_length="40" name="u_company" type="string"/>
+        <element attributes="import_attribute_name=Field,edge_encryption_enabled=true" label="Field" max_length="40" name="u_field" type="string"/>
+        <element attributes="import_attribute_name=SubCat,edge_encryption_enabled=true" label="SubCat" max_length="40" name="u_subcat" type="string"/>
+    </element>
+</database>

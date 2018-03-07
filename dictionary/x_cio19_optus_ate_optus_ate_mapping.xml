@@ -13,5 +13,8 @@
         <element label="Source value" max_length="50" name="u_source_value" type="string"/>
         <element label="Target value" max_length="50" name="u_target_value" type="string"/>
         <element label="Ticket category" max_length="50" name="u_ticket_category" type="string"/>
+        <index name="index">
+            <element name="u_source_value"/>
+        </index>
     </element>
 </database>

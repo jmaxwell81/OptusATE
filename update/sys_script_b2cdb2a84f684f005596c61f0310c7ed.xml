@@ -7,21 +7,23 @@
         <action_insert>true</action_insert>
         <action_query>false</action_query>
         <action_update>false</action_update>
-        <active>true</active>
+        <active>false</active>
         <add_message>false</add_message>
         <advanced>true</advanced>
         <change_fields>false</change_fields>
         <client_callable>false</client_callable>
         <collection>x_cio19_optus_ate_optus_ate_holding</collection>
-        <condition>current.messagetype=='21' &amp;&amp; current.assignment_group=='Optus PMSD'</condition>
+        <condition/>
         <description/>
         <execute_function>false</execute_function>
-        <filter_condition/>
+        <filter_condition table="x_cio19_optus_ate_optus_ate_holding">messagetype=21^EQ<item endquery="false" field="messagetype" goto="false" newquery="false" operator="=" or="false" value="21"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
         <is_rest>false</is_rest>
         <message/>
         <name>ATE_TCC_OpenReq_21</name>
         <order>100</order>
-        <priority>100</priority>
+        <priority>110</priority>
         <rest_method/>
         <rest_method_text/>
         <rest_service/>
@@ -78,7 +80,7 @@ try{
  s.setStringParameterNoEscape('instance.MobileNumber', current.mobilenumber);
  s.setStringParameterNoEscape('instance.ConfigItemID', current.configuration_item_id);
  s.setStringParameterNoEscape('instance.ProductType', current.producttype);
-s.setStringParameterNoEscape('instance.company', current.messagecompany);
+s.setStringParameterNoEscape('instance.MessageCompany', current.messagecompany);
 
 	var mapCategory=new tcc_table_mapping();
 	mapCategory.getMappedInBoundValue(current.messagecompany,'category',current.category);		
@@ -104,7 +106,7 @@ try{
  s.setStringParameterNoEscape('instance.ProblemType', current.problemtype);
  s.setStringParameterNoEscape('instance.DowntimeEnd', current.downtimeend);
  s.setStringParameterNoEscape('instance.EmailAddress', current.emailaddress);
-	s.setStringParameterNoEscape('instance.company', current.messagecompany);
+	s.setStringParameterNoEscape('instance.MessageCompany', current.messagecompany);
 }
 		catch(c){
 			gs.error("OPTUS ATE 21: Error at c ",c);
@@ -141,13 +143,13 @@ s.setStringParameterNoEscape('instance.Priority', mapPriority);
 var response = s.execute();
  var responseBody = response.getBody(); 
  var status = response.getStatusCode();
-	if (gs.getProperty('x_cio19_optus_ate.Debug')=='True'){
+	if (gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
 		gs.info('OPTUS ATE BR-21 OPEN REQUEST: ' +responseBody+', '+response+', '+status);
 	}
 		if(status!='200'){
 		//Send email notification "OPTUS ATE Heartbeat not recieved"
 	gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_optus_ate.Alert_Notifications'),responseBody+', '+response+', '+status);
-		
+		gs.info('OPTUS ATE BR-21 OPEN REQUEST: ' +responseBody+', '+response+', '+status);
 				  
 	}
 		
@@ -156,6 +158,7 @@ var response = s.execute();
 catch(ex) { 
  //var message = ex.getMessage();
 	gs.error('OPTUS ATE BR-21 OPEN REQUEST: ',ex);
+	gs.error('OPTUS ATE BR-21 OPEN REQUEST: ' +responseBody+', '+response+', '+status);
 	//gs.debug('ATE_TCC_OpenReq_21 Not Sent');
 gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_optus_ate.Alert_Notifications'),'OPTUS ATE BR-21 OPEN REQUEST: ' +ex);
 }
@@ -168,7 +171,7 @@ gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_opt
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>b2cdb2a84f684f005596c61f0310c7ed</sys_id>
-        <sys_mod_count>51</sys_mod_count>
+        <sys_mod_count>72</sys_mod_count>
         <sys_name>ATE_TCC_OpenReq_21</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -177,7 +180,7 @@ gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_opt
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_b2cdb2a84f684f005596c61f0310c7ed</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-01 01:38:59</sys_updated_on>
+        <sys_updated_on>2018-03-06 01:41:07</sys_updated_on>
         <template/>
         <when>async</when>
     </sys_script>

@@ -13,11 +13,11 @@
         <change_fields>false</change_fields>
         <client_callable>false</client_callable>
         <collection>x_cio19_optus_ate_optus_ate_holding</collection>
-        <condition/>
+        <condition>current.messagetype=='27' &amp;&amp; current.messagecompany=='TCC'</condition>
         <description/>
         <execute_function>false</execute_function>
-        <filter_condition table="x_cio19_optus_ate_optus_ate_holding">messagetype=27^messagecompany=TOCC_IMT^EQ<item endquery="false" field="messagetype" goto="false" newquery="false" operator="=" or="false" value="27"/>
-            <item endquery="false" field="messagecompany" goto="false" newquery="false" operator="=" or="false" value="TOCC_IMT"/>
+        <filter_condition table="x_cio19_optus_ate_optus_ate_holding">messagetype=27^messagecompany=TCC^EQ<item endquery="false" field="messagetype" goto="false" newquery="false" operator="=" or="false" value="27"/>
+            <item endquery="false" field="messagecompany" goto="false" newquery="false" operator="=" or="false" value="TCC"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </filter_condition>
         <is_rest>false</is_rest>
@@ -42,36 +42,38 @@ instance=gs.getProperty('instance_name');
 	}else{
 	outgoing_api=gs.getProperty('x_cio19_optus_ate.outgoing_API_PROD');
 	}}
-	if (gs.getProperty('x_cio19_optus_ate.Debug')=='True'){
+	if (gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
 		gs.info("OPTUS ATE Environment: " + instance+', '+outgoing_api);
 		}
 	var s = new sn_ws.SOAPMessageV2(outgoing_api, 'sendTicketEvent');
 
+	var msgdate= '';
+	msgdate=new GlideDateTime(current.sys_created_on).getDisplayValue();
 	
 	//override authentication profile
 	//authentication type ='basic'
 	//r.setAuthentication(authentication type,profile name);
-	s.setStringParameterNoEscape('instance.messagecompany','TOCC_IMT');
-	s.setStringParameterNoEscape('instance.messagedate',current.created);
-	s.setStringParameterNoEscape('instance.messagestatus','Pending');
-	s.setStringParameterNoEscape('instance.messagetype','27');
-	s.setStringParameterNoEscape('instance.uniqueid',current.sys_id);
+	s.setStringParameterNoEscape('instance.MessageCompany','TCC');
+	s.setStringParameterNoEscape('instance.MessageDate', msgdate);
+	s.setStringParameterNoEscape('instance.MessageStatus','Pending');
+	s.setStringParameterNoEscape('instance.MessageType','27');
+	s.setStringParameterNoEscape('instance.UniqueID',current.sys_id);
 	/*
-	 s.setStringParameterNoEscape('instance.PhoneNumber', '');
+ s.setStringParameterNoEscape('instance.PhoneNumber', '');
  s.setStringParameterNoEscape('model.instance', '');
  s.setStringParameterNoEscape('instance.ClosureCode', '');
  s.setStringParameterNoEscape('messages.message', '');
- s.setStringParameterNoEscape('instance.MessageType', '');
+ s.setStringParameterNoEscape('instance.MessageType', '27');
  s.setStringParameterNoEscape('instance.Integrator', '');
- s.setStringParameterNoEscape('instance.UniqueID', '');
+ s.setStringParameterNoEscape('instance.UniqueID', 'wjk4h5b4g8i325bn295ugh29ufn');
  s.setStringParameterNoEscape('ATERequest', '');
  s.setStringParameterNoEscape('instance.AttachName', '');
  s.setStringParameterNoEscape('WorkLog.WorkLog', '');
  s.setStringParameterNoEscape('instance.Priority', '');
- s.setStringParameterNoEscape('instance.MessageDate', '');
+ s.setStringParameterNoEscape('instance.MessageDate', '28/02/2018 00:00:00');
  s.setStringParameterNoEscape('BriefDescription.BriefDescription', '');
  s.setStringParameterNoEscape('instance.LastName', '');
- s.setStringParameterNoEscape('instance.MessageStatus', '');
+ s.setStringParameterNoEscape('instance.MessageStatus', 'Pending');
  s.setStringParameterNoEscape('instance.CustomerTicketID', '');
  s.setStringParameterNoEscape('UpdateDescription.UpdateDescription', '');
  s.setStringParameterNoEscape('instance.ErrorMessage', '');
@@ -98,7 +100,7 @@ instance=gs.getProperty('instance_name');
  s.setStringParameterNoEscape('instance.ManagedTicketID', '');
  s.setStringParameterNoEscape('instance.PlannedEnd', '');
  s.setStringParameterNoEscape('instance.ConfigItemID', '');
- s.setStringParameterNoEscape('instance.MessageCompany', '');
+ s.setStringParameterNoEscape('instance.MessageCompany', 'TOCC_IMT');
  s.setStringParameterNoEscape('SoapHeaderMsg.ContextId', '');
  s.setStringParameterNoEscape('instance.Location', '');
  s.setStringParameterNoEscape('instance.EmailAddress', '');
@@ -116,7 +118,7 @@ instance=gs.getProperty('instance_name');
 	var responseBody = response.getBody();
 	var status = response.getStatusCode();
 	
-	if (gs.getProperty('x_cio19_optus_ate.Debug')=='True'){
+	if (gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
 		gs.info('OPTUS ATE BR-27 RESPONSE: ' +responseBody+', '+response+', '+status);
 	}
 	
@@ -130,7 +132,7 @@ instance=gs.getProperty('instance_name');
 }
 catch(ex) {
 	var message = ex.getMessage();
-	if (gs.getProperty('x_cio19_optus_ate.Debug')=='True'){
+	if (gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
 	gs.error('OPTUS_ATE ATE_HealthCheck_27: '+message);
 	}
 	gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_optus_ate.Alert_Notifications'),'OPTUS_ATE ATE_HealthCheck_27: ' +message);
@@ -144,7 +146,7 @@ catch(ex) {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f89018f14f1807005596c61f0310c708</sys_id>
-        <sys_mod_count>96</sys_mod_count>
+        <sys_mod_count>106</sys_mod_count>
         <sys_name>ATE_HealthCheck_27</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -153,7 +155,7 @@ catch(ex) {
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_f89018f14f1807005596c61f0310c708</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-02-28 23:29:23</sys_updated_on>
+        <sys_updated_on>2018-03-05 23:59:48</sys_updated_on>
         <template/>
         <when>async</when>
     </sys_script>
