@@ -12,14 +12,14 @@
         <advanced>true</advanced>
         <change_fields>false</change_fields>
         <client_callable>false</client_callable>
-        <collection>x_cio19_optus_ate_optus_ate_holding</collection>
-        <condition>current.messagetype==26</condition>
+        <collection>x_cio19_optus_ate_tcceventin</collection>
+        <condition>current.messagetype==24</condition>
         <description/>
         <execute_function>false</execute_function>
         <filter_condition/>
         <is_rest>false</is_rest>
         <message/>
-        <name>ATE_TCC_OpenAck_26</name>
+        <name>ATE_TCC_UpdateAck_26</name>
         <order>100</order>
         <priority>100</priority>
         <rest_method/>
@@ -29,8 +29,59 @@
         <rest_variables/>
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
-
-	// Add your code here
+try {
+instance=gs.getProperty('instance_name');
+	if (instance.indexOf('dev')>-1){
+		outgoing_api = gs.getProperty('x_cio19_optus_ate.outgoing_API_DEV');
+	}else{
+	if (instance.indexOf("uat")>-1){
+		outgoing_api=gs.getProperty('x_cio19_optus_ate.outgoing_API_UAT');
+	}else{
+	outgoing_api=gs.getProperty('x_cio19_optus_ate.outgoing_API_PROD');
+	}}
+	if (gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+		gs.info("OPTUS ATE Environment: " + instance+', '+outgoing_api);
+		}
+	var s = new sn_ws.SOAPMessageV2(outgoing_api, 'sendTicketEvent');
+	//var s = new sn_ws.SOAPMessageV2('x_cio19_optus_ate.OptusEventOut', 'sendTicketEvent');
+	
+	var msgdate= '';
+	msgdate=new GlideDateTime(current.sys_created_on).getDisplayValue();
+	
+	//override authentication profile
+	//authentication type ='basic'
+	//r.setAuthentication(authentication type,profile name);
+	s.setStringParameterNoEscape('instance.MessageCompany','TCC');
+	s.setStringParameterNoEscape('instance.MessageDate',msgdate);
+	s.setStringParameterNoEscape('instance.MessageStatus','Update ACK');
+	s.setStringParameterNoEscape('instance.MessageType','26');
+	s.setStringParameterNoEscape('instance.UniqueID',current.uniqueid);
+	
+	
+	var response = s.execute();
+	var responseBody = response.getBody();
+	var status = response.getStatusCode();
+		if (gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+		gs.info('OPTUS ATE BR-26 RESPONSE: ' +responseBody+', '+response+', '+status);
+	}
+		if(status!='200'){
+		//Send email notification "OPTUS ATE Heartbeat response not recieved"
+	gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_optus_ate.Alert_Notifications'),'OPTUS ATE BR-26 RESPONSE: ' +responseBody+', '+response+', '+status);
+		
+				  
+	}
+	
+}
+catch(ex) {
+	var message = ex.getMessage();
+		if (gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+	gs.error('OPTUS_ATE ATE_HealthCheck_26: '+message);
+		
+	}
+gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_optus_ate.Alert_Notifications'),'OPTUS ATE BR-26 RESPONSE: ' +message);
+	
+	
+}
 
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
@@ -40,8 +91,8 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>65400fe84f684f005596c61f0310c7b3</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>ATE_TCC_OpenAck_26</sys_name>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>ATE_TCC_UpdateAck_26</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
         <sys_policy/>
@@ -49,7 +100,7 @@
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_65400fe84f684f005596c61f0310c7b3</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2017-08-10 02:03:22</sys_updated_on>
+        <sys_updated_on>2018-03-08 05:38:37</sys_updated_on>
         <template/>
         <when>async</when>
     </sys_script>
