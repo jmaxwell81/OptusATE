@@ -88,7 +88,7 @@ try{
 	var inc_prob = new GlideRecord('problem');
 	var inc_chg = new GlideRecord('change_request');
 	var inc_map = new GlideRecord('x_cio19_optus_ate_optus_ate_mapping');
-	
+	var inc_notes = new GlideRecord('task');
 	
 	inc21.initialize();
 	
@@ -178,7 +178,11 @@ try {
 	//inc21.configitemid = current.cmdb_ci;
 	inc21.contactkey = current.firstname +' '+current.lastname;
 	inc21.costcentre = '';
+		
+		
 	inc21.customer_status = current.incident_state;
+		
+		
 	inc21.customerticketid = current.number;
 	
 	//Get reference table for user detail
@@ -216,7 +220,11 @@ try {
 	//Message Type 21 = New Incident to send to Optus
 	inc21.messagetype = 21;
 	inc21.opentime = current.opened_at;
+		
+	//Map Priority	
 	inc21.priority = current.priority;
+		
+		
 	}
 	catch(err_inc){
 		gs.error("OPTUS ATE 21: Failed incident detail ",err_inc);
@@ -293,7 +301,7 @@ try {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>a916dff54fe443405596c61f0310c7e1</sys_id>
-        <sys_mod_count>267</sys_mod_count>
+        <sys_mod_count>269</sys_mod_count>
         <sys_name>INC_Holding_21</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -302,7 +310,7 @@ try {
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_a916dff54fe443405596c61f0310c7e1</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-12 01:37:24</sys_updated_on>
+        <sys_updated_on>2018-03-12 03:07:10</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
