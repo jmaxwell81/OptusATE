@@ -87,6 +87,8 @@ try{
 	var inc_att_doc = new GlideRecord('sys_attachment_doc');
 	var inc_prob = new GlideRecord('problem');
 	var inc_chg = new GlideRecord('change_request');
+	var inc_map = new GlideRecord('x_cio19_optus_ate_optus_ate_mapping');
+	
 	
 	inc21.initialize();
 	
@@ -124,7 +126,53 @@ try {
 	
 	try{
 	inc21.brief_description = current.short_description;
-	inc21.category = current.category;
+		
+	/*	
+	var mapCategory = new table_mapping();
+	var cat = mapCategory.getMappedInBoundValue('TCC','category',current.category,'','Incident',current.sys_id);
+	//inc21.category = current.category;
+	//	var parser = new global.JSON();
+	//	var cat = parser.encode(mapCategory);
+		inc21.category=cat;
+		if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+			gs.info('OPTUS ATE INC-21: '+cat);
+		}
+		
+	*/
+		
+		//Map Category
+		inc_map.addQuery('u_company','TCC');
+		//inc_map.addQuery(u_category=current.category);
+		inc_map.addQuery('u_ticket_category','Incident');
+		inc_map.addQuery('u_source_field','category');
+		inc_map.addQuery('u_source_value',current.category);
+		inc_map.query();
+		while(inc_map.next()){
+		inc21.category=inc_map.u_target_value;
+		if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+			gs.info('OPTUS ATE BR-21 Category: '+inc_map.u_target_value);
+		}}
+		
+	
+		
+	//Map sub-category	
+		var map_subcat=new GlideRecord('x_cio19_optus_ate_optus_ate_mapping');
+		map_subcat.addQuery('u_company','TCC');
+		map_subcat.addQuery('u_ticket_category','Incident');
+		map_subcat.addQuery('u_source_field','subcategory');
+		map_subcat.addQuery('u_source_value',current.subcategory);
+		map_subcat.query();
+		while(map_subcat.next()){
+		inc21.subcategory=map_subcat.u_target_value;	
+			if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+				gs.info('OPTUS ATE BR-21 Sub-Category: '+map_subcat.u_target_value);
+			}
+		}
+		
+	
+		
+		
+		
 	inc21.third_party_ticket_id = current.u_third_party_reference;
 	
 	//inc21.configitemid = current.cmdb_ci;
@@ -170,8 +218,8 @@ try {
 	inc21.opentime = current.opened_at;
 	inc21.priority = current.priority;
 	}
-	catch(inc){
-		gs.error("OPTUS ATE 21: Failed incident detail ",inc);
+	catch(err_inc){
+		gs.error("OPTUS ATE 21: Failed incident detail ",err_inc);
 	}
 	
 	
@@ -180,7 +228,15 @@ try {
 	inc_prob.get(current.problem_id);
 	inc21.problemtype =inc_prob.sys_class_name;
 	//inc21.producttype = current.pr;
-	inc21.subcategory = current.subcategory;
+		
+		
+		
+	//inc21.subcategory = current.subcategory;
+		
+		
+		
+		
+		
 	inc21.updatedescrption = current.description;
 	
 	var notes = current.comments_and_work_notes.getJournalEntry(-1); //gets all journal entries as a string where each entry is delimited by '\n\n'
@@ -220,6 +276,11 @@ try {
 	{
 		gs.error('OPTUS ATE 21: Insert '+current.number+' into holding table failed?',ex);
 	}
+		
+		
+//	_mapField : function (company,ticketcategory,sourcefield,sourcevalue){
+//		var mapping=new GlideRecord('x_cio19_optus_ate_optus_ate_mapping');
+//	}
 })(current, previous);
 }else{
 	gs.info("OPTUS ATE 21: Application is not enabled");
@@ -232,7 +293,7 @@ try {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>a916dff54fe443405596c61f0310c7e1</sys_id>
-        <sys_mod_count>247</sys_mod_count>
+        <sys_mod_count>267</sys_mod_count>
         <sys_name>INC_Holding_21</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -241,7 +302,7 @@ try {
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_a916dff54fe443405596c61f0310c7e1</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-06 00:27:11</sys_updated_on>
+        <sys_updated_on>2018-03-12 01:37:24</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

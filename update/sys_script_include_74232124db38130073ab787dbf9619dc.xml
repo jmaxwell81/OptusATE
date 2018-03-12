@@ -21,16 +21,16 @@ table_mapping.prototype = {
  	*/
 	getMappedInBoundValue : function(messagecompany, sourceField, sourceValue, currentOptusValue, ticketCategory, currentTicket) {
 		if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
-		gs.info("OPTUS ATE Mapping: getMappedInBoundValue enter (" + company + "," + sourceField + "," + sourceValue + "," + currentOptusValue + "," +  ticketCategory +")");
+		gs.info("OPTUS ATE Mapping: getMappedInBoundValue enter (" + messagecompany + "," + sourceField + "," + sourceValue + "," + currentOptusValue + "," +  ticketCategory +")");
 		}
-		
+	try{	
 		var inBoundMappingTableName = 'x_cio19_optus_ate_optus_ate_mapping';
 		
 		//var company = this.getMappedCompany(messagecompany);
 		/*
  		* 1. Find based on source and current value
- 		*/
-		try{
+ 		
+
 		var inMapping = new GlideRecord(inBoundMappingTableName);
 		inMapping.addQuery('u_company', messagecompany);
 		inMapping.addQuery('u_ticket_category', ticketCategory);
@@ -43,7 +43,7 @@ table_mapping.prototype = {
 			// Here we have matched the target value as already mapped as the current value
 			return inMapping.u_target_value;
 		}
-
+*/
 		/*
  		* 2. Find just based on the source value
  		*/
@@ -55,14 +55,19 @@ table_mapping.prototype = {
 		inMapping.addQuery('u_source_value', sourceValue);
 		inMapping.orderBy("u_order"); //Will ensure always get the first mapping
 		inMapping.query();
-		if(inMapping.next()){
+		while(inMapping.next()){
 			// Here we have matched the target value as the first mapping
-			return inMapping.u_target_value;
+			//return inMapping.u_target_value;
+			
+			if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+				gs.info('OPTUS ATE MAPPING: '+inMapping.u_target_value);
+			}
+			return inMapping.u_target_table;
 		}
 		
 		/*
  		* 3. legacy compatibility - check without the ticketCategory
- 		*/
+ 		
 		inMapping = new GlideRecord(inBoundMappingTableName);
 		inMapping.addQuery('u_company', messagecompany);
 		inMapping.addQuery('u_source_field', sourceField);
@@ -73,19 +78,21 @@ table_mapping.prototype = {
 			// Here we have matched the target value as the first mapping
 			return inMapping.u_target_value;
 		}
-		
+		*/
 		/*
  		* 4. We have not found a mapping - check to see if the currentValue is not null
- 		*/
+ 		
 		if (!currentOptusValue.nil()){
 			// Use the current value if we have not found any other mapping
 			return currentOptusValue;
 		}
-		
+		*/
 		/*
  		* 5. Did not map, so get default value
- 		*/
+ 		
 		return this._getDefaultInBoundValueUpdate(messagecompany, sourceField, ticketCategory);
+		*/
+		
 	}catch(err1){
 		gs.error('OPTUS ATE MAPPING: '+err1);	
 	}
@@ -149,7 +156,7 @@ table_mapping.prototype = {
         <sys_created_on>2018-03-09 01:44:37</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>74232124db38130073ab787dbf9619dc</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>table_mapping</sys_name>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
         <sys_policy>read</sys_policy>
@@ -157,6 +164,6 @@ table_mapping.prototype = {
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_include_74232124db38130073ab787dbf9619dc</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-09 02:00:36</sys_updated_on>
+        <sys_updated_on>2018-03-12 00:23:43</sys_updated_on>
     </sys_script_include>
 </record_update>
