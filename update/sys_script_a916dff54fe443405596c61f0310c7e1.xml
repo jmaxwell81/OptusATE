@@ -12,11 +12,11 @@
         <advanced>true</advanced>
         <change_fields>false</change_fields>
         <client_callable>false</client_callable>
-        <collection>incident</collection>
+        <collection>task</collection>
         <condition/>
         <description/>
         <execute_function>false</execute_function>
-        <filter_condition table="incident">assignment_group=3ac476c84f2e8b048767a3b11310c72a^EQ<item display_table="sys_user_group" display_value="Optus PMSD" endquery="false" field="assignment_group" goto="false" newquery="false" operator="=" or="false" value="3ac476c84f2e8b048767a3b11310c72a"/>
+        <filter_condition table="task">assignment_group=3ac476c84f2e8b048767a3b11310c72a^EQ<item display_table="sys_user_group" display_value="Optus PMSD" endquery="false" field="assignment_group" goto="false" newquery="false" operator="=" or="false" value="3ac476c84f2e8b048767a3b11310c72a"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </filter_condition>
         <is_rest>false</is_rest>
@@ -32,7 +32,7 @@
         <role_conditions/>
         <script><![CDATA[/*
 Author: Leon Storey
-Purpose: On insert of record in Incident table where Assignment group is for Optus, Insert a new record into the holding table for transport to Optus ATE SOAP endpoint Business rule ATE_TCC_OpenReq_21.
+Purpose: On insert of record in Incident table where Assignment group is for Optus, Insert a new record into the holding table for transport to Optus ATE SOAP endpoint Business rule ATE_TCC_Open_21.
 */
 //looks at url and sets Optus WSDL endpoint parameters
 //var env=''
@@ -139,8 +139,12 @@ try {
 		}
 		
 	*/
-		
-		//Map Category
+	
+		inc21.category='Incident';
+		inc21.subcategory=current.category;
+		inc21.producttype=current.subcategory;
+		//inc.category=current.category;
+		/*Map Category
 		inc_map.addQuery('u_company','TCC');
 		//inc_map.addQuery(u_category=current.category);
 		inc_map.addQuery('u_ticket_category','Incident');
@@ -152,10 +156,10 @@ try {
 		if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
 			gs.info('OPTUS ATE BR-21 Category: '+inc_map.u_target_value);
 		}}
-		
+		*/
 	
-		
-	//Map sub-category	
+	
+	/*Map sub-category	
 		var map_subcat=new GlideRecord('x_cio19_optus_ate_optus_ate_mapping');
 		map_subcat.addQuery('u_company','TCC');
 		map_subcat.addQuery('u_ticket_category','Incident');
@@ -168,7 +172,7 @@ try {
 				gs.info('OPTUS ATE BR-21 Sub-Category: '+map_subcat.u_target_value);
 			}
 		}
-		
+		*/
 	
 		
 		
@@ -222,7 +226,7 @@ try {
 	inc21.opentime = current.opened_at;
 		
 	//Map Priority	
-	inc21.priority = current.priority;
+	//inc21.priority = current.priority;
 		
 		
 	}
@@ -235,14 +239,6 @@ try {
 	//Get Problem Label
 	inc_prob.get(current.problem_id);
 	inc21.problemtype =inc_prob.sys_class_name;
-	//inc21.producttype = current.pr;
-		
-		
-		
-	//inc21.subcategory = current.subcategory;
-		
-		
-		
 		
 		
 	inc21.updatedescrption = current.description;
@@ -301,7 +297,7 @@ try {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>a916dff54fe443405596c61f0310c7e1</sys_id>
-        <sys_mod_count>269</sys_mod_count>
+        <sys_mod_count>281</sys_mod_count>
         <sys_name>INC_Holding_21</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -310,7 +306,7 @@ try {
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_a916dff54fe443405596c61f0310c7e1</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-12 03:07:10</sys_updated_on>
+        <sys_updated_on>2018-03-13 01:43:36</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
