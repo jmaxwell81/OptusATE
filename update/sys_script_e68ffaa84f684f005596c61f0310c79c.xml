@@ -13,10 +13,12 @@
         <change_fields>false</change_fields>
         <client_callable>false</client_callable>
         <collection>x_cio19_optus_ate_tcceventin</collection>
-        <condition>current.messagetype==24</condition>
+        <condition/>
         <description/>
         <execute_function>false</execute_function>
-        <filter_condition/>
+        <filter_condition table="x_cio19_optus_ate_tcceventin">messagetype=24^EQ<item endquery="false" field="messagetype" goto="false" newquery="false" operator="=" or="false" value="24"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
         <is_rest>false</is_rest>
         <message/>
         <name>ATE_OPT_Update_24</name>
@@ -36,23 +38,57 @@ try{
 
 	
 var inc = new GlideRecord('x_cio19_optus_ate_optus_ate_holding');
-	var incident = new GlideRecord('incident');
-//inc.initialize();
-inc.addQuery('number',current.csnticketid);
-inc.query(); 
 
+//inc.initialize();
+inc.addQuery('number',current.csnsticketid);
+inc.query(); 
+	
+if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+	gs.info('OPTUS ATE BR-24 Update: '+current.csnsticketid);
+}
 while (inc.next()) {
-	inc.messagestatus = "Ticket Update";
+	inc.messagestatus = current.messagestatus;
+		//incident.addQuery('sys_id',inc_id);
+	if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+	gs.info('OPTUS ATE BR-24 Update: '+inc.messagestatus);
+}
+	inc.update();
+}
 	var inc_id=inc.uniqueid;
+	
+
+	
+	
+	var incident = new GlideRecord('Task');
 	incident.addQuery('sys_id',inc_id);
 	incident.query();
+
+	if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+		gs.info('OPTUS ATE BR-24 Ticket Update Task: '+incident.comments+', '+current.worklog+', '+current.updatedescrption+', '+inc_id);
+	
 	while(incident.next()){
-		incident['work_notes'].setJournalEntry(current.worklog);
-		incident.description=incident.description+' :OPTUS Update: '+current.updatedescrption;
+		incident.work_notes=current.worklog.toString();
+		//incident.description=incident.description+' :OPTUS Update: '+current.updatedescrption;
+		incident.comments=current.updatedescrption;
+		var statmap=new GlideRecord('x_cio19_optus_ate_optus_ate_mapping');
+		statmap.addQuery('u_company','Optus');
+		statmap.addQuery('u_ticket_category','Incident');
+		statmap.addQuery('u_source_field','Status');
+		statmap.addQuery('u_source_value',current.csnsticketstatus);
+		statmap.query();
+
+		while(statmap.next()){
+			incident.state=statmap.u_target_value;
+		}
+		
+		
 		incident.update();
+		if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+		gs.info('OPTUS ATE BR-24 Ticket Update Task: '+incident.number+', '+incident.description+', '+incident.work_notes+', '+incident.comments+', '+current.worklog+', '+current.updatedescrption);
+	}
 	}
 	
-	inc.update();
+	//inc.update();
 if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
 		gs.info('OPTUS ATE BR-24 Ticket Update Holding: '+inc.number+' '+inc.uniqueid);
 	}
@@ -87,7 +123,7 @@ if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>e68ffaa84f684f005596c61f0310c79c</sys_id>
-        <sys_mod_count>17</sys_mod_count>
+        <sys_mod_count>40</sys_mod_count>
         <sys_name>ATE_OPT_Update_24</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -96,7 +132,7 @@ if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_e68ffaa84f684f005596c61f0310c79c</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-12 22:55:29</sys_updated_on>
+        <sys_updated_on>2018-03-13 06:25:30</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
