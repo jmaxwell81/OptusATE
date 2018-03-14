@@ -7,7 +7,7 @@
         <action_insert>false</action_insert>
         <action_query>false</action_query>
         <action_update>true</action_update>
-        <active>false</active>
+        <active>true</active>
         <add_message>false</add_message>
         <advanced>true</advanced>
         <change_fields>false</change_fields>
@@ -35,9 +35,62 @@ try{
 var inc=new GlideRecord('x_cio19_optus_ate_optus_ate_holding');
 	inc.addQuery('uniqueid',current.sys_id);
 	inc.query();
+			if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+			gs.info('OPTUS ATE BR-23 B4 Updated: '+current.number+', '+current.sys_id);
+			
+		}
 	while(inc.next()){
-		inc.worklog=current.work_notes;
-		inc.updatedescription=current.comments;
+		var jnlwl=new GlideRecord('sys_journal_field');
+		jnlwl.addQuery('element_id',current.sys_id);
+		jnlwl.addQuery('element','work_notes');
+		jnlwl.query();
+		if(jnlwl.next()){
+			gs.info('OPTUS ATE Journal Entry Work log: '+jnlwl.value);
+			var journalString=jnlwl.value;
+			while(jnlwl.next()){
+			
+				journalString+='\n\n'+jnlwl.value;
+				inc.worklog=journalString;
+			
+			}
+		}
+		
+		//inc.worklog=current.work_notes.toString();
+		//inc.updatedescription=current.comments.toString();
+		var jnlc=new GlideRecord('sys_journal_field');
+		jnlc.addQuery('element_id',current.sys_id);
+		jnlc.addQuery('element','comments');
+		jnlc.query();
+		if(jnlc.next()){
+			
+						gs.info('OPTUS ATE Journal Entry Comments: '+jnlc.value);
+			var journalStringc=jnlc.value;
+			while(jnlc.next()){
+			
+				journalStringc+='\n\n'+jnlc.value;
+				inc.updatedescrption=journalStringc;
+			
+			}
+			
+		}
+		
+		inc.assigned_to=current.assigned_to;
+		inc.impact=current.impact;
+		inc.urgency=current.urgency;
+		inc.messagetype='23';
+		inc.category='Incident';//change to sys_Class_type?
+		inc.subcategory=current.category;
+		inc.customer_status=current.customer_status;
+		inc.messagestatus='TCC Updated';
+		inc.attachments=current.attachments;
+		inc.closure_code=current.close_code;
+		
+		
+			if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+			gs.info('OPTUS ATE BR-23 Updated: '+current.number+', '+current.sys_id+', '+current.work_notes.toString()+', '+current.comments.toString()+', '+current.assigned_to+', '+ current.category +', '+ current.subcategory +', '+current.customer_status  +', '+current.messagestatus);
+			
+		}
+		
 		
 		//map status
 		
@@ -46,13 +99,14 @@ var inc=new GlideRecord('x_cio19_optus_ate_optus_ate_holding');
 		
 		inc.update();
 		if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
-			gs.info('OPTUS ATE BR-23 Updated: '+current.number+', '+current.sys_id);
+			gs.info('OPTUS ATE BR-23 After Updated: '+current.number+', '+current.sys_id);
 			
 		}
 	}
 }catch(update_err){
 	gs.error('OPTUS ATE Update BR-23: '+update_err);
 }	
+	
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
@@ -61,7 +115,7 @@ var inc=new GlideRecord('x_cio19_optus_ate_optus_ate_holding');
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>ea52f1f5dbbc930073ab787dbf961930</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>26</sys_mod_count>
         <sys_name>INC_Holding_23</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -70,7 +124,7 @@ var inc=new GlideRecord('x_cio19_optus_ate_optus_ate_holding');
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_ea52f1f5dbbc930073ab787dbf961930</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-13 05:37:41</sys_updated_on>
+        <sys_updated_on>2018-03-14 06:09:08</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

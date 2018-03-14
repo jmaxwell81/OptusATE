@@ -113,6 +113,12 @@ try {
 	inc_att_doc.query();
 		while(inc_att_doc.next()){
 			inc21.attachments += inc_att_doc.data.toString();
+			inc21.attachment_binary_information +=inc_att_doc.data;
+ var sa = new  Packages.com.glide.ui.SysAttachment();
+  var binData =  sa.getBytes(inc21);
+  var encData =  StringUtil.base64Encode(binData);
+			
+			
 		}
 	}
 	else{
@@ -297,7 +303,7 @@ try {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>a916dff54fe443405596c61f0310c7e1</sys_id>
-        <sys_mod_count>281</sys_mod_count>
+        <sys_mod_count>283</sys_mod_count>
         <sys_name>INC_Holding_21</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -306,7 +312,7 @@ try {
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_a916dff54fe443405596c61f0310c7e1</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-13 01:43:36</sys_updated_on>
+        <sys_updated_on>2018-03-14 03:33:43</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

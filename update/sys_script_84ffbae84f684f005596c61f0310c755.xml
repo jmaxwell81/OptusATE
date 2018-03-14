@@ -7,7 +7,7 @@
         <action_insert>true</action_insert>
         <action_query>false</action_query>
         <action_update>false</action_update>
-        <active>true</active>
+        <active>false</active>
         <add_message>false</add_message>
         <advanced>true</advanced>
         <change_fields>false</change_fields>
@@ -32,7 +32,76 @@
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 
-	// Add your code here
+try{
+	
+	var inc_in = new GlideRecord('task');
+	inc_in.initialize();
+	inc_in.sys_class_name='incident';
+	//inc_in.=current.assignmentgroup;
+	inc_in.short_description=current.brief_description;
+	//inc_in.=current.category;
+	//inc_in.=current.closetime;
+	inc_in.close_code=current.closure_code;
+	//inc_in.close_notes=current.close_notes;
+	
+	//inc_in.=current.configuration_item_id;
+	//inc_in.=current.contact_information;//mapping to reference
+	//inc_in.=current.cost_centre;
+	//inc_in.=current.csnsparentid;
+	//inc_in.=current.csnsticketid;
+	//inc_in.=current.csnsticketstatus;
+	//inc_in.=current.customer_status;
+	//inc_in.=current.customerparentid;
+	//inc_in.=current.customerticketid;
+	//inc_in.=current.downtimeend;
+	//inc_in.=current.downtimestart;
+	//inc_in.=current.emailaddress;
+	//inc_in.=current.errormessagedescription;
+	//inc_in.=current.firstname;
+	//inc_in.impact=current.impact;
+	//inc_in.=current.lastname;
+	//inc_in.location=current.location;
+	inc_in.company=current.messagecompany;
+	//inc_in.=current.messagedate;
+	inc_in.state=current.messagestatus;//mapping
+	//inc_in.=current.messagetype;
+	//inc_in.=current.mobilenumber;
+	//current.number;
+	inc_in.opened_at=current.opentime;
+	//inc_in.=current.phonenumber;
+	//inc_in.=current.plannedend;
+	//inc_in.=current.plannedstart;
+	//inc_in.priority=current.priority;
+	//inc_in.=current.problemtype;
+	//inc_in.=current.producttype;
+	//inc_in.=current.subcategory;
+	inc_in.u_third_party_reference=current.third_party_ticket_id;
+	//inc_in.=current.uniqueid;
+	inc_in.comments=current.updatedescrption;
+	inc_in.urgency=current.urgency;
+	inc_in.work_notes=current.worklog.toString();
+	//inc_in.=current.workstationport;
+	
+	
+	//inc_in.due_date=current.due_date;
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	inc_in.insert();
+}catch(err_25){
+	gs.error('OPTUS ATE BR-25: '+err_25);
+	
+}	
 
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
@@ -42,7 +111,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>84ffbae84f684f005596c61f0310c755</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>ATE_OPT_OpenReq_25</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -51,7 +120,7 @@
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_84ffbae84f684f005596c61f0310c755</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2017-08-24 01:13:39</sys_updated_on>
+        <sys_updated_on>2018-03-14 06:35:08</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

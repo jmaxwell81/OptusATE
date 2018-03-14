@@ -41,9 +41,9 @@
         <element attributes="import_attribute_name=subcategory,edge_encryption_enabled=true" label="Subcategory" max_length="40" name="subcategory" type="string"/>
         <element attributes="import_attribute_name=third_party_ticket_id,edge_encryption_enabled=true" label="Third party ticket ID" max_length="40" name="third_party_ticket_id" type="string"/>
         <element attributes="import_attribute_name=uniqueid,edge_encryption_enabled=true" label="Uniqueid" max_length="40" name="uniqueid" type="string"/>
-        <element attributes="import_attribute_name=updatedescrption,edge_encryption_enabled=true" label="Updatedescrption" max_length="40" name="updatedescrption" type="string"/>
+        <element attributes="import_attribute_name=updatedescrption,edge_encryption_enabled=true" label="Updatedescrption" max_length="8000" name="updatedescrption" type="string"/>
         <element attributes="import_attribute_name=urgency,edge_encryption_enabled=true" label="Urgency" max_length="40" name="urgency" type="string"/>
-        <element attributes="import_attribute_name=worklog,edge_encryption_enabled=true" label="Worklog" max_length="40" name="worklog" type="string"/>
+        <element attributes="import_attribute_name=worklog,edge_encryption_enabled=true" label="Worklog" max_length="8000" name="worklog" type="string"/>
         <element attributes="import_attribute_name=workstationport,edge_encryption_enabled=true" label="Workstationport" max_length="40" name="workstationport" type="string"/>
     </element>
 </database>

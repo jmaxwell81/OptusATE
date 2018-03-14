@@ -13,7 +13,7 @@
         <change_fields>false</change_fields>
         <client_callable>false</client_callable>
         <collection>x_cio19_optus_ate_tcceventin</collection>
-        <condition/>
+        <condition>current.messagetype==24</condition>
         <description/>
         <execute_function>false</execute_function>
         <filter_condition table="x_cio19_optus_ate_tcceventin">messagetype=24^EQ<item endquery="false" field="messagetype" goto="false" newquery="false" operator="=" or="false" value="24"/>
@@ -59,7 +59,7 @@ while (inc.next()) {
 
 	
 	
-	var incident = new GlideRecord('Task');
+	var incident = new GlideRecord('incident');
 	incident.addQuery('sys_id',inc_id);
 	incident.query();
 
@@ -67,9 +67,16 @@ while (inc.next()) {
 		gs.info('OPTUS ATE BR-24 Ticket Update Task: '+incident.comments+', '+current.worklog+', '+current.updatedescrption+', '+inc_id);
 	
 	while(incident.next()){
-		incident.work_notes=current.worklog.toString();
+		//Update work notes and comments
+		//https://docs.servicenow.com/bundle/jakarta-platform-administration/page/administer/field-administration/concept/c_JournalFields.html
+		incident.work_notes="OPTUS work notes: "+current.worklog.toString();
 		//incident.description=incident.description+' :OPTUS Update: '+current.updatedescrption;
-		incident.comments=current.updatedescrption;
+		incident.comments="OPTUS Comments: "+current.updatedescrption.toString();
+		if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+				gs.info('OPTUS ATE Inserted comment journal: '+current.updatedescrption.toString()+', '+current.worklog.toString());
+			}
+	
+			
 		var statmap=new GlideRecord('x_cio19_optus_ate_optus_ate_mapping');
 		statmap.addQuery('u_company','Optus');
 		statmap.addQuery('u_ticket_category','Incident');
@@ -123,7 +130,7 @@ if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>e68ffaa84f684f005596c61f0310c79c</sys_id>
-        <sys_mod_count>40</sys_mod_count>
+        <sys_mod_count>52</sys_mod_count>
         <sys_name>ATE_OPT_Update_24</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -132,7 +139,7 @@ if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_e68ffaa84f684f005596c61f0310c79c</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-13 06:25:30</sys_updated_on>
+        <sys_updated_on>2018-03-14 01:13:16</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
