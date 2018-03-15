@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="INSERT_OR_UPDATE">
+        <order>1000</order>
+        <role display_value="sn_dd_optusate_serviceportal" name="sn_dd_optusate_serviceportal">8395cdae4f309300aab4a3b11310c771</role>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+        <sys_created_on>2018-03-15 04:41:02</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>0b95cdae4f309300aab4a3b11310c772</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>8395cdae4f309300aab4a3b11310c771</sys_name>
+        <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
+        <sys_update_name>sys_embedded_help_role_0b95cdae4f309300aab4a3b11310c772</sys_update_name>
+        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2018-03-15 04:41:02</sys_updated_on>
+    </sys_embedded_help_role>
+</record_update>
