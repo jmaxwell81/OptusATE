@@ -7,7 +7,7 @@
         <action_insert>false</action_insert>
         <action_query>false</action_query>
         <action_update>true</action_update>
-        <active>false</active>
+        <active>true</active>
         <add_message>false</add_message>
         <advanced>true</advanced>
         <change_fields>false</change_fields>
@@ -54,22 +54,25 @@ instance=gs.getProperty('instance_name');
 //authentication type ='basic'
 //r.setAuthentication(authentication type,profile name);
 
- s.setStringParameterNoEscape('instance.Priority', '1');
- s.setStringParameterNoEscape('instance.MessageDate', 'javascript:gs.GlideDateTime()');
+ //s.setStringParameterNoEscape('instance.Priority', );
+ s.setStringParameterNoEscape('instance.MessageDate', current.created);
  s.setStringParameterNoEscape('instance.MessageType', '23');
- s.setStringParameterNoEscape('instance.Urgency', '1');
- s.setStringParameterNoEscape('UpdateDescription.UpdateDescription', "{''Key'',''Value''}");
+ s.setStringParameterNoEscape('instance.Urgency', current.urgency);
+ s.setStringParameterNoEscape('UpdateDescription.UpdateDescription', current.updatedescrption);
+ s.setStringParameterNoEscape('WorkLog.WorkLog', current.worklog);	
  s.setStringParameterNoEscape('instance.MessageCompany', 'TCC');
- s.setStringParameterNoEscape('instance.MessageStatus', 'Pending');
- s.setStringParameterNoEscape('instance.PlannedStart', '');
- s.setStringParameterNoEscape('instance.CloseTime', '');
- s.setStringParameterNoEscape('instance.Impact', '1');
+ s.setStringParameterNoEscape('instance.MessageStatus', current.messagestatus);
+ s.setStringParameterNoEscape('instance.PlannedStart', current.plannedstart);
+ s.setStringParameterNoEscape('instance.CloseTime', current.closetime);
+ s.setStringParameterNoEscape('instance.Impact', current.impact);
  s.setStringParameterNoEscape('CSNSParentID', '');
  s.setStringParameterNoEscape('instance.CustomerParentID', '');
- s.setStringParameterNoEscape('instance.DowntimeStart', '');
- s.setStringParameterNoEscape('instance.UniqueID', 'current.number');
- s.setStringParameterNoEscape('instance.PlannedEnd', '');
- s.setStringParameterNoEscape('instance.DowntimeEnd', '');
+ s.setStringParameterNoEscape('instance.DowntimeStart', current.downtimestart);
+ s.setStringParameterNoEscape('instance.UniqueID', current.uniqueid);
+ s.setStringParameterNoEscape('instance.PlannedEnd', current.plannedend);
+ s.setStringParameterNoEscape('instance.DowntimeEnd', current.downtimeend);
+ s.setStringParameterNoEscape('attachments.attachment', current.attachments);
+	
  var response = s.execute();
  var responseBody = response.getBody(); 
  var status = response.getStatusCode();	if (gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
@@ -77,7 +80,7 @@ instance=gs.getProperty('instance_name');
 	}
 	
 	if(status!='200'){
-		//Send email notification "OPTUS ATE Heartbeat not recieved"
+		//Send email notification "not recieved"
 	gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_optus_ate.Alert_Notifications'),responseBody+', '+response+', '+status);
 		
 				  
@@ -85,11 +88,11 @@ instance=gs.getProperty('instance_name');
 	
 }
 catch(ex) {
-	var message = ex.getMessage();
+	//var message = ex.getMessage();
 	if (gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
-	gs.error('OPTUS_ATE TicketUpdate 23: '+message);
+	gs.error('OPTUS_ATE TicketUpdate 23: '+ex);
 	}
-	gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_optus_ate.Alert_Notifications'),'OPTUS_ATE TicketUpdate 23: ' +message);
+	gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_optus_ate.Alert_Notifications'),'OPTUS_ATE TicketUpdate 23: ' +ex);
 }
 
 })(current, previous);]]></script>
@@ -100,7 +103,7 @@ catch(ex) {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>76fefea84f684f005596c61f0310c78f</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name>ATE_TCC_Update_23</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -109,7 +112,7 @@ catch(ex) {
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_76fefea84f684f005596c61f0310c78f</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-08 03:34:39</sys_updated_on>
+        <sys_updated_on>2018-03-15 03:13:19</sys_updated_on>
         <template/>
         <when>async</when>
     </sys_script>

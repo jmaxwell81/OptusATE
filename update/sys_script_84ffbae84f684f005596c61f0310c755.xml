@@ -7,16 +7,16 @@
         <action_insert>true</action_insert>
         <action_query>false</action_query>
         <action_update>false</action_update>
-        <active>false</active>
+        <active>true</active>
         <add_message>false</add_message>
         <advanced>true</advanced>
         <change_fields>false</change_fields>
         <client_callable>false</client_callable>
-        <collection>x_cio19_optus_ate_optus_ate_holding</collection>
-        <condition>current.messagetype==25</condition>
+        <collection>x_cio19_optus_ate_tcceventin</collection>
+        <condition/>
         <description/>
         <execute_function>false</execute_function>
-        <filter_condition table="x_cio19_optus_ate_optus_ate_holding">messagetype=25^EQ<item endquery="false" field="messagetype" goto="false" newquery="false" operator="=" or="false" value="25"/>
+        <filter_condition table="x_cio19_optus_ate_tcceventin">messagetype=25^EQ<item endquery="false" field="messagetype" goto="false" newquery="false" operator="=" or="false" value="25"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </filter_condition>
         <is_rest>false</is_rest>
@@ -34,22 +34,22 @@
 
 try{
 	
-	var inc_in = new GlideRecord('task');
+	var inc_in = new GlideRecord('incident');
 	inc_in.initialize();
-	inc_in.sys_class_name='incident';
-	//inc_in.=current.assignmentgroup;
+	//inc_in.sys_class_name='incident';
+	inc_in.assignment_group=current.assignmentgroup;
 	inc_in.short_description=current.brief_description;
-	//inc_in.=current.category;
-	//inc_in.=current.closetime;
+	inc_in.category=current.category;
+	inc_in.closed_at=current.closetime;
 	inc_in.close_code=current.closure_code;
-	//inc_in.close_notes=current.close_notes;
+	//inc_in.close_notes=current.close_notes; NA
 	
-	//inc_in.=current.configuration_item_id;
+	//inc_in.=current.configuration_item_id; NA
 	//inc_in.=current.contact_information;//mapping to reference
-	//inc_in.=current.cost_centre;
-	//inc_in.=current.csnsparentid;
+	//inc_in.=current.cost_centre; NA
+	inc_in.parent=current.csnsparentid;
 	//inc_in.=current.csnsticketid;
-	//inc_in.=current.csnsticketstatus;
+	inc_in.state=current.csnsticketstatus;
 	//inc_in.=current.customer_status;
 	//inc_in.=current.customerparentid;
 	//inc_in.=current.customerticketid;
@@ -57,8 +57,9 @@ try{
 	//inc_in.=current.downtimestart;
 	//inc_in.=current.emailaddress;
 	//inc_in.=current.errormessagedescription;
-	//inc_in.=current.firstname;
-	//inc_in.impact=current.impact;
+	inc_in.u_requestor=current.firstname+' '+current.lastname;
+	
+	inc_in.impact=current.impact;
 	//inc_in.=current.lastname;
 	//inc_in.location=current.location;
 	inc_in.company=current.messagecompany;
@@ -73,11 +74,11 @@ try{
 	//inc_in.=current.plannedstart;
 	//inc_in.priority=current.priority;
 	//inc_in.=current.problemtype;
-	//inc_in.=current.producttype;
-	//inc_in.=current.subcategory;
+	inc_in.subcategory=current.producttype;
+	inc_in.category=current.subcategory;
 	inc_in.u_third_party_reference=current.third_party_ticket_id;
 	//inc_in.=current.uniqueid;
-	inc_in.comments=current.updatedescrption;
+	inc_in.comments=current.updatedescrption.toString();
 	inc_in.urgency=current.urgency;
 	inc_in.work_notes=current.worklog.toString();
 	//inc_in.=current.workstationport;
@@ -85,24 +86,80 @@ try{
 	
 	//inc_in.due_date=current.due_date;
 	
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
+	if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+		gs.info('OPTUS ATE BR-25 New Incident: '+current.uniqueid+', '+current.brief_description+', '+current.category);
+	}
 	
 	
 	inc_in.insert();
+	
+	
+	//Add Attachment
+	var att=new GlideRecord('sys_attachment');
+	
+	
 }catch(err_25){
 	gs.error('OPTUS ATE BR-25: '+err_25);
 	
 }	
+//Start 22 Open Acknoledge
+	try {
+instance=gs.getProperty('instance_name');
+	if (instance.indexOf('dev')>-1){
+		outgoing_api = gs.getProperty('x_cio19_optus_ate.outgoing_API_DEV');
+	}else{
+	if (instance.indexOf("uat")>-1){
+		outgoing_api=gs.getProperty('x_cio19_optus_ate.outgoing_API_UAT');
+	}else{
+	outgoing_api=gs.getProperty('x_cio19_optus_ate.outgoing_API_PROD');
+	}}
+	if (gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+		gs.info("OPTUS ATE Environment: " + instance+', '+outgoing_api);
+		}
+	var s = new sn_ws.SOAPMessageV2(outgoing_api, 'sendTicketEvent');
+	//var s = new sn_ws.SOAPMessageV2('x_cio19_optus_ate.OptusEventOut', 'sendTicketEvent');
+	
+	var msgdate= '';
+	msgdate=new GlideDateTime(current.sys_created_on).getDisplayValue();
+	
+	//override authentication profile
+	//authentication type ='basic'
+	//r.setAuthentication(authentication type,profile name);
+	s.setStringParameterNoEscape('instance.MessageCompany','TCC');
+	s.setStringParameterNoEscape('instance.MessageDate',msgdate);
+	s.setStringParameterNoEscape('instance.MessageStatus','New ACK');
+	s.setStringParameterNoEscape('instance.MessageType','22');
+	s.setStringParameterNoEscape('instance.UniqueID',current.uniqueid);
+	
+	
+	var response = s.execute();
+	var responseBody = response.getBody();
+	var status = response.getStatusCode();
+		if (gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+		gs.info('OPTUS ATE BR-22 RESPONSE: ' +responseBody+', '+response+', '+status);
+	}
+		if(status!='200'){
+		//Send email notification "OPTUS ATE Heartbeat response not recieved"
+	gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_optus_ate.Alert_Notifications'),'OPTUS ATE BR-22 RESPONSE: ' +responseBody+', '+response+', '+status);
+		
+				  
+	}
+	
+}
+catch(ex) {
+	//var message = ex.getMessage();
+		if (gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+	gs.error('OPTUS_ATE New ACK 22: '+ex);
+		
+	}
+gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_optus_ate.Alert_Notifications'),'OPTUS ATE BR-22 RESPONSE: ' +ex);
+	
+	
+}
 
+	
+	
+	
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
@@ -111,7 +168,7 @@ try{
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>84ffbae84f684f005596c61f0310c755</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>15</sys_mod_count>
         <sys_name>ATE_OPT_OpenReq_25</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -120,7 +177,7 @@ try{
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_84ffbae84f684f005596c61f0310c755</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-14 06:35:08</sys_updated_on>
+        <sys_updated_on>2018-03-15 00:55:22</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

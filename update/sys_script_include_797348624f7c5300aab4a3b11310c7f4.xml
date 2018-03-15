@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_cio19_optus_ate.ATETransformHelper</api_name>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>ATETransformHelper</name>
+        <script><![CDATA[var ATETransformHelper = Class.create();
+
+
+
+ATETransformHelper.prototype = {
+    initialize: function(){
+        
+    },
+    
+	/** OBCR-1607
+	  * AS 2017-09-26 coalesce on the configuration item id based on the customer ci name
+	  * if that is configured in the ate properties
+	  */
+	  
+	  coalesceCiName: function(cmdbIdStr,company){
+		if (null == cmdbIdStr){
+			return null;
+		}
+		if (cmdbIdStr == ""){
+			if(company == '9f6fe40bd33211009712ae2c6ba16a22'){
+				return "AMP Optus Managed Services";
+			}
+			else
+				return null;
+		}
+		//OBCR-1608 V3 Start
+		//var ciRec = new GlideRecord('cmdb_ci');
+		//ciRec.addQuery('u_company',company);
+		
+		var ateConfig = new ATEIntegrationHelper().getAteConfigFlag(company.sys_id);
+		
+		var grATECompanyConfig = new GlideRecord('u_ate_company_config');
+		grATECompanyConfig.addQuery('sys_id', ateConfig);
+		grATECompanyConfig.query();
+		
+		var ciRec = new GlideRecord('cmdb_ci');
+		ciRec.addQuery('company',ateConfig.u_ate_company.name);
+		//OBCR-1608 V3 End
+		
+		if(grATECompanyConfig.next()) {
+			var ateSysId = grATECompanyConfig.u_ate_company.sys_id;
+			var ateUseCustomerCiName = grATECompanyConfig.u_use_customer_ci_name;
+		}
+		
+		if (null == ateSysId 
+			|| !ateUseCustomerCiName ){
+			// just use the CI name
+			ciRec.addQuery('name', cmdbIdStr);
+		} else{
+			// use the customer ci name field
+			ciRec.addQuery('u_customer_ci_name', cmdbIdStr);
+		}
+		ciRec.query();
+		if(ciRec.next()){
+			gs.log("coalesceCiName found CI("+cmdbIdStr+","+company+")", "ATETransformHelper");
+				return ciRec.name;
+		}
+		//OBCR-1608 V3 End
+		gs.log("coalesceCiName did not find CI("+cmdbIdStr+","+company+")", "ATETransformHelper");
+		
+		//OBCR-1631 Start
+		if(company == '9f6fe40bd33211009712ae2c6ba16a22'){
+			return "AMP Optus Managed Services";
+		}
+		else{
+			return null;
+		}
+		//OBCR-1631 End
+	},
+	
+	/**
+	 * AS 2017-09-26 lookup the configuration item id and return the customer
+	 * CI name if the org property is set and the customer ci name is set
+	 */
+	 getConfigItemId : function (cmdb_ci, company){
+		if (null == cmdb_ci){
+			return null;
+		}
+		var ateConfig = new ATEIntegrationHelper().getAteConfigFlag(company.sys_id);
+		
+		var grATECompanyConfig = new GlideRecord('u_ate_company_config');
+		grATECompanyConfig.addQuery('sys_id', ateConfig);
+		grATECompanyConfig.query();
+		
+		if(grATECompanyConfig.next()) {
+			var ateSysId = grATECompanyConfig.u_ate_company.sys_id;
+			var ateUseCustomerCiName = grATECompanyConfig.u_use_customer_ci_name;
+		}
+
+		if (null == ateSysId
+			|| !ateUseCustomerCiName
+			|| cmdb_ci.u_customer_ci_name.nil() ){
+			// don't use the customer ci name
+			//gs.log("getConfigItemId using ci name("+cmdb_ci+","+company+")", "ATETransformHelper");
+			return cmdb_ci.name;
+		}
+		// we are using the customer ci name
+		//gs.log("getConfigItemId using ci name("+cmdb_ci+","+company+")", "ATETransformHelper");
+		return cmdb_ci.u_customer_ci_name;	 
+	 },
+	/** OBCR-1607 */
+	
+	/** OBCR-1608
+	 * AS 2017-09-25 - lookup outbound action 
+	 
+	 * lookup the category from the task type outbound mapping table
+	 * first determine if we have an exact match
+	 * then if it is for this table type - then return this
+	 * if no exact match, look up based on category for a default value
+	 * if it found, then return this record
+	 * otherwise return nothing
+	 * transformType is either incident or change - based on the transform type
+	 */
+	 
+	lookUpMessageActionOnCreate : function(category,area,subarea,ticketType,messagecompany){
+		gs.log("lookUpMessageActionOnCreate("+category+","+area+","+subarea+","+ticketType+","+messagecompany+")", "ATETransformHelper");
+		
+		var mapHelper = new ATEValueMatchingHelper();
+		company = mapHelper.getMappedCompany(messagecompany);
+		var tableName = "u_outbound_mapping";
+		var sourceField = "u_messageaction";
+		var separator = ":";
+		/*
+		 * 1. can we find the exact match on cat, area, subarea, company and type
+		 */
+		 var IncCat = new GlideRecord(tableName);
+		 var sourceValue = category + separator + area + separator + subarea;
+         IncCat.addQuery('u_source_value', sourceValue);
+         IncCat.addQuery('u_source_field', sourceField);
+		 IncCat.addQuery('u_ticket_type', ticketType);
+		 IncCat.addQuery('u_company',company);
+		 IncCat.orderBy("u_order"); //Will ensure always get the first mapping
+        
+         IncCat.query();
+		 if(IncCat.next()){
+			gs.log("lookUpMessageActionOnCreate matched exact("+category+","+area+","+subarea+","+ticketType+","+company+")", "ATETransformHelper");
+			return IncCat.u_target_value;
+		}
+		
+		/*
+		 * 2. can we find the exact match on cat, area, company 
+		 */
+		 IncCat = new GlideRecord(tableName);
+		 sourceValue = category + separator + area ;
+         IncCat.addQuery('u_source_value', sourceValue);
+         IncCat.addQuery('u_source_field', sourceField);
+		 IncCat.addQuery('u_ticket_type', ticketType);
+		 IncCat.addQuery('u_company',company);
+		 IncCat.orderBy("u_order"); //Will ensure always get the first mapping
+        
+         IncCat.query();
+		 if(IncCat.next()){
+			gs.log("lookUpMessageActionOnCreate matched cat area("+category+","+area+","+subarea+","+ticketType+","+company+")", "ATETransformHelper");
+			return IncCat.u_target_value;
+		}
+		/*
+		 * 3. can we find the match on cat, company 
+		 */
+		 IncCat = new GlideRecord(tableName);
+		 sourceValue = category ;
+         IncCat.addQuery('u_source_value', sourceValue);
+         IncCat.addQuery('u_source_field', sourceField);
+		 IncCat.addQuery('u_ticket_type', ticketType);
+		 IncCat.addQuery('u_company',company);
+		 IncCat.orderBy("u_order"); //Will ensure always get the first mapping
+        
+         IncCat.query();
+		 if(IncCat.next()){
+			gs.log("lookUpMessageActionOnCreate matched cat ("+category+","+area+","+subarea+","+ticketType+","+company+")", "ATETransformHelper");
+			return IncCat.u_target_value;
+		} 
+		
+		/*
+		 * 4. can we find the default record based on ticket type
+		 */
+		 IncCat = new GlideRecord(tableName);
+		 sourceValue = category ;
+         
+         IncCat.addQuery('u_source_field', sourceField);
+		 IncCat.addQuery('u_ticket_type', ticketType);
+		 IncCat.addQuery('u_company',company);
+		 IncCat.addQuery('u_default', true);
+		 IncCat.orderBy("u_order"); //Will ensure always get the first mapping
+        
+         IncCat.query();
+		 if(IncCat.next()){
+			gs.log("lookUpMessageActionOnCreate matched default ("+category+","+area+","+subarea+","+ticketType+","+company+")", "ATETransformHelper");
+			return IncCat.u_target_value;
+		} 
+		 
+		
+		gs.log("lookUpMessageActionOnCreate no match returning null ("+category+","+area+","+subarea+","+ticketType+","+company+")", "ATETransformHelper");
+		return null;
+		
+	},
+
+	/**
+	 * AS 2017-09-25 - lookup outbound action 
+	 * lookup the destination action based on the customer ticket number
+	 */
+	//OBCR-1608 V3 Start
+	lookUpMessageActionOnUpdate : function(category,area,subarea,u_customer_reference_number,ticketType,messagecompany){
+		gs.log("lookUpMessageActionOnUpdate("+category+","+area+","+subarea+","+u_customer_reference_number+","+ticketType+","+messagecompany+")", "ATETransformHelper");
+		
+		var mapHelper = new ATEValueMatchingHelper();
+		company = mapHelper.getMappedCompanyNameATE(messagecompany);
+		var tableName = "u_outbound_mapping";
+		var sourceField = "u_customer_reference_number";
+		var matches = u_customer_reference_number.match(/^[^0-9]+/);// match starting non digits	
+		var separator = ":";		
+		if (!matches) {
+			gs.log("lookUpMessageActionOnUpdate did not match prefix - returning null("+category+","+area+","+subarea+","+u_customer_reference_number+","+company+")", "ATETransformHelper");
+			//return null;
+			return this.lookUpMessageActionOnCreate(category,area,subarea,ticketType,messagecompany);
+		}
+		var ticketPrefix = matches[0];	
+		gs.log("lookUpMessageActionOnUpdate got prefix ("+ticketPrefix+","+u_customer_reference_number+","+company+")", "ATETransformHelper");		
+		
+		/*
+		 * 1. can we find the exact match on ticket prefix
+		 */
+		 var IncCat = new GlideRecord(tableName);
+		 var sourceValue = category + separator + area + separator + subarea;
+         IncCat.addQuery('u_source_value', ticketPrefix);
+         IncCat.addQuery('u_source_field', sourceField);
+		 //IncCat.addQuery('u_ticket_type', ticketType);
+		 IncCat.addQuery('u_company',company);
+		 IncCat.orderBy("u_order"); //Will ensure always get the first mapping
+        
+         IncCat.query();
+		 if(IncCat.next()){
+			gs.log("lookUpMessageActionOnUpdate matched exact("+category+","+area+","+subarea+","+u_customer_reference_number+","+company+")", "ATETransformHelper");
+			return IncCat.u_target_value;
+		}
+		gs.log("lookUpMessageActionOnUpdate did not match - returning null("+category+","+area+","+subarea+","+u_customer_reference_number+","+company+")", "ATETransformHelper");
+		//return null;
+		return this.lookUpMessageActionOnCreate(category,area,subarea,ticketType,messagecompany);
+		//OBCR-1608 V3 End
+	},
+	/** OBCR-1608 */
+	
+    // Logic to determine if a Change Request should be created or existing record updated. This function is called by the Change Request transform script.
+    isChange : function(messagetype, ticketid, csnsticketid, category, area, subarea, company, transport_method, customerticketid){
+		gs.log("isChange: PASSED PARAMETERS: messagetype,  ticketid, csnsticketid, category, area, subarea, company, transport method, customerticketid: " + messagetype + "|" +  "|" + ticketid + "|" + csnsticketid + "|" + category + "|" + area + "|" + subarea + "|" + company + "|" + transport_method + "|" + customerticketid , "ATETransformHelper");
+		
+        
+        if (typeof transport_method === 'undefined'  || JSUtil.nil(transport_method)) { transport_method = 'SOAP'; }
+        transport_method = transport_method.toUpperCase();
+        
+        if(ticketid != '' || csnsticketid != '' || customerticketid != ''){
+            
+			//get the real company sys_id to use in our change lookup
+			var valMatch = new ATEValueMatchingHelper;
+			var chgCompanySys_id = valMatch.getMappedCompany(company);
+			gs.log("isChange: Company sys_id is " + chgCompanySys_id);
+			
+            var gr = new GlideRecord('change_request');
+			gr.addQuery('company', chgCompanySys_id);
+			
+            if(ticketid != ''){
+				gs.log("isChange: Querying for Managed Ticket ID " + ticketid, "ATETransformHelper");
+                gr.addQuery('number', ticketid);
+            }
+            if(ticketid == '' && csnsticketid != ''){
+				gs.log("isChange: Querying for CSNS Ticket ID " + csnsticketid, "ATETransformHelper");
+                gr.addQuery('u_csns_ticket_id', csnsticketid);
+            }
+			if(ticketid == '' && csnsticketid == '' && customerticketid != '') {
+				gs.log("isChange: Querying for Customer Ticket ID " + customerticketid, "ATETransformHelper");
+				gr.addQuery('u_customer_reference', customerticketid);
+			}
+            gr.query();
+            if(gr.next()){
+				//UPDATE                    
+                gs.log("isChange: Existing change update", "ATETransformHelper");
+				
+                var ateMiscFunctions = new ATEMiscFunctions();
+                //These message types belong to company transport method
+                //ack_update is current ignored by SN
+                var outboundMsgTypeCreate = ateMiscFunctions.getMessageType(gr.company.u_ate_model, "outbound", gr.company.u_transport_method, 'create');
+                var outboundMsgTypeUpdate = ateMiscFunctions.getMessageType(gr.company.u_ate_model, "outbound", gr.company.u_transport_method, 'update');
+                var outboundMsgTypeAckCreate = ateMiscFunctions.getMessageType(gr.company.u_ate_model, "outbound", gr.company.u_transport_method, 'ack_create');
+                
+                //These message types belong to assignment group ate flow through method
+                //ack_update is current ignored by SN
+                var outboundMsgTypeCreateFT = ateMiscFunctions.getMessageType(gr.company.u_ate_model, "outbound", gr.assignment_group.u_ate_flow_through_method, 'create');
+                var outboundMsgTypeUpdateFT = ateMiscFunctions.getMessageType(gr.company.u_ate_model, "outbound", gr.assignment_group.u_ate_flow_through_method, 'update');
+                var outboundMsgTypeAckCreateFT = ateMiscFunctions.getMessageType(gr.company.u_ate_model, "outbound", gr.assignment_group.u_ate_flow_through_method, 'ack_create');
+				// AS 2016-06-17 OBCR-419 this is also in the incident module
+				var inboundMsgTypeUpdate = ateMiscFunctions.getMessageType(gr.company.u_ate_model, "inbound", gr.company.u_transport_method, 'update');
+                                                                        
+                if(messagetype == outboundMsgTypeCreate 
+					|| messagetype == outboundMsgTypeUpdate 
+					|| messagetype == outboundMsgTypeAckCreate 
+				    || messagetype == outboundMsgTypeCreateFT 
+					|| messagetype == outboundMsgTypeUpdateFT 
+					|| messagetype == outboundMsgTypeAckCreateFT
+					|| messagetype == inboundMsgTypeUpdate
+				  )
+                {
+					gs.log("isChange message processed - message type " + messagetype,"OBCR419");
+                    return  'process';
+                }
+				gs.log("isChange message type not known " + messagetype,"OBCR419");
+            }
+            else {
+				//INSERT
+				gs.log("isChange: *** New change insert", "ATETransformHelper");
+                /*
+				 *  AS 2016-06-13 OBCR 402 - lookup default values for categories
+				 */
+				var catVal = this.lookUpCategoryForTable(category,area,subarea,'change_request',company);
+                
+                //var ChgCat = new GlideRecord('u_task_type_mapping');
+                //ChgCat.addQuery('u_category', category);
+                //ChgCat.addQuery('u_area', area);
+                //ChgCat.addQuery('u_sub_area', subarea);
+                //ChgCat.addQuery('u_table', 'change_request');
+                //ChgCat.query();
+                //if(ChgCat.next()){	
+				if (null != catVal){				
+                    if(messagetype == '11' || messagetype == '25' || messagetype == '21'){
+                        return 'process';
+                    }
+					else {
+						gs.log("isChange: Ignoring transform - task type found but messagetype "+messagetype+" not catered for.", "ATETransformHelper");
+						return 'ignore';
+					}
+                }
+                gs.log("isChange: Ignoring transform as theres no task type mapping", "ATETransformHelper");
+                return 'ignore';
+            }
+        }
+        //amberpoint SOAP - only return if category is specifically change (let isInc deal with others)
+        else if (transport_method == "AMBERPOINT" && category == "change") {
+            //lookup inbound Heartbeat types, create event for processing heartbeat response?
+            var helper = new ATEValueMatchingHelper();
+            var companyRec = helper.getMappedCompany(company);
+            
+            var ateMiscFunctions = new ATEMiscFunctions();
+            
+            var inboundMsgTypeReqHB_SNOC = ateMiscFunctions.getMessageType("SNOC Integration", "inbound", companyRec.u_transport_method, "req_heartbeat");
+            var inboundMsgTypeReqHB_PMSD = ateMiscFunctions.getMessageType("Full PMSD Integration", "inbound", companyRec.u_transport_method, "req_heartbeat");
+            
+            if (messagetype == inboundMsgTypeReqHB_SNOC) {
+                var outboundMsgTypeResHB_SNOC = ateMiscFunctions.getMessageType("SNOC Integration", "outbound", companyRec.u_transport_method, "res_heartbeat");
+                if (outboundMsgTypeResHB_SNOC != -99) {
+                    // Send health check response soap message
+                    var ate = new ATEIntegrationHelper();
+                    ate.setSystemType(transport_method);
+                    ate.createOptEventInHC(company);
+                }
+                return 'ignore';
+            }
+            else if (messagetype == inboundMsgTypeReqHB_PMSD) {
+                var outboundMsgTypeResHB_PMSD = ateMiscFunctions.getMessageType("Full PMSD Integration", "outbound", companyRec.u_transport_method, "res_heartbeat");
+                if (outboundMsgTypeResHB_SNOC != -99) {
+                    // Send health check response soap message
+                    var ate = new ATEIntegrationHelper();
+                    ate.setSystemType(transport_method);
+                    ate.createOptEventInHC(company);
+                }
+                return 'ignore';
+            }
+        }
+		gs.log("isChange: Ignoring input as no transport method defined", "ATETransformHelper");
+        return 'ignore';
+    },
+    
+    // Logic to determine if an Incident should be created or existing record updated. This function is called by the Incident transform script.
+	// Note: asgGroup need to be a record object, for dot walking.    
+	// dblack (16-05-2016): added customerticketid, processing for type 21 and logging
+    isInc : function(messagetype, asgGroup, ticketid, csnsticketid, category, area, subarea, company, transport_method, customerticketid) {
+	
+		gs.log("isInc: PASSED PARAMETERS: messagetype, asgGroup, ticketid, csnsticketid, category, area, subarea, company, transport method, customerticketid : " + messagetype + "|" + asgGroup + "|" + ticketid + "|" + csnsticketid + "|" + category + "|" + area + "|" + subarea + "|" + company + "|" + transport_method + "|" + customerticketid, "ATETransformHelper");
+		
+		
+        if (typeof transport_method === 'undefined' || JSUtil.nil(transport_method), "ATETransformHelper") { 
+			transport_method = 'SOAP'; 
+			gs.log("isInc: Transport method set to " + transport_method);
+		}
+        transport_method = transport_method.toUpperCase();
+		                            
+		
+        if(ticketid != '' || csnsticketid != '' || customerticketid != '') {
+            
+			
+			//get the real company sys_id to use in our incident lookup
+			var valMatch = new ATEValueMatchingHelper;
+			var incCompanySys_id = valMatch.getMappedCompany(company);
+			gs.log("isInc: Company sys_id is " + incCompanySys_id);
+			
+            var gr2 = new GlideRecord('incident');
+			gr2.addQuery('company', incCompanySys_id);
+			
+            if(ticketid != ''){
+				gs.log("isInc: Querying for Managed Ticket ID " + ticketid, "ATETransformHelper");
+                gr2.addQuery('number', ticketid);
+            }
+            if(ticketid == '' && csnsticketid != '') {
+				gs.log("isInc: Querying for CSNS Ticket ID " + csnsticketid, "ATETransformHelper");
+                gr2.addQuery('number', csnsticketid);
+            }
+			if(ticketid == '' && csnsticketid == '' && customerticketid != '') {
+				gs.log("isInc: Querying for Customer Ticket ID " + customerticketid, "ATETransformHelper");
+                gr2.addQuery('u_customer_reference_number', customerticketid);
+            }
+			
+			
+            gr2.query();
+            if(gr2.next()) {
+                //UPDATE                    
+                gs.log("isInc: Existing incident update", "ATETransformHelper");
+        
+                var ateMiscFunctions = new ATEMiscFunctions();
+                var outboundMsgTypeCreate = ateMiscFunctions.getMessageType(gr2.company.u_ate_model, "outbound", gr2.company.u_transport_method, 'create');
+
+                var outboundMsgTypeUpdate = ateMiscFunctions.getMessageType(gr2.company.u_ate_model, "outbound", gr2.company.u_transport_method, 'update');
+
+                var outboundMsgTypeAckCreate = ateMiscFunctions.getMessageType(gr2.company.u_ate_model, "outbound", gr2.company.u_transport_method, 'ack_create');
+
+                
+				
+				//currently this script only caters for outbound but we need to look up inbound for 23 updates coming from customer
+				//work-around for just that scenario - needs to be reviewed 
+				var inboundMsgTypeUpdate = ateMiscFunctions.getMessageType(gr2.company.u_ate_model, "inbound", gr2.company.u_transport_method, 'update');
+				//gs.log("DEBUG: isInc: inboundMsgTypeUpdate: "+inboundMsgTypeUpdate, "ATETransformHelper");
+				
+				
+				
+                // If Update request never intend to change the assignment group, it will be empty from the source, use the original assignemt group in record.
+                /*if (asgGroup.nil()){
+                        asgGrp = gr2.assignment_group.u_ate_flow_through_method;
+                }*/
+                var asgGrp = asgGroup;
+                if (JSUtil.nil(asgGroup)) {
+                    asgGrp = gr2.assignment_group;
+                }				
+				
+                //These message types belong to assignment group ate flow through method
+                //ack_update is current ignored by SN
+                // var outboundMsgTypeCreateFT = ateMiscFunctions.getMessageType(gr2.company.u_ate_model, "inbound", gr2.assignment_group.u_ate_flow_through_method, 'create');
+                // var outboundMsgTypeUpdateFT = ateMiscFunctions.getMessageType(gr2.company.u_ate_model, "inbound", gr2.assignment_group.u_ate_flow_through_method, 'update');												
+                // var outboundMsgTypeAckCreateFT = ateMiscFunctions.getMessageType(gr2.company.u_ate_model, "inbound", gr2.assignment_group.u_ate_flow_through_method, 'ack_create');
+                // needs to be updated in the isChange portion above
+                var outboundMsgTypeCreateFT = ateMiscFunctions.getMessageType(gr2.company.u_ate_model, "inbound", asgGrp.u_ate_flow_through_method, 'create');
+
+                var outboundMsgTypeUpdateFT = ateMiscFunctions.getMessageType(gr2.company.u_ate_model, "inbound", asgGrp.u_ate_flow_through_method, 'update');
+
+                var outboundMsgTypeAckCreateFT = ateMiscFunctions.getMessageType(gr2.company.u_ate_model, "inbound", asgGrp.u_ate_flow_through_method, 'ack_create');
+
+        
+                //gs.log("gr2.company.u_ate_model" + gr2.company.u_ate_model, "MA");
+                //gs.log("asgGrp.u_ate_flow_through_method" + asgGrp.u_ate_flow_through_method, "MA");
+                //gs.log("outboundMsgTypeUpdateFT" + outboundMsgTypeUpdateFT, "MA");				
+                 
+				//gs.log("DEBUG: isInc: messagetype: "+messagetype, "ATETransformHelper");
+				
+                if((messagetype == outboundMsgTypeCreate || messagetype == outboundMsgTypeUpdate ||  messagetype == outboundMsgTypeAckCreate) ||
+                   (messagetype == outboundMsgTypeCreateFT || messagetype == outboundMsgTypeUpdateFT ||  messagetype == outboundMsgTypeAckCreateFT) ||
+				   (messagetype == inboundMsgTypeUpdate) ) {
+					gs.log("DEBUG: isInc: PROCESSING... ", "ATETransformHelper");
+                    return  'process';
+                }
+            }
+            else {
+                //INSERT
+				gs.log("isInc: *** New incident insert", "ATETransformHelper");
+				/*
+				 *  AS 2016-06-13 OBCR 402 - lookup default values for categories
+				 */
+				var catVal = this.lookUpCategoryForTable(category,area,subarea,'incident',company);
+                //var IncCat = new GlideRecord('u_task_type_mapping');
+                //IncCat.addQuery('u_category', category);
+                //IncCat.addQuery('u_area', area);
+                //IncCat.addQuery('u_sub_area', subarea);
+                //IncCat.addQuery('u_table', 'incident');
+                //IncCat.query();
+                //if(IncCat.next()){
+				if (null != catVal){
+                    if(messagetype == '11' || messagetype == '25' || messagetype == '21'){
+                        return 'process';
+                    }
+					else {
+						gs.log("isInc: Ignoring transform - task type found but messagetype "+messagetype+" not catered for.", "ATETransformHelper");
+						return 'ignore';
+					}
+                }
+				else{
+					   /*
+					   * AS 2017-11-22
+					   * check if we are also creating in change.
+					   * if we are not creating in change, then we should create here as a default
+					   */
+					   if(messagetype == '11' || messagetype == '25' || messagetype == '21'){
+							var isChg = this.isChange(messagetype, ticketid, csnsticketid, category, area, subarea, company, transport_method, customerticketid);
+							if (isChg === "ignore"){
+								 // not a change either so create default
+								 gs.log("isInc: neither incident nor change mapped, so creating a default incident ", "ATETransformHelper");
+								 return 'process';
+							}
+					   }
+					   
+				 }
+                gs.log("isInc: Ignoring transform as theres no task type mapping", "ATETransformHelper");
+                return 'ignore';
+            }
+        } else if (transport_method == "AMBERPOINT") {
+            //lookup inbound Heartbeat types, create event for processing heartbeat response?
+            var helper = new ATEValueMatchingHelper();
+            var companyRec = helper.getMappedCompany(company);
+            
+            var ateMiscFunctions = new ATEMiscFunctions();
+            
+            var inboundMsgTypeReqHB_SNOC = ateMiscFunctions.getMessageType("SNOC Integration", "inbound", companyRec.u_transport_method, "req_heartbeat");
+            var inboundMsgTypeReqHB_PMSD = ateMiscFunctions.getMessageType("Full PMSD Integration", "inbound", companyRec.u_transport_method, "req_heartbeat");
+            
+            if (messagetype == inboundMsgTypeReqHB_SNOC) {
+                var outboundMsgTypeResHB_SNOC = ateMiscFunctions.getMessageType("SNOC Integration", "outbound", companyRec.u_transport_method, "res_heartbeat");
+                if (outboundMsgTypeResHB_SNOC != -99) {
+                    // Send health check response soap message
+                    var ate = new ATEIntegrationHelper();
+                    ate.setSystemType(transport_method);
+                    ate.createOptEventInHC(company);
+                }
+                return 'ignore';
+            }
+            else if (messagetype == inboundMsgTypeReqHB_PMSD) {
+                var outboundMsgTypeResHB_PMSD = ateMiscFunctions.getMessageType("Full PMSD Integration", "outbound", companyRec.u_transport_method, "res_heartbeat");
+                if (outboundMsgTypeResHB_SNOC != -99) {
+                    // Send health check response soap message
+                    var ate = new ATEIntegrationHelper();
+                    ate.setSystemType(transport_method);
+                    ate.createOptEventInHC(company);
+                }
+                return 'ignore';
+            }
+        }
+		gs.log("isInc: Ignoring transform - no process condition met", "ATETransformHelper");
+        return 'ignore';
+    },
+    /**
+	 * AS 2016-06-13 OBCR 402 - lookup default values for categories
+	 * lookup the category from the task type mapping tableType
+	 * first determine if we have an exact match
+	 * then if it is for this table type - then return this
+	 * if no exact match, look up based on category for a default value
+	 * if it found, then return this record
+	 * otherwise return nothing
+	 * transformType is either incident or change - based on the transform type
+	 */
+	 
+	lookUpCategoryForTable : function(category,area,subarea,transformType,messagecompany){
+		gs.log("lookUpCategoryForTable("+category+","+area+","+subarea+","+transformType+","+messagecompany+")", "ATETransformHelper");
+		
+		var mapHelper = new ATEValueMatchingHelper();
+		company = mapHelper.getMappedCompany(messagecompany);
+		/*
+		 * 1. can we find the exact match on cat, area, subarea, company and type
+		 */
+		 var IncCat = new GlideRecord('u_task_type_mapping');
+         IncCat.addQuery('u_category', category);
+         IncCat.addQuery('u_area', area);
+         IncCat.addQuery('u_sub_area', subarea);
+		 IncCat.addQuery('u_company',company);
+         IncCat.addQuery('u_table', transformType);
+         IncCat.query();
+		 if(IncCat.next()){
+			gs.log("lookUpCategoryForTable matched exact("+category+","+area+","+subarea+","+transformType+","+company+")", "ATETransformHelper");
+			return IncCat;
+		}
+		
+		/*
+		 * 2. can we find the exact match on cat, area, subarea, company but not type - the other transform may do this
+		 */
+		 var IncCat = new GlideRecord('u_task_type_mapping');
+         IncCat.addQuery('u_category', category);
+         IncCat.addQuery('u_area', area);
+         IncCat.addQuery('u_sub_area', subarea);
+		 IncCat.addQuery('u_company',company);
+         // don't use transform IncCat.addQuery('u_table', transformType);
+         IncCat.query();
+		 if(IncCat.next()){
+			gs.log("lookUpCategoryForTable matched exact for other transform ("+category+","+area+","+subarea+","+transformType+","+company+") returning null", "ATETransformHelper");
+			return null;
+		}
+		
+		/*
+		 * 3. can we match exact without company
+		 */
+		 IncCat = new GlideRecord('u_task_type_mapping');
+         IncCat.addQuery('u_category', category);
+         IncCat.addQuery('u_area', area);
+         IncCat.addQuery('u_sub_area', subarea);
+		 // no company
+         IncCat.addQuery('u_table', transformType);
+         IncCat.query();
+		 if(IncCat.next()){
+			gs.log("lookUpCategoryForTable matched exact but no company ("+category+","+area+","+subarea+","+transformType+","+company+")", "ATETransformHelper");
+			return IncCat;
+		}
+		
+		/*
+		 * 4. can we match exact without company and type - leave for the other transform
+		 */
+		 IncCat = new GlideRecord('u_task_type_mapping');
+         IncCat.addQuery('u_category', category);
+         IncCat.addQuery('u_area', area);
+         IncCat.addQuery('u_sub_area', subarea);
+		 // no company
+         // no type IncCat.addQuery('u_table', transformType);
+         IncCat.query();
+		 if(IncCat.next()){
+			gs.log("lookUpCategoryForTable matched exact but no company for other transform  ("+category+","+area+","+subarea+","+transformType+","+company+") returning null ", "ATETransformHelper");
+			return null;
+		}
+		
+		/*
+		 * 5. can we find the default record based on cat, company and type
+		 */
+		 var IncCat = new GlideRecord('u_task_type_mapping');
+         IncCat.addQuery('u_category', category);
+         // no area IncCat.addQuery('u_area', area);
+         // no sub area IncCat.addQuery('u_sub_area', subarea);
+		 IncCat.addQuery('u_company',company);
+         IncCat.addQuery('u_table', transformType);
+		 IncCat.addQuery('u_default', true);
+         IncCat.query();
+		 if(IncCat.next()){
+			gs.log("lookUpCategoryForTable matched default("+category+","+area+","+subarea+","+transformType+","+company+")", "ATETransformHelper");		
+			return IncCat;
+		}
+		
+		/*
+		 * 6. can we find the default record based on cat, company and type but for other transform
+		 */
+		var IncCat = new GlideRecord('u_task_type_mapping');
+        IncCat.addQuery('u_category', category);
+         // no area IncCat.addQuery('u_area', area);
+         // no sub area IncCat.addQuery('u_sub_area', subarea);
+		IncCat.addQuery('u_company',company);
+        // other transform IncCat.addQuery('u_table', transformType);
+		IncCat.addQuery('u_default', true);
+        IncCat.query();
+		if(IncCat.next()){
+			gs.log("lookUpCategoryForTable matched default for other transform("+category+","+area+","+subarea+","+transformType+","+company+") returning null", "ATETransformHelper");
+			return null;
+		}
+		
+		/*
+		 * 7. can we find the default record based on cat and type
+		 */
+		var IncCat = new GlideRecord('u_task_type_mapping');
+        IncCat.addQuery('u_category', category);
+         // no area IncCat.addQuery('u_area', area);
+         // no sub area IncCat.addQuery('u_sub_area', subarea);
+		 // no company IncCat.addQuery('u_company',company);
+        IncCat.addQuery('u_table', transformType);
+		IncCat.addQuery('u_default', true);
+        IncCat.query();
+		if(IncCat.next()){
+			gs.log("lookUpCategoryForTable matched default no company ("+category+","+area+","+subarea+","+transformType+","+company+")", "ATETransformHelper");
+			return IncCat;
+		}
+		gs.log("lookUpCategoryForTable no match returning null ("+category+","+area+","+subarea+","+transformType+","+company+")", "ATETransformHelper");
+		
+		return null;
+		
+	},	
+		
+	    
+    
+    // Function to build the source datetime value into a ServiceNow friendly value.
+    
+    datetime : function(date_time){
+        
+        // Split date and time
+        
+        var date1 = date_time.split("T")[0];
+        var time1 = date_time.split("T")[1];
+        
+        // Reformat
+        
+        var input = date1 + " " + time1;
+        
+        // Get internal representation of the UTC time
+        
+        var gdt = new GlideDateTime(input);
+        var output = gdt.getDisplayValueInternal();
+        
+        // Split and reformat date to return
+        
+        var date = output.split(" ")[0];
+        var time = output.split(" ")[1];
+        
+        var dd = date.split("-")[2];
+        var mm = date.split("-")[1];
+        var yyyy = date.split("-")[0];
+        
+        var result = dd + "-" + mm + "-" + yyyy + " " + time;
+        
+        
+        return result;
+        
+        
+        
+    },
+    
+    // Function to format the briefdescription.
+    short_description : function(string){
+        
+        var bd = string.replace(/\\r\\n/g, " ");
+        
+        return bd;
+        
+    },
+    
+    
+    // Function to format the briefdescription.
+    
+    wu_format : function(string){ 
+        var uwd = string.replace(/\\r\\n/g, "\n\n");
+        
+        return uwd;
+    },    
+     
+    type: 'ATETransformHelper'
+    
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+        <sys_created_on>2018-03-14 23:52:47</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>797348624f7c5300aab4a3b11310c7f4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ATETransformHelper</sys_name>
+        <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
+        <sys_update_name>sys_script_include_797348624f7c5300aab4a3b11310c7f4</sys_update_name>
+        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2018-03-14 23:52:47</sys_updated_on>
+    </sys_script_include>
+</record_update>

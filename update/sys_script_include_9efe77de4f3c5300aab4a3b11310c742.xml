@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_cio19_optus_ate.ATE_Helper_Functions</api_name>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>ATE_Helper_Functions</name>
+        <script><![CDATA[var ATE_Helper_Functions = Class.create();
+ATE_Helper_Functions.prototype = {
+    initialize: function() {
+    },
+		     
+	
+	addAttachmentMuleSoft : function (rec) {
+                var gsu = (typeof GlideStringUtil != 'undefined') ? (GlideStringUtil) : (Packages.com.glide.util.StringUtil);
+                var gsa = (typeof GlideSysAttachment != 'undefined') ? (new GlideSysAttachment()) : (new Packages.com.glide.ui.SysAttachment());
+                var lAttachmentData = gsa.getBytes(rec);
+                var lAttachment = gsu.base64Encode(lAttachmentData);
+                var lFilename = rec.file_name;
+                var lTablename = rec.table_name;
+                var lContentType = rec.content_type;
+                var lSize = rec.size_bytes;
+                var lID = rec.getUniqueValue();
+                var xml = "<ate:attachment action=\"add\" charset=\"UTF-8\" ";
+                xml += "len=\"" + lSize + "\" name=\"" + lFilename + "\" ";
+                xml += "type=\"" + lContentType + "\" contentId=\"" + lID + "\">";
+                xml += lAttachment;
+                xml += "</ate:attachment>";
+                return xml;
+        },
+	
+	addAttachment : function (rec) {
+                var gsu = (typeof GlideStringUtil != 'undefined') ? (GlideStringUtil) : (Packages.com.glide.util.StringUtil);
+                var gsa = (typeof GlideSysAttachment != 'undefined') ? (new GlideSysAttachment()) : (new Packages.com.glide.ui.SysAttachment());
+                var lAttachmentData = gsa.getBytes(rec);
+                var lAttachment = gsu.base64Encode(lAttachmentData);
+                var lFilename = rec.file_name;
+                var lTablename = rec.table_name;
+                var lContentType = rec.content_type;
+                var lSize = rec.size_bytes;
+                var lID  = rec.getUniqueValue();
+                var xml = "<ns:attachment action=\"add\" charset=\"UTF-8\" ";
+                xml += "len=\"" + lSize + "\" name=\"" + lFilename + "\" ";
+                xml += "type=\"" + lContentType + "\" contentId=\"" + lID + "\">";
+                xml += lAttachment;
+                xml += "</ns:attachment>";
+                return xml;
+        },
+	
+	
+	toTitleCase : function () {
+   return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+},
+
+    titlecase : function(str){
+    var arr=[];  
+    var str1=str.split(' ');
+    for (var i = 0; i < str1.length; i++) {
+    var upper= str1[i].charAt(0).toUpperCase()+ str1[i].substr(1);
+    arr.push(upper);
+     }
+      return arr.join(' ');
+    },
+    type: 'ATE_Helper_Functions'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+        <sys_created_on>2018-03-14 23:34:28</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>9efe77de4f3c5300aab4a3b11310c742</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>ATE_Helper_Functions</sys_name>
+        <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
+        <sys_update_name>sys_script_include_9efe77de4f3c5300aab4a3b11310c742</sys_update_name>
+        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2018-03-15 03:16:05</sys_updated_on>
+    </sys_script_include>
+</record_update>

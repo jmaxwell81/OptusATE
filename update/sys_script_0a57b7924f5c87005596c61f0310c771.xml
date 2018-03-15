@@ -91,12 +91,12 @@ instance=gs.getProperty('instance_name');
 	
 }
 catch(ex) {
-	var message = ex.getMessage();
+	//var message = ex.getMessage();
 		if (gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
-	gs.error('OPTUS_ATE ATE_HealthCheck_28: '+message);
+	gs.error('OPTUS_ATE ATE_HealthCheck_28: '+ex);
 		
 	}
-gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_optus_ate.Alert_Notifications'),'OPTUS ATE BR-28 RESPONSE: ' +message);
+gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_optus_ate.Alert_Notifications'),'OPTUS ATE BR-28 RESPONSE: ' +ex);
 	
 	
 }
@@ -109,7 +109,7 @@ gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_opt
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>0a57b7924f5c87005596c61f0310c771</sys_id>
-        <sys_mod_count>219</sys_mod_count>
+        <sys_mod_count>220</sys_mod_count>
         <sys_name>ATE_HealthCheck_28</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -118,7 +118,7 @@ gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_opt
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_0a57b7924f5c87005596c61f0310c771</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-08 05:12:40</sys_updated_on>
+        <sys_updated_on>2018-03-15 00:54:59</sys_updated_on>
         <template/>
         <when>async</when>
     </sys_script>

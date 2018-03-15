@@ -8,7 +8,7 @@
         <element label="AttachmentBinary" max_length="40" name="attachment_binary_information" type="string"/>
         <element label="AttachmentFileName" max_length="40" name="attachment_file_name" type="string"/>
         <element label="AttachName" max_length="300" name="attachname" type="string"/>
-        <element label="Brief Description" max_length="4000" name="brief_description" type="data_structure"/>
+        <element label="Brief Description" max_length="8000" name="brief_description" type="string"/>
         <element label="Category" max_length="250" name="category" type="string"/>
         <element label="CloseTime" max_length="40" name="closetime" type="glide_date_time"/>
         <element label="Closure code" max_length="40" name="closure_code" type="string"/>
