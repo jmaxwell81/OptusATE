@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element label="Optus_ATE_Holding" max_length="40" name="x_cio19_optus_ate_optus_ate_holding" type="collection">
+    <element label="Optus_ATE_Holding" max_length="40" name="x_cio19_optus_ate_optus_ate_holding" sizeclass="5398" type="collection">
         <element label="AssignmentGroup" max_length="40" name="assignmentgroup" type="string"/>
         <element display="true" label="Assignment Group" max_length="80" name="assignment_group" type="string"/>
         <element label="Attachment1" max_length="32" name="attachment1" reference="sys_attachment" type="reference"/>
@@ -8,7 +8,7 @@
         <element label="AttachmentBinary" max_length="40" name="attachment_binary_information" type="string"/>
         <element label="AttachmentFileName" max_length="40" name="attachment_file_name" type="string"/>
         <element label="AttachName" max_length="300" name="attachname" type="string"/>
-        <element label="Brief Description" max_length="8000" name="brief_description" type="string"/>
+        <element label="Brief Description" max_length="8000" name="brief_description" type="data_structure"/>
         <element label="Category" max_length="250" name="category" type="string"/>
         <element label="CloseTime" max_length="40" name="closetime" type="glide_date_time"/>
         <element label="Closure code" max_length="40" name="closure_code" type="string"/>
@@ -30,6 +30,7 @@
         <element label="Impact" max_length="40" name="impact" type="integer"/>
         <element label="LastName" max_length="50" name="lastname" type="string"/>
         <element label="Location" max_length="255" name="location" type="string"/>
+        <element label="ManagedTicketID" max_length="8000" name="managedticketid" type="script"/>
         <element default="TCC" label="MessageCompany" max_length="255" name="messagecompany" type="string"/>
         <element label="MessageDate" max_length="40" name="messagedate" type="glide_date_time"/>
         <element label="MessageStatus" max_length="255" name="messagestatus" type="string"/>

@@ -148,10 +148,10 @@
         <key_store_password/>
         <lock>false</lock>
         <protocol_profile/>
-        <qualified_name>ATE_27_TEST [ getKeys ]</qualified_name>
+        <qualified_name> [ getKeys ]</qualified_name>
         <soap_action>http://www.service-now.com/x_cio19_optus_ate_tcceventin/getKeys</soap_action>
         <soap_endpoint>https://mitownsvilledev.service-now.com/x_cio19_optus_ate_tcceventin.do?SOAP</soap_endpoint>
-        <soap_message display_value="ATE_27_TEST">548c1a0e4f900700aab4a3b11310c7ca</soap_message>
+        <soap_message display_value="">548c1a0e4f900700aab4a3b11310c7ca</soap_message>
         <strip_whitespace>false</strip_whitespace>
         <sys_class_name>sys_soap_message_function</sys_class_name>
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>

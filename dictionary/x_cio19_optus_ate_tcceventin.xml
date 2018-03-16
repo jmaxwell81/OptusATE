@@ -4,7 +4,7 @@
         <element attributes="import_attribute_name=assignmentgroup,edge_encryption_enabled=true" label="Assignmentgroup" max_length="40" name="assignmentgroup" type="string"/>
         <element attributes="import_attribute_name=attachment_binary_information,edge_encryption_enabled=true" label="Attachment binary information" max_length="40" name="attachment_binary_information" type="string"/>
         <element attributes="import_attribute_name=attachment_file_name,edge_encryption_enabled=true" label="Attachment file name" max_length="40" name="attachment_file_name" type="string"/>
-        <element attributes="import_attribute_name=brief_description,edge_encryption_enabled=true" label="Brief description" max_length="40" name="brief_description" type="string"/>
+        <element attributes="import_attribute_name=brief_description,edge_encryption_enabled=true" label="Brief description" max_length="800" name="brief_description" type="data_structure"/>
         <element attributes="import_attribute_name=category,edge_encryption_enabled=true" label="Category" max_length="40" name="category" type="string"/>
         <element attributes="import_attribute_name=closetime,edge_encryption_enabled=true" label="Closetime" max_length="40" name="closetime" type="string"/>
         <element attributes="import_attribute_name=closure_code,edge_encryption_enabled=true" label="Closure code" max_length="40" name="closure_code" type="string"/>
@@ -25,12 +25,13 @@
         <element attributes="import_attribute_name=impact,edge_encryption_enabled=true" label="Impact" max_length="40" name="impact" type="string"/>
         <element attributes="import_attribute_name=lastname,edge_encryption_enabled=true" label="Lastname" max_length="40" name="lastname" type="string"/>
         <element attributes="import_attribute_name=location,edge_encryption_enabled=true" label="Location" max_length="40" name="location" type="string"/>
+        <element attributes="import_attribute_name=managedticketid,edge_encryption_enabled=true" label="ManagedTicketID" max_length="40" name="managedticketid" type="string"/>
         <element attributes="import_attribute_name=messagecompany,edge_encryption_enabled=true" label="Messagecompany" max_length="40" name="messagecompany" type="string"/>
         <element attributes="import_attribute_name=messagedate,edge_encryption_enabled=true" label="Messagedate" max_length="40" name="messagedate" type="string"/>
         <element attributes="import_attribute_name=messagestatus,edge_encryption_enabled=true" label="Messagestatus" max_length="40" name="messagestatus" type="string"/>
         <element attributes="import_attribute_name=messagetype,edge_encryption_enabled=true" label="Messagetype" max_length="40" name="messagetype" type="string"/>
         <element attributes="import_attribute_name=mobilenumber,edge_encryption_enabled=true" label="Mobilenumber" max_length="40" name="mobilenumber" type="string"/>
-        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element attributes="import_attribute_name=number,ignore_filter_on_new=true,edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
         <element attributes="import_attribute_name=opentime,edge_encryption_enabled=true" label="Opentime" max_length="40" name="opentime" type="string"/>
         <element attributes="import_attribute_name=phonenumber,edge_encryption_enabled=true" label="Phonenumber" max_length="40" name="phonenumber" type="string"/>
         <element attributes="import_attribute_name=plannedend,edge_encryption_enabled=true" label="Plannedend" max_length="40" name="plannedend" type="string"/>
@@ -41,9 +42,9 @@
         <element attributes="import_attribute_name=subcategory,edge_encryption_enabled=true" label="Subcategory" max_length="40" name="subcategory" type="string"/>
         <element attributes="import_attribute_name=third_party_ticket_id,edge_encryption_enabled=true" label="Third party ticket ID" max_length="40" name="third_party_ticket_id" type="string"/>
         <element attributes="import_attribute_name=uniqueid,edge_encryption_enabled=true" label="Uniqueid" max_length="40" name="uniqueid" type="string"/>
-        <element attributes="import_attribute_name=updatedescrption,edge_encryption_enabled=true" label="Updatedescrption" max_length="8000" name="updatedescrption" type="string"/>
+        <element attributes="import_attribute_name=updatedescrption,edge_encryption_enabled=true" label="Updatedescrption" max_length="8000" name="updatedescrption" type="data_structure"/>
         <element attributes="import_attribute_name=urgency,edge_encryption_enabled=true" label="Urgency" max_length="40" name="urgency" type="string"/>
-        <element attributes="import_attribute_name=worklog,edge_encryption_enabled=true" label="Worklog" max_length="8000" name="worklog" type="string"/>
+        <element attributes="import_attribute_name=worklog,edge_encryption_enabled=true" label="Worklog" max_length="8000" name="worklog" type="data_structure"/>
         <element attributes="import_attribute_name=workstationport,edge_encryption_enabled=true" label="Workstationport" max_length="40" name="workstationport" type="string"/>
     </element>
 </database>
