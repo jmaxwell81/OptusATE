@@ -17,7 +17,7 @@
         <sys_created_on>2018-03-14 22:54:22</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>4103b7d64f3c5300aab4a3b11310c799</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>Test_ATE_New_25</sys_name>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
         <sys_policy/>
@@ -25,9 +25,9 @@
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_template_4103b7d64f3c5300aab4a3b11310c799</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-14 23:47:18</sys_updated_on>
+        <sys_updated_on>2018-03-18 23:55:12</sys_updated_on>
         <table>x_cio19_optus_ate_tcceventin</table>
-        <template>assignmentgroup=f496c4454fa25600a0124c111310c778^brief_description=Testing new ticket recieved from Optus^category=Incident^closure_code=^csnsticketid=^csnsticketstatus=^emailaddress=leon.storey@townsville.qld.gov.au^firstname=Leon^lastname=Storey^location=a7161c664fc55a008767a3b11310c7cb^messagecompany=TCC^messagedate=javascript:gs.GlideDateTime()^subcategory=Security^messagestatus=New^messagetype=25^impact=3^mobilenumber=0414000000^sys_import_state=test^updatedescrption=Testing for comments^worklog=Test for worklog^producttype=denial of service^urgency=3^EQ</template>
+        <template>assignmentgroup=f496c4454fa25600a0124c111310c778^brief_description=Testing new ticket recieved from Optus^category=Incident^closure_code=^csnsticketid=obd123456^csnsticketstatus=^emailaddress=leon.storey@townsville.qld.gov.au^firstname=Leon^lastname=Storey^location=a7161c664fc55a008767a3b11310c7cb^messagecompany=TCC^messagedate=javascript:gs.GlideDateTime()^subcategory=Security^messagestatus=New^messagetype=25^impact=3^mobilenumber=0414000000^sys_import_state=test^updatedescrption=Testing for comments^worklog=Test for worklog^producttype=denial of service^urgency=3^EQ</template>
         <u_pre_approved>false</u_pre_approved>
         <user display_value="Leon Storey">1d8b25ce4f6ee240a022c61f0310c7d4</user>
         <view/>

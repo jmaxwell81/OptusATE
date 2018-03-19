@@ -63,6 +63,94 @@ ATE_Helper_Functions.prototype = {
      }
       return arr.join(' ');
     },
+	
+	
+	
+parseAttachments : function () {
+    try {
+                var xmldoc;
+                gs.info("OPTUS ATE parseAttachments()","HISHAM");
+        if(source.u_attachments.toString()=="<see_attachment/>"){
+                        //Load the attachment data element from the sys_attachment table
+                        gs.info("OPTUS ATE Load the attachment data element from the sys_attachment table","HISHAM");
+                        var grAtt = new GlideRecord('sys_attachment');
+                        gs.info("OPTUS ATE Querying attachment: "+source.sys_id.toString(),"HISHAM");
+                        if(grAtt.get("table_sys_id",source.sys_id.toString())){
+                                gs.info("OPTUS ATE Found attachment:"+grAtt.sys_id.toString(),"HISHAM");
+                                
+                                var gsa = new GlideSysAttachment();
+                var bytesInFile = gsa.getBytes(source.sys_class_name.toString(), source.sys_id.toString());
+                                gs.info("OPTUS ATE bytesInFile="+bytesInFile.length,"HISHAM");
+                                
+                //var dataAsString = new Packages.java.lang.String(bytesInFile);
+                                
+                                //var gsa = GlideSysAttachmentInputStream(grAtt.sys_id.toString());
+ 
+                                //var baos = new Packages.java.io.ByteArrayOutputStream();
+                                //gsa.writeTo(baos);
+                                //baos.close();
+                                //var strData=baos.toString();
+                                gs.info("OPTUS ATE Attachment bytesInFile length="+bytesInFile.toString().length,"HISHAM");
+                                xmldoc = new XMLDocument(bytesInFile.toString());
+                        }
+                        
+                        
+                }else{
+                        xmldoc = new XMLDocument(source.u_attachments.toString());
+                }
+                
+        var node = xmldoc.getNodes("//Attachments/*");
+                
+                gs.info('OPTUS ATE onAfter parseAttachments: ' + node.getLength() + ' - ' + source.u_attachments.toString());
+                
+        for(i=0; i < node.getLength(); i++){
+ 
+            var attachmentNumber = i + 1;
+ 
+            var filename = xmldoc.getNodeText("//Attachments/Attachment[" + attachmentNumber + "]/Filename");
+            var filetype = xmldoc.getNodeText("//Attachments/Attachment[" + attachmentNumber + "]/Filetype");
+            var filedata = xmldoc.getNodeText("//Attachments/Attachment[" + attachmentNumber + "]/Contents");
+ 
+            createAttachment(filename, filetype, filedata);
+        }
+ 
+    } catch (e) {
+        gs.info("OPTUS ATE An error occurred parsing attachment(s) into a record on the XML Incident transform map. It is " + e.message);
+    }
+},
+ 
+// This function is doing (i) create the attachment (ii) Retrieve the attachment and do the flowthrough
+createAttachment : function (fileName, fileType, fileData) {
+ 
+    var StringUtil = GlideStringUtil;
+    var fileDataDecoded = StringUtil.base64DecodeAsBytes(fileData);
+    var tableName = target.getTableName();
+    var sys_id = target.getUniqueValue();
+        
+        gs.info('OPTUS ATE onAfter createAttachment: ' + tableName + ' - ' + sys_id + ' - ' + fileName + ' - ' + fileType);
+        
+        // (i) Create the attachment
+    var attachment = new Attachment();
+    attachment.write(tableName, sys_id, fileName, fileType, fileDataDecoded);
+        
+        // (ii) Flowthrough
+        if (target.assignment_group.u_ate_flow_through_method == "XML") {
+                
+        // This section is doing the flow through attachment from PMSD to UNISYS
+        if(target.company.u_transport_method=='SQL'){
+            var record = ATEIntegrationHelper.parentAttachmentRecordExists(tableName, sys_id);
+ 
+            var miscFunc = new ATEMiscFunctions();
+            var ateUsrAcct = gs.getProperty("ate_user_account");
+            var attachmentRtn = miscFunc.getAttachment(tableName, sys_id, fileName, fileType, ateUsrAcct, true);
+ 
+            var ateIntHelper = new ATEIntegrationHelper(record);
+            ateIntHelper.insertSQLAttachmentBinary(attachmentRtn);
+         }
+		}	
+},
+	
+	
     type: 'ATE_Helper_Functions'
 };]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
@@ -70,7 +158,7 @@ ATE_Helper_Functions.prototype = {
         <sys_created_on>2018-03-14 23:34:28</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>9efe77de4f3c5300aab4a3b11310c742</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>ATE_Helper_Functions</sys_name>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
         <sys_policy>read</sys_policy>
@@ -78,6 +166,6 @@ ATE_Helper_Functions.prototype = {
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_include_9efe77de4f3c5300aab4a3b11310c742</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-15 03:16:05</sys_updated_on>
+        <sys_updated_on>2018-03-19 06:20:32</sys_updated_on>
     </sys_script_include>
 </record_update>
