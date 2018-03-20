@@ -63,7 +63,7 @@ try{
 	//inc_in.=current.lastname;
 	//inc_in.location=current.location;
 	//inc_in.company=current.messagecompany;
-		inc_in.company='Optus';
+	inc_in.company='Optus';
 	inc_in.u_third_party='37ffa4964f3e0300fe56ccce0310c763';
 	//inc_in.=current.messagedate;
 	inc_in.state=current.messagestatus;//mapping
@@ -80,12 +80,16 @@ try{
 	inc_in.category=current.subcategory;
 	inc_in.u_third_party_reference=current.csnsticketid;
 	//inc_in.=current.uniqueid;
-	inc_in.comments=current.updatedescrption.toString();
+	//inc_in.comments=current.updatedescrption;
 	inc_in.urgency=current.urgency;
-	inc_in.work_notes=current.worklog.toString();
+	//inc_in.work_notes=current.worklog;
 	//inc_in.=current.workstationport;
 	
-	
+var gr = new GlideRecord('sc_req_item');
+gr.get(current.request_item);
+gr.comments = current.comments;
+gr.work_notes = current.work_notes;
+gr.update();
 	//inc_in.due_date=current.due_date;
 	
 	if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
@@ -138,8 +142,10 @@ instance=gs.getProperty('instance_name');
 	var response = s.execute();
 	var responseBody = response.getBody();
 	var status = response.getStatusCode();
+		var header=s.getRequestHeaders();
 		if (gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
 		gs.info('OPTUS ATE BR-22 RESPONSE: ' +responseBody+', '+response+', '+status);
+			gs.info('OPTUS ATE BR-22 Headers: ' +header);
 	}
 		if(status!='200'){
 		//Send email notification "OPTUS ATE Heartbeat response not recieved"
@@ -171,7 +177,7 @@ gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_opt
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>84ffbae84f684f005596c61f0310c755</sys_id>
-        <sys_mod_count>25</sys_mod_count>
+        <sys_mod_count>28</sys_mod_count>
         <sys_name>ATE_OPT_OpenReq_25</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -180,7 +186,7 @@ gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_opt
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_84ffbae84f684f005596c61f0310c755</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-19 04:43:39</sys_updated_on>
+        <sys_updated_on>2018-03-20 00:48:19</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

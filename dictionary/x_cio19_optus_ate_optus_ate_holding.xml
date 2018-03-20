@@ -4,7 +4,7 @@
         <element label="AssignmentGroup" max_length="40" name="assignmentgroup" type="string"/>
         <element display="true" label="Assignment Group" max_length="80" name="assignment_group" type="string"/>
         <element label="Attachment1" max_length="32" name="attachment1" reference="sys_attachment" type="reference"/>
-        <element label="Attachments" max_length="400000000" name="attachments" type="string"/>
+        <element label="Attachments" max_length="400000000" name="attachments" type="data_structure"/>
         <element label="AttachmentBinary" max_length="40" name="attachment_binary_information" type="string"/>
         <element label="AttachmentFileName" max_length="40" name="attachment_file_name" type="string"/>
         <element label="AttachName" max_length="300" name="attachname" type="string"/>
@@ -47,9 +47,9 @@
         <element label="SubCategory" max_length="40" name="subcategory" type="string"/>
         <element label="Third Party Ticket ID" max_length="40" name="third_party_ticket_id" type="string"/>
         <element label="UniqueID" max_length="255" name="uniqueid" type="string"/>
-        <element label="UpdateDescrption" max_length="8000" name="updatedescrption" type="data_structure"/>
+        <element label="UpdateDescrption" max_length="8000" name="updatedescrption" type="journal"/>
         <element label="Urgency" max_length="40" name="urgency" type="integer"/>
-        <element label="WorkLog" max_length="8000" name="worklog" type="data_structure"/>
+        <element label="WorkLog" max_length="8000" name="worklog" type="journal"/>
         <element label="WorkStationPort" max_length="40" name="workstationport" type="string"/>
         <index name="index">
             <element name="attachment1"/>

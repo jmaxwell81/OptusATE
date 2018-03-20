@@ -104,6 +104,29 @@ try {
 	if(inc_att.next()){
 	inc21.attachname = inc_att.file_name;
 	
+		
+		
+/*	var table_sys_id = inc21.table_sys_id;   
+   // read the attachment...   
+   var stringUtil = new GlideStringUtil();   
+   var att = new GlideSysAttachment();   
+   var binData = att.getBytes(inc21);   
+   // convert it to Encoded Data..   
+   var encData = stringUtil.base64Encode(binData);   
+   // decode the encoded data into string..   
+   var csv_string = stringUtil.base64Decode(encData) + ''; 
+		inc21.attachments=encData;
+   var csv_array = csv_string.split("\r\n");
+   csv_array.shift(); //removes the first row, edit file   
+   // convert this back into a CSV string...   
+   csv_string = csv_array.join("\r\n");
+   // attach it back...   
+   var base64EncodeString = stringUtil.base64Encode(csv_string);   
+   var data = stringUtil.base64DecodeAsBytes(this.base64EncodeString);   
+   //attach the attachment. 
+   var attachment = new Attachment();   
+   var attachment_sys_id = attachment.write("ecc_agent_attachment", table_sys_id, "1111.csv", "test/csv", data);   
+	*/	
 	//combine base64 encoded file and insert into holding table	
 	// see https://www.servicenowguru.com/integration/sending-attachments-3rdparty-service-desk/
 	var inc_docs = inc_att_doc.addJoinQuery('sys_attachment','sys_attachment');
@@ -112,9 +135,9 @@ try {
 	inc_att_doc.orderBy('position');
 	inc_att_doc.query();
 		while(inc_att_doc.next()){
-			inc21.attachments += inc_att_doc.toString();
-			inc21.attachment_binary_information +=inc_att_doc.data;
-			
+			//inc21.attachments += inc_att_doc.toString();
+			//inc21.attachment_binary_information +=inc_att_doc.data;
+			inc21.attachments +=inc_att_doc.data;
 			//var new_att= new ATE_Helper_Functions();
 		//inc21.attachments=new_att.addAttachment(inc_att.sys_id);
 // var sa = new  GlideSysAttachment();
@@ -124,7 +147,7 @@ try {
 			
 		
 			
-			
+		
 		}
 	}
 	else{
@@ -158,7 +181,6 @@ try {
 		
 		
 		var cap=new ATE_Helper_Functions();
-		//inc21.category=titlecase(current.sys_class_name.toString());
 		inc21.category=cap.titlecase(current.sys_class_name.toString());
 		inc21.subcategory=current.category;
 		inc21.producttype=current.subcategory;
@@ -203,7 +225,7 @@ try {
 	inc21.costcentre = '';
 		
 		
-	inc21.customer_status = current.incident_state;
+	inc21.csnsticketstatus = current.state;
 		
 		
 	inc21.customerticketid = current.number;
@@ -230,7 +252,7 @@ try {
 	inc_status.addQuery('name', 'incident');
 	inc_status.addQuery('element', 'state');
 	inc_status.addQuery('inactive',false);
-	inc_status.addQuery('value', current.incident_state);
+	inc_status.addQuery('value', current.state);
 	inc_status.query();
 	
 	if (inc_status.next()){
@@ -260,11 +282,20 @@ try {
 	inc21.problemtype =inc_prob.sys_class_name;
 		
 		
-	inc21.updatedescrption = current.comments.toString();
+	//inc21.updatedescrption = current.comments;
 	
-	var notes = current.comments_and_work_notes.getJournalEntry(-1); //gets all journal entries as a string where each entry is delimited by '\n\n'
-	var na = notes.split("\n\n");                       //stores each entry into an array of strings
-	inc21.worklog = current.work_notes.toString();
+	//var notes = current.comments_and_work_notes.getJournalEntry(-1); //gets all journal entries as a string where each entry is delimited by '\n\n'
+	//var na = notes.split("\n\n");                       //stores each entry into an array of strings
+	//inc21.worklog = current.work_notes;
+		
+var gr = new GlideRecord('sc_req_item');
+gr.get(current.sys_id);
+gr.comments = current.comments;
+gr.work_notes = current.work_notes;
+gr.update();
+		
+		
+		
 	//inc21.worklog = na;
 	inc21.uniqueid = current.sys_id;
 	//Get data from Change request table
@@ -316,7 +347,7 @@ try {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>a916dff54fe443405596c61f0310c7e1</sys_id>
-        <sys_mod_count>308</sys_mod_count>
+        <sys_mod_count>313</sys_mod_count>
         <sys_name>INC_Holding_21</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -325,7 +356,7 @@ try {
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_a916dff54fe443405596c61f0310c7e1</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-19 03:34:39</sys_updated_on>
+        <sys_updated_on>2018-03-20 00:52:35</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

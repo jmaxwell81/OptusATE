@@ -45,7 +45,7 @@ var inc=new GlideRecord('x_cio19_optus_ate_optus_ate_holding');
 		}
 	
 	while(inc.next()){
-		var jnlwl=new GlideRecord('sys_journal_field');
+		/*var jnlwl=new GlideRecord('sys_journal_field');
 		jnlwl.addQuery('element_id',current.sys_id);
 		jnlwl.addQuery('element','work_notes');
 		jnlwl.query();
@@ -58,11 +58,22 @@ var inc=new GlideRecord('x_cio19_optus_ate_optus_ate_holding');
 				inc.worklog=journalString;
 			
 			}
-		}
+		}*/
 		
 		//inc.worklog=current.work_notes;
 		//inc.updatedescription=current.comments;
-		var jnlc=new GlideRecord('sys_journal_field');
+		
+	
+var gr = new GlideRecord('sc_req_item');
+gr.get(current.sys_id);
+gr.comments = current.comments;
+gr.work_notes = current.work_notes;
+gr.update();
+		
+		
+		
+		
+		/*var jnlc=new GlideRecord('sys_journal_field');
 		jnlc.addQuery('element_id',current.sys_id);
 		jnlc.addQuery('element','comments');
 		jnlc.query();
@@ -77,7 +88,7 @@ var inc=new GlideRecord('x_cio19_optus_ate_optus_ate_holding');
 			
 			}
 			
-		}
+		}*/
 //String.prototype.toTitleCase = function () {
  //   return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 //};
@@ -92,7 +103,7 @@ var inc=new GlideRecord('x_cio19_optus_ate_optus_ate_holding');
 		
 		//inc.category=current.sys_class_name.toString().toTitleCase;
 		inc.subcategory=current.category;
-		inc.customer_status=current.customer_status;
+		inc.csnsticketstatus=current.state;
 		inc.messagestatus='Pending';
 		inc.attachments=current.attachments;
 		inc.closure_code=current.close_code;
@@ -129,7 +140,7 @@ var inc=new GlideRecord('x_cio19_optus_ate_optus_ate_holding');
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>ea52f1f5dbbc930073ab787dbf961930</sys_id>
-        <sys_mod_count>60</sys_mod_count>
+        <sys_mod_count>63</sys_mod_count>
         <sys_name>INC_Holding_23</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -138,7 +149,7 @@ var inc=new GlideRecord('x_cio19_optus_ate_optus_ate_holding');
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_ea52f1f5dbbc930073ab787dbf961930</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-19 05:10:39</sys_updated_on>
+        <sys_updated_on>2018-03-20 00:52:58</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
