@@ -31,137 +31,145 @@
         <rest_variables/>
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
-
-	try { 
+	
+	try {
+		
+		instance=gs.getProperty('instance_name');
+		if (instance.indexOf('dev')>-1){
+			outgoing_api = gs.getProperty('x_cio19_optus_ate.outgoing_API_DEV');
+		}else{
+			if (instance.indexOf("uat")>-1){
+				outgoing_api=gs.getProperty('x_cio19_optus_ate.outgoing_API_UAT');
+			}else{
+				outgoing_api=gs.getProperty('x_cio19_optus_ate.outgoing_API_PROD');
+			}}
+			if (gs.getProperty('x_cio19_optus_ate.Debug')=='True'){
+				gs.info("OPTUS ATE Environment: " + instance+', '+outgoing_api);
+			}
+			
+			var s = new sn_ws.SOAPMessageV2(outgoing_api, 'sendTicketEvent');
+			
+			//override authentication profile
+			//authentication type ='basic'
+			//r.setAuthentication(authentication type,profile name);
+			
+			msgdate	= GlideDateTime(current.sys_created_on);
+			
+			
+			s.setStringParameterNoEscape('instance.PhoneNumber', current.phonenumber);
+			s.setStringParameterNoEscape('model.instance', '');
+			s.setStringParameterNoEscape('instance.ClosureCode', current.closure_code);
+			s.setStringParameterNoEscape('messages.message', '');
+			s.setStringParameterNoEscape('instance.MessageType', current.messagetype);
+			s.setStringParameterNoEscape('instance.Integrator', '');
+			s.setStringParameterNoEscape('instance.UniqueID', current.sys_id);
+			s.setStringParameterNoEscape('ATERequest', '');
+			s.setStringParameterNoEscape('instance.AttachName', current.attachname);
+			s.setStringParameterNoEscape('WorkLog.WorkLog', current.worklog);//needs reference
+			//s.setStringParameterNoEscape('instance.Priority', current.priority);  //needs to be mapped
+			s.setStringParameterNoEscape('instance.MessageDate', current.sys_created_on);
+			s.setStringParameterNoEscape('BriefDescription.BriefDescription', current.brief_description);
+			s.setStringParameterNoEscape('instance.LastName', current.lastname);
+			s.setStringParameterNoEscape('instance.MessageStatus', current.messagestatus);
+			s.setStringParameterNoEscape('instance.CustomerTicketID', current.number);
+			s.setStringParameterNoEscape('UpdateDescription.UpdateDescription', current.updatedescrption);//needs reference?
+			s.setStringParameterNoEscape('instance.ErrorMessage', current.errormessagedescription);
+			s.setStringParameterNoEscape('instance.OpenTime', current.sys_created_on);//needs formating to AEST
+			s.setStringParameterNoEscape('instance.CustomerParentID', '');
+			s.setStringParameterNoEscape('instance.CSNSParentID', '');
+			s.setStringParameterNoEscape('instance.DowntimeEnd', '');
+			
+			
+			s.setStringParameterNoEscape('instance.Category', current.category);
+			
+			
+			s.setStringParameterNoEscape('extensions.ExtensionsFieldValue', '');
+			s.setStringParameterNoEscape('instance.Impact', current.impact);//needs mapping
+			s.setStringParameterNoEscape('attachments.attachment', current.attachment_binary_information);
+		s.setStringParameterNoEscape('attachments.attachment', current.attachments);
+			s.setStringParameterNoEscape('instance.SubCategory', current.subcategory);
+			s.setStringParameterNoEscape('instance.CostCentre', '');
+			s.setStringParameterNoEscape('instance.AssignmentGroup', current.assignmentgroup);
+			s.setStringParameterNoEscape('extensions.ExtensionsFieldName', '');
+			s.setStringParameterNoEscape('ATERequest.model', '');
+			s.setStringParameterNoEscape('instance.DowntimeStart', '');
+			s.setStringParameterNoEscape('instance.FirstName', current.firstname);
+			s.setStringParameterNoEscape('instance.Urgency', current.urgency);//needs mapping
+			s.setStringParameterNoEscape('instance.ProblemType', current.problemtype);////needs mapping
+			s.setStringParameterNoEscape('instance.MessageAction', '');
+			s.setStringParameterNoEscape('instance.CustomerTicketStatus', current.messagestatus);
+			s.setStringParameterNoEscape('instance.ProductType', current.producttype);
+			s.setStringParameterNoEscape('instance.ManagedTicketID', '');
+			s.setStringParameterNoEscape('instance.PlannedEnd', '');
+			s.setStringParameterNoEscape('instance.ConfigItemID', '');//needs reference to CMDB
+			s.setStringParameterNoEscape('instance.MessageCompany', 'TCC');
+			s.setStringParameterNoEscape('SoapHeaderMsg.ContextId', '');
+			s.setStringParameterNoEscape('instance.Location', current.location);
+			s.setStringParameterNoEscape('instance.EmailAddress', current.emailaddress);
+			s.setStringParameterNoEscape('instance.WorkStationPort', '');
+			s.setStringParameterNoEscape('instance.CloseTime', current.closetime);
+			s.setStringParameterNoEscape('instance.PlannedStart', current.plannedstart);
+			s.setStringParameterNoEscape('instance.MobileNumber', current.mobilenumber);
+			s.setStringParameterNoEscape('instance.CSNSTicketID', current.number);
+			s.setStringParameterNoEscape('instance.ContactKey', '');
+			
+			
+			//var gsa = new GlideSysAttachment();
+		//var bindata=gsa.getContentBase64(current.sys_id);
+			
+		
+		//var attach=gsa.getContentBase64(current.uniqueid);
+		
+		
+			
+			//var addatt=new ATE_Helper_Functions();
+			//addatt.addAttachment(current.uniqueid);
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			var request = s.getRequestBody();
+			var response = s.execute();
+			var responseBody = response.getBody();
+			var status = response.getStatusCode();
+			var header=s.getRequestHeaders();
+		var headers=s.getRequestHeader('attachments.attachment');
+			if (gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+				gs.info('OPTUS ATE BR-21 RESPONSE: ' +responseBody+', '+response+', '+status);
+				gs.info('OPTUS ATE BR-21 Request Headers: '+header);
+				gs.info('OPTUS ATE BR-21 Header Attachment: '+headers);
+			}
+			
+			if(status!='200'){
+				//Send email notification "OPTUS ATE Heartbeat not recieved"
+				gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_optus_ate.Alert_Notifications'),responseBody+', '+response+', '+status+', '+header);
 				
-	instance=gs.getProperty('instance_name');
-	if (instance.indexOf('dev')>-1){
-		outgoing_api = gs.getProperty('x_cio19_optus_ate.outgoing_API_DEV');
-	}else{
-	if (instance.indexOf("uat")>-1){
-		outgoing_api=gs.getProperty('x_cio19_optus_ate.outgoing_API_UAT');
-	}else{
-	outgoing_api=gs.getProperty('x_cio19_optus_ate.outgoing_API_PROD');
-	}}
-	if (gs.getProperty('x_cio19_optus_ate.Debug')=='True'){
-		gs.info("OPTUS ATE Environment: " + instance+', '+outgoing_api);
-		}	
+				
+			}
+			
+			
+			
+			
+			
+		}
+		catch(ex) {
+			// var message = ex.getMessage();
+			gs.error('OPTUS_ATE BR-21: '+ex);
+			
+			gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_optus_ate.Alert_Notifications'),'OPTUS_ATE BR-21' +ex);
+			
+			
+			
+		}
 		
- var s = new sn_ws.SOAPMessageV2(outgoing_api, 'sendTicketEvent');
-
-//override authentication profile 
-//authentication type ='basic'
-//r.setAuthentication(authentication type,profile name);
-		
-msgdate	= GlideDateTime(current.sys_created_on);
-		
-
- s.setStringParameterNoEscape('instance.PhoneNumber', current.phonenumber);
- s.setStringParameterNoEscape('model.instance', '');
- s.setStringParameterNoEscape('instance.ClosureCode', current.closure_code);
- s.setStringParameterNoEscape('messages.message', '');
- s.setStringParameterNoEscape('instance.MessageType', current.messagetype);
- s.setStringParameterNoEscape('instance.Integrator', '');
- s.setStringParameterNoEscape('instance.UniqueID', current.sys_id);
- s.setStringParameterNoEscape('ATERequest', '');
- s.setStringParameterNoEscape('instance.AttachName', current.attachname);
- s.setStringParameterNoEscape('WorkLog.WorkLog', current.worklog);//needs reference
- //s.setStringParameterNoEscape('instance.Priority', current.priority);  //needs to be mapped
- s.setStringParameterNoEscape('instance.MessageDate', current.sys_created_on);
- s.setStringParameterNoEscape('BriefDescription.BriefDescription', current.brief_description);
- s.setStringParameterNoEscape('instance.LastName', current.lastname);
- s.setStringParameterNoEscape('instance.MessageStatus', current.messagestatus);
- s.setStringParameterNoEscape('instance.CustomerTicketID', current.number);
- s.setStringParameterNoEscape('UpdateDescription.UpdateDescription', current.updatedescrption);//needs reference?
- s.setStringParameterNoEscape('instance.ErrorMessage', current.errormessagedescription);
- s.setStringParameterNoEscape('instance.OpenTime', current.sys_created_on);//needs formating to AEST
- s.setStringParameterNoEscape('instance.CustomerParentID', '');
- s.setStringParameterNoEscape('instance.CSNSParentID', '');
- s.setStringParameterNoEscape('instance.DowntimeEnd', '');
-		
-		
- s.setStringParameterNoEscape('instance.Category', current.category);
-		
-		
- s.setStringParameterNoEscape('extensions.ExtensionsFieldValue', '');
- s.setStringParameterNoEscape('instance.Impact', current.impact);//needs mapping
- s.setStringParameterNoEscape('attachments.attachment', current.attachments);
- s.setStringParameterNoEscape('instance.SubCategory', current.subcategory);
- s.setStringParameterNoEscape('instance.CostCentre', '');
- s.setStringParameterNoEscape('instance.AssignmentGroup', current.assignment_group);//check field
- s.setStringParameterNoEscape('extensions.ExtensionsFieldName', '');
- s.setStringParameterNoEscape('ATERequest.model', '');
- s.setStringParameterNoEscape('instance.DowntimeStart', '');
- s.setStringParameterNoEscape('instance.FirstName', current.firstname);
- s.setStringParameterNoEscape('instance.Urgency', current.urgency);//needs mapping
- s.setStringParameterNoEscape('instance.ProblemType', current.problemtype);////needs mapping
- s.setStringParameterNoEscape('instance.MessageAction', '');
- s.setStringParameterNoEscape('instance.CustomerTicketStatus', current.messagestatus);
- s.setStringParameterNoEscape('instance.ProductType', current.producttype);
- s.setStringParameterNoEscape('instance.ManagedTicketID', '');
- s.setStringParameterNoEscape('instance.PlannedEnd', '');
- s.setStringParameterNoEscape('instance.ConfigItemID', '');//needs reference to CMDB
- s.setStringParameterNoEscape('instance.MessageCompany', 'TCC');
- s.setStringParameterNoEscape('SoapHeaderMsg.ContextId', '');
- s.setStringParameterNoEscape('instance.Location', current.location);
- s.setStringParameterNoEscape('instance.EmailAddress', current.emailaddress);
- s.setStringParameterNoEscape('instance.WorkStationPort', '');
- s.setStringParameterNoEscape('instance.CloseTime', current.closetime);
- s.setStringParameterNoEscape('instance.PlannedStart', current.plannedstart);
- s.setStringParameterNoEscape('instance.MobileNumber', current.mobilenumber);
- s.setStringParameterNoEscape('instance.CSNSTicketID', current.number);
- s.setStringParameterNoEscape('instance.ContactKey', '');
-		
-		
-//var gsa = new GlideSlopeAttachment();
-//var attach=gsa.getContentBase64(current.uniqueid);
-		
-//var addatt=new ATE_Helper_Functions();
-//addatt.addAttachment(current.uniqueid);
-		
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	var request = s.getRequestBody();	
- var response = s.execute();
- var responseBody = response.getBody(); 
- var status = response.getStatusCode();
-var header=s.getRequestHeaders();	
-		if (gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
-		gs.info('OPTUS ATE BR-21 RESPONSE: ' +responseBody+', '+response+', '+status);
-		 gs.info('OPTUS ATE BR-21 Request: '+header);	
-	}
-	
-	if(status!='200'){
-		//Send email notification "OPTUS ATE Heartbeat not recieved"
-	gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_optus_ate.Alert_Notifications'),responseBody+', '+response+', '+status+', '+header);
-		
-				  
-	}
-	
-	
-	
-	
-	
-}
-catch(ex) { 
-// var message = ex.getMessage();
-		gs.error('OPTUS_ATE BR-21: '+ex);
-	
-	gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_optus_ate.Alert_Notifications'),'OPTUS_ATE BR-21' +ex);
-	
-	
-	
-}
-
-})(current, previous);]]></script>
+	})(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
         <sys_created_on>2018-03-06 01:29:49</sys_created_on>
@@ -169,7 +177,7 @@ catch(ex) {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>dcb20aefdb28974073ab787dbf9619cc</sys_id>
-        <sys_mod_count>36</sys_mod_count>
+        <sys_mod_count>41</sys_mod_count>
         <sys_name>ATE_TCC_Open_21</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -178,7 +186,7 @@ catch(ex) {
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_dcb20aefdb28974073ab787dbf9619cc</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-20 01:23:24</sys_updated_on>
+        <sys_updated_on>2018-03-20 05:25:54</sys_updated_on>
         <template/>
         <when>async</when>
     </sys_script>

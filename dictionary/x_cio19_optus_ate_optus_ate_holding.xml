@@ -5,7 +5,7 @@
         <element display="true" label="Assignment Group" max_length="80" name="assignment_group" type="string"/>
         <element label="Attachment1" max_length="32" name="attachment1" reference="sys_attachment" type="reference"/>
         <element label="Attachments" max_length="400000000" name="attachments" type="data_structure"/>
-        <element label="AttachmentBinary" max_length="40" name="attachment_binary_information" type="string"/>
+        <element label="AttachmentBinary" max_length="100000000" name="attachment_binary_information" type="string"/>
         <element label="AttachmentFileName" max_length="40" name="attachment_file_name" type="string"/>
         <element label="AttachName" max_length="300" name="attachname" type="string"/>
         <element label="Brief Description" max_length="8000" name="brief_description" type="data_structure"/>

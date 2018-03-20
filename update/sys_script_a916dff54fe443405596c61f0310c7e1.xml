@@ -94,7 +94,7 @@ try{
 	
 	// gets sys_id for current record and inserts the name of assignment group into the holding table
 	inc_grp.get(current.assignment_group);
-	inc21.assignment_group = inc_grp.name;
+	inc21.assignmentgroup = inc_grp.name;
 try {
 	//Insert attachment name and  
 	inc_att.addQuery('table_sys_id',current.sys_id);
@@ -135,20 +135,21 @@ try {
 	inc_att_doc.orderBy('position');
 	inc_att_doc.query();
 		while(inc_att_doc.next()){
-			//inc21.attachments += inc_att_doc.toString();
-			//inc21.attachment_binary_information +=inc_att_doc.data;
-			inc21.attachments +=inc_att_doc.data;
+			inc21.attachments += inc_att_doc.toString();
+			inc21.attachment_binary_information +=inc_att_doc.data;
+	//inc21.attachments +=inc_att_doc.data;
 			//var new_att= new ATE_Helper_Functions();
-		//inc21.attachments=new_att.addAttachment(inc_att.sys_id);
+		//inc21.attachments=new_att.addAttachment(inc_att.sys_id); 
 // var sa = new  GlideSysAttachment();
-// var binData =  sa.getContent(inc_att_doc);
- //var encData =  sa.getContentBase64(binData);
+//var binData =  inc_att.getContent(current.sys_id);		
+//var binData =  sa.getContent(current.sys_id);
+// var encData =  sa.getContentBase64(binData);
 		//	inc21.attachments=encData;
 			
 		
 			
 		
-		}
+	}
 	}
 	else{
 		gs.info('OPTUS ATE 21: No Attachment');
@@ -347,7 +348,7 @@ gr.update();
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>a916dff54fe443405596c61f0310c7e1</sys_id>
-        <sys_mod_count>314</sys_mod_count>
+        <sys_mod_count>318</sys_mod_count>
         <sys_name>INC_Holding_21</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -356,7 +357,7 @@ gr.update();
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_a916dff54fe443405596c61f0310c7e1</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-20 01:55:44</sys_updated_on>
+        <sys_updated_on>2018-03-20 05:24:32</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
