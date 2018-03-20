@@ -47,9 +47,9 @@
         <element label="SubCategory" max_length="40" name="subcategory" type="string"/>
         <element label="Third Party Ticket ID" max_length="40" name="third_party_ticket_id" type="string"/>
         <element label="UniqueID" max_length="255" name="uniqueid" type="string"/>
-        <element label="UpdateDescrption" max_length="8000" name="updatedescrption" type="journal"/>
+        <element label="UpdateDescrption" max_length="8000" name="updatedescrption" type="data_structure"/>
         <element label="Urgency" max_length="40" name="urgency" type="integer"/>
-        <element label="WorkLog" max_length="8000" name="worklog" type="journal"/>
+        <element label="WorkLog" max_length="8000" name="worklog" type="data_structure"/>
         <element label="WorkStationPort" max_length="40" name="workstationport" type="string"/>
         <index name="index">
             <element name="attachment1"/>
