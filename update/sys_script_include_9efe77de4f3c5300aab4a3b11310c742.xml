@@ -168,6 +168,94 @@ createAttachment : function (fileName, fileType, fileData) {
 		}
 	},
 	
+	
+	tccAttachment : function(sysid){
+	var inc_att = new GlideRecord('sys_attachment');
+	var inc_att_doc = new GlideRecord('sys_attachment_doc');
+	try{
+	inc_att.addQuery('table_sys_id',sysid);
+	inc_att.addQuery('table_name', current.getTableName());
+	inc_att.query();
+	
+	if(inc_att.next()){
+	var attachname = '';
+	attachname = inc_att.file_name;
+	var filetype = '';
+	filetype=inc_att.content_type;
+	var filesize ='';
+	filesize=inc_att.size_bytes;
+	var contentid='';
+		contentid=inc_att.getUniqueValue();
+		
+		
+	
+		
+		
+		
+/*	var table_sys_id = inc21.table_sys_id;   
+   // read the attachment...   
+   var stringUtil = new GlideStringUtil();   
+   var att = new GlideSysAttachment();   
+   var binData = att.getBytes(inc21);   
+   // convert it to Encoded Data..   
+   var encData = stringUtil.base64Encode(binData);   
+   // decode the encoded data into string..   
+   var csv_string = stringUtil.base64Decode(encData) + ''; 
+		inc21.attachments=encData;
+   var csv_array = csv_string.split("\r\n");
+   csv_array.shift(); //removes the first row, edit file   
+   // convert this back into a CSV string...   
+   csv_string = csv_array.join("\r\n");
+   // attach it back...   
+   var base64EncodeString = stringUtil.base64Encode(csv_string);   
+   var data = stringUtil.base64DecodeAsBytes(this.base64EncodeString);   
+   //attach the attachment. 
+   var attachment = new Attachment();   
+   var attachment_sys_id = attachment.write("ecc_agent_attachment", table_sys_id, "1111.csv", "test/csv", data);   
+	*/	
+	//combine base64 encoded file and insert into holding table	
+	// see https://www.servicenowguru.com/integration/sending-attachments-3rdparty-service-desk/
+	var inc_docs = inc_att_doc.addJoinQuery('sys_attachment','sys_attachment');
+	inc_docs.addCondition('sys_attachment', inc_att.sysid);
+	inc_att_doc.addQuery('sys_attachment', inc_att.sysid);
+	inc_att_doc.orderBy('position');
+	inc_att_doc.query();
+		while(inc_att_doc.next()){
+			var attachments ='';
+			attachments += inc_att_doc.toString();
+			var attachment_binary_information ='';
+			attachment_binary_information+=inc_att_doc.data;
+			
+		 var xml = "<ate:attachment action=\"add\" charset=\"UTF-8\" ";
+                xml += "len=\"" + filesize + "\" name=\"" + attachname + "\" ";
+                xml += "type=\"" + filetype + "\" contentId=\"" + contentid + "\">";
+                xml += attachment_binary_information;
+                xml += "</ate:attachment>";
+			return xml;
+	//inc21.attachments +=inc_att_doc.data;
+			//var new_att= new ATE_Helper_Functions();
+		//inc21.attachments=new_att.addAttachment(inc_att.sys_id); 
+// var sa = new  GlideSysAttachment();
+//var binData =  inc_att.getContent(current.sys_id);		
+//var binData =  sa.getContent(current.sys_id);
+// var encData =  sa.getContentBase64(binData);
+		//	inc21.attachments=encData;
+			
+		
+			
+		
+	}
+	}
+	else{
+		gs.info('OPTUS ATE 21: No Attachment');
+	}
+}
+	catch(att_err){
+		gs.error("OPTUS ATE 21: insert attachment failed ",att_err);
+		
+}
+	},
+	
     type: 'ATE_Helper_Functions'
 };]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
@@ -175,7 +263,7 @@ createAttachment : function (fileName, fileType, fileData) {
         <sys_created_on>2018-03-14 23:34:28</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>9efe77de4f3c5300aab4a3b11310c742</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_name>ATE_Helper_Functions</sys_name>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
         <sys_policy>read</sys_policy>
@@ -183,6 +271,6 @@ createAttachment : function (fileName, fileType, fileData) {
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_include_9efe77de4f3c5300aab4a3b11310c742</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-21 00:28:32</sys_updated_on>
+        <sys_updated_on>2018-03-21 06:26:44</sys_updated_on>
     </sys_script_include>
 </record_update>
