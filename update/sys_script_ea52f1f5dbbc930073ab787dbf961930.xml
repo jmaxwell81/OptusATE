@@ -45,9 +45,13 @@ var inc=new GlideRecord('x_cio19_optus_ate_optus_ate_holding');
 		}
 	
 	while(inc.next()){
+	//	var jnl=new ATE_Helper_Functions();
+	//	inc.worklog=jnl.addJournal(current.sys_id,'work_notes');
 var jnlwl=new GlideRecord('sys_journal_field');
 		jnlwl.addQuery('element_id',current.sys_id);
 		jnlwl.addQuery('element','work_notes');
+		jnlwl.orderByDesc('sys_created_on');
+		jnlwl.setLimit(1);
 		jnlwl.query();
 		if(jnlwl.next()){
 			gs.info('OPTUS ATE Journal Entry Work log: '+jnlwl.value);
@@ -62,7 +66,14 @@ var jnlwl=new GlideRecord('sys_journal_field');
 		
 	//	inc.worklog=current.work_notes;
 	//	inc.updatedescription=current.comments;
-		
+
+//var wl=current.work_notes.getJournalEntry(-1);
+//var na = wl.split("\n\n");
+//	inc.worklog=na;
+	
+	
+//gets all journal entries as a string where each entry is delimited by '\n\n'
+	//var na = notes.split("\n\n");    
 	
 /*var gr = new GlideRecord('sc_req_item');
 gr.get(current.sys_id);
@@ -76,6 +87,8 @@ gr.update();
 		var jnlc=new GlideRecord('sys_journal_field');
 		jnlc.addQuery('element_id',current.sys_id);
 		jnlc.addQuery('element','comments');
+		jnlc.orderByDesc('sys_created_on');
+		jnlc.setLimit(1);
 		jnlc.query();
 		if(jnlc.next()){
 			
@@ -140,7 +153,7 @@ gr.update();
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>ea52f1f5dbbc930073ab787dbf961930</sys_id>
-        <sys_mod_count>65</sys_mod_count>
+        <sys_mod_count>73</sys_mod_count>
         <sys_name>INC_Holding_23</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -149,7 +162,7 @@ gr.update();
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_ea52f1f5dbbc930073ab787dbf961930</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-20 23:51:42</sys_updated_on>
+        <sys_updated_on>2018-03-21 03:54:45</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
