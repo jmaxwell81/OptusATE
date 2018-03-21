@@ -86,7 +86,7 @@
 			s.setStringParameterNoEscape('extensions.ExtensionsFieldValue', '');
 			s.setStringParameterNoEscape('instance.Impact', current.impact);//needs mapping
 			s.setStringParameterNoEscape('attachments.attachment', current.attachment_binary_information);
-		s.setStringParameterNoEscape('attachments.attachment', current.attachments);
+		//s.setStringParameterNoEscape('attachment', current.attachments);
 			s.setStringParameterNoEscape('instance.SubCategory', current.subcategory);
 			s.setStringParameterNoEscape('instance.CostCentre', '');
 			s.setStringParameterNoEscape('instance.AssignmentGroup', current.assignmentgroup);
@@ -110,7 +110,7 @@
 			s.setStringParameterNoEscape('instance.CloseTime', current.closetime);
 			s.setStringParameterNoEscape('instance.PlannedStart', current.plannedstart);
 			s.setStringParameterNoEscape('instance.MobileNumber', current.mobilenumber);
-			s.setStringParameterNoEscape('instance.CSNSTicketID', current.number);
+			//s.setStringParameterNoEscape('instance.CSNSTicketID', current.number);
 			s.setStringParameterNoEscape('instance.ContactKey', '');
 			
 			
@@ -153,11 +153,6 @@
 				
 				
 			}
-			
-			
-			
-			
-			
 		}
 		catch(ex) {
 			// var message = ex.getMessage();
@@ -177,7 +172,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>dcb20aefdb28974073ab787dbf9619cc</sys_id>
-        <sys_mod_count>41</sys_mod_count>
+        <sys_mod_count>46</sys_mod_count>
         <sys_name>ATE_TCC_Open_21</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -186,7 +181,7 @@
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_dcb20aefdb28974073ab787dbf9619cc</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-20 05:25:54</sys_updated_on>
+        <sys_updated_on>2018-03-20 23:31:37</sys_updated_on>
         <template/>
         <when>async</when>
     </sys_script>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element attributes="text_index_translations=true,all_tables.detail_row=short_description,hasListeners=true,largeTable=true,hasLabels=true,extension_model=hierarchy,reference_index_include=active,all_tables.live_feed=true,all_tables.display_color=priority" label="Task" max_length="40" name="task" sizeclass="68223" text_index="true" type="collection">
+    <element attributes="text_index_translations=true,all_tables.detail_row=short_description,hasListeners=true,largeTable=true,hasLabels=true,extension_model=hierarchy,reference_index_include=active,all_tables.live_feed=true,all_tables.display_color=priority" label="Task" max_length="40" name="task" sizeclass="68233" text_index="true" type="collection">
         <element label="ate_reference" max_length="40" name="x_cio19_optus_ate_reference" type="string"/>
     </element>
 </database>

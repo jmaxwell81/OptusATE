@@ -229,7 +229,7 @@ try {
 	inc21.csnsticketstatus = current.state;
 		
 		
-	inc21.customerticketid = current.number;
+	//inc21.customerticketid = current.number;
 	
 	//Get reference table for user detail
 	inc_requestor.get(current.caller_id);
@@ -297,7 +297,7 @@ gr.update();
 		*/
 		
 		
-	//inc21.worklog = na;
+	inc21.worklog = current.description;
 	inc21.uniqueid = current.sys_id;
 	//Get data from Change request table
 	inc_chg.get(current.caused_by);
@@ -348,7 +348,7 @@ gr.update();
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>a916dff54fe443405596c61f0310c7e1</sys_id>
-        <sys_mod_count>318</sys_mod_count>
+        <sys_mod_count>321</sys_mod_count>
         <sys_name>INC_Holding_21</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -357,7 +357,7 @@ gr.update();
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_a916dff54fe443405596c61f0310c7e1</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-20 05:24:32</sys_updated_on>
+        <sys_updated_on>2018-03-20 23:48:49</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

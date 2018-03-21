@@ -121,7 +121,8 @@
                <!--Optional:-->
                <ate:attachments>
                   <!--Zero or more repetitions:-->
-                  <ate:attachment href="${attachments.attachment}" contentId="${attachments.attachment}" action="${attachments.attachment}" name="${attachments.attachment}" type="${attachments.attachment}" len="${attachments.attachment}" charset="${attachments.attachment}" attachmentType="${attachments.attachment}">cid:185720196920</ate:attachment>
+                                    <!--<ate:attachment href="${href}" contentId="${contentId}" action="${action}" name="${name}" type="${type}" len="${len}" charset="${charset}" attachmentType="${attachmentType}"></ate:attachment>-->
+				   ${attachment}
                </ate:attachments>
             </ate:instance>
             <!--Optional:-->
@@ -149,7 +150,7 @@
         <sys_created_on>2017-09-04 03:54:28</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>0db908784f058f005596c61f0310c75e</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>sendTicketEvent</sys_name>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
         <sys_policy/>
@@ -157,7 +158,7 @@
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_soap_message_function_0db908784f058f005596c61f0310c75e</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-02-28 01:32:15</sys_updated_on>
+        <sys_updated_on>2018-03-20 05:57:23</sys_updated_on>
         <use_basic_auth>false</use_basic_auth>
         <use_mid_server/>
         <use_ws_security>false</use_ws_security>
