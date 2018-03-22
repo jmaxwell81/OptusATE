@@ -33,7 +33,7 @@
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 	
 	try {
-		
+	var help=new ATE_Helper_Functions();	
 		instance=gs.getProperty('instance_name');
 		if (instance.indexOf('dev')>-1){
 			outgoing_api = gs.getProperty('x_cio19_optus_ate.outgoing_API_DEV');
@@ -47,8 +47,8 @@
 				gs.info("OPTUS ATE Environment: " + instance+', '+outgoing_api);
 			}
 			
-			var s = new sn_ws.SOAPMessageV2(outgoing_api, 'sendTicketEvent');
-			
+			//var s = new sn_ws.SOAPMessageV2(outgoing_api, 'sendTicketEvent');
+			var s = new sn_ws.SOAPMessageV2(help.instanceEndpoint(), 'sendTicketEvent');
 			//override authentication profile
 			//authentication type ='basic'
 			//r.setAuthentication(authentication type,profile name);
@@ -85,7 +85,7 @@
 			
 			s.setStringParameterNoEscape('extensions.ExtensionsFieldValue', '');
 			s.setStringParameterNoEscape('instance.Impact', current.impact);//needs mapping
-			s.setStringParameterNoEscape('attachments.attachment', current.attachment_binary_information);
+			//s.setStringParameterNoEscape('attachments.attachment', current.attachment_binary_information);
 		//s.setStringParameterNoEscape('attachment', current.attachments);
 			s.setStringParameterNoEscape('instance.SubCategory', current.subcategory);
 			s.setStringParameterNoEscape('instance.CostCentre', '');
@@ -122,10 +122,10 @@
 		
 		
 			
-			//var addatt=new ATE_Helper_Functions();
-			//addatt.addAttachment(current.uniqueid);
 			
+			var attch= help.tccAttachment(current.uniqueid);
 			
+			s.setStringParameterNoEscape('attachment', attch);
 			
 			
 			
@@ -172,7 +172,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>dcb20aefdb28974073ab787dbf9619cc</sys_id>
-        <sys_mod_count>46</sys_mod_count>
+        <sys_mod_count>48</sys_mod_count>
         <sys_name>ATE_TCC_Open_21</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -181,7 +181,7 @@
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_dcb20aefdb28974073ab787dbf9619cc</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-20 23:31:37</sys_updated_on>
+        <sys_updated_on>2018-03-22 01:11:48</sys_updated_on>
         <template/>
         <when>async</when>
     </sys_script>

@@ -11,7 +11,22 @@
 ATE_Helper_Functions.prototype = {
     initialize: function() {
     },
-		     
+		 //Changes the outgoing SOAP endpoint depending on the SN instance, defined in ATE Properties    
+	instanceEndpoint : function(){
+	var instance=gs.getProperty('instance_name');
+	if (instance.indexOf('dev')>-1){
+		outgoing_api = gs.getProperty('x_cio19_optus_ate.outgoing_API_DEV');
+	}else{
+	if (instance.indexOf("uat")>-1){
+		outgoing_api=gs.getProperty('x_cio19_optus_ate.outgoing_API_UAT');
+	}else{
+	outgoing_api=gs.getProperty('x_cio19_optus_ate.outgoing_API_PROD');
+	}}
+	if (gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+		gs.info("OPTUS ATE Environment: " + instance+', '+outgoing_api);
+		}
+},
+	
 	
 	addAttachmentMuleSoft : function (rec) {
                 var gsu = (typeof GlideStringUtil != 'undefined') ? (GlideStringUtil) : (Packages.com.glide.util.StringUtil);
@@ -174,7 +189,7 @@ createAttachment : function (fileName, fileType, fileData) {
 	var inc_att_doc = new GlideRecord('sys_attachment_doc');
 	try{
 	inc_att.addQuery('table_sys_id',sysid);
-	inc_att.addQuery('table_name', current.getTableName());
+	inc_att.addQuery('table_name', source.getTableName());
 	inc_att.query();
 	
 	if(inc_att.next()){
@@ -185,7 +200,7 @@ createAttachment : function (fileName, fileType, fileData) {
 	var filesize ='';
 	filesize=inc_att.size_bytes;
 	var contentid='';
-		contentid=inc_att.getUniqueValue();
+	contentid=inc_att.getUniqueValue();
 		
 		
 	
@@ -263,7 +278,7 @@ createAttachment : function (fileName, fileType, fileData) {
         <sys_created_on>2018-03-14 23:34:28</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>9efe77de4f3c5300aab4a3b11310c742</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>15</sys_mod_count>
         <sys_name>ATE_Helper_Functions</sys_name>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
         <sys_policy>read</sys_policy>
@@ -271,6 +286,6 @@ createAttachment : function (fileName, fileType, fileData) {
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_include_9efe77de4f3c5300aab4a3b11310c742</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-21 06:26:44</sys_updated_on>
+        <sys_updated_on>2018-03-22 00:20:01</sys_updated_on>
     </sys_script_include>
 </record_update>
