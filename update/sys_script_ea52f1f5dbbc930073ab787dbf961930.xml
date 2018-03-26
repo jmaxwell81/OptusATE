@@ -4,10 +4,10 @@
         <abort_action>false</abort_action>
         <access>package_private</access>
         <action_delete>false</action_delete>
-        <action_insert>false</action_insert>
+        <action_insert>true</action_insert>
         <action_query>false</action_query>
-        <action_update>true</action_update>
-        <active>true</active>
+        <action_update>false</action_update>
+        <active>false</active>
         <add_message>false</add_message>
         <advanced>true</advanced>
         <change_fields>false</change_fields>
@@ -33,8 +33,10 @@
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 try{
 var inc=new GlideRecord('x_cio19_optus_ate_optus_ate_holding');
-	inc.addQuery('uniqueid',current.sys_id);
-	inc.addQuery('messagetype','21').addOrCondition('messagetype','23');
+	inc.initialize();
+	//inc.addQuery('uniqueid',current.sys_id);
+//inc.addQuery('messagetype','21').addOrCondition('messagetype','23');
+	//incOR.addOrCondition('x_cio19_optus_ate_reference',current.csnsticketid);
 	//inc.addAggregate('COUNT');
 	inc.query();
 			if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
@@ -42,10 +44,13 @@ var inc=new GlideRecord('x_cio19_optus_ate_optus_ate_holding');
 			
 		}
 	
-	while(inc.next()){
+//	while(inc.next()){
 	//	var jnl=new ATE_Helper_Functions();
 	//	inc.worklog=jnl.addJournal(current.sys_id,'work_notes');
-var jnlwl=new GlideRecord('sys_journal_field');
+
+		inc.worklog=current.work_notes.getJournalEntry(1);
+		/*
+		var jnlwl=new GlideRecord('sys_journal_field');
 		jnlwl.addQuery('element_id',current.sys_id);
 		jnlwl.addQuery('element','work_notes');
 		jnlwl.orderByDesc('sys_created_on');
@@ -60,7 +65,7 @@ var jnlwl=new GlideRecord('sys_journal_field');
 				inc.worklog=journalString;
 			
 			}
-		}
+		}*/
 		
 	//	inc.worklog=current.work_notes;
 	//	inc.updatedescription=current.comments;
@@ -81,8 +86,8 @@ gr.update();
 		*/
 		
 		
-		
-		var jnlc=new GlideRecord('sys_journal_field');
+		inc.updatedescrption=current.comments.getJournalEntry(1);
+	/*	var jnlc=new GlideRecord('sys_journal_field');
 		jnlc.addQuery('element_id',current.sys_id);
 		jnlc.addQuery('element','comments');
 		jnlc.orderByDesc('sys_created_on');
@@ -99,7 +104,7 @@ gr.update();
 			
 			}
 			
-		}
+		}*/
 //String.prototype.toTitleCase = function () {
  //   return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 //};
@@ -114,12 +119,14 @@ gr.update();
 		
 		//inc.category=current.sys_class_name.toString().toTitleCase;
 		inc.subcategory=current.category;
-		inc.csnsticketstatus=current.state;
+		inc.customerticketstatus=current.state;
 		inc.messagestatus='Pending';
 		inc.attachments=current.attachments;
 		inc.closure_code=current.close_code;
-		inc.csnsticketid=current.x_cio19_optus_ate_reference;
-		inc.customerticketid=current.sys_id;
+		inc.csnsticketid=current.u_third_party_reference;
+		//inc.customerticketid=current.sys_id;
+		inc.customerticketid=current.number;
+		
 		
 		
 			if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
@@ -133,12 +140,12 @@ gr.update();
 		
 		
 		
-		inc.update();
+		inc.insert();
 		if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
 			gs.info('OPTUS ATE BR-23 After Updated: '+current.number+', '+current.sys_id);
 			
 		}
-	}
+	
 }catch(update_err){
 	gs.error('OPTUS ATE Update BR-23: '+update_err);
 }	
@@ -151,7 +158,7 @@ gr.update();
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>ea52f1f5dbbc930073ab787dbf961930</sys_id>
-        <sys_mod_count>83</sys_mod_count>
+        <sys_mod_count>92</sys_mod_count>
         <sys_name>INC_Holding_23</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -160,7 +167,7 @@ gr.update();
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_ea52f1f5dbbc930073ab787dbf961930</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-23 02:10:23</sys_updated_on>
+        <sys_updated_on>2018-03-26 00:10:53</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

@@ -31,14 +31,13 @@
         <rest_variables/>
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
-
+var inc_in = new GlideRecord('incident');
 try{
 	
-	var inc_in = new GlideRecord('task');
+	
 	inc_in.initialize();
 	//inc_in.sys_class_name='incident';
-	inc_in.assignmentgroup=current.assignmentgroup;
-	//inc_in.assignmentgroup='3ac476c84f2e8b048767a3b11310c72a';
+	inc_in.assignment_group=current.assignmentgroup;
 	inc_in.short_description=current.brief_description;
 	inc_in.category=current.category;
 	inc_in.closed_at=current.closetime;
@@ -49,7 +48,7 @@ try{
 	//inc_in.=current.contact_information;//mapping to reference
 	//inc_in.=current.cost_centre; NA
 	inc_in.parent=current.csnsparentid;
-	inc_in.x_cio19_optus_ate_reference=current.csnsticketid;
+	inc_in.u_third_party_reference=current.csnsticketid;
 	inc_in.state=current.csnsticketstatus;
 	//inc_in.=current.customer_status;
 	//inc_in.=current.customerparentid;
@@ -65,7 +64,7 @@ try{
 	//inc_in.location=current.location;
 	//inc_in.company=current.messagecompany;
 	inc_in.company='Optus';
-	inc_in.u_third_party='37ffa4964f3e0300fe56ccce0310c763'; //Optus Company SYS_ID
+	inc_in.u_third_party='37ffa4964f3e0300fe56ccce0310c763';
 	//inc_in.=current.messagedate;
 	inc_in.state=current.messagestatus;//mapping
 	//inc_in.=current.messagetype;
@@ -100,6 +99,7 @@ gr.update();*/
 	
 	inc_in.insert();
 	
+	//var up_hold = new GlideRecord('x_cio19_optus_ate_optus_ate_holding');
 	
 	//Add Attachment
 	var att=new GlideRecord('sys_attachment');
@@ -137,7 +137,7 @@ instance=gs.getProperty('instance_name');
 	s.setStringParameterNoEscape('instance.MessageStatus','New ACK');
 	s.setStringParameterNoEscape('instance.MessageType','22');
 	s.setStringParameterNoEscape('instance.UniqueID',current.uniqueid);
-	s.setStringParameterNoEscape('instance.CustomerTicketID',current.number);
+	s.setStringParameterNoEscape('instance.CustomerTicketID',inc_in.number);
 	s.setStringParameterNoEscape('instance.CSNSTicketID',current.csnsticketid);	
 	
 	var response = s.execute();
@@ -178,7 +178,7 @@ gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_opt
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>84ffbae84f684f005596c61f0310c755</sys_id>
-        <sys_mod_count>32</sys_mod_count>
+        <sys_mod_count>33</sys_mod_count>
         <sys_name>ATE_OPT_OpenReq_25</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -187,7 +187,7 @@ gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_opt
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_84ffbae84f684f005596c61f0310c755</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-23 01:37:00</sys_updated_on>
+        <sys_updated_on>2018-03-25 23:53:28</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
