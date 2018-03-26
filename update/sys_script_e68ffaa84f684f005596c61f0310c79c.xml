@@ -33,9 +33,11 @@
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 try{
 	// Add your code here
-	var inc_att = new GlideRecord('sys_attachment');
-	var inc_att_doc = new GlideRecord('sys_attachment_doc');
-
+	//var inc_att = new GlideRecord('sys_attachment');
+	//var inc_att_doc = new GlideRecord('sys_attachment_doc');
+	
+	var wri_att=new GlideSysAttachment();
+	wri_att.writeBase64(current.sys_id,current.attachment_file_name,'UTF-8',current.attachment_binary_information);
 	
 var inc = new GlideRecord('x_cio19_optus_ate_optus_ate_holding');
 
@@ -131,7 +133,7 @@ if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>e68ffaa84f684f005596c61f0310c79c</sys_id>
-        <sys_mod_count>56</sys_mod_count>
+        <sys_mod_count>58</sys_mod_count>
         <sys_name>ATE_OPT_Update_24</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -140,7 +142,7 @@ if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_e68ffaa84f684f005596c61f0310c79c</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-23 00:38:17</sys_updated_on>
+        <sys_updated_on>2018-03-26 05:49:30</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

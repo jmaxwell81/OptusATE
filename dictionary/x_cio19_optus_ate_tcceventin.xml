@@ -2,9 +2,9 @@
 <database>
     <element extends="sys_import_set_row" label="TCCEventIn" max_length="40" name="x_cio19_optus_ate_tcceventin" type="collection">
         <element attributes="import_attribute_name=assignmentgroup,edge_encryption_enabled=true" label="Assignmentgroup" max_length="40" name="assignmentgroup" type="string"/>
-        <element attributes="import_attribute_name=attachment_binary_information,edge_encryption_enabled=true" label="Attachment binary information" max_length="40" name="attachment_binary_information" type="string"/>
-        <element attributes="import_attribute_name=attachment_file_name,edge_encryption_enabled=true" label="Attachment file name" max_length="40" name="attachment_file_name" type="string"/>
-        <element attributes="import_attribute_name=brief_description,edge_encryption_enabled=true" label="Brief description" max_length="800" name="brief_description" type="data_structure"/>
+        <element attributes="import_attribute_name=attachment_binary_information,edge_encryption_enabled=true" label="Attachment binary information" max_length="100000000" name="attachment_binary_information" type="string"/>
+        <element attributes="import_attribute_name=attachment_file_name,edge_encryption_enabled=true" label="Attachment file name" max_length="100" name="attachment_file_name" type="string"/>
+        <element attributes="import_attribute_name=brief_description,edge_encryption_enabled=true" label="Brief description" max_length="4000" name="brief_description" type="data_structure"/>
         <element attributes="import_attribute_name=category,edge_encryption_enabled=true" label="Category" max_length="40" name="category" type="string"/>
         <element attributes="import_attribute_name=closetime,edge_encryption_enabled=true" label="Closetime" max_length="40" name="closetime" type="glide_date_time"/>
         <element attributes="import_attribute_name=closure_code,edge_encryption_enabled=true" label="Closure code" max_length="40" name="closure_code" type="string"/>
