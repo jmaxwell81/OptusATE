@@ -91,11 +91,13 @@ gr.comments = current.comments;
 gr.work_notes = current.work_notes;
 gr.update();*/
 	//inc_in.due_date=current.due_date;
-var wri_att=new GlideSysAttachment();
+
+/*	
+	var wri_att=new GlideSysAttachment();
 	var gr = new GlideRecord('sc_req_item');
 	gr.get(inc_in.sys_id);
  var attachment_sys_id= wri_att.writeBase64(inc_in.sys_id,current.attachment_file_name,'image\jpeg',current.attachment_binary_information);
-	
+	*/
 	if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
 		gs.info('OPTUS ATE BR-25 New Incident: '+current.uniqueid+', '+current.brief_description+', '+current.category);
 	}
@@ -184,7 +186,7 @@ gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_opt
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>84ffbae84f684f005596c61f0310c755</sys_id>
-        <sys_mod_count>40</sys_mod_count>
+        <sys_mod_count>41</sys_mod_count>
         <sys_name>ATE_OPT_OpenReq_25</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -193,7 +195,7 @@ gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_opt
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_84ffbae84f684f005596c61f0310c755</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-26 22:55:15</sys_updated_on>
+        <sys_updated_on>2018-03-26 23:06:02</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
