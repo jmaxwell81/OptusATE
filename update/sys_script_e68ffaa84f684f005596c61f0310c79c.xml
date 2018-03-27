@@ -90,6 +90,50 @@ while (inc.next()) {
 		while(statmap.next()){
 			incident.state=statmap.u_target_value;
 		}
+		//Insert attachment
+		if(current.attachment_file_name!=''){	
+		var clean=new GlideRecord('x_cio19_optus_ate_tcceventin');
+		clean.addQuery('number',current.number);
+		clean.query();
+		while(clean.next()){
+			current.attachment_binary_information=current.attachment_binary_information.replace('<Contents>','');
+			current.attachment_binary_information=current.attachment_binary_information.replace('</Contents>','');
+			current.attachment_file_name=current.attachment_file_name.replace('<Filename>','');
+			current.attachment_file_name=current.attachment_file_name.replace('</Filename>','');
+		}
+		
+		
+		var getTask=new GlideRecord('incident');
+		getTask.get(inc_in.sys_id);
+		//var binData='';
+		//binData=gs.base64Decode(current.attachment_binary_information);
+		
+//	var wri_att=new GlideSysAttachment();
+//	var binData = wri_att.writeBase64(getTask,current.attachment_file_name,'image\jpeg',current.attachment_binary_information);
+	//wri_att.write(inc_in.sys_id,'Photo.jpg','image\jpeg',binData);*/
+		help_att=new ATE_Helper_Functions();
+		help_att.createAttach(getTask,current.attachment_file_name,'',current.attachment_binary_information);
+	if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+		gs.info('OPTUS ATE BR-24 Attachment added: '+current.attachment_file_name+', sys_ID: '+inc_in.sys_id);
+	}
+		}
+		
+		
+		//check for closure code and map from Optus
+		if(current.closure_code != ''){
+		var closemap = new GlideRecord('x_cio19_optus_ate_optus_ate_mapping');
+				closemap.addQuery('u_company','Optus');
+		closemap.addQuery('u_ticket_category','Incident');
+		closemap.addQuery('u_source_field','closure_code');
+		closemap.addQuery('u_source_value',current.closure_code);
+		closemap.query();
+
+		while(closemap.next()){
+			incident.close_code=closemap.u_target_value;
+			//incident.close_notes='Closed by Optus PMSD, see comments for closure notes';
+			incident.close_notes= current.comments.getJournalEntry(-1);
+		}
+		}
 		//incident.closure_code=current.closure_code; //mapping
 		//incident.closure_notes=current.closure_notes;
 		
@@ -134,7 +178,7 @@ if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>e68ffaa84f684f005596c61f0310c79c</sys_id>
-        <sys_mod_count>63</sys_mod_count>
+        <sys_mod_count>68</sys_mod_count>
         <sys_name>ATE_OPT_Update_24</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -143,7 +187,7 @@ if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_e68ffaa84f684f005596c61f0310c79c</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-26 23:28:44</sys_updated_on>
+        <sys_updated_on>2018-03-27 05:11:45</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

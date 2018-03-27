@@ -8,11 +8,20 @@
         <date_format>yyyy-MM-dd HH:mm:ss</date_format>
         <map display_value="TCCEventIn">459cdc2d4fd8c3005596c61f0310c716</map>
         <reference_value_field/>
-        <source_field>attachment_binary_information</source_field>
+        <source_field>[Script]</source_field>
         <source_script><![CDATA[answer = (function transformEntry(source) {
+//strip mulesoft xml tags
+	if(source.attachment_binary_information!=''){
+		var sabi=source.attachment_binary_information;
+		var clean=sabi.replace('<Contents>','');
+		clean=clean.replace('</Contents>','');
+		if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+			gs.info('OPTUS ATE Transform Map sabi: '+clean);
+		}
+	}
+	return "clean"; // return the value to be put into the target field
 
-	// Add your code here
-	return ""; // return the value to be put into the target field
+	
 
 })(source);]]></source_script>
         <source_table>x_cio19_optus_ate_tcceventin</source_table>
@@ -21,17 +30,17 @@
         <sys_created_on>2017-07-31 06:25:41</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>72ac506d4fd8c3005596c61f0310c781</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>attachment_binary_information</sys_name>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>[Script]</sys_name>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_transform_entry_72ac506d4fd8c3005596c61f0310c781</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2017-07-31 06:25:41</sys_updated_on>
+        <sys_updated_on>2018-03-27 04:58:11</sys_updated_on>
         <target_field>attachment_binary_information</target_field>
         <target_table>x_cio19_optus_ate_optus_ate_holding</target_table>
-        <use_source_script>false</use_source_script>
+        <use_source_script>true</use_source_script>
     </sys_transform_entry>
 </record_update>
