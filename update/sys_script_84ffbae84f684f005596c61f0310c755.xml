@@ -80,7 +80,7 @@ try{
 	inc_in.category=current.subcategory;
 	inc_in.u_third_party_reference=current.csnsticketid;
 	//inc_in.=current.uniqueid;
-	//inc_in.comments=current.updatedescrption;
+	inc_in.comments=current.updatedescrption;
 	inc_in.urgency=current.urgency;
 	//inc_in.work_notes=current.worklog;
 	//inc_in.=current.workstationport;
@@ -110,6 +110,7 @@ try{
 			current.attachment_binary_information=current.attachment_binary_information.replace('</Contents>','');
 			current.attachment_file_name=current.attachment_file_name.replace('<Filename>','');
 			current.attachment_file_name=current.attachment_file_name.replace('</Filename>','');
+			
 		}
 		
 		
@@ -117,12 +118,12 @@ try{
 		getTask.get(inc_in.sys_id);
 		//var binData='';
 		//binData=gs.base64Decode(current.attachment_binary_information);
-		
+		var getExt = current.attachment_file_name.split('.').pop();
 //	var wri_att=new GlideSysAttachment();
 //	var binData = wri_att.writeBase64(getTask,current.attachment_file_name,'image\jpeg',current.attachment_binary_information);
 	//wri_att.write(inc_in.sys_id,'Photo.jpg','image\jpeg',binData);*/
 		help_att=new ATE_Helper_Functions();
-		help_att.createAttach(getTask,current.attachment_file_name,'',current.attachment_binary_information);
+		help_att.createAttach(getTask,current.attachment_file_name,getExt,current.attachment_binary_information);
 	if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
 		gs.info('OPTUS ATE BR-25 Attachment added: '+current.attachment_file_name+', sys_ID: '+inc_in.sys_id);
 	}
@@ -201,7 +202,7 @@ gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_opt
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>84ffbae84f684f005596c61f0310c755</sys_id>
-        <sys_mod_count>73</sys_mod_count>
+        <sys_mod_count>76</sys_mod_count>
         <sys_name>ATE_OPT_OpenReq_25</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -210,7 +211,7 @@ gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_opt
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_84ffbae84f684f005596c61f0310c755</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-27 05:09:44</sys_updated_on>
+        <sys_updated_on>2018-03-28 01:05:31</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

@@ -31,7 +31,8 @@
         <rest_variables/>
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
-try{
+var inc = new GlideRecord('x_cio19_optus_ate_optus_ate_holding');
+	try{
 	// Add your code here
 	//var inc_att = new GlideRecord('sys_attachment');
 	//var inc_att_doc = new GlideRecord('sys_attachment_doc');
@@ -39,7 +40,7 @@ try{
 //	var wri_att=new GlideSysAttachment();
 //	wri_att.writeBase64(current.sys_id,current.attachment_file_name,'UTF-8',current.attachment_binary_information);
 	
-var inc = new GlideRecord('x_cio19_optus_ate_optus_ate_holding');
+
 
 //inc.initialize();
 inc.addQuery('number',current.customerticketid);
@@ -104,17 +105,17 @@ while (inc.next()) {
 		
 		
 		var getTask=new GlideRecord('incident');
-		getTask.get(inc_in.sys_id);
+		getTask.get(inc.sys_id);
 		//var binData='';
 		//binData=gs.base64Decode(current.attachment_binary_information);
-		
+		var getExt = current.attachment_file_name.split('.').pop();
 //	var wri_att=new GlideSysAttachment();
 //	var binData = wri_att.writeBase64(getTask,current.attachment_file_name,'image\jpeg',current.attachment_binary_information);
 	//wri_att.write(inc_in.sys_id,'Photo.jpg','image\jpeg',binData);*/
 		help_att=new ATE_Helper_Functions();
-		help_att.createAttach(getTask,current.attachment_file_name,'',current.attachment_binary_information);
+		help_att.createAttach(getTask,current.attachment_file_name,getExt,current.attachment_binary_information);
 	if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
-		gs.info('OPTUS ATE BR-24 Attachment added: '+current.attachment_file_name+', sys_ID: '+inc_in.sys_id);
+		gs.info('OPTUS ATE BR-24 Attachment added: '+current.attachment_file_name+', sys_ID: '+inc.sys_id);
 	}
 		}
 		
@@ -178,7 +179,7 @@ if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>e68ffaa84f684f005596c61f0310c79c</sys_id>
-        <sys_mod_count>68</sys_mod_count>
+        <sys_mod_count>72</sys_mod_count>
         <sys_name>ATE_OPT_Update_24</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -187,7 +188,7 @@ if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_e68ffaa84f684f005596c61f0310c79c</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-27 05:11:45</sys_updated_on>
+        <sys_updated_on>2018-03-28 03:27:26</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
