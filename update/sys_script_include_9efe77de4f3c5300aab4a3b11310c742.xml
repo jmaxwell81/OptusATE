@@ -29,43 +29,6 @@ ATE_Helper_Functions.prototype = {
 },
 	
 	
-	addAttachmentMuleSoft : function (rec) {
-                var gsu = (typeof GlideStringUtil != 'undefined') ? (GlideStringUtil) : (Packages.com.glide.util.StringUtil);
-                var gsa = (typeof GlideSysAttachment != 'undefined') ? (new GlideSysAttachment()) : (new Packages.com.glide.ui.SysAttachment());
-                var lAttachmentData = gsa.getBytes(rec);
-                var lAttachment = gsu.base64Encode(lAttachmentData);
-                var lFilename = rec.file_name;
-                var lTablename = rec.table_name;
-                var lContentType = rec.content_type;
-                var lSize = rec.size_bytes;
-                var lID = rec.getUniqueValue();
-                var xml = "<ate:attachment action=\"add\" charset=\"UTF-8\" ";
-                xml += "len=\"" + lSize + "\" name=\"" + lFilename + "\" ";
-                xml += "type=\"" + lContentType + "\" contentId=\"" + lID + "\">";
-                xml += lAttachment;
-                xml += "</ate:attachment>";
-                return xml;
-        },
-	
-	addAttachment : function (rec) {
-                var gsu = (typeof GlideStringUtil != 'undefined') ? (GlideStringUtil) : (Packages.com.glide.util.StringUtil);
-                var gsa = (typeof GlideSysAttachment != 'undefined') ? (new GlideSysAttachment()) : (new Packages.com.glide.ui.SysAttachment());
-                var lAttachmentData = gsa.getBytes(rec);
-                var lAttachment = gsu.base64Encode(lAttachmentData);
-                var lFilename = rec.file_name;
-                var lTablename = rec.table_name;
-                var lContentType = rec.content_type;
-                var lSize = rec.size_bytes;
-                var lID  = rec.getUniqueValue();
-                var xml = "<ns:attachment action=\"add\" charset=\"UTF-8\" ";
-                xml += "len=\"" + lSize + "\" name=\"" + lFilename + "\" ";
-                xml += "type=\"" + lContentType + "\" contentId=\"" + lID + "\">";
-                xml += lAttachment;
-                xml += "</ns:attachment>";
-                return xml;
-        },
-	
-	
 	toTitleCase : function () {
    return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 },
@@ -85,18 +48,18 @@ ATE_Helper_Functions.prototype = {
 parseAttachments : function () {
     try {
                 var xmldoc;
-                gs.info("OPTUS ATE parseAttachments()","HISHAM");
-        if(source.u_attachments.toString()=="<see_attachment/>"){
+                gs.info("OPTUS ATE parseAttachments()");
+        if(source.attachment_binary_information.toString()=="<see_attachment/>"){
                         //Load the attachment data element from the sys_attachment table
-                        gs.info("OPTUS ATE Load the attachment data element from the sys_attachment table","HISHAM");
+                        gs.info("OPTUS ATE Load the attachment data element from the sys_attachment table");
                         var grAtt = new GlideRecord('sys_attachment');
-                        gs.info("OPTUS ATE Querying attachment: "+source.sys_id.toString(),"HISHAM");
-                        if(grAtt.get("table_sys_id",source.sys_id.toString())){
-                                gs.info("OPTUS ATE Found attachment:"+grAtt.sys_id.toString(),"HISHAM");
+                        gs.info("OPTUS ATE Querying attachment: "+source.sys_id.toString());
+                        if(grAtt.get("table_sys_id",source.uniqueid.toString())){
+                                gs.info("OPTUS ATE Found attachment:"+grAtt.sys_id.toString());
                                 
                                 var gsa = new GlideSysAttachment();
-                var bytesInFile = gsa.getBytes(source.sys_class_name.toString(), source.sys_id.toString());
-                                gs.info("OPTUS ATE bytesInFile="+bytesInFile.length,"HISHAM");
+                var bytesInFile = gsa.getBytes(source.sys_class_name.toString(), source.uniqueid.toString());
+                                gs.info("OPTUS ATE bytesInFile="+bytesInFile.length);
                                 
                 //var dataAsString = new Packages.java.lang.String(bytesInFile);
                                 
@@ -106,18 +69,18 @@ parseAttachments : function () {
                                 //gsa.writeTo(baos);
                                 //baos.close();
                                 //var strData=baos.toString();
-                                gs.info("OPTUS ATE Attachment bytesInFile length="+bytesInFile.toString().length,"HISHAM");
-                                xmldoc = new XMLDocument(bytesInFile.toString());
+                                gs.info("OPTUS ATE Attachment bytesInFile length="+bytesInFile.toString().length);
+                                xmldoc = new XMLDocument2(bytesInFile.toString());
                         }
                         
                         
                 }else{
-                        xmldoc = new XMLDocument(source.u_attachments.toString());
+                        xmldoc = new XMLDocument2(source.attachment_binary_information);
                 }
                 
         var node = xmldoc.getNodes("//Attachments/*");
                 
-                gs.info('OPTUS ATE onAfter parseAttachments: ' + node.getLength() + ' - ' + source.u_attachments.toString());
+                gs.info('OPTUS ATE onAfter parseAttachments: ' + node.getLength() + ' - ' + source.attachment_binary_information	.toString());
                 
         for(i=0; i < node.getLength(); i++){
  
@@ -131,24 +94,24 @@ parseAttachments : function () {
         }
  
     } catch (e) {
-        gs.info("OPTUS ATE An error occurred parsing attachment(s) into a record on the XML Incident transform map. It is " + e.message);
+        gs.error("OPTUS ATE An error occurred parsing attachment(s) into a record on the XML Incident transform map. It is " + e.message);
     }
 },
  
 // This function is doing (i) create the attachment (ii) Retrieve the attachment and do the flowthrough
 createAttachment : function (fileName, fileType, fileData) {
- 
-    var StringUtil = GlideStringUtil;
-    var fileDataDecoded = StringUtil.base64DecodeAsBytes(fileData);
+try{ 
+   // var StringUtil = GlideStringUtil;
+    var fileDataDecoded = gs.base64Decode(fileData);
     var tableName = target.getTableName();
     var sys_id = target.getUniqueValue();
         
         gs.info('OPTUS ATE onAfter createAttachment: ' + tableName + ' - ' + sys_id + ' - ' + fileName + ' - ' + fileType);
         
         // (i) Create the attachment
-    var attachment = new Attachment();
+    var attachment = new GlideSysAttachment();
     attachment.write(tableName, sys_id, fileName, fileType, fileDataDecoded);
-        
+       
         // (ii) Flowthrough
         if (target.assignment_group.u_ate_flow_through_method == "XML") {
                 
@@ -164,6 +127,9 @@ createAttachment : function (fileName, fileType, fileData) {
             ateIntHelper.insertSQLAttachmentBinary(attachmentRtn);
          }
 		}	
+}catch(createatt){
+	gs.error('OPTUS ATE Helper Create Attachment: '+createatt.message);
+}
 },
 	addJournal : function(sysid,element){
 		var jnlwl=new GlideRecord('sys_journal_field');
@@ -202,33 +168,7 @@ createAttachment : function (fileName, fileType, fileData) {
 	filesize=inc_att.size_bytes;
 	var contentid='';
 	contentid=inc_att.getUniqueValue();
-		
-		
 	
-		
-		
-		
-/*	var table_sys_id = inc21.table_sys_id;   
-   // read the attachment...   
-   var stringUtil = new GlideStringUtil();   
-   var att = new GlideSysAttachment();   
-   var binData = att.getBytes(inc21);   
-   // convert it to Encoded Data..   
-   var encData = stringUtil.base64Encode(binData);   
-   // decode the encoded data into string..   
-   var csv_string = stringUtil.base64Decode(encData) + ''; 
-		inc21.attachments=encData;
-   var csv_array = csv_string.split("\r\n");
-   csv_array.shift(); //removes the first row, edit file   
-   // convert this back into a CSV string...   
-   csv_string = csv_array.join("\r\n");
-   // attach it back...   
-   var base64EncodeString = stringUtil.base64Encode(csv_string);   
-   var data = stringUtil.base64DecodeAsBytes(this.base64EncodeString);   
-   //attach the attachment. 
-   var attachment = new Attachment();   
-   var attachment_sys_id = attachment.write("ecc_agent_attachment", table_sys_id, "1111.csv", "test/csv", data);   
-	*/	
 	//combine base64 encoded file and insert into holding table	
 	// see https://www.servicenowguru.com/integration/sending-attachments-3rdparty-service-desk/
 	var inc_docs = inc_att_doc.addJoinQuery('sys_attachment','sys_attachment');
@@ -248,18 +188,6 @@ createAttachment : function (fileName, fileType, fileData) {
                 xml += attachment_binary_information;
                 xml += "</ate:attachment>";
 			return xml;
-	//inc21.attachments +=inc_att_doc.data;
-			//var new_att= new ATE_Helper_Functions();
-		//inc21.attachments=new_att.addAttachment(inc_att.sys_id); 
-// var sa = new  GlideSysAttachment();
-//var binData =  inc_att.getContent(current.sys_id);		
-//var binData =  sa.getContent(current.sys_id);
-// var encData =  sa.getContentBase64(binData);
-		//	inc21.attachments=encData;
-			
-		
-			
-		
 	}
 	}
 	else{
@@ -272,7 +200,8 @@ createAttachment : function (fileName, fileType, fileData) {
 }
 	},
 	 createAttach: function(record,name,contentType, data) {
-     var attCreator = new GlideRecord('ecc_queue');
+    
+	var attCreator = new GlideRecord('ecc_queue');
      attCreator.agent = "AttachmentCreator";
      attCreator.topic = "AttachmentCreator";
      attCreator.name =   name + ":" + contentType;
@@ -280,6 +209,45 @@ createAttachment : function (fileName, fileType, fileData) {
      attCreator.payload = data;
      attCreator.insert();
  },
+	
+	
+	/** Function that count occurrences of a substring in a string;
+ * @param {String} string               The string
+ * @param {String} subString            The sub string to search for
+ * @param {Boolean} [allowOverlapping]  Optional. (Default:false)
+ *
+ * @author Vitim.us https://gist.github.com/victornpb/7736865
+ * @see Unit Test https://jsfiddle.net/Victornpb/5axuh96u/
+ * @see http://stackoverflow.com/questions/4009756/how-to-count-string-occurrence-in-string/7924240#7924240
+ */
+occurrences : function (string, subString, allowOverlapping) {
+
+    string += "";
+    subString += "";
+    if (subString.length <= 0) return (string.length + 1);
+
+    var n = 0,
+        pos = 0,
+        step = allowOverlapping ? 1 : subString.length;
+
+    while (true) {
+        pos = string.indexOf(subString, pos);
+        if (pos >= 0) {
+            ++n;
+            pos += step;
+        } else break;
+    }
+    return n;
+	
+	/*Usage
+	occurrences(string, string);
+	occurrences('String to search', 'String to search for');
+	returns int, number of occurrences 'String to search for' is found in 'String to search'
+	
+	*/
+},
+	
+	
  
     type: 'ATE_Helper_Functions'
 };]]></script>
@@ -288,7 +256,7 @@ createAttachment : function (fileName, fileType, fileData) {
         <sys_created_on>2018-03-14 23:34:28</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>9efe77de4f3c5300aab4a3b11310c742</sys_id>
-        <sys_mod_count>17</sys_mod_count>
+        <sys_mod_count>28</sys_mod_count>
         <sys_name>ATE_Helper_Functions</sys_name>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
         <sys_policy>read</sys_policy>
@@ -296,6 +264,6 @@ createAttachment : function (fileName, fileType, fileData) {
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_include_9efe77de4f3c5300aab4a3b11310c742</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-27 01:39:56</sys_updated_on>
+        <sys_updated_on>2018-03-29 04:27:48</sys_updated_on>
     </sys_script_include>
 </record_update>

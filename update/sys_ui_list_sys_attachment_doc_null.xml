@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="sys_attachment_doc" version="2" view="">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>data</element>
+            <list_id display_value="sys_attachment_doc" element="NULL" name="sys_attachment_doc" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">6f08ed164f015f00aab4a3b11310c7ae</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-03-26 22:48:45</sys_created_on>
+            <sys_id>e308ed164f015f00aab4a3b11310c7af</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-03-26 22:48:45</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>length</element>
+            <list_id display_value="sys_attachment_doc" element="NULL" name="sys_attachment_doc" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">6f08ed164f015f00aab4a3b11310c7ae</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-03-26 22:48:45</sys_created_on>
+            <sys_id>6708ed164f015f00aab4a3b11310c7af</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-03-26 22:48:45</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>position</element>
+            <list_id display_value="sys_attachment_doc" element="NULL" name="sys_attachment_doc" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">6f08ed164f015f00aab4a3b11310c7ae</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-03-26 22:48:45</sys_created_on>
+            <sys_id>e708ed164f015f00aab4a3b11310c7af</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-03-26 22:48:45</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>sys_attachment_doc</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-03-29 05:59:52</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>52eddd874f09df00aab4a3b11310c7f6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name/>
+            <sys_package/>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
+            <sys_update_name/>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-03-29 05:59:52</sys_updated_on>
+            <sys_user display_value="Leon Storey">1d8b25ce4f6ee240a022c61f0310c7d4</sys_user>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>
