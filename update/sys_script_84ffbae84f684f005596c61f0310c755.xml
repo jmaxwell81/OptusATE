@@ -37,7 +37,8 @@ try{
 	
 	inc_in.initialize();
 	//inc_in.sys_class_name='incident';
-	inc_in.assignment_group='f496c4454fa25600a0124c111310c778';
+	//inc_in.assignment_group='f496c4454fa25600a0124c111310c778';
+	inc_in.assignment_group=gs.getProperty('x_cio19_optus_ate.DefaultGroup');
 	inc_in.short_description=current.brief_description;
 	inc_in.category=current.category;
 	inc_in.closed_at=current.closetime;
@@ -101,15 +102,12 @@ try{
 	
 	//Add Attachment
 	//var att=new GlideRecord('sys_attachment');
-	if (current.attachment_file_name!=''){
+/*	if (current.attachment_file_name!=''){
 
 		
 		var clean=new GlideRecord('x_cio19_optus_ate_tcceventin');
 		clean.addQuery('number',current.number);
 		clean.query();
-		
-		
-		
 		
 		//gs.info('OPTUS ATE BR-25 multi-attach: '+numatt);
 		
@@ -154,7 +152,7 @@ try{
 //	gr.get(inc_in.sys_id);
  //var attachment_sys_id= wri_att.writeBase64(inc_in.sys_id,current.attachment_file_name,'image\jpeg',current.attachment_binary_information);
 }
-	
+*/	
 	
 //Start 22 Open Acknoledge
 	try {
@@ -225,7 +223,7 @@ gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_opt
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>84ffbae84f684f005596c61f0310c755</sys_id>
-        <sys_mod_count>99</sys_mod_count>
+        <sys_mod_count>102</sys_mod_count>
         <sys_name>ATE_OPT_OpenReq_25</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -234,7 +232,7 @@ gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_opt
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_84ffbae84f684f005596c61f0310c755</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-29 05:53:31</sys_updated_on>
+        <sys_updated_on>2018-04-04 06:16:41</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

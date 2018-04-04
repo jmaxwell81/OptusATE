@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update table="sys_transform_script">
     <sys_transform_script action="INSERT_OR_UPDATE">
-        <active>false</active>
+        <active>true</active>
         <map display_value="TCCEventIn">459cdc2d4fd8c3005596c61f0310c716</map>
         <order>100</order>
         <script><![CDATA[(function runTransformScript(source, map, log, target /*undefined onStart*/ ) {
@@ -34,7 +34,7 @@ function parseAttachments() {
         }
         
     } catch (e) {
-        gs.log("An error occurred parsing attachment(s) into a record on the XML Incident transform map. It is " + e.message);
+        gs.error("An error occurred parsing attachment(s) into a record on the XML Incident transform map. It is " + e.message);
     }
 }
 
@@ -49,8 +49,10 @@ function createAttachment(fileName, fileType, fileData) {
 	//(a) get incident from task table 
 	var newrecord = new GlideRecord('task');
 	newrecord.get(sys_id);//??
-	newrecord.query();
-    
+  if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+				
+				gs.info('OPTUS ATE onAfter createAttachment: filename= '+filename+', filetype= '+filetype+', filedata= '+filedata+', sys_id= '+sys_id);
+			}
                 // (i) Create the attachment
     var attachment = new GlideSysAttachment();
     attachment.write(newrecord, fileName, fileType, fileDataDecoded);
@@ -79,7 +81,7 @@ function createAttachment(fileName, fileType, fileData) {
         <sys_created_on>2018-04-04 01:32:03</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>a61a1fb84f155740aab4a3b11310c703</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>onAfter</sys_name>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
         <sys_policy/>
@@ -87,7 +89,7 @@ function createAttachment(fileName, fileType, fileData) {
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_transform_script_a61a1fb84f155740aab4a3b11310c703</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-04-04 02:00:16</sys_updated_on>
+        <sys_updated_on>2018-04-04 06:31:01</sys_updated_on>
         <when>onAfter</when>
     </sys_transform_script>
 </record_update>
