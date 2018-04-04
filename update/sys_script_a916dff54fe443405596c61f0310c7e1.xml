@@ -137,10 +137,14 @@ var attachname = '';
                 xml += encData;
                 xml += "</ate:attachment></ate:attachments>";
 			
-			inc21.attachments=xml;
+			
+		if(inc_att.getRowCount()>1){
+				xml+=xml;
+				inc21.attachments=xml;
+		}else{
+			inc21.attachments=xml;}
 		}
-	
-	}
+		}
 
 
 }
@@ -337,7 +341,7 @@ gr.update();
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>a916dff54fe443405596c61f0310c7e1</sys_id>
-        <sys_mod_count>343</sys_mod_count>
+        <sys_mod_count>344</sys_mod_count>
         <sys_name>INC_Holding_21</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -346,7 +350,7 @@ gr.update();
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_a916dff54fe443405596c61f0310c7e1</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-03-28 22:44:08</sys_updated_on>
+        <sys_updated_on>2018-04-04 00:44:03</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
