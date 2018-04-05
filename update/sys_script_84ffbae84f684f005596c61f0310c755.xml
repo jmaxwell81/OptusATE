@@ -97,7 +97,45 @@ try{
 	
 }catch(err_25){
 	gs.error('OPTUS ATE BR-25: '+err_25);
-}		
+}	
+	
+/*if(current.attachment_binary_information!='')
+{parseAttachments();}
+
+
+
+function parseAttachments() {
+    try {
+        var xmldoc = new XMLDocument2();
+		xmldoc.parseXML(current.attachment_binary_information);
+        
+        
+        var node = xmldoc.getNode('//Attachments');
+        var iter = node.getChildNodeIterator();
+		while(iter.next()){
+			
+            var filename = xmldoc.getNodeText('//Attachments/Attachment/Filename');
+            var filetype = xmldoc.getNodeText('//Attachments/Attachment/Filetype');
+            var filedata = xmldoc.getNodeText('//Attachments/Attachment/Contents');
+            if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+				
+				gs.info('OPTUS ATE onAfter Transform Script: filename= '+filename+', filetype= '+filetype+', filedata= '+filedata);
+			}
+			var get_inc=new GlideRecord('incident');
+			get_inc.addQuery('u_third_party_reference',current.csnsticketid);
+			//get_inc.get(get_inc.getUniqueValue());
+			get_inc.query();
+			while(get_inc.next()){
+				var help=new ATE_Helper_Functions();
+				help.createAttach(get_inc,filename,filetype,filedata);
+			}
+            //createAttachment(filename, filetype, filedata);
+        }
+        
+    } catch (e) {
+        gs.error("OPTUS ATE: An error occurred parsing attachment(s) into a record on the XML Incident transform map. It is " + e.message);
+    }
+}*/
 	//var up_hold = new GlideRecord('x_cio19_optus_ate_optus_ate_holding');
 	
 	//Add Attachment
@@ -223,7 +261,7 @@ gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_opt
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>84ffbae84f684f005596c61f0310c755</sys_id>
-        <sys_mod_count>102</sys_mod_count>
+        <sys_mod_count>106</sys_mod_count>
         <sys_name>ATE_OPT_OpenReq_25</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -232,7 +270,7 @@ gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_opt
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_84ffbae84f684f005596c61f0310c755</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-04-04 06:16:41</sys_updated_on>
+        <sys_updated_on>2018-04-05 05:24:42</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

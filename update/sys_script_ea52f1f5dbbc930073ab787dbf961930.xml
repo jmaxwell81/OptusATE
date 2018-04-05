@@ -7,7 +7,7 @@
         <action_insert>false</action_insert>
         <action_query>false</action_query>
         <action_update>true</action_update>
-        <active>true</active>
+        <active>false</active>
         <add_message>false</add_message>
         <advanced>true</advanced>
         <change_fields>false</change_fields>
@@ -16,9 +16,10 @@
         <condition/>
         <description/>
         <execute_function>false</execute_function>
-        <filter_condition table="task">assignment_group=3ac476c84f2e8b048767a3b11310c72a^ORassignment_group=f496c4454fa25600a0124c111310c778^sys_updated_by!=OptusAte^EQ<item display_table="sys_user_group" display_value="Optus PMSD" endquery="false" field="assignment_group" goto="false" newquery="false" operator="=" or="false" value="3ac476c84f2e8b048767a3b11310c72a"/>
+        <filter_condition table="task">assignment_group=3ac476c84f2e8b048767a3b11310c72a^ORassignment_group=f496c4454fa25600a0124c111310c778^sys_updated_by!=OptusAte^ORsys_updated_by!=system^EQ<item display_table="sys_user_group" display_value="Optus PMSD" endquery="false" field="assignment_group" goto="false" newquery="false" operator="=" or="false" value="3ac476c84f2e8b048767a3b11310c72a"/>
             <item display_table="sys_user_group" display_value="Service Desk" endquery="false" field="assignment_group" goto="false" newquery="false" operator="=" or="true" value="f496c4454fa25600a0124c111310c778"/>
             <item endquery="false" field="sys_updated_by" goto="false" newquery="false" operator="!=" or="false" value="OptusAte"/>
+            <item endquery="false" field="sys_updated_by" goto="false" newquery="false" operator="!=" or="true" value="system"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </filter_condition>
         <is_rest>false</is_rest>
@@ -33,8 +34,9 @@
         <rest_variables/>
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+var inc=new GlideRecord('x_cio19_optus_ate_optus_ate_holding');	
 try{
-var inc=new GlideRecord('x_cio19_optus_ate_optus_ate_holding');
+
 	inc.initialize();
 	//inc.query();
 			if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
@@ -64,7 +66,7 @@ var inc=new GlideRecord('x_cio19_optus_ate_optus_ate_holding');
 		inc.customerticketid=current.number;
 		inc.uniqueid=current.sys_id;
 		
-		
+		//inc.insert();
 			if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
 			gs.info('OPTUS ATE BR-23 Updated: '+current.number+', '+current.sys_id+', '+current.work_notes.toString()+', '+current.comments.toString()+', '+current.assigned_to+', '+ current.category +', '+ current.subcategory +', '+current.customer_status  +', '+current.messagestatus);
 			
@@ -75,15 +77,18 @@ var inc=new GlideRecord('x_cio19_optus_ate_optus_ate_holding');
 	inc_att.addQuery('table_sys_id',current.sys_id);
 	inc_att.addQuery('table_name', current.getTableName());
 	inc_att.addQuery('sys_updated_by','!=','OptusAte');
+	//inc_att.addQuery('file_name','!=',current.attachment_file_name);
 	//inc_att.addQuery('sys_mod_count'>0);
 	inc_att.orderByDesc('sys_updated_on');
-	inc_att.setLimit(1);
+	//inc_att.setLimit(1);
 	inc_att.query();
-	
+	if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+		gs.info('OPTUS ATE BR-23 Attachment: count='+inc_att.getRowCount()+', SYS_ID='+current.sys_id);
+	}
 	while(inc_att.next()){
-		if(inc.attachname!=inc_att.file_name){
-	inc.attachname = inc_att.file_name;
-var attachname = '';
+		inc.attachname = inc_att.file_name;
+		//if(inc_att.file_name!=current.attachment_file_name){
+	var attachname = '';
 	attachname = inc_att.file_name;
 	var filetype = '';
 	filetype=inc_att.content_type;
@@ -91,7 +96,7 @@ var attachname = '';
 	filesize=inc_att.size_bytes;
 	var contentid='';
 	contentid=inc_att.getUniqueValue();
-		
+
 		
 
 	//combine base64 encoded file and insert into holding table	
@@ -119,23 +124,16 @@ var attachname = '';
 			//inc.attachments=xml;
 			//inc.worklog='New attachment added ' +attachname;
 					if(inc_att.getRowCount()>1){
-				xml+=xml;
-				inc.attachments=xml;
+			//	xml+=xml;
+				inc.attachments+=xml;
 		}else{
 			inc.attachments=xml;}
 		}
 		}
 
-}
+//}
 			
-	
-	
-	
-		
-		
-		
-		
-		inc.insert();
+	inc.insert();
 		if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
 			gs.info('OPTUS ATE BR-23 After Updated: '+current.number+', '+current.sys_id);
 			
@@ -153,7 +151,7 @@ var attachname = '';
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>ea52f1f5dbbc930073ab787dbf961930</sys_id>
-        <sys_mod_count>139</sys_mod_count>
+        <sys_mod_count>155</sys_mod_count>
         <sys_name>INC_Holding_23</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -162,7 +160,7 @@ var attachname = '';
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_ea52f1f5dbbc930073ab787dbf961930</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-04-04 04:55:43</sys_updated_on>
+        <sys_updated_on>2018-04-05 05:11:39</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
