@@ -1,0 +1,2523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2018-04-05 06:18:45">
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:19:45</sys_created_on>
+<sys_id>0ce060dd4f559740aab4a3b11310c732</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:32:19</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>category</u_source_field>
+<u_source_value>Performance</u_source_value>
+<u_target_value>Network</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 00:28:39</sys_created_on>
+<sys_id>1f2219204f381300aab4a3b11310c7e2</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-11 23:18:01</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>category</u_source_field>
+<u_source_value>IT Security</u_source_value>
+<u_target_value>Security</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:19:12</sys_created_on>
+<sys_id>34c02cdd4f559740aab4a3b11310c72b</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:33:08</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>category</u_source_field>
+<u_source_value>Network Uecomm</u_source_value>
+<u_target_value>Network</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:17:52</sys_created_on>
+<sys_id>3850e8dd4f559740aab4a3b11310c707</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:32:07</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>category</u_source_field>
+<u_source_value>Billing</u_source_value>
+<u_target_value>Network</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 00:23:55</sys_created_on>
+<sys_id>571119ec4ff41300aab4a3b11310c7a5</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-11 23:18:01</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>category</u_source_field>
+<u_source_value>Network</u_source_value>
+<u_target_value>Network</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:18:25</sys_created_on>
+<sys_id>6990a8dd4f559740aab4a3b11310c7e8</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:32:25</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>category</u_source_field>
+<u_source_value>Hardware</u_source_value>
+<u_target_value>Hardware</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:18:43</sys_created_on>
+<sys_id>82a020dd4f559740aab4a3b11310c7f6</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:32:29</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>category</u_source_field>
+<u_source_value>Network Customer</u_source_value>
+<u_target_value>Network</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 00:25:14</sys_created_on>
+<sys_id>8971dda04f381300aab4a3b11310c762</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-11 23:18:02</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>category</u_source_field>
+<u_source_value>Network</u_source_value>
+<u_target_value>Network</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 00:24:43</sys_created_on>
+<sys_id>b74159ac4ff41300aab4a3b11310c79c</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-11 23:18:02</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>category</u_source_field>
+<u_source_value>Software</u_source_value>
+<u_target_value>Software</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:20:06</sys_created_on>
+<sys_id>cdf028dd4f559740aab4a3b11310c7a5</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:33:00</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>category</u_source_field>
+<u_source_value>Security</u_source_value>
+<u_target_value>IT Security</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 00:27:20</sys_created_on>
+<sys_id>d0f195204f381300aab4a3b11310c79b</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-11 23:18:02</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>category</u_source_field>
+<u_source_value>Billing</u_source_value>
+<u_target_value>Billing</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:18:55</sys_created_on>
+<sys_id>d5b0285d4f559740aab4a3b11310c70c</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:32:37</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>category</u_source_field>
+<u_source_value>Network Optus</u_source_value>
+<u_target_value>Network</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:18:09</sys_created_on>
+<sys_id>d880e8dd4f559740aab4a3b11310c70a</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:32:01</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>category</u_source_field>
+<u_source_value>Access</u_source_value>
+<u_target_value>Access</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:19:25</sys_created_on>
+<sys_id>e5d0e4dd4f559740aab4a3b11310c73c</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:32:44</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>category</u_source_field>
+<u_source_value>Network</u_source_value>
+<u_target_value>Network</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 00:26:48</sys_created_on>
+<sys_id>f1c159e04f381300aab4a3b11310c770</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-11 23:18:02</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>category</u_source_field>
+<u_source_value>Hardware</u_source_value>
+<u_target_value>Hardware</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:20:14</sys_created_on>
+<sys_id>f801e4dd4f559740aab4a3b11310c71f</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:32:54</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>category</u_source_field>
+<u_source_value>Software</u_source_value>
+<u_target_value>Software</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:48:45</sys_created_on>
+<sys_id>0643eaafdba8974073ab787dbf961951</sys_id>
+<sys_mod_count>3</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-15 05:51:37</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>closure_code</u_source_field>
+<u_source_value>Solved (Permanently)</u_source_value>
+<u_target_value>Other - Withdrawn by User</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:55:47</sys_created_on>
+<sys_id>06e4e663dbe8974073ab787dbf961928</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:17:18</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>closure_code</u_source_field>
+<u_source_value>Other - Unknown</u_source_value>
+<u_target_value>!!TBD</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:53:41</sys_created_on>
+<sys_id>0b642e23dbe8974073ab787dbf961905</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:17:20</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>closure_code</u_source_field>
+<u_source_value>Other - Out of Scope</u_source_value>
+<u_target_value>!!TBD</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:56:45</sys_created_on>
+<sys_id>1b156e63dbe8974073ab787dbf96194b</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:16:48</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>closure_code</u_source_field>
+<u_source_value>Request - Data Backup/Restore</u_source_value>
+<u_target_value>!!TBD</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:55:01</sys_created_on>
+<sys_id>1eb4a263dbe8974073ab787dbf961921</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:17:13</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>closure_code</u_source_field>
+<u_source_value>Other - Withdrawn by User</u_source_value>
+<u_target_value>!!TBD</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 04:00:44</sys_created_on>
+<sys_id>1ef56a27dbe8974073ab787dbf9619d4</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:00:44</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>closure_code</u_source_field>
+<u_source_value>Request - User Training/Instruction</u_source_value>
+<u_target_value>User Issue</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:57:25</sys_created_on>
+<sys_id>49452263dbe8974073ab787dbf9619f1</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:16:44</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>closure_code</u_source_field>
+<u_source_value>Request - Hardware</u_source_value>
+<u_target_value>!!TBD</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:50:25</sys_created_on>
+<sys_id>5ea366efdba8974073ab787dbf961983</sys_id>
+<sys_mod_count>3</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-15 05:52:33</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>closure_code</u_source_field>
+<u_source_value>Not Solved (Not Reproducible)</u_source_value>
+<u_target_value>Other - Withdrawn by User</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:51:39</sys_created_on>
+<sys_id>65f3aeafdba8974073ab787dbf9619e2</sys_id>
+<sys_mod_count>3</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-15 05:52:30</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>closure_code</u_source_field>
+<u_source_value>Process Failure</u_source_value>
+<u_target_value>Other - Withdrawn by User</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:52:56</sys_created_on>
+<sys_id>6844a263dbe8974073ab787dbf96198e</sys_id>
+<sys_mod_count>3</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-15 05:52:18</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>closure_code</u_source_field>
+<u_source_value>Software Issue</u_source_value>
+<u_target_value>Other - Withdrawn by User</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:56:28</sys_created_on>
+<sys_id>7905aa23dbe8974073ab787dbf961934</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:16:57</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>closure_code</u_source_field>
+<u_source_value>Request - Access</u_source_value>
+<u_target_value>!!TBD</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:50:38</sys_created_on>
+<sys_id>7ab3a223dbe8974073ab787dbf96190b</sys_id>
+<sys_mod_count>2</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-11 23:18:01</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>closure_code</u_source_field>
+<u_source_value>Not Solved (Not Reproducible)</u_source_value>
+<u_target_value>Other - Unable to Reproduce</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:51:24</sys_created_on>
+<sys_id>7ad366efdba8974073ab787dbf96191b</sys_id>
+<sys_mod_count>3</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-15 05:52:35</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>closure_code</u_source_field>
+<u_source_value>Not Solved (No longer required)</u_source_value>
+<u_target_value>Other - Withdrawn by User</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:52:23</sys_created_on>
+<sys_id>80242223dbe8974073ab787dbf9619f5</sys_id>
+<sys_mod_count>3</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-15 05:52:06</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>closure_code</u_source_field>
+<u_source_value>User Issue</u_source_value>
+<u_target_value>Other - Withdrawn by User</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:54:11</sys_created_on>
+<sys_id>8884a263dbe8974073ab787dbf961991</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 03:54:11</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>closure_code</u_source_field>
+<u_source_value>Other - Unable to Reproduce</u_source_value>
+<u_target_value>Not Solved (Not Reproducible)</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:49:19</sys_created_on>
+<sys_id>9263eaafdba8974073ab787dbf961905</sys_id>
+<sys_mod_count>2</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-15 05:50:36</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>closure_code</u_source_field>
+<u_source_value>Solved Remotely (Work Around)</u_source_value>
+<u_target_value>Other - Withdrawn by User</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:48:22</sys_created_on>
+<sys_id>99df122bdba8974073ab787dbf96195c</sys_id>
+<sys_mod_count>3</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-15 05:51:43</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>closure_code</u_source_field>
+<u_source_value>Solved (Work Around)</u_source_value>
+<u_target_value>Other - Withdrawn by User</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 04:01:34</sys_created_on>
+<sys_id>a936a627dbe8974073ab787dbf96190b</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:16:52</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>closure_code</u_source_field>
+<u_source_value>Request - Change</u_source_value>
+<u_target_value>!!TBD</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:58:27</sys_created_on>
+<sys_id>a985eaa3dbe8974073ab787dbf961940</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:16:39</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>closure_code</u_source_field>
+<u_source_value>Request - Scheduled Task</u_source_value>
+<u_target_value>!!TBD</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:53:23</sys_created_on>
+<sys_id>b154ea23dbe8974073ab787dbf961986</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:17:22</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>closure_code</u_source_field>
+<u_source_value>Other - Duplicate Ticket/Cancelled</u_source_value>
+<u_target_value>!!TBD</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:52:42</sys_created_on>
+<sys_id>b834eaafdba8974073ab787dbf96190d</sys_id>
+<sys_mod_count>3</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-15 05:51:59</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>closure_code</u_source_field>
+<u_source_value>Systems Issue</u_source_value>
+<u_target_value>Other - Withdrawn by User</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:59:55</sys_created_on>
+<sys_id>ced5a627dbe8974073ab787dbf9619bf</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:01:06</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>closure_code</u_source_field>
+<u_source_value>Request - User Account Administration</u_source_value>
+<u_target_value>User Issue</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 04:02:33</sys_created_on>
+<sys_id>cf56ea67dbe8974073ab787dbf96193c</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:16:55</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>closure_code</u_source_field>
+<u_source_value>Request - Cancellations</u_source_value>
+<u_target_value>!!TBD</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:52:04</sys_created_on>
+<sys_id>d304eaafdba8974073ab787dbf96190b</sys_id>
+<sys_mod_count>3</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-15 05:52:28</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>closure_code</u_source_field>
+<u_source_value>Resource Issue</u_source_value>
+<u_target_value>Other - Withdrawn by User</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 04:01:52</sys_created_on>
+<sys_id>d7462e27dbe8974073ab787dbf96196e</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:16:50</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>closure_code</u_source_field>
+<u_source_value>Request - Customer</u_source_value>
+<u_target_value>!!TBD</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:49:00</sys_created_on>
+<sys_id>e253aaafdba8974073ab787dbf961974</sys_id>
+<sys_mod_count>4</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-15 05:51:53</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>closure_code</u_source_field>
+<u_source_value>Solved Remotely (Permanently)</u_source_value>
+<u_target_value>Other - Withdrawn by User</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:57:07</sys_created_on>
+<sys_id>e325e663dbe8974073ab787dbf96192b</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:16:47</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>closure_code</u_source_field>
+<u_source_value>Request - Data Update</u_source_value>
+<u_target_value>!!TBD</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:58:12</sys_created_on>
+<sys_id>e665ae23dbe8974073ab787dbf961980</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:16:41</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>closure_code</u_source_field>
+<u_source_value>Request - Rejected</u_source_value>
+<u_target_value>!!TBD</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:50:53</sys_created_on>
+<sys_id>eac3e6efdba8974073ab787dbf9619bd</sys_id>
+<sys_mod_count>3</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-15 05:52:31</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>closure_code</u_source_field>
+<u_source_value>Not Solved (Too Costly)</u_source_value>
+<u_target_value>Other - Withdrawn by User</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:57:47</sys_created_on>
+<sys_id>eb5566a3dbe8974073ab787dbf961949</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:16:43</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>closure_code</u_source_field>
+<u_source_value>Request - Information</u_source_value>
+<u_target_value>!!TBD</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:54:44</sys_created_on>
+<sys_id>eea42263dbe8974073ab787dbf9619ed</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:17:16</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>closure_code</u_source_field>
+<u_source_value>Other - Withdrawn by Agent</u_source_value>
+<u_target_value>!!TBD</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:58:58</sys_created_on>
+<sys_id>f69566e3dbe8974073ab787dbf961900</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 03:58:58</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>closure_code</u_source_field>
+<u_source_value>Request - Software/Application</u_source_value>
+<u_target_value>Software Issue</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 04:10:13</sys_created_on>
+<sys_id>0a38aee7dbe8974073ab787dbf9619e8</sys_id>
+<sys_mod_count>3</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-11 23:18:01</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>impact</u_source_field>
+<u_source_value>2</u_source_value>
+<u_target_value>2</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 04:09:34</sys_created_on>
+<sys_id>30186e2bdbe8974073ab787dbf9619e2</sys_id>
+<sys_mod_count>2</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:25:39</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>impact</u_source_field>
+<u_source_value>3</u_source_value>
+<u_target_value>3</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 04:09:20</sys_created_on>
+<sys_id>4508eaa7dbe8974073ab787dbf961988</sys_id>
+<sys_mod_count>2</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:26:32</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>impact</u_source_field>
+<u_source_value>2</u_source_value>
+<u_target_value>2</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 04:09:06</sys_created_on>
+<sys_id>69f7662bdbe8974073ab787dbf9619c5</sys_id>
+<sys_mod_count>2</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:26:38</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>impact</u_source_field>
+<u_source_value>1</u_source_value>
+<u_target_value>1</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 04:09:48</sys_created_on>
+<sys_id>6f186e2bdbe8974073ab787dbf9619ea</sys_id>
+<sys_mod_count>2</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:25:14</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>impact</u_source_field>
+<u_source_value>4</u_source_value>
+<u_target_value>3</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 04:10:34</sys_created_on>
+<sys_id>ea48a26bdbe8974073ab787dbf9619a1</sys_id>
+<sys_mod_count>4</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-11 23:18:02</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>impact</u_source_field>
+<u_source_value>3</u_source_value>
+<u_target_value>3</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 04:10:00</sys_created_on>
+<sys_id>f6286e2bdbe8974073ab787dbf9619e4</sys_id>
+<sys_mod_count>2</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-11 23:18:02</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>impact</u_source_field>
+<u_source_value>1</u_source_value>
+<u_target_value>1</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:22:54</sys_created_on>
+<sys_id>171d1ae7dba8974073ab787dbf961989</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 03:22:54</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default>New</u_default>
+<u_order/>
+<u_source_field>messagestatus</u_source_field>
+<u_source_value>New</u_source_value>
+<u_target_value>New</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:33:11</sys_created_on>
+<sys_id>38bf1ae7dba8974073ab787dbf961917</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:17:10</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>messagestatus</u_source_field>
+<u_source_value>Pending Change</u_source_value>
+<u_target_value>!!TBD</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:32:47</sys_created_on>
+<sys_id>539f1e6bdba8974073ab787dbf9619c4</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:19:12</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>messagestatus</u_source_field>
+<u_source_value>Closed</u_source_value>
+<u_target_value>!!TBD</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:24:25</sys_created_on>
+<sys_id>6faddaa7dba8974073ab787dbf96195f</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:17:07</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>messagestatus</u_source_field>
+<u_source_value>Pending Customer</u_source_value>
+<u_target_value>!!TBD</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:32:24</sys_created_on>
+<sys_id>7cfd9aafdb68974073ab787dbf9619f1</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:16:34</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>messagestatus</u_source_field>
+<u_source_value>Resolved</u_source_value>
+<u_target_value>!!TBD</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:23:54</sys_created_on>
+<sys_id>927d56efdb68974073ab787dbf9619e3</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:19:14</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>messagestatus</u_source_field>
+<u_source_value>Active</u_source_value>
+<u_target_value>!!TBD</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:24:50</sys_created_on>
+<sys_id>a2cddaa7dba8974073ab787dbf961965</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:17:01</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>messagestatus</u_source_field>
+<u_source_value>Pending Vendor</u_source_value>
+<u_target_value>!!TBD</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 03:25:07</sys_created_on>
+<sys_id>e4ed122bdba8974073ab787dbf961948</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:17:03</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>messagestatus</u_source_field>
+<u_source_value>Pending User (Internal)</u_source_value>
+<u_target_value>!!TBD</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 04:05:54</sys_created_on>
+<sys_id>0e37ae67dbe8974073ab787dbf961962</sys_id>
+<sys_mod_count>3</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-11 23:18:01</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>priority</u_source_field>
+<u_source_value>2</u_source_value>
+<u_target_value>2</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 04:04:58</sys_created_on>
+<sys_id>16f6e2a7dbe8974073ab787dbf9619a5</sys_id>
+<sys_mod_count>2</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:22:27</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>priority</u_source_field>
+<u_source_value>2</u_source_value>
+<u_target_value>2</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 04:05:25</sys_created_on>
+<sys_id>231766a7dbe8974073ab787dbf9619b7</sys_id>
+<sys_mod_count>2</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:22:07</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>priority</u_source_field>
+<u_source_value>4</u_source_value>
+<u_target_value>4</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 04:05:40</sys_created_on>
+<sys_id>322722a7dbe8974073ab787dbf961938</sys_id>
+<sys_mod_count>3</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-11 23:18:01</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>priority</u_source_field>
+<u_source_value>1</u_source_value>
+<u_target_value>1</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 04:04:33</sys_created_on>
+<sys_id>3f86ae67dbe8974073ab787dbf961971</sys_id>
+<sys_mod_count>2</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:22:37</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>priority</u_source_field>
+<u_source_value>1</u_source_value>
+<u_target_value>1</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 04:05:11</sys_created_on>
+<sys_id>5417ae67dbe8974073ab787dbf961960</sys_id>
+<sys_mod_count>4</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-11 23:18:01</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>priority</u_source_field>
+<u_source_value>3</u_source_value>
+<u_target_value>3</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 04:06:06</sys_created_on>
+<sys_id>e54766a7dbe8974073ab787dbf961907</sys_id>
+<sys_mod_count>2</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:22:15</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>priority</u_source_field>
+<u_source_value>3</u_source_value>
+<u_target_value>3</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-13 04:48:01</sys_created_on>
+<sys_id>14047e79db30d30073ab787dbf9619c4</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-13 04:48:01</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>status</u_source_field>
+<u_source_value>Closed</u_source_value>
+<u_target_value>7</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-13 04:45:04</sys_created_on>
+<sys_id>1e333e79db30d30073ab787dbf961918</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-13 04:45:04</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>status</u_source_field>
+<u_source_value>New</u_source_value>
+<u_target_value>1</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-13 04:48:14</sys_created_on>
+<sys_id>22043a79db30d30073ab787dbf9619eb</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-14 00:15:54</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>status</u_source_field>
+<u_source_value>Pending Change</u_source_value>
+<u_target_value>3</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-13 04:45:31</sys_created_on>
+<sys_id>5b53fa79db30d30073ab787dbf9619af</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-13 04:45:31</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>status</u_source_field>
+<u_source_value>Active</u_source_value>
+<u_target_value>2</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-13 04:46:05</sys_created_on>
+<sys_id>8e737a39db30d30073ab787dbf9619b5</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-14 00:16:37</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>status</u_source_field>
+<u_source_value>Pending Customer</u_source_value>
+<u_target_value>4</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-13 04:47:52</sys_created_on>
+<sys_id>95f3f679db30d30073ab787dbf9619b3</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-13 04:47:52</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>status</u_source_field>
+<u_source_value>Resolved</u_source_value>
+<u_target_value>6</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-13 04:47:39</sys_created_on>
+<sys_id>aed3f239db30d30073ab787dbf961946</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-13 04:47:39</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>status</u_source_field>
+<u_source_value>Pending User (Internal)</u_source_value>
+<u_target_value>5</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-13 04:46:32</sys_created_on>
+<sys_id>d6933e39db30d30073ab787dbf9619d7</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-13 04:46:32</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>status</u_source_field>
+<u_source_value>Pending Vendor</u_source_value>
+<u_target_value>4</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:21:18</sys_created_on>
+<sys_id>004120114f959740aab4a3b11310c784</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:21:18</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>provisioning</u_source_value>
+<u_target_value>Billing Error</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:31:38</sys_created_on>
+<sys_id>04a3e4514f959740aab4a3b11310c753</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:31:38</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Update</u_source_value>
+<u_target_value>Functionality</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:26:11</sys_created_on>
+<sys_id>08622c114f959740aab4a3b11310c7b0</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:26:11</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Alphawest</u_source_value>
+<u_target_value>Enquiry</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:25:14</sys_created_on>
+<sys_id>1222e8114f959740aab4a3b11310c7c7</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:25:14</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Peripheral</u_source_value>
+<u_target_value>Switch</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:28:04</sys_created_on>
+<sys_id>12c2a0514f959740aab4a3b11310c7ce</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:28:04</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Outage/connectivity</u_source_value>
+<u_target_value>Internet</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:30:29</sys_created_on>
+<sys_id>135320514f959740aab4a3b11310c76b</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:30:29</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>virus alert</u_source_value>
+<u_target_value>Breach</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 00:42:55</sys_created_on>
+<sys_id>1f6555e04f381300aab4a3b11310c726</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-11 23:18:01</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Mobile Phone</u_source_value>
+<u_target_value>Hardware failure</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 00:43:37</sys_created_on>
+<sys_id>1f9559644f381300aab4a3b11310c7b5</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-11 23:18:01</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Switch</u_source_value>
+<u_target_value>Hardware failure</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:28:35</sys_created_on>
+<sys_id>1fe2a0514f959740aab4a3b11310c79c</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:28:35</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>send/receive SMS</u_source_value>
+<u_target_value>Enquiry</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:30:10</sys_created_on>
+<sys_id>2643a0514f959740aab4a3b11310c7a5</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:30:10</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>SPAM event/message</u_source_value>
+<u_target_value>SPAM</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 00:48:37</sys_created_on>
+<sys_id>27b6d9a44f381300aab4a3b11310c7f7</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-11 23:18:01</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Breach</u_source_value>
+<u_target_value>unauthorised access/use</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:26:21</sys_created_on>
+<sys_id>2a62ec114f959740aab4a3b11310c799</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:26:21</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Other</u_source_value>
+<u_target_value>Enquiry</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 00:42:03</sys_created_on>
+<sys_id>2c3559644f381300aab4a3b11310c7a7</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-11 23:18:01</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Desk Phone</u_source_value>
+<u_target_value>Hardware failure</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:26:45</sys_created_on>
+<sys_id>2c82ac114f959740aab4a3b11310c7e1</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:26:45</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Equipment</u_source_value>
+<u_target_value>Switch</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 00:46:04</sys_created_on>
+<sys_id>2f265d644f381300aab4a3b11310c7c3</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-11 23:18:01</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Enquiry</u_source_value>
+<u_target_value>Configuration</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 00:46:56</sys_created_on>
+<sys_id>3066d1a04f381300aab4a3b11310c783</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-11 23:18:01</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Error</u_source_value>
+<u_target_value>Error</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:21:45</sys_created_on>
+<sys_id>325120114f959740aab4a3b11310c787</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:21:45</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>dispute DAK</u_source_value>
+<u_target_value>Billing Error</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:30:19</sys_created_on>
+<sys_id>3c53a4514f959740aab4a3b11310c7f0</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:30:19</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>unauthorised access/use</u_source_value>
+<u_target_value>Breach</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:23:48</sys_created_on>
+<sys_id>3cd1e4114f959740aab4a3b11310c736</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:23:48</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Device not received</u_source_value>
+<u_target_value>Switch</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:27:48</sys_created_on>
+<sys_id>40c220514f959740aab4a3b11310c7bb</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:27:48</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>fibre</u_source_value>
+<u_target_value>WAN</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:28:55</sys_created_on>
+<sys_id>440368114f959740aab4a3b11310c7d9</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:28:55</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>alert event/message</u_source_value>
+<u_target_value>Performance</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 00:47:47</sys_created_on>
+<sys_id>489659644f381300aab4a3b11310c7b9</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-11 23:18:01</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Spam</u_source_value>
+<u_target_value>SPAM event/message</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:22:17</sys_created_on>
+<sys_id>4f712cdd4f559740aab4a3b11310c732</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:22:17</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>coverage check</u_source_value>
+<u_target_value>Mobile</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 00:49:21</sys_created_on>
+<sys_id>4fe651e44f381300aab4a3b11310c781</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-11 23:18:01</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Phishing</u_source_value>
+<u_target_value>Security alert</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 00:51:43</sys_created_on>
+<sys_id>517791644f381300aab4a3b11310c766</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-11 23:18:01</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Enquiry</u_source_value>
+<u_target_value>policy violation</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:21:33</sys_created_on>
+<sys_id>585160dd4f559740aab4a3b11310c737</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:21:33</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Dispute</u_source_value>
+<u_target_value>Billing Error</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:30:01</sys_created_on>
+<sys_id>6043a4514f959740aab4a3b11310c775</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:30:01</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Security alert</u_source_value>
+<u_target_value>Breach</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:24:22</sys_created_on>
+<sys_id>60f1e8114f959740aab4a3b11310c753</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:24:22</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Missing or stolen</u_source_value>
+<u_target_value>Switch</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:31:20</sys_created_on>
+<sys_id>6983a4514f959740aab4a3b11310c777</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:31:20</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Performance degradation</u_source_value>
+<u_target_value>Performance</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:28:12</sys_created_on>
+<sys_id>7dd268114f959740aab4a3b11310c7d6</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:28:12</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Performance degradation</u_source_value>
+<u_target_value>Internet</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:29:43</sys_created_on>
+<sys_id>7f2368114f959740aab4a3b11310c7db</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:29:43</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>missing or stolen</u_source_value>
+<u_target_value>Enquiry</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:24:33</sys_created_on>
+<sys_id>8402a8114f959740aab4a3b11310c75d</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:24:33</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Monitor</u_source_value>
+<u_target_value>Switch</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:23:02</sys_created_on>
+<sys_id>8da1e4114f959740aab4a3b11310c794</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:23:02</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>voice connection</u_source_value>
+<u_target_value>Mobile</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:25:47</sys_created_on>
+<sys_id>8e42e4114f959740aab4a3b11310c739</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:25:47</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Provisioning</u_source_value>
+<u_target_value>Switch</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:28:24</sys_created_on>
+<sys_id>94e220514f959740aab4a3b11310c7ad</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:28:24</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>provisioning</u_source_value>
+<u_target_value>Enquiry</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:29:53</sys_created_on>
+<sys_id>9e3364114f959740aab4a3b11310c756</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:29:53</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>policy violation</u_source_value>
+<u_target_value>Breach</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:24:10</sys_created_on>
+<sys_id>a2e1a8114f959740aab4a3b11310c75a</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:24:10</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Hardware failure</u_source_value>
+<u_target_value>Switch</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:29:30</sys_created_on>
+<sys_id>a42320514f959740aab4a3b11310c7c3</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:29:30</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>denial of service</u_source_value>
+<u_target_value>Enquiry</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 01:30:09</sys_created_on>
+<sys_id>a8606960db38130073ab787dbf961984</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-09 01:30:09</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>voice connection</u_source_value>
+<u_target_value>Mobile</u_target_value>
+<u_ticket_category>Coverage</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 01:30:09</sys_created_on>
+<sys_id>a8606960db38130073ab787dbf961987</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-09 01:30:09</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Equipment</u_source_value>
+<u_target_value>Switch</u_target_value>
+<u_ticket_category>Network Uecomm</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 01:30:10</sys_created_on>
+<sys_id>a8606960db38130073ab787dbf96198a</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-09 01:30:10</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Security alert</u_source_value>
+<u_target_value>Breach</u_target_value>
+<u_ticket_category>Security</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:30:39</sys_created_on>
+<sys_id>a96328514f959740aab4a3b11310c78d</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:30:39</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Configuration</u_source_value>
+<u_target_value>Functionality</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:22:29</sys_created_on>
+<sys_id>a981e0114f959740aab4a3b11310c72c</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:22:29</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>coverage level</u_source_value>
+<u_target_value>Mobile</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 01:30:09</sys_created_on>
+<sys_id>ac606960db38130073ab787dbf961986</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-09 01:30:09</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Customer</u_source_value>
+<u_target_value>Enquiry</u_target_value>
+<u_ticket_category>Network Customer</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 01:30:10</sys_created_on>
+<sys_id>ac606960db38130073ab787dbf961989</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-09 01:30:10</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>system or application hangs</u_source_value>
+<u_target_value>Performance</u_target_value>
+<u_ticket_category>Performance</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:29:17</sys_created_on>
+<sys_id>ad1320514f959740aab4a3b11310c766</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:29:17</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>system or application hangs</u_source_value>
+<u_target_value>Performance</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:27:38</sys_created_on>
+<sys_id>b0b2e4114f959740aab4a3b11310c73d</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:27:38</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>copper</u_source_value>
+<u_target_value>WAN</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 00:40:29</sys_created_on>
+<sys_id>b4e411644f381300aab4a3b11310c727</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-11 23:18:02</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Performance</u_source_value>
+<u_target_value>Performance degradation</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:25:26</sys_created_on>
+<sys_id>b83264114f959740aab4a3b11310c750</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:25:26</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Platform</u_source_value>
+<u_target_value>Switch</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:26:03</sys_created_on>
+<sys_id>b952ac114f959740aab4a3b11310c7de</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:26:03</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Customer</u_source_value>
+<u_target_value>Enquiry</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 01:06:52</sys_created_on>
+<sys_id>b9fad9284f381300aab4a3b11310c777</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-09 01:06:52</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Login failure</u_source_value>
+<u_target_value>Enquiry</u_target_value>
+<u_ticket_category>Access</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:25:05</sys_created_on>
+<sys_id>bb12e8114f959740aab4a3b11310c7b6</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:25:05</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Performance degradation</u_source_value>
+<u_target_value>Switch</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:22:41</sys_created_on>
+<sys_id>c09164114f959740aab4a3b11310c7f5</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:22:41</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>dropped calls</u_source_value>
+<u_target_value>Mobile</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:30:50</sys_created_on>
+<sys_id>c473e4514f959740aab4a3b11310c7a3</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:30:50</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Desktop</u_source_value>
+<u_target_value>Functionality</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:23:38</sys_created_on>
+<sys_id>c5b164114f959740aab4a3b11310c7f8</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:23:38</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Configuration</u_source_value>
+<u_target_value>Switch</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:21:09</sys_created_on>
+<sys_id>c831e85d4f559740aab4a3b11310c79a</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:21:09</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>error</u_source_value>
+<u_target_value>Billing Error</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:22:50</sys_created_on>
+<sys_id>cf91a0114f959740aab4a3b11310c7d8</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:22:50</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Performance degradation</u_source_value>
+<u_target_value>Mobile</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 00:37:13</sys_created_on>
+<sys_id>d624d1e04f381300aab4a3b11310c7ba</sys_id>
+<sys_mod_count>2</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-11 23:18:02</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Enquiry</u_source_value>
+<u_target_value>Outage/connectivity</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:26:33</sys_created_on>
+<sys_id>d972e4114f959740aab4a3b11310c79d</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:26:33</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Configuration</u_source_value>
+<u_target_value>Enquiry</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 00:38:12</sys_created_on>
+<sys_id>e054dda04f381300aab4a3b11310c76a</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-11 23:18:02</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Mobile</u_source_value>
+<u_target_value>coverage check</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 01:30:09</sys_created_on>
+<sys_id>e0606960db38130073ab787dbf961985</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-09 01:30:09</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Hard disk</u_source_value>
+<u_target_value>Switch</u_target_value>
+<u_ticket_category>Hardware</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 01:30:10</sys_created_on>
+<sys_id>e0606960db38130073ab787dbf961988</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-09 01:30:10</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Configuration</u_source_value>
+<u_target_value>Enquiry</u_target_value>
+<u_ticket_category>Network</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 01:30:10</sys_created_on>
+<sys_id>e0606960db38130073ab787dbf96198b</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-09 01:30:10</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>virus alert</u_source_value>
+<u_target_value>Breach</u_target_value>
+<u_ticket_category>Security</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 01:30:09</sys_created_on>
+<sys_id>e4606960db38130073ab787dbf961984</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-09 01:30:09</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Performance degradation</u_source_value>
+<u_target_value>Mobile</u_target_value>
+<u_ticket_category>Coverage</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 01:30:09</sys_created_on>
+<sys_id>e4606960db38130073ab787dbf961987</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-09 01:30:09</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Configuration</u_source_value>
+<u_target_value>Enquiry</u_target_value>
+<u_ticket_category>Network Uecomm</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 01:30:10</sys_created_on>
+<sys_id>e4606960db38130073ab787dbf96198a</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-09 01:30:10</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>policy violation</u_source_value>
+<u_target_value>Breach</u_target_value>
+<u_ticket_category>Security</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:27:24</sys_created_on>
+<sys_id>e5a2ac114f959740aab4a3b11310c74e</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:27:24</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Configuration</u_source_value>
+<u_target_value>Enquiry</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:30:59</sys_created_on>
+<sys_id>e673e4514f959740aab4a3b11310c7eb</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:30:59</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Installation</u_source_value>
+<u_target_value>Functionality</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:26:54</sys_created_on>
+<sys_id>e68220514f959740aab4a3b11310c7b7</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:26:54</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Infrastructure</u_source_value>
+<u_target_value>Switch</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:22:07</sys_created_on>
+<sys_id>e761a0114f959740aab4a3b11310c7d6</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:22:07</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>congestion</u_source_value>
+<u_target_value>Mobile</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 01:30:09</sys_created_on>
+<sys_id>e8606960db38130073ab787dbf961986</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-09 01:30:09</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Provisioning</u_source_value>
+<u_target_value>Switch</u_target_value>
+<u_ticket_category>Hardware</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 01:30:10</sys_created_on>
+<sys_id>e8606960db38130073ab787dbf961989</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-09 01:30:10</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Performance degradation</u_source_value>
+<u_target_value>Performance</u_target_value>
+<u_ticket_category>Performance</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 01:30:09</sys_created_on>
+<sys_id>ec606960db38130073ab787dbf961985</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-09 01:30:09</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Performance degradation</u_source_value>
+<u_target_value>Switch</u_target_value>
+<u_ticket_category>Hardware</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 01:30:10</sys_created_on>
+<sys_id>ec606960db38130073ab787dbf961988</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-09 01:30:10</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Performance degradation</u_source_value>
+<u_target_value>Internet</u_target_value>
+<u_ticket_category>Network</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 01:30:10</sys_created_on>
+<sys_id>ec606960db38130073ab787dbf96198b</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-09 01:30:10</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Performance degradation</u_source_value>
+<u_target_value>Performance</u_target_value>
+<u_ticket_category>Software</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 01:05:39</sys_created_on>
+<sys_id>ecaa19684f381300aab4a3b11310c73a</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-09 01:05:39</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>ate</u_source_value>
+<u_target_value>Enquiry</u_target_value>
+<u_ticket_category>Access</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:25:37</sys_created_on>
+<sys_id>f33268114f959740aab4a3b11310c7d3</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:25:37</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Power supply</u_source_value>
+<u_target_value>Switch</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:27:08</sys_created_on>
+<sys_id>f592e8114f959740aab4a3b11310c7cc</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:27:08</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>activation</u_source_value>
+<u_target_value>Enquiry</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 01:06:16</sys_created_on>
+<sys_id>f5da11a84f381300aab4a3b11310c713</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-09 01:06:16</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Authorization/permissions error</u_source_value>
+<u_target_value>Not Authorised</u_target_value>
+<u_ticket_category>Access</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:23:58</sys_created_on>
+<sys_id>f7d16c9d4f559740aab4a3b11310c7af</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:23:58</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Hard disk</u_source_value>
+<u_target_value>Switch</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:29:06</sys_created_on>
+<sys_id>fa0320514f959740aab4a3b11310c776</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:29:06</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Performance degradation</u_source_value>
+<u_target_value>Performance</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-04-05 01:31:29</sys_created_on>
+<sys_id>fd93e4514f959740aab4a3b11310c7a5</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-04-05 01:31:29</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Software failure</u_source_value>
+<u_target_value>Functionality</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-09 00:50:58</sys_created_on>
+<sys_id>fe2751a44f381300aab4a3b11310c798</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-11 23:18:02</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>subcategory</u_source_field>
+<u_source_value>Whaling</u_source_value>
+<u_target_value>Security alert</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 04:08:16</sys_created_on>
+<sys_id>25c7a2e7dbe8974073ab787dbf961981</sys_id>
+<sys_mod_count>3</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-11 23:18:01</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>urgency</u_source_field>
+<u_source_value>3</u_source_value>
+<u_target_value>4</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 04:08:05</sys_created_on>
+<sys_id>6ab7eea7dbe8974073ab787dbf9619f5</sys_id>
+<sys_mod_count>3</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-11 23:18:01</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>urgency</u_source_field>
+<u_source_value>2</u_source_value>
+<u_target_value>2</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 04:07:52</sys_created_on>
+<sys_id>73a72ae7dbe8974073ab787dbf9619cf</sys_id>
+<sys_mod_count>3</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-11 23:18:01</sys_updated_on>
+<u_company>TCC</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>urgency</u_source_field>
+<u_source_value>1</u_source_value>
+<u_target_value>1</u_target_value>
+<u_ticket_category>Incident</u_ticket_category>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 04:07:01</sys_created_on>
+<sys_id>9c676e67dbe8974073ab787dbf96198c</sys_id>
+<sys_mod_count>2</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:24:48</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>urgency</u_source_field>
+<u_source_value>1</u_source_value>
+<u_target_value>1</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 04:07:40</sys_created_on>
+<sys_id>c5a722e7dbe8974073ab787dbf961931</sys_id>
+<sys_mod_count>2</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:24:08</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>urgency</u_source_field>
+<u_source_value>4</u_source_value>
+<u_target_value>3</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 04:07:15</sys_created_on>
+<sys_id>d287e2e7dbe8974073ab787dbf961946</sys_id>
+<sys_mod_count>2</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:24:42</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>urgency</u_source_field>
+<u_source_value>2</u_source_value>
+<u_target_value>2</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+<x_cio19_optus_ate_optus_ate_mapping action="INSERT_OR_UPDATE">
+<sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+<sys_created_on>2018-03-06 04:07:28</sys_created_on>
+<sys_id>d997a6a7dbe8974073ab787dbf961900</sys_id>
+<sys_mod_count>2</sys_mod_count>
+<sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+<sys_updated_on>2018-03-06 04:24:28</sys_updated_on>
+<u_company>Optus</u_company>
+<u_default/>
+<u_order/>
+<u_source_field>urgency</u_source_field>
+<u_source_value>3</u_source_value>
+<u_target_value>3</u_target_value>
+<u_ticket_category/>
+</x_cio19_optus_ate_optus_ate_mapping>
+</unload>
