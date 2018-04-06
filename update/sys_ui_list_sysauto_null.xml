@@ -4,62 +4,152 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>name</element>
-            <list_id display_value="sysauto" element="NULL" name="sysauto" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">a1b0b9330a000641494885177d512f13</list_id>
+            <list_id display_value="sysauto" element="NULL" name="sysauto" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">95edc5614f55d740aab4a3b11310c7ec</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>0</position>
             <sum>false</sum>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2011-04-29 14:36:44</sys_created_on>
-            <sys_id>a1b0b9400a00064152b4d0f4a3eb84f2</sys_id>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-04-05 23:14:42</sys_created_on>
+            <sys_id>11edc5614f55d740aab4a3b11310c7ed</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2011-04-29 14:36:44</sys_updated_on>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-04-05 23:14:42</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>active</element>
-            <list_id display_value="sysauto" element="NULL" name="sysauto" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">a1b0b9330a000641494885177d512f13</list_id>
+            <list_id display_value="sysauto" element="NULL" name="sysauto" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">95edc5614f55d740aab4a3b11310c7ec</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>1</position>
             <sum>false</sum>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2011-04-29 14:36:44</sys_created_on>
-            <sys_id>a1b0b9810a000641349359bd6bb11ebc</sys_id>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-04-05 23:14:42</sys_created_on>
+            <sys_id>95edc5614f55d740aab4a3b11310c7ed</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2011-04-29 14:36:44</sys_updated_on>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-04-05 23:14:42</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>sys_class_name</element>
-            <list_id display_value="sysauto" element="NULL" name="sysauto" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">a1b0b9330a000641494885177d512f13</list_id>
+            <element>condition</element>
+            <list_id display_value="sysauto" element="NULL" name="sysauto" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">95edc5614f55d740aab4a3b11310c7ec</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>2</position>
             <sum>false</sum>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2011-04-29 14:36:44</sys_created_on>
-            <sys_id>a1b0b9820a0006413f07022c148869a1</sys_id>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-04-05 23:14:42</sys_created_on>
+            <sys_id>19edc5614f55d740aab4a3b11310c7ed</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2011-04-29 14:36:44</sys_updated_on>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-04-05 23:14:42</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>sys_updated_on</element>
-            <list_id display_value="sysauto" element="NULL" name="sysauto" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">a1b0b9330a000641494885177d512f13</list_id>
+            <element>conditional</element>
+            <list_id display_value="sysauto" element="NULL" name="sysauto" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">95edc5614f55d740aab4a3b11310c7ec</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>3</position>
             <sum>false</sum>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2011-04-29 14:36:44</sys_created_on>
-            <sys_id>a1b0b98e0a0006415f7a1a0e7202f667</sys_id>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-04-05 23:14:42</sys_created_on>
+            <sys_id>99edc5614f55d740aab4a3b11310c7ed</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2011-04-29 14:36:44</sys_updated_on>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-04-05 23:14:42</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>run_as</element>
+            <list_id display_value="sysauto" element="NULL" name="sysauto" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">95edc5614f55d740aab4a3b11310c7ec</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-04-05 23:14:42</sys_created_on>
+            <sys_id>1dedc5614f55d740aab4a3b11310c7ed</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-04-05 23:14:42</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>run_as_tz</element>
+            <list_id display_value="sysauto" element="NULL" name="sysauto" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">95edc5614f55d740aab4a3b11310c7ec</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>5</position>
+            <sum>false</sum>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-04-05 23:14:42</sys_created_on>
+            <sys_id>9dedc5614f55d740aab4a3b11310c7ed</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-04-05 23:14:42</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>run_dayofmonth</element>
+            <list_id display_value="sysauto" element="NULL" name="sysauto" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">95edc5614f55d740aab4a3b11310c7ec</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>6</position>
+            <sum>false</sum>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-04-05 23:14:42</sys_created_on>
+            <sys_id>11edc5614f55d740aab4a3b11310c7ee</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-04-05 23:14:42</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>run_dayofweek</element>
+            <list_id display_value="sysauto" element="NULL" name="sysauto" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">95edc5614f55d740aab4a3b11310c7ec</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>7</position>
+            <sum>false</sum>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-04-05 23:14:42</sys_created_on>
+            <sys_id>91edc5614f55d740aab4a3b11310c7ee</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-04-05 23:14:42</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>run_period</element>
+            <list_id display_value="sysauto" element="NULL" name="sysauto" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">95edc5614f55d740aab4a3b11310c7ec</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>8</position>
+            <sum>false</sum>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-04-05 23:14:42</sys_created_on>
+            <sys_id>15edc5614f55d740aab4a3b11310c7ee</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-04-05 23:14:42</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>run_start</element>
+            <list_id display_value="sysauto" element="NULL" name="sysauto" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">95edc5614f55d740aab4a3b11310c7ec</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>9</position>
+            <sum>false</sum>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-04-05 23:14:42</sys_created_on>
+            <sys_id>95edc5614f55d740aab4a3b11310c7ee</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-04-05 23:14:42</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
@@ -79,12 +169,12 @@
             <sys_domain_path>/</sys_domain_path>
             <sys_id>9bc2a5e5dbb4930073ab787dbf96190d</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_name/>
-            <sys_package/>
+            <sys_name>sysauto</sys_name>
+            <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
             <sys_policy/>
             <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
             <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
-            <sys_update_name/>
+            <sys_update_name>sys_ui_list_sysauto_null</sys_update_name>
             <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
             <sys_updated_on>2018-03-12 04:14:38</sys_updated_on>
             <sys_user display_value="Leon Storey">1d8b25ce4f6ee240a022c61f0310c7d4</sys_user>
