@@ -5,24 +5,24 @@
         <license_condition/>
         <license_model>none</license_model>
         <license_roles/>
-        <name>x_cio19_optus_ate_optus_ate_holding</name>
+        <name>x_cio19_optus_ate_ateeventin</name>
         <op_delete>true</op_delete>
         <op_insert>true</op_insert>
         <op_update>true</op_update>
         <owner_condition/>
         <sys_class_name>ua_table_licensing_config</sys_class_name>
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
-        <sys_created_on>2017-07-31 05:47:27</sys_created_on>
+        <sys_created_on>2018-03-16 03:29:37</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_id>bf0725d14f999740aab4a3b11310c7da</sys_id>
+        <sys_id>538fdceb4f595f40aab4a3b11310c7dc</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>x_cio19_optus_ate_optus_ate_holding</sys_name>
+        <sys_name>x_cio19_optus_ate_ateeventin</sys_name>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
-        <sys_update_name>ua_table_licensing_config_bf0725d14f999740aab4a3b11310c7da</sys_update_name>
+        <sys_update_name>ua_table_licensing_config_538fdceb4f595f40aab4a3b11310c7dc</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2017-07-31 05:47:27</sys_updated_on>
+        <sys_updated_on>2018-03-16 03:29:37</sys_updated_on>
     </ua_table_licensing_config>
 </record_update>
