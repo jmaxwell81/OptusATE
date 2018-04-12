@@ -4,152 +4,152 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>number</element>
-            <list_id display_value="incident" element="NULL" name="incident" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">cd0d47fd4fc0cf40fe56ccce0310c71e</list_id>
+            <list_id display_value="incident" element="NULL" name="incident" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">970e45614f55d740aab4a3b11310c711</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>0</position>
             <sum>false</sum>
-            <sys_created_by>b1v@townsville.qld.gov.au</sys_created_by>
-            <sys_created_on>2017-07-20 03:38:56</sys_created_on>
-            <sys_id>090d47fd4fc0cf40fe56ccce0310c71f</sys_id>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-04-05 23:15:23</sys_created_on>
+            <sys_id>9b0e01254f55d740aab4a3b11310c7b2</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>b1v@townsville.qld.gov.au</sys_updated_by>
-            <sys_updated_on>2017-07-20 03:38:56</sys_updated_on>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-04-05 23:15:23</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>u_requestor</element>
-            <list_id display_value="incident" element="NULL" name="incident" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">cd0d47fd4fc0cf40fe56ccce0310c71e</list_id>
+            <element>active</element>
+            <list_id display_value="incident" element="NULL" name="incident" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">970e45614f55d740aab4a3b11310c711</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>1</position>
             <sum>false</sum>
-            <sys_created_by>b1v@townsville.qld.gov.au</sys_created_by>
-            <sys_created_on>2017-07-20 03:38:56</sys_created_on>
-            <sys_id>8d0d47fd4fc0cf40fe56ccce0310c71f</sys_id>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-04-05 23:15:23</sys_created_on>
+            <sys_id>1f0e01254f55d740aab4a3b11310c7b2</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>b1v@townsville.qld.gov.au</sys_updated_by>
-            <sys_updated_on>2017-07-20 03:38:56</sys_updated_on>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-04-05 23:15:23</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>short_description</element>
-            <list_id display_value="incident" element="NULL" name="incident" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">cd0d47fd4fc0cf40fe56ccce0310c71e</list_id>
+            <element>activity_due</element>
+            <list_id display_value="incident" element="NULL" name="incident" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">970e45614f55d740aab4a3b11310c711</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>2</position>
             <sum>false</sum>
-            <sys_created_by>b1v@townsville.qld.gov.au</sys_created_by>
-            <sys_created_on>2017-07-20 03:38:56</sys_created_on>
-            <sys_id>010d47fd4fc0cf40fe56ccce0310c720</sys_id>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-04-05 23:15:23</sys_created_on>
+            <sys_id>9f0e01254f55d740aab4a3b11310c7b2</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>b1v@townsville.qld.gov.au</sys_updated_by>
-            <sys_updated_on>2017-07-20 03:38:56</sys_updated_on>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-04-05 23:15:23</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>category</element>
-            <list_id display_value="incident" element="NULL" name="incident" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">cd0d47fd4fc0cf40fe56ccce0310c71e</list_id>
+            <element>additional_assignee_list</element>
+            <list_id display_value="incident" element="NULL" name="incident" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">970e45614f55d740aab4a3b11310c711</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>3</position>
             <sum>false</sum>
-            <sys_created_by>b1v@townsville.qld.gov.au</sys_created_by>
-            <sys_created_on>2017-07-20 03:38:56</sys_created_on>
-            <sys_id>810d47fd4fc0cf40fe56ccce0310c720</sys_id>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-04-05 23:15:23</sys_created_on>
+            <sys_id>130e01254f55d740aab4a3b11310c7b3</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>b1v@townsville.qld.gov.au</sys_updated_by>
-            <sys_updated_on>2017-07-20 03:38:56</sys_updated_on>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-04-05 23:15:23</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>priority</element>
-            <list_id display_value="incident" element="NULL" name="incident" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">cd0d47fd4fc0cf40fe56ccce0310c71e</list_id>
+            <element>approval</element>
+            <list_id display_value="incident" element="NULL" name="incident" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">970e45614f55d740aab4a3b11310c711</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>4</position>
             <sum>false</sum>
-            <sys_created_by>b1v@townsville.qld.gov.au</sys_created_by>
-            <sys_created_on>2017-07-20 03:38:56</sys_created_on>
-            <sys_id>050d47fd4fc0cf40fe56ccce0310c720</sys_id>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-04-05 23:15:23</sys_created_on>
+            <sys_id>930e01254f55d740aab4a3b11310c7b3</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>b1v@townsville.qld.gov.au</sys_updated_by>
-            <sys_updated_on>2017-07-20 03:38:56</sys_updated_on>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-04-05 23:15:23</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>state</element>
-            <list_id display_value="incident" element="NULL" name="incident" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">cd0d47fd4fc0cf40fe56ccce0310c71e</list_id>
+            <element>approval_history</element>
+            <list_id display_value="incident" element="NULL" name="incident" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">970e45614f55d740aab4a3b11310c711</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>5</position>
             <sum>false</sum>
-            <sys_created_by>b1v@townsville.qld.gov.au</sys_created_by>
-            <sys_created_on>2017-07-20 03:38:56</sys_created_on>
-            <sys_id>850d47fd4fc0cf40fe56ccce0310c720</sys_id>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-04-05 23:15:23</sys_created_on>
+            <sys_id>170e01254f55d740aab4a3b11310c7b3</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>b1v@townsville.qld.gov.au</sys_updated_by>
-            <sys_updated_on>2017-07-20 03:38:56</sys_updated_on>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-04-05 23:15:23</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>assignment_group</element>
-            <list_id display_value="incident" element="NULL" name="incident" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">cd0d47fd4fc0cf40fe56ccce0310c71e</list_id>
+            <element>approval_set</element>
+            <list_id display_value="incident" element="NULL" name="incident" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">970e45614f55d740aab4a3b11310c711</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>6</position>
             <sum>false</sum>
-            <sys_created_by>b1v@townsville.qld.gov.au</sys_created_by>
-            <sys_created_on>2017-07-20 03:38:56</sys_created_on>
-            <sys_id>090d47fd4fc0cf40fe56ccce0310c720</sys_id>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-04-05 23:15:23</sys_created_on>
+            <sys_id>970e01254f55d740aab4a3b11310c7b3</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>b1v@townsville.qld.gov.au</sys_updated_by>
-            <sys_updated_on>2017-07-20 03:38:56</sys_updated_on>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-04-05 23:15:23</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>assigned_to</element>
-            <list_id display_value="incident" element="NULL" name="incident" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">cd0d47fd4fc0cf40fe56ccce0310c71e</list_id>
+            <list_id display_value="incident" element="NULL" name="incident" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">970e45614f55d740aab4a3b11310c711</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>7</position>
             <sum>false</sum>
-            <sys_created_by>b1v@townsville.qld.gov.au</sys_created_by>
-            <sys_created_on>2017-07-20 03:38:56</sys_created_on>
-            <sys_id>890d47fd4fc0cf40fe56ccce0310c720</sys_id>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-04-05 23:15:23</sys_created_on>
+            <sys_id>1b0e01254f55d740aab4a3b11310c7b3</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>b1v@townsville.qld.gov.au</sys_updated_by>
-            <sys_updated_on>2017-07-20 03:38:56</sys_updated_on>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-04-05 23:15:23</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>business_service</element>
-            <list_id display_value="incident" element="NULL" name="incident" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">cd0d47fd4fc0cf40fe56ccce0310c71e</list_id>
+            <element>assignment_group</element>
+            <list_id display_value="incident" element="NULL" name="incident" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">970e45614f55d740aab4a3b11310c711</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>8</position>
             <sum>false</sum>
-            <sys_created_by>b1v@townsville.qld.gov.au</sys_created_by>
-            <sys_created_on>2017-07-20 03:38:56</sys_created_on>
-            <sys_id>0d0d47fd4fc0cf40fe56ccce0310c720</sys_id>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-04-05 23:15:23</sys_created_on>
+            <sys_id>9b0e01254f55d740aab4a3b11310c7b3</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>b1v@townsville.qld.gov.au</sys_updated_by>
-            <sys_updated_on>2017-07-20 03:38:56</sys_updated_on>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-04-05 23:15:23</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>cmdb_ci</element>
-            <list_id display_value="incident" element="NULL" name="incident" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">cd0d47fd4fc0cf40fe56ccce0310c71e</list_id>
+            <element>business_duration</element>
+            <list_id display_value="incident" element="NULL" name="incident" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">970e45614f55d740aab4a3b11310c711</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>9</position>
             <sum>false</sum>
-            <sys_created_by>b1v@townsville.qld.gov.au</sys_created_by>
-            <sys_created_on>2017-07-20 03:38:56</sys_created_on>
-            <sys_id>8d0d47fd4fc0cf40fe56ccce0310c720</sys_id>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-04-05 23:15:23</sys_created_on>
+            <sys_id>1f0e01254f55d740aab4a3b11310c7b3</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>b1v@townsville.qld.gov.au</sys_updated_by>
-            <sys_updated_on>2017-07-20 03:38:56</sys_updated_on>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-04-05 23:15:23</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
@@ -162,12 +162,12 @@
             <relationship/>
             <sum>false</sum>
             <sys_class_name>sys_ui_list</sys_class_name>
-            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
-            <sys_created_on>2018-03-28 05:06:28</sys_created_on>
+            <sys_created_by>keystone.benc</sys_created_by>
+            <sys_created_on>2018-04-11 06:11:02</sys_created_on>
             <sys_customer_update>false</sys_customer_update>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>a618c4f64f859f00aab4a3b11310c768</sys_id>
+            <sys_id>b42d5cd7db9d5b4073ab787dbf961912</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name/>
             <sys_package/>
@@ -175,9 +175,9 @@
             <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
             <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
             <sys_update_name/>
-            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-            <sys_updated_on>2018-03-28 05:06:28</sys_updated_on>
-            <sys_user display_value="Leon Storey">1d8b25ce4f6ee240a022c61f0310c7d4</sys_user>
+            <sys_updated_by>keystone.benc</sys_updated_by>
+            <sys_updated_on>2018-04-11 06:11:02</sys_updated_on>
+            <sys_user display_value="Ben Collyer">0bf9e6ed4fb816008767a3b11310c7a3</sys_user>
             <view display_value="Default view" name="NULL">Default view</view>
             <view_name/>
         </sys_ui_list>
