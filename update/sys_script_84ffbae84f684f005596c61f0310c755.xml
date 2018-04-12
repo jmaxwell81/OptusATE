@@ -31,7 +31,8 @@
         <rest_variables/>
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
-var inc_in = new GlideRecord('incident');
+//var inc_in = new GlideRecord('incident');
+	var inc_in = new GlideRecord('task');
 try{
 	
 	
@@ -270,7 +271,7 @@ gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_opt
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>84ffbae84f684f005596c61f0310c755</sys_id>
-        <sys_mod_count>182</sys_mod_count>
+        <sys_mod_count>183</sys_mod_count>
         <sys_name>ATE_OPT_OpenReq_25</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -279,7 +280,7 @@ gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_opt
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_84ffbae84f684f005596c61f0310c755</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-04-12 01:11:46</sys_updated_on>
+        <sys_updated_on>2018-04-12 02:56:45</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

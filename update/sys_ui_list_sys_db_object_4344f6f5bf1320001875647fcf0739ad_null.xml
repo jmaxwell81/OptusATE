@@ -163,20 +163,20 @@
             <sum>false</sum>
             <sys_class_name>sys_ui_list</sys_class_name>
             <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
-            <sys_created_on>2018-03-26 05:53:57</sys_created_on>
+            <sys_created_on>2018-04-12 04:21:35</sys_created_on>
             <sys_customer_update>false</sys_customer_update>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>4d7082ee4f199b40aab4a3b11310c7fb</sys_id>
+            <sys_id>87ad85674f5d5f40aab4a3b11310c704</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_name>sys_dictionary</sys_name>
-            <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
+            <sys_name/>
+            <sys_package/>
             <sys_policy/>
             <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
             <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
-            <sys_update_name>sys_ui_list_sys_db_object_4344f6f5bf1320001875647fcf0739ad_null</sys_update_name>
+            <sys_update_name/>
             <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-            <sys_updated_on>2018-03-26 05:53:57</sys_updated_on>
+            <sys_updated_on>2018-04-12 04:21:35</sys_updated_on>
             <sys_user display_value="Leon Storey">1d8b25ce4f6ee240a022c61f0310c7d4</sys_user>
             <view display_value="Default view" name="NULL">Default view</view>
             <view_name/>
