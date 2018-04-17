@@ -61,7 +61,7 @@ instance=gs.getProperty('instance_name');
  s.setStringParameterNoEscape('instance.MessageType', '23');
  s.setStringParameterNoEscape('instance.Urgency', current.urgency);
 // s.setStringParameterNoEscape('UpdateDescription.UpdateDescription', current.updatedescrption.toString());
-s.setStringParameterNoEscape('UpdateDescription.UpdateDescription',current.worklog.toString()); 	
+s.setStringParameterNoEscape('UpdateDescription.UpdateDescription','TCC Work Notes: '+current.worklog.toString()+'TCC Comments: '+current.updatedescrption.toString()); 	
  s.setStringParameterNoEscape('instance.MessageCompany', 'TCC');
  s.setStringParameterNoEscape('instance.MessageStatus', current.messagestatus);
  s.setStringParameterNoEscape('instance.PlannedStart', current.plannedstart);
@@ -134,7 +134,7 @@ catch(ex) {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>76fefea84f684f005596c61f0310c78f</sys_id>
-        <sys_mod_count>66</sys_mod_count>
+        <sys_mod_count>67</sys_mod_count>
         <sys_name>ATE_TCC_Update_23</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -143,7 +143,7 @@ catch(ex) {
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_76fefea84f684f005596c61f0310c78f</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-04-06 01:29:44</sys_updated_on>
+        <sys_updated_on>2018-04-16 02:01:54</sys_updated_on>
         <template/>
         <when>async</when>
     </sys_script>

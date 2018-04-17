@@ -6,7 +6,7 @@
         <assessment/>
         <content_page/>
         <device_type/>
-        <filter table="incident">assignment_group=3ac476c84f2e8b048767a3b11310c72a^EQ<item display_table="sys_user_group" display_value="Optus PMSD" endquery="false" field="assignment_group" goto="false" newquery="false" operator="=" or="false" value="3ac476c84f2e8b048767a3b11310c72a"/>
+        <filter table="incident">assignment_group=3ac476c84f2e8b048767a3b11310c72a^EQ<item endquery="false" field="assignment_group" goto="false" newquery="false" operator="=" or="false" value="3ac476c84f2e8b048767a3b11310c72a"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </filter>
         <hint/>

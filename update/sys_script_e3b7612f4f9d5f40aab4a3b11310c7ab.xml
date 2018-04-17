@@ -7,20 +7,19 @@
         <action_insert>false</action_insert>
         <action_query>false</action_query>
         <action_update>true</action_update>
-        <active>false</active>
+        <active>true</active>
         <add_message>false</add_message>
         <advanced>true</advanced>
         <change_fields>false</change_fields>
         <client_callable>false</client_callable>
-        <collection>task</collection>
+        <collection>change_request</collection>
         <condition/>
         <description/>
         <execute_function>false</execute_function>
-        <filter_condition table="task">assignment_group=3ac476c84f2e8b048767a3b11310c72a^ORassignment_group=f496c4454fa25600a0124c111310c778^sys_updated_by!=OptusAte^ORsys_updated_by!=system^sys_class_name=change_request^EQ<item display_table="sys_user_group" display_value="Optus PMSD" endquery="false" field="assignment_group" goto="false" newquery="false" operator="=" or="false" value="3ac476c84f2e8b048767a3b11310c72a"/>
+        <filter_condition table="change_request">assignment_group=3e053ac84f2e8b048767a3b11310c721^ORassignment_group=f496c4454fa25600a0124c111310c778^sys_class_name=change_request^sys_updated_by!=OptusAte^EQ<item display_table="sys_user_group" display_value="Optus PMSD" endquery="false" field="assignment_group" goto="false" newquery="false" operator="=" or="false" value="3e053ac84f2e8b048767a3b11310c721"/>
             <item display_table="sys_user_group" display_value="Service Desk" endquery="false" field="assignment_group" goto="false" newquery="false" operator="=" or="true" value="f496c4454fa25600a0124c111310c778"/>
-            <item endquery="false" field="sys_updated_by" goto="false" newquery="false" operator="!=" or="false" value="OptusAte"/>
-            <item endquery="false" field="sys_updated_by" goto="false" newquery="false" operator="!=" or="true" value="system"/>
             <item endquery="false" field="sys_class_name" goto="false" newquery="false" operator="=" or="false" value="change_request"/>
+            <item endquery="false" field="sys_updated_by" goto="false" newquery="false" operator="!=" or="false" value="OptusAte"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </filter_condition>
         <is_rest>false</is_rest>
@@ -40,7 +39,7 @@ try{
 
 	inc.initialize();
 			if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
-			gs.info('OPTUS ATE BR-23 B4 Updated: '+current.number+', '+current.sys_id+', '+inc.getRowCount());
+			gs.info('OPTUS ATE CHG BR-23 B4 Updated: '+current.number+', '+current.sys_id+', '+inc.getRowCount());
 			
 		}
 	
@@ -66,7 +65,7 @@ try{
 		inc.uniqueid=current.sys_id;
 		
 					if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
-			gs.info('OPTUS ATE BR-23 Updated: '+current.number+', '+current.sys_id+', '+current.work_notes.toString()+', '+current.comments.toString()+', '+current.assigned_to+', '+ current.category +', '+ current.subcategory +', '+current.customer_status  +', '+current.messagestatus);
+			gs.info('OPTUS ATE BR-23 CHG Updated: '+current.number+', '+current.sys_id+', '+current.work_notes.toString()+', '+current.comments.toString()+', '+current.assigned_to+', '+ current.category +', '+ current.subcategory +', '+current.customer_status  +', '+current.messagestatus);
 			
 		}
 		
@@ -81,7 +80,7 @@ try{
 	//inc_att.setLimit(1);
 	inc_att.query();
 	if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
-		gs.info('OPTUS ATE BR-23 Attachment: count='+inc_att.getRowCount()+', SYS_ID='+current.sys_id);
+		gs.info('OPTUS ATE BR-23 CHG Attachment: count='+inc_att.getRowCount()+', SYS_ID='+current.sys_id);
 	}
 	while(inc_att.next()){
 		inc.attachname = inc_att.file_name;
@@ -133,12 +132,12 @@ try{
 			
 	inc.insert();
 		if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
-			gs.info('OPTUS ATE BR-23 After Updated: '+current.number+', '+current.sys_id);
+			gs.info('OPTUS ATE CHG BR-23 After Updated: '+current.number+', '+current.sys_id);
 			
 		}
 	
 }catch(update_err){
-	gs.error('OPTUS ATE Update BR-23: '+update_err);
+	gs.error('OPTUS ATE Update CHG BR-23: '+update_err);
 }	
 	
 })(current, previous);]]></script>
@@ -149,7 +148,7 @@ try{
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>e3b7612f4f9d5f40aab4a3b11310c7ab</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>CHG_Holding_23</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -158,7 +157,7 @@ try{
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_e3b7612f4f9d5f40aab4a3b11310c7ab</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-04-12 06:18:01</sys_updated_on>
+        <sys_updated_on>2018-04-16 23:59:50</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

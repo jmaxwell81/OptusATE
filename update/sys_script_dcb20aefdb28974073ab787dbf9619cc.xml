@@ -65,8 +65,12 @@
 			s.setStringParameterNoEscape('instance.UniqueID', current.sys_id);
 			s.setStringParameterNoEscape('ATERequest', '');
 			s.setStringParameterNoEscape('instance.AttachName', current.attachname);
+		if(current.category=='Change_request'){	
+		s.setStringParameterNoEscape('WorkLog.WorkLog', 'Change Type: '+current.problemtype+', '+current.worklog);
+		}else{
 			s.setStringParameterNoEscape('WorkLog.WorkLog', current.worklog);
-			s.setStringParameterNoEscape('instance.Priority', current.priority);  
+		}
+		s.setStringParameterNoEscape('instance.Priority', current.priority);  
 			s.setStringParameterNoEscape('instance.MessageDate', current.sys_created_on);
 			s.setStringParameterNoEscape('BriefDescription.BriefDescription', current.brief_description);
 			s.setStringParameterNoEscape('instance.LastName', current.lastname);
@@ -172,7 +176,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>dcb20aefdb28974073ab787dbf9619cc</sys_id>
-        <sys_mod_count>55</sys_mod_count>
+        <sys_mod_count>56</sys_mod_count>
         <sys_name>ATE_TCC_Open_21</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -181,7 +185,7 @@
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_dcb20aefdb28974073ab787dbf9619cc</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-04-12 01:36:11</sys_updated_on>
+        <sys_updated_on>2018-04-13 00:45:28</sys_updated_on>
         <template/>
         <when>async</when>
     </sys_script>

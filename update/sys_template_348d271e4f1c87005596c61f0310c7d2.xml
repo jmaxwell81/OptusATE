@@ -3,7 +3,7 @@
     <sys_template action="INSERT_OR_UPDATE">
         <active>true</active>
         <global>false</global>
-        <group display_value="Optus PMSD" name="Optus PMSD">3ac476c84f2e8b048767a3b11310c72a</group>
+        <group/>
         <link_element/>
         <name>Optus_ATE_27</name>
         <next/>

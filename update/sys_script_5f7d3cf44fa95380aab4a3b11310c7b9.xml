@@ -16,13 +16,13 @@
         <condition/>
         <description/>
         <execute_function>false</execute_function>
-        <filter_condition table="x_cio19_optus_ate_tcceventin">messagetype=24^customerticketidSTARTSWITHINC^EQ<item endquery="false" field="messagetype" goto="false" newquery="false" operator="=" or="false" value="24"/>
-            <item endquery="false" field="customerticketid" goto="false" newquery="false" operator="STARTSWITH" or="false" value="INC"/>
+        <filter_condition table="x_cio19_optus_ate_tcceventin">messagetype=24^customerticketidSTARTSWITHCHG^EQ<item endquery="false" field="messagetype" goto="false" newquery="false" operator="=" or="false" value="24"/>
+            <item endquery="false" field="customerticketid" goto="false" newquery="false" operator="STARTSWITH" or="false" value="CHG"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </filter_condition>
         <is_rest>false</is_rest>
         <message/>
-        <name>ATE_OPT_Update_24</name>
+        <name>ATE_OPT_CHG_Update_24</name>
         <order>100</order>
         <priority>100</priority>
         <rest_method/>
@@ -48,13 +48,13 @@ inc.addQuery('number',current.customerticketid);
 inc.query(); 
 	
 if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
-	gs.info('OPTUS ATE BR-24 Update: '+current.csnsticketid);
+	gs.info('OPTUS ATE BR-24 CHG Update: '+current.csnsticketid);
 }
 while (inc.next()) {
 	inc.csnsticketstatus = current.csnsticketstatus;
 		//incident.addQuery('sys_id',inc_id);
 	if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
-	gs.info('OPTUS ATE BR-24 Update: '+inc.csnsticketstatus);
+	gs.info('OPTUS ATE BR-24 CHG Update: '+inc.csnsticketstatus);
 }
 	inc.update();
 }
@@ -63,34 +63,34 @@ while (inc.next()) {
 
 	
 	
-	var incident = new GlideRecord('incident');
-	incident.addQuery('number',current.customerticketid);
-	incident.query();
+	var chg_req = new GlideRecord('change_request');
+	chg_req.addQuery('number',current.customerticketid);
+	chg_req.query();
 
 	if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
-		gs.info('OPTUS ATE BR-24 Ticket Update Task: '+incident.comments+', '+current.worklog+', '+current.updatedescrption+', '+inc_id);
+		gs.info('OPTUS ATE BR-24 CHG Ticket Update Task: '+chg_req.comments+', '+current.worklog+', '+current.updatedescrption+', '+inc_id);
 	
-	while(incident.next()){
+	while(chg_req.next()){
 		//Update work notes and comments
 		//https://docs.servicenow.com/bundle/jakarta-platform-administration/page/administer/field-administration/concept/c_JournalFields.html
 		
-		incident.work_notes="OPTUS work notes: "+current.worklog;
-		//incident.description=incident.description+' :OPTUS Update: '+current.updatedescrption;
-		incident.comments="OPTUS Comments: "+current.updatedescrption;
+		chg_req.work_notes="OPTUS work notes: "+current.worklog+'\n\n'+"OPTUS Comments: "+current.updatedescrption;
+		//chg_req.description=incident.description+' :OPTUS Update: '+current.updatedescrption;
+		//chg_req.comments="OPTUS Comments: "+current.updatedescrption;
 		if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
-				gs.info('OPTUS ATE Inserted comment journal: '+current.updatedescrption+', '+current.worklog);
+				gs.info('OPTUS ATE CHG Inserted comment journal: '+current.updatedescrption+', '+current.worklog);
 			}
 	
 		//if customerticketid like CHG* statmap.addQuery('u_ticket_category','change_request');	
 		var statmap=new GlideRecord('x_cio19_optus_ate_optus_ate_mapping');
 		statmap.addQuery('u_company','Optus');
-		statmap.addQuery('u_ticket_category','Incident');
+		statmap.addQuery('u_ticket_category','change_request');
 		statmap.addQuery('u_source_field','Status');
 		statmap.addQuery('u_source_value',current.csnsticketstatus);
 		statmap.query();
 
 		while(statmap.next()){
-			incident.state=statmap.u_target_value;
+			chg_req.state=statmap.u_target_value;
 		}
 /*		//Insert attachment
 		if(current.attachment_file_name!=''){	
@@ -125,33 +125,33 @@ while (inc.next()) {
 		if(current.closure_code != ''){
 		var closemap = new GlideRecord('x_cio19_optus_ate_optus_ate_mapping');
 				closemap.addQuery('u_company','Optus');
-		closemap.addQuery('u_ticket_category','Incident');
+		closemap.addQuery('u_ticket_category','change_request');
 		closemap.addQuery('u_source_field','closure_code');
 		closemap.addQuery('u_source_value',current.closure_code);
 		closemap.query();
 
 		while(closemap.next()){
-			incident.close_code=closemap.u_target_value;
+			chg_req.close_code=closemap.u_target_value;
 			//incident.close_notes='Closed by Optus PMSD, see comments for closure notes';
-			incident.close_notes= current.comments.getJournalEntry(-1);
+			chg_req.close_notes= current.comments.getJournalEntry(-1);
 		}
 		}
 		//incident.closure_code=current.closure_code; //mapping
 		//incident.closure_notes=current.closure_notes;
 		
-		incident.update();
+		chg_req.update();
 		if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
-		gs.info('OPTUS ATE BR-24 Ticket Update Task: '+incident.number+', '+incident.description+', '+incident.work_notes+', '+incident.comments+', '+current.worklog+', '+current.updatedescrption);
+		gs.info('OPTUS ATE BR-24 Ticket Update Task: '+chg_req.number+', '+chg_req.description+', '+chg_req.work_notes+', '+chg_req.comments+', '+current.worklog+', '+current.updatedescrption);
 	}
 	}
 	
 	//inc.update();
 if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
-		gs.info('OPTUS ATE BR-24 Ticket Update Holding: '+inc.number+' '+inc.uniqueid);
+		gs.info('OPTUS ATE BR-24 CHG Ticket Update Holding: '+inc.number+' '+inc.uniqueid);
 	}
 }
 }catch(hold){
-	gs.error('OPTUS ATE BR-24 ERROR HOLDING: '+hold+' ' +inc.number+' '+inc.uniqueid);
+	gs.error('OPTUS ATE BR-24 CHG ERROR HOLDING: '+hold+' ' +inc.number+' '+inc.uniqueid);
 }
 /*try{	
 var incident = new GlideRecord('incident');	
@@ -175,23 +175,23 @@ if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
 )(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
-        <sys_created_on>2017-08-10 01:59:49</sys_created_on>
+        <sys_created_on>2018-04-16 00:25:32</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>e68ffaa84f684f005596c61f0310c79c</sys_id>
-        <sys_mod_count>78</sys_mod_count>
-        <sys_name>ATE_OPT_Update_24</sys_name>
+        <sys_id>5f7d3cf44fa95380aab4a3b11310c7b9</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>ATE_OPT_CHG_Update_24</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
-        <sys_update_name>sys_script_e68ffaa84f684f005596c61f0310c79c</sys_update_name>
+        <sys_update_name>sys_script_5f7d3cf44fa95380aab4a3b11310c7b9</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-04-16 00:52:45</sys_updated_on>
+        <sys_updated_on>2018-04-16 01:26:15</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
-    <sys_translated_text action="delete_multiple" query="documentkey=e68ffaa84f684f005596c61f0310c79c"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=5f7d3cf44fa95380aab4a3b11310c7b9"/>
 </record_update>

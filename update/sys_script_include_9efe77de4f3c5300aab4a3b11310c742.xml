@@ -259,6 +259,8 @@ occurrences : function (string, subString, allowOverlapping) {
 		
 	},
 
+	
+	
  
     type: 'ATE_Helper_Functions'
 };]]></script>
@@ -267,7 +269,7 @@ occurrences : function (string, subString, allowOverlapping) {
         <sys_created_on>2018-03-14 23:34:28</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>9efe77de4f3c5300aab4a3b11310c742</sys_id>
-        <sys_mod_count>30</sys_mod_count>
+        <sys_mod_count>31</sys_mod_count>
         <sys_name>ATE_Helper_Functions</sys_name>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
         <sys_policy>read</sys_policy>
@@ -275,6 +277,6 @@ occurrences : function (string, subString, allowOverlapping) {
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_include_9efe77de4f3c5300aab4a3b11310c742</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-04-12 00:11:12</sys_updated_on>
+        <sys_updated_on>2018-04-13 00:23:45</sys_updated_on>
     </sys_script_include>
 </record_update>
