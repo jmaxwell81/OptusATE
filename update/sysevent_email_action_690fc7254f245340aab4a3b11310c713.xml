@@ -24,7 +24,9 @@
         <item_table/>
         <mandatory>false</mandatory>
         <message/>
-        <message_html><![CDATA[<p>Problem on Optus ATE Heartbeat goto <a title="Logs" target="_blank">Logs</a></p>]]></message_html>
+        <message_html><![CDATA[<p>Problem on Optus ATE</p>
+<p>Response from Optus not success</p>
+<p>goto <a title="Logs" target="_blank">Logs</a></p>]]></message_html>
         <message_list/>
         <message_text/>
         <name>Problem</name>
@@ -38,7 +40,7 @@
         <send_self>true</send_self>
         <sms_alternate/>
         <style/>
-        <subject>Problem on Optus ATE Heartbeat</subject>
+        <subject>Problem on Optus ATE</subject>
         <subscribable>false</subscribable>
         <sys_class_name>sysevent_email_action</sys_class_name>
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
@@ -47,7 +49,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>690fc7254f245340aab4a3b11310c713</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name>Problem</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -56,7 +58,7 @@
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sysevent_email_action_690fc7254f245340aab4a3b11310c713</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-02-28 02:58:14</sys_updated_on>
+        <sys_updated_on>2018-04-26 05:09:48</sys_updated_on>
         <sys_version>2</sys_version>
         <template display_value="Unsubscribe and Preferences">7ed0481f3b0b2200c869c2c703efc487</template>
         <type>email</type>
