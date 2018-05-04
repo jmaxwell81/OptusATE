@@ -3,7 +3,7 @@
     <sysevent_email_action action="INSERT_OR_UPDATE">
         <action_insert>false</action_insert>
         <action_update>false</action_update>
-        <active>true</active>
+        <active>false</active>
         <advanced_condition/>
         <affected_field_on_event/>
         <category display_value="Uncategorized" name="Uncategorized">c97d83137f4432005f58108c3ffa917a</category>
@@ -49,7 +49,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>690fc7254f245340aab4a3b11310c713</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>Problem</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -58,7 +58,7 @@
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sysevent_email_action_690fc7254f245340aab4a3b11310c713</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-04-26 05:09:48</sys_updated_on>
+        <sys_updated_on>2018-05-02 22:36:23</sys_updated_on>
         <sys_version>2</sys_version>
         <template display_value="Unsubscribe and Preferences">7ed0481f3b0b2200c869c2c703efc487</template>
         <type>email</type>

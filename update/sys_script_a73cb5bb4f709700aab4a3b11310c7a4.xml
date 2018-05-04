@@ -7,7 +7,7 @@
         <action_insert>true</action_insert>
         <action_query>false</action_query>
         <action_update>false</action_update>
-        <active>false</active>
+        <active>true</active>
         <add_message>false</add_message>
         <advanced>true</advanced>
         <change_fields>false</change_fields>
@@ -51,7 +51,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>a73cb5bb4f709700aab4a3b11310c7a4</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>23</sys_mod_count>
         <sys_name>ATE_OPT_Update_Attach</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -60,7 +60,7 @@
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_a73cb5bb4f709700aab4a3b11310c7a4</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-04-06 04:20:40</sys_updated_on>
+        <sys_updated_on>2018-05-02 23:26:38</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

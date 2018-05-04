@@ -68,24 +68,21 @@ try{
 			gs.info('OPTUS ATE BR-23 Updated: '+current.number+', '+current.sys_id+', '+current.work_notes.toString()+', '+current.comments.toString()+', '+current.assigned_to+', '+ current.category +', '+ current.subcategory +', '+current.customer_status  +', '+current.messagestatus);
 			
 		}
-		
-	var inc_att = new GlideRecord('sys_attachment');
-	var inc_att_doc = new GlideRecord('sys_attachment_doc');	
+	inc.insert();
+	try {
+	//Insert attachment name and  
+		var inc_att = new GlideRecord('sys_attachment');
 	inc_att.addQuery('table_sys_id',current.sys_id);
-	inc_att.addQuery('table_name', current.getTableName());
-	inc_att.addQuery('sys_updated_by','!=','OptusAte');
-	//inc_att.addQuery('file_name','!=',current.attachment_file_name);
-	//inc_att.addQuery('sys_mod_count'>0);
-	inc_att.orderByDesc('sys_updated_on');
-	//inc_att.setLimit(1);
+	inc_att.addQuery('table_name', 'incident');
+		inc_att.addQuery('file_name','!=',inc.attachname);
+		inc_att.addQuery('sys_created_on','=>',current.sys_created_on);
 	inc_att.query();
-	if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
-		gs.info('OPTUS ATE BR-23 Attachment: count='+inc_att.getRowCount()+', SYS_ID='+current.sys_id);
-	}
+	
 	while(inc_att.next()){
-		inc.attachname = inc_att.file_name;
-		//if(inc_att.file_name!=current.attachment_file_name){
-	var attachname = '';
+	if(inc_att.file_name != current.attachname)
+		{//inc.attachname = current.attachname;
+		// var att=inc_att.next();
+var attachname = '';
 	attachname = inc_att.file_name;
 	var filetype = '';
 	filetype=inc_att.content_type;
@@ -93,44 +90,60 @@ try{
 	filesize=inc_att.size_bytes;
 	var contentid='';
 	contentid=inc_att.getUniqueValue();
-
-		
-
+		if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+			gs.info('OPTUS ATE BR-23-Hold: #attachments= '+inc_att.getRowCount());
+		}
+			
 	//combine base64 encoded file and insert into holding table	
 	// see https://www.servicenowguru.com/integration/sending-attachments-3rdparty-service-desk/
-	var inc_docs = inc_att_doc.addJoinQuery('sys_attachment','sys_attachment');
-	inc_docs.addCondition('sys_attachment', inc_att.sys_id);
-	inc_att_doc.addQuery('sys_attachment', inc_att.sys_id);
-	inc_att_doc.orderBy('position');
-	inc_att_doc.query();
-		while(inc_att_doc.next()){
+//	var inc_docs = inc_att_doc.addJoinQuery('sys_attachment','sys_attachment');
+//	inc_docs.addCondition('sys_attachment', inc_att.sys_id);
+//	inc_att_doc.addQuery('sys_attachment', inc_att.sys_id);
+//	inc_att_doc.orderBy('position');
+//	inc_att_doc.query();
+//		while(inc_att_doc.next()){
 			//inc21.attachments += inc_att_doc.toString();
 			
 		var sa = new GlideSysAttachment();
-         //var binData =   sa.GlideSysAttachment(inc_att); //this is the encoded attachment. You'll need to add this somehow to your XML
-		var encData =   sa.getContentBase64(inc_att);
-			var att_bin_info = '';
-			att_bin_info += inc_att_doc.data;
-			inc.attachment_binary_information +=att_bin_info;
-			var xml = "<ate:attachments><ate:attachment action=\"add\" charset=\"UTF-8\" ";
+       		//var encData =   sa.getContentBase64(inc_att);
+			var encData =   sa.getContentBase64(inc_att);
+//			var att_bin_info = '';
+//			att_bin_info += inc_att_doc.data;
+			inc.attachment_binary_information =encData;
+			var xml1 = "<ate:attachments>";
+			var xml = "<ate:attachment action=\"add\" charset=\"UTF-8\" ";
                 xml += "len=\"" + filesize + "\" name=\"" + attachname + "\" ";
                 xml += "type=\"" + filetype + "\" contentId=\"" + contentid + "\">";
                 xml += encData;
-                xml += "</ate:attachment></ate:attachments>";
+                xml += "</ate:attachment>";
+			var xml2 = "</ate:attachments>";
 			
-			//inc.attachments=xml;
-			//inc.worklog='New attachment added ' +attachname;
-					if(inc_att.getRowCount()>1){
-			//	xml+=xml;
-				inc.attachments+=xml;
-		}else{
-			inc.attachments=xml;}
+		//inc.attachments=xml1+(xml+=xml)+xml2;
+		// var att_body='';
+		 //att_body+=xml;
+		 inc.attachments+=xml;
+		// inc21.attachments=xml1+inc21.attachments+xml2;
+	//	if(inc_att.getRowCount()>1){
+		//		xml+=xml;
+		//		inc21.attachments=xml1+(xml+=xml)+xml2;
+	//	}else{
+	//		inc21.attachments=xml1+xml+xml2;}
+		inc.update();
 		}
+		 
 		}
+		inc.attachments="<ate:attachments>"+inc.attachments+"</ate:attachments>";
+		inc.worklog='New Attachment added '+inc.attachname;
+		inc.update();
+	}
 
-//}
-			
-	inc.insert();
+
+	catch(att_err){
+		gs.error("OPTUS ATE 23: insert attachment failed ",att_err);
+		
+	}
+	
+	
 		if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
 			gs.info('OPTUS ATE BR-23 After Updated: '+current.number+', '+current.sys_id);
 			
@@ -148,7 +161,7 @@ try{
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>ea52f1f5dbbc930073ab787dbf961930</sys_id>
-        <sys_mod_count>170</sys_mod_count>
+        <sys_mod_count>180</sys_mod_count>
         <sys_name>INC_Holding_23</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -157,7 +170,7 @@ try{
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_ea52f1f5dbbc930073ab787dbf961930</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-04-16 23:59:56</sys_updated_on>
+        <sys_updated_on>2018-05-03 22:57:40</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
