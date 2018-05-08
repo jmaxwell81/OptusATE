@@ -259,7 +259,81 @@ occurrences : function (string, subString, allowOverlapping) {
 		
 	},
 
+	sendAttach : function(_sysid){
+	var inc=new GlideRecord('x_cio19_optus_ate_optus_ate_holding');
+	var inc_att = new GlideRecord('sys_attachment');
+		try {
+	//Insert attachment name and  
+
+	inc_att.addQuery('table_sys_id', _sysid);
+	inc_att.addQuery('table_name', 'incident');
+	inc_att.addQuery('file_name','!=',inc.attachname);
+	inc_att.addQuery('sys_created_on','=>',current.sys_created_on);
+	inc_att.query();
 	
+	while(inc_att.next()){
+	if(inc_att.file_name != current.attachname)
+		{//inc.attachname = current.attachname;
+		// var att=inc_att.next();
+var attachname = '';
+	attachname = inc_att.file_name;
+	var filetype = '';
+	filetype=inc_att.content_type;
+	var filesize ='';
+	filesize=inc_att.size_bytes;
+	var contentid='';
+	contentid=inc_att.getUniqueValue();
+		if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+			gs.info('OPTUS ATE BR-23-Hold: #attachments= '+inc_att.getRowCount());
+		}
+			
+	//combine base64 encoded file and insert into holding table	
+	// see https://www.servicenowguru.com/integration/sending-attachments-3rdparty-service-desk/
+//	var inc_docs = inc_att_doc.addJoinQuery('sys_attachment','sys_attachment');
+//	inc_docs.addCondition('sys_attachment', inc_att.sys_id);
+//	inc_att_doc.addQuery('sys_attachment', inc_att.sys_id);
+//	inc_att_doc.orderBy('position');
+//	inc_att_doc.query();
+//		while(inc_att_doc.next()){
+			//inc21.attachments += inc_att_doc.toString();
+			
+		var sa = new GlideSysAttachment();
+       		//var encData =   sa.getContentBase64(inc_att);
+			var encData =   sa.getContentBase64(inc_att);
+			inc.attachment_binary_information =encData;
+			var xml1 = "<ate:attachments>";
+			var xml = "<ate:attachment action=\"add\" charset=\"UTF-8\" ";
+                xml += "len=\"" + filesize + "\" name=\"" + attachname + "\" ";
+                xml += "type=\"" + filetype + "\" contentId=\"" + contentid + "\">";
+                xml += encData;
+                xml += "</ate:attachment>";
+			var xml2 = "</ate:attachments>";
+			
+		//inc.attachments=xml1+(xml+=xml)+xml2;
+		// var att_body='';
+		 //att_body+=xml;
+		 inc.attachments+=xml;
+		// inc21.attachments=xml1+inc21.attachments+xml2;
+	//	if(inc_att.getRowCount()>1){
+		//		xml+=xml;
+		//		inc21.attachments=xml1+(xml+=xml)+xml2;
+	//	}else{
+	//		inc21.attachments=xml1+xml+xml2;}
+		inc.update();
+		}
+		 
+		}
+		inc.attachments="<ate:attachments>"+inc.attachments+"</ate:attachments>";
+		inc.worklog='New Attachment added '+inc.attachname;
+		inc.update();
+	}
+
+
+	catch(att_err){
+		gs.error("OPTUS ATE 23: insert attachment failed ",att_err);
+		
+	}	
+	},
 	
  
     type: 'ATE_Helper_Functions'
@@ -269,7 +343,7 @@ occurrences : function (string, subString, allowOverlapping) {
         <sys_created_on>2018-03-14 23:34:28</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>9efe77de4f3c5300aab4a3b11310c742</sys_id>
-        <sys_mod_count>31</sys_mod_count>
+        <sys_mod_count>32</sys_mod_count>
         <sys_name>ATE_Helper_Functions</sys_name>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
         <sys_policy>read</sys_policy>
@@ -277,6 +351,6 @@ occurrences : function (string, subString, allowOverlapping) {
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_include_9efe77de4f3c5300aab4a3b11310c742</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-04-13 00:23:45</sys_updated_on>
+        <sys_updated_on>2018-05-07 23:05:46</sys_updated_on>
     </sys_script_include>
 </record_update>
