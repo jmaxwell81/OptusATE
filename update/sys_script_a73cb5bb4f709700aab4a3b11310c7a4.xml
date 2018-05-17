@@ -35,12 +35,16 @@
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 // On insert of a new attachment on an incident, updates the incident with a new work note, this allows the BR-23 to trigger if no other updates are made to the incident.  current.sys_class_name
 	var att_cnt=new GlideRecord('sys_attachment');
-	att_cnt.addQuery('sys_id',current.table_sys_id);
+	att_cnt.addQuery('table_sys_id',current.table_sys_id);
 	att_cnt.query();
 	var attached=att_cnt.getRowCount();
+	
+		if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+		gs.info('OPTUS ATE BR update from Attachment: Count='+attached);
+	}
+		
+	
 	if (attached>=1){
-	
-	
 	
 	var up_inc=new GlideRecord('task');
 	up_inc.addQuery('sys_id',current.table_sys_id);
@@ -65,7 +69,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>a73cb5bb4f709700aab4a3b11310c7a4</sys_id>
-        <sys_mod_count>47</sys_mod_count>
+        <sys_mod_count>51</sys_mod_count>
         <sys_name>ATE_OPT_Update_Attach</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -74,7 +78,7 @@
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_a73cb5bb4f709700aab4a3b11310c7a4</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-05-17 05:44:41</sys_updated_on>
+        <sys_updated_on>2018-05-17 06:17:52</sys_updated_on>
         <template>sys_mod_count=99^EQ</template>
         <when>after</when>
     </sys_script>

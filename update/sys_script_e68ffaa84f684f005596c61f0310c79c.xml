@@ -16,8 +16,8 @@
         <condition/>
         <description/>
         <execute_function>false</execute_function>
-        <filter_condition table="x_cio19_optus_ate_tcceventin">messagetype=24^category=Incident^EQ<item endquery="false" field="messagetype" goto="false" newquery="false" operator="=" or="false" value="24"/>
-            <item endquery="false" field="category" goto="false" newquery="false" operator="=" or="false" value="Incident"/>
+        <filter_condition table="x_cio19_optus_ate_tcceventin">messagetype=24^customerticketidSTARTSWITHINC^EQ<item endquery="false" field="messagetype" goto="false" newquery="false" operator="=" or="false" value="24"/>
+            <item endquery="false" field="customerticketid" goto="false" newquery="false" operator="STARTSWITH" or="false" value="INC"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </filter_condition>
         <is_rest>false</is_rest>
@@ -241,7 +241,7 @@ if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>e68ffaa84f684f005596c61f0310c79c</sys_id>
-        <sys_mod_count>88</sys_mod_count>
+        <sys_mod_count>89</sys_mod_count>
         <sys_name>ATE_OPT_UpdateINC_24</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -250,7 +250,7 @@ if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_e68ffaa84f684f005596c61f0310c79c</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-05-17 05:38:42</sys_updated_on>
+        <sys_updated_on>2018-05-17 05:51:36</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
