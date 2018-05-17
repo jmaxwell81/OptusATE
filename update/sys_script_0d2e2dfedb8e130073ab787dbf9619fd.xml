@@ -16,13 +16,13 @@
         <condition/>
         <description/>
         <execute_function>false</execute_function>
-        <filter_condition table="x_cio19_optus_ate_tcceventin">messagetype=25^category=Incident^EQ<item endquery="false" field="messagetype" goto="false" newquery="false" operator="=" or="false" value="25"/>
-            <item endquery="false" field="category" goto="false" newquery="false" operator="=" or="false" value="Incident"/>
+        <filter_condition table="x_cio19_optus_ate_tcceventin">messagetype=25^category=Change Request^EQ<item endquery="false" field="messagetype" goto="false" newquery="false" operator="=" or="false" value="25"/>
+            <item endquery="false" field="category" goto="false" newquery="false" operator="=" or="false" value="Change Request"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </filter_condition>
         <is_rest>false</is_rest>
         <message/>
-        <name>ATE_OPT_OpenINC_25</name>
+        <name>ATE_OPT_OpenCHG_25</name>
         <order>100</order>
         <priority>100</priority>
         <rest_method/>
@@ -32,13 +32,13 @@
         <rest_variables/>
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
-var inc_in = new GlideRecord('incident');
+var inc_in = new GlideRecord('change_request');
 try{
 	
 	
 	inc_in.initialize();
 	//inc_in.sys_class_name='incident';
-	//inc_in.assignment_group='Service Desk';
+	//inc_in.assignment_group='f496c4454fa25600a0124c111310c778';
 	inc_in.assignment_group=gs.getProperty('x_cio19_optus_ate.DefaultGroup');
 	inc_in.short_description=current.brief_description;
 	
@@ -91,7 +91,7 @@ try{
 	
 
 	if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
-		gs.info('OPTUS ATE BR-25 New Incident: '+current.uniqueid+', '+current.brief_description+', '+current.u_category);
+		gs.info('OPTUS ATE BR-25 New Request: '+current.uniqueid+', '+current.brief_description+', '+current.u_category);
 }
 	inc_in.insert();
 	
@@ -132,8 +132,8 @@ function parseAttachments() {
 				gs.info('OPTUS ATE onAfter Transform Script: filename= '+filename+', filetype= '+filetype+', filedata= '+filedata+', NodeName= '+node.getNodeName()+', NodeValue= '+node.getTextContent());
 			}
 			//var data=gs.base64Decode(filedata);
-			//Get the incident to attach to
-			var get_inc=new GlideRecord('incident');
+			//Get the Request to attach to
+			var get_inc=new GlideRecord('change_request');
 			get_inc.addQuery('u_third_party_reference',current.csnsticketid);
 			//get_inc.get(get_inc.getUniqueValue());
 			get_inc.query();
@@ -145,7 +145,7 @@ function parseAttachments() {
 		
         
     } catch (e) {
-        gs.error("OPTUS ATE: An error occurred parsing attachment(s) into a record on the XML Incident transform map. It is " + e.message);
+        gs.error("OPTUS ATE: An error occurred parsing attachment(s) into a record on the XML Request transform map. It is " + e.message);
     }
 }
 	//var up_hold = new GlideRecord('x_cio19_optus_ate_optus_ate_holding');
@@ -268,23 +268,23 @@ gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_opt
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
-        <sys_created_on>2017-08-10 02:01:55</sys_created_on>
+        <sys_created_on>2018-05-17 05:37:43</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>84ffbae84f684f005596c61f0310c755</sys_id>
-        <sys_mod_count>198</sys_mod_count>
-        <sys_name>ATE_OPT_OpenINC_25</sys_name>
+        <sys_id>0d2e2dfedb8e130073ab787dbf9619fd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ATE_OPT_OpenCHG_25</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
-        <sys_update_name>sys_script_84ffbae84f684f005596c61f0310c755</sys_update_name>
+        <sys_update_name>sys_script_0d2e2dfedb8e130073ab787dbf9619fd</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-05-17 05:31:38</sys_updated_on>
+        <sys_updated_on>2018-05-17 05:37:43</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
-    <sys_translated_text action="delete_multiple" query="documentkey=84ffbae84f684f005596c61f0310c755"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=0d2e2dfedb8e130073ab787dbf9619fd"/>
 </record_update>

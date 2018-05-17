@@ -43,8 +43,13 @@ try{
 			
 		}
 	
+if(current.work_notes.changes()){
 		inc.worklog=current.work_notes.getJournalEntry(1);
+	}
+	if(current.comments.changes()){
 		inc.updatedescrption=current.comments.getJournalEntry(1);
+	}
+	
 		inc.assigned_to=current.assigned_to;
 		inc.impact=current.impact;
 		inc.urgency=current.urgency;
@@ -52,12 +57,15 @@ try{
 		//inc.category='Incident';//change to sys_class_name?
 		var cap=new ATE_Helper_Functions();
 		inc.category=cap.titlecase(current.sys_class_name.toString());
-		
+		if (current.close_notes!=''){
+			inc.updatedescrption=inc.updatedescrption+' '+current.close_notes;
+		}
 		inc.subcategory=current.category;
 		inc.customer_status=current.state;
 		inc.messagestatus='Pending';
 		inc.attachments=current.attachments;
 		inc.closure_code=current.close_code;
+	
 		inc.csnsticketid=current.u_third_party_reference;
 	inc.csnsticketstatus=current.state;
 		inc.customerticketid=current.sys_id;
@@ -75,12 +83,17 @@ try{
 	inc_att.addQuery('table_sys_id',current.sys_id);
 	inc_att.addQuery('table_name', 'incident');
 		inc_att.addQuery('file_name','!=',inc.attachname);
-		inc_att.addQuery('sys_created_on','=>',current.sys_created_on);
+	var incuptime=new GlideDateTime();
+		//incuptime=current.sys_updated_on;
+		incuptime.addSeconds(-120);
+		inc_att.addQuery('sys_created_on','>=',incuptime);	 
+		//inc_att.addQuery('sys_created_on','=>',current.sys_created_on);
 	inc_att.query();
-	
+	var inc_att_rows=inc_att.getRowCount();
+		
 	while(inc_att.next()){
 	if(inc_att.file_name != current.attachname)
-		{//inc.attachname = current.attachname;
+		{inc.attachname = current.attachname;
 		// var att=inc_att.next();
 var attachname = '';
 	attachname = inc_att.file_name;
@@ -132,9 +145,10 @@ var attachname = '';
 		}
 		 
 		}
+		if (inc_att_rows>0){
 		inc.attachments="<ate:attachments>"+inc.attachments+"</ate:attachments>";
 		inc.worklog='New Attachment added '+inc.attachname;
-		inc.update();
+		inc.update();}
 	}
 
 
@@ -161,7 +175,7 @@ var attachname = '';
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>ea52f1f5dbbc930073ab787dbf961930</sys_id>
-        <sys_mod_count>180</sys_mod_count>
+        <sys_mod_count>187</sys_mod_count>
         <sys_name>INC_Holding_23</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -170,7 +184,7 @@ var attachname = '';
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_ea52f1f5dbbc930073ab787dbf961930</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-05-03 22:57:40</sys_updated_on>
+        <sys_updated_on>2018-05-17 03:25:06</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

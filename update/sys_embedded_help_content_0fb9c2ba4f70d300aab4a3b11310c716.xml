@@ -4,7 +4,7 @@
         <active>true</active>
         <category>mid-server</category>
         <content><![CDATA[ <h1 class="title topictitle1">ECC queue</h1>  <div class="body conbody">  <p class="p"><span class="ph">The External Communication Channel (ECC) Queue is a      connection point between an instance and other systems that integrate with it, most commonly a      MID Server.</span>  </p>  <p class="p">The ECC queue contains records that are created during all stages        of discovery. Each record is essentially a message from the instance and another system,        classified as <span class="ph uicontrol">output</span>, or a message from the external system to the        instance, classified as <span class="ph uicontrol">input</span>. ECC queue records provide you with a        connected flow of probe and sensor activity, as well as the actual XML payload that is sent        to or from an instance.</p> </div> <div class="related-links"><div class="relinfo"><div class="reltitle">Related information<br /><div><a class="link" href="https://docs.servicenow.com/?context&#61;CSHelp:ECCQueueAccess&amp;version&#61;jakarta" target="_blank" rel="nofollow">Access the ECC queue</a></div></div></div></div>]]></content>
-        <last_sync>2018-04-30 04:19:07</last_sync>
+        <last_sync>2018-05-15 04:20:06</last_sync>
         <modifier>normal</modifier>
         <name>ecc_queue_list-normal</name>
         <page>ecc_queue_list</page>
@@ -18,7 +18,7 @@
         <sys_created_on>2018-03-16 04:17:09</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>0fb9c2ba4f70d300aab4a3b11310c716</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>ecc_queue_list-normal</sys_name>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
         <sys_policy/>
@@ -26,7 +26,7 @@
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_embedded_help_content_0fb9c2ba4f70d300aab4a3b11310c716</sys_update_name>
         <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2018-04-30 04:19:07</sys_updated_on>
+        <sys_updated_on>2018-05-15 04:20:06</sys_updated_on>
         <version>j</version>
     </sys_embedded_help_content>
 </record_update>
