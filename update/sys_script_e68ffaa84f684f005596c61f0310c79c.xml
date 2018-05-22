@@ -74,9 +74,9 @@ while (inc.next()) {
 		//Update work notes and comments
 		//https://docs.servicenow.com/bundle/jakarta-platform-administration/page/administer/field-administration/concept/c_JournalFields.html
 		
-		incident.work_notes="OPTUS work notes: "+current.worklog;
+		//incident.work_notes="OPTUS work notes: "+current.worklog;
 		//incident.description=incident.description+' :OPTUS Update: '+current.updatedescrption;
-		incident.comments="OPTUS Comments: "+current.updatedescrption;
+		incident.work_notes="OPTUS Comments: "+current.updatedescrption;
 		if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
 				gs.info('OPTUS ATE Inserted comment journal: '+current.updatedescrption+', '+current.worklog);
 			}
@@ -85,50 +85,67 @@ while (inc.next()) {
 		var statmap=new GlideRecord('x_cio19_optus_ate_optus_ate_mapping');
 		statmap.addQuery('u_company','Optus');
 		statmap.addQuery('u_ticket_category','Incident');
-		statmap.addQuery('u_source_field','Status');
+		statmap.addQuery('u_source_field','status');
 		statmap.addQuery('u_source_value',current.csnsticketstatus);
 		statmap.query();
 
-		while(statmap.next()){
+		//while(statmap.next()){
+		if(statmap.hasNext()){
+			while(statmap.next()){
 			incident.state=statmap.u_target_value;
-		}
-
-		
-		
-		/*		//Insert attachment
-
-
-
-
-
-
-		if(current.attachment_file_name!=''){	
-		var clean=new GlideRecord('x_cio19_optus_ate_tcceventin');
-		clean.addQuery('number',current.number);
-		clean.query();
-		while(clean.next()){
-			current.attachment_binary_information=current.attachment_binary_information.replace('<Contents>','');
-			current.attachment_binary_information=current.attachment_binary_information.replace('</Contents>','');
-			current.attachment_file_name=current.attachment_file_name.replace('<Filename>','');
-			current.attachment_file_name=current.attachment_file_name.replace('</Filename>','');
+			}
+			
+		}else{
+			//incident.state=statmap.u_default;
+			incident.state='1';
+			if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+				gs.info('OPTUS ATE mapping status 24: cant update default');
 		}
 		
-		
-		var getTask=new GlideRecord('incident');
-		getTask.get(inc.sys_id);
-		//var binData='';
-		//binData=gs.base64Decode(current.attachment_binary_information);
-		var getExt = current.attachment_file_name.split('.').pop();
-//	var wri_att=new GlideSysAttachment();
-//	var binData = wri_att.writeBase64(getTask,current.attachment_file_name,'image\jpeg',current.attachment_binary_information);
-	//wri_att.write(inc_in.sys_id,'Photo.jpg','image\jpeg',binData);
-		help_att=new ATE_Helper_Functions();
-		help_att.createAttach(getTask,current.attachment_file_name,getExt,current.attachment_binary_information);
-	if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
-		gs.info('OPTUS ATE BR-24 Attachment added: '+current.attachment_file_name+', sys_ID: '+inc.sys_id);
-	}
+				//if customerticketid like CHG* statmap.addQuery('u_ticket_category','change_request');	
+		var mapcat=new GlideRecord('x_cio19_optus_ate_optus_ate_mapping');
+		mapcat.addQuery('u_company','Optus');
+		mapcat.addQuery('u_ticket_category','Incident');
+		mapcat.addQuery('u_source_field','u_category');
+		mapcat.addQuery('u_source_value',current.subcategory);
+		mapcat.query();
+
+		//while(statmap.next()){
+		if(mapcat.hasNext()){
+			while(mapcat.next()){
+			incident.subcategory=mapcat.u_target_value;
+			}
+			
+		}else{
+			//incident.state=statmap.u_default;
+			incident.subcategory='undefined';
+			if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+				gs.info('OPTUS ATE mapping status 24: cant update default');
 		}
-	*/	
+			
+			
+			//if customerticketid like CHG* statmap.addQuery('u_ticket_category','change_request');	
+		var mapsubcat=new GlideRecord('x_cio19_optus_ate_optus_ate_mapping');
+		mapsubcat.addQuery('u_company','Optus');
+		mapsubcat.addQuery('u_ticket_category','Incident');
+		mapsubcat.addQuery('u_source_field','u_category');
+		mapsubcat.addQuery('u_source_value',current.producttype);
+		mapsubcat.query();
+
+		//while(statmap.next()){
+		if(mapsubcat.hasNext()){
+			while(mapsubcat.next()){
+			incident.producttype=mapsubcat.u_target_value;
+			}
+			
+		}else{
+			//incident.state=statmap.u_default;
+			incident.producttype='undefined';
+			if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+				gs.info('OPTUS ATE mapping status 24: cant update default');
+		}
+			
+			
 		
 		//check for closure code and map from Optus
 		if(current.closure_code != ''){
@@ -142,7 +159,7 @@ while (inc.next()) {
 		while(closemap.next()){
 			incident.close_code=closemap.u_target_value;
 			//incident.close_notes='Closed by Optus PMSD, see comments for closure notes';
-			incident.close_notes= current.comments.getJournalEntry(-1);
+			incident.close_notes = current.comments.getJournalEntry(1);
 		}
 		}
 		//incident.closure_code=current.closure_code; //mapping
@@ -158,7 +175,7 @@ while (inc.next()) {
 if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
 		gs.info('OPTUS ATE BR-24 Ticket Update Holding: '+inc.number+' '+inc.uniqueid);
 	}
-}
+	}}}}
 }catch(hold){
 	gs.error('OPTUS ATE BR-24 ERROR HOLDING: '+hold+' ' +inc.number+' '+inc.uniqueid);
 }
@@ -241,7 +258,7 @@ if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>e68ffaa84f684f005596c61f0310c79c</sys_id>
-        <sys_mod_count>89</sys_mod_count>
+        <sys_mod_count>96</sys_mod_count>
         <sys_name>ATE_OPT_UpdateINC_24</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -250,7 +267,7 @@ if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_e68ffaa84f684f005596c61f0310c79c</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-05-17 05:51:36</sys_updated_on>
+        <sys_updated_on>2018-05-22 05:23:44</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

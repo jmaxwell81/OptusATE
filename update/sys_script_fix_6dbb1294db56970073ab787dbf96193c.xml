@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_fix">
+    <sys_script_fix action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <before>false</before>
+        <description/>
+        <flush_cache>false</flush_cache>
+        <name>Testing attachment count</name>
+        <run_once>true</run_once>
+        <script><![CDATA[var target = new GlideRecord('incident'); 
+target.addQuery('number','INC0045124');
+target.query(); // Issue the query to the database to get relevant records 
+while (target.next()) { 
+ gs.info("OPTUS ATE : Incident " + target.sys_id); // add code here to process the incident record 
+}
+
+var count = 0;
+var attachments = new GlideRecord('sys_attachment');
+attachments.addQuery('table_sys_id',target.sys_id);
+attachments.query(); //commit
+while (attachments.next()){
+	count += 1;
+	gs.info("OPTUS ATE : Count plus 1 " + target.sys_id);
+}
+gs.info("OPTUS ATE : Incident " + target.sys_id + " - Attachments count: " + count);
+
+
+	var att_cnt=new GlideRecord('sys_attachment');
+	att_cnt.addQuery('table_sys_id',target.sys_id);
+	att_cnt.query();
+	var attached=att_cnt.getRowCount();
+gs.info("OPTUS ATE : attached " + attached);
+]]></script>
+        <sys_class_name>sys_script_fix</sys_class_name>
+        <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+        <sys_created_on>2018-05-22 00:46:29</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>6dbb1294db56970073ab787dbf96193c</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>Testing attachment count</sys_name>
+        <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
+        <sys_update_name>sys_script_fix_6dbb1294db56970073ab787dbf96193c</sys_update_name>
+        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2018-05-22 01:06:35</sys_updated_on>
+        <unloadable>false</unloadable>
+    </sys_script_fix>
+</record_update>

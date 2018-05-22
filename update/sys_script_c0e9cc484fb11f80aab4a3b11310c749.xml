@@ -4,7 +4,7 @@
         <abort_action>false</abort_action>
         <access>package_private</access>
         <action_delete>false</action_delete>
-        <action_insert>true</action_insert>
+        <action_insert>false</action_insert>
         <action_query>false</action_query>
         <action_update>true</action_update>
         <active>true</active>
@@ -16,7 +16,7 @@
         <condition/>
         <description/>
         <execute_function>false</execute_function>
-        <filter_condition table="sc_task">assignment_group=3e053ac84f2e8b048767a3b11310c721^sys_class_name=sc_task^EQ<item display_table="sys_user_group" display_value="Optus PMSD" endquery="false" field="assignment_group" goto="false" newquery="false" operator="=" or="false" value="3e053ac84f2e8b048767a3b11310c721"/>
+        <filter_condition table="sc_task">assignment_groupCHANGESTO3e053ac84f2e8b048767a3b11310c721^sys_class_name=sc_task^EQ<item display_table="sys_user_group" display_value="Optus PMSD" endquery="false" field="assignment_group" goto="false" newquery="false" operator="CHANGESTO" or="false" value="3e053ac84f2e8b048767a3b11310c721"/>
             <item endquery="false" field="sys_class_name" goto="false" newquery="false" operator="=" or="false" value="sc_task"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </filter_condition>
@@ -347,7 +347,7 @@ var attachname = '';
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>c0e9cc484fb11f80aab4a3b11310c749</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>REQ_Holding_21</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -356,7 +356,7 @@ var attachname = '';
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_c0e9cc484fb11f80aab4a3b11310c749</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-05-16 05:48:19</sys_updated_on>
+        <sys_updated_on>2018-05-22 04:49:32</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

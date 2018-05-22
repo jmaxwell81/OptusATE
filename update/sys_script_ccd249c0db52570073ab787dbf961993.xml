@@ -7,7 +7,7 @@
         <action_insert>true</action_insert>
         <action_query>false</action_query>
         <action_update>false</action_update>
-        <active>true</active>
+        <active>false</active>
         <add_message>false</add_message>
         <advanced>true</advanced>
         <change_fields>false</change_fields>
@@ -23,7 +23,7 @@
         </filter_condition>
         <is_rest>false</is_rest>
         <message/>
-        <name>ATE_OPT_Update_Attach</name>
+        <name>ATE_Update_attach</name>
         <order>100</order>
         <priority>100</priority>
         <rest_method/>
@@ -33,54 +33,54 @@
         <rest_variables/>
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
-// On insert of a new attachment on an incident, updates the incident with a new work note, this allows the BR-23 to trigger if no other updates are made to the incident.  current.sys_class_name
-	var att_cnt=new GlideRecord('sys_attachment');
-	att_cnt.addQuery('table_sys_id',current.table_sys_id);
-	att_cnt.query();
-	var attached=att_cnt.getRowCount();
-	
-		if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
-		gs.info('OPTUS ATE BR update from Attachment: Count='+attached);
+try{
+updateRecordForAttachment();   
+}
+	catch(e){
+		gs.error('Optus ATE update table from adding attachment:'+e);
 	}
-		
-	
-	if (attached>2){	
-	var up_inc=new GlideRecord('task');
-	up_inc.addQuery('sys_id',current.table_sys_id);
-	//	up_inc.addQuery('u_third_party','Optus');
-	up_inc.query();
-	var up_inc_count=up_inc.getRowCount();
-	if(up_inc.next()){
-		up_inc.work_notes='New attachment added: '+current.file_name;
-		
-		//up_inc.comments='New attachment added: '+current.file_name;
-		
-	up_inc.update();
-	}
-	if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
-		gs.info('OPTUS ATE BR update from Attachment: Count='+up_inc.getRowCount()+', Filename='+current.file_name);
-	}
-	}
+
+function updateRecordForAttachment(){   
+
+
+ var gr = new GlideRecord(current.table_name);   
+
+
+     if(gr.get(current.table_sys_id)){   
+
+
+   gr.work_notes = "Attachment: " + current.file_name + " has been attached.";   
+gs.info("Attachment: " + current.file_name + " has been attached.");
+
+   gr.update();   
+
+
+     }   
+
+
+}   
+
+
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
-        <sys_created_on>2018-03-19 05:53:23</sys_created_on>
+        <sys_created_on>2018-05-20 23:41:13</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>a73cb5bb4f709700aab4a3b11310c7a4</sys_id>
-        <sys_mod_count>74</sys_mod_count>
-        <sys_name>ATE_OPT_Update_Attach</sys_name>
+        <sys_id>ccd249c0db52570073ab787dbf961993</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>ATE_Update_attach</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
-        <sys_update_name>sys_script_a73cb5bb4f709700aab4a3b11310c7a4</sys_update_name>
+        <sys_update_name>sys_script_ccd249c0db52570073ab787dbf961993</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-05-22 04:13:52</sys_updated_on>
+        <sys_updated_on>2018-05-21 23:18:52</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
-    <sys_translated_text action="delete_multiple" query="documentkey=a73cb5bb4f709700aab4a3b11310c7a4"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=ccd249c0db52570073ab787dbf961993"/>
 </record_update>

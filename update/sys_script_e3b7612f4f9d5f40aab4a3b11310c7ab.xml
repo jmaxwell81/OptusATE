@@ -56,7 +56,7 @@ try{
 		var cap=new ATE_Helper_Functions();
 		inc.category=cap.titlecase(current.sys_class_name.toString());
 		
-		inc.subcategory=current.category;
+		inc.subcategory=current.u_category;
 		inc.customer_status=current.state;
 		inc.messagestatus='Pending';
 		inc.attachments=current.attachments;
@@ -68,7 +68,7 @@ try{
 		inc.uniqueid=current.sys_id;
 		
 					if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
-			gs.info('OPTUS ATE BR-23 Updated: '+current.number+', '+current.sys_id+', '+current.work_notes.toString()+', '+current.comments.toString()+', '+current.assigned_to+', '+ current.category +', '+ current.subcategory +', '+current.customer_status  +', '+current.messagestatus);
+			gs.info('OPTUS ATE BR-23 Updated: '+current.number+', '+current.sys_id+', '+current.work_notes.toString()+', '+current.comments.toString()+', '+current.assigned_to+', '+ current.u_category +', '+ current.subcategory +', '+current.customer_status  +', '+current.messagestatus);
 			
 		}
 	inc.insert();
@@ -142,9 +142,10 @@ var attachname = '';
 		}
 		 
 		}
+		if (inc_att_rows>0){
 		inc.attachments="<ate:attachments>"+inc.attachments+"</ate:attachments>";
 		inc.worklog='New Attachment added '+inc.attachname;
-		inc.update();
+		inc.update();}
 	}
 	
 
@@ -171,7 +172,7 @@ var attachname = '';
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>e3b7612f4f9d5f40aab4a3b11310c7ab</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>CHG_Holding_23</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -180,7 +181,7 @@ var attachname = '';
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_e3b7612f4f9d5f40aab4a3b11310c7ab</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-05-16 01:50:02</sys_updated_on>
+        <sys_updated_on>2018-05-18 02:54:12</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

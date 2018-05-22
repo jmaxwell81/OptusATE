@@ -16,8 +16,9 @@
         <condition/>
         <description/>
         <execute_function>false</execute_function>
-        <filter_condition table="x_cio19_optus_ate_optus_ate_holding">messagetype=23^sys_updated_by!=OptusAte^EQ<item endquery="false" field="messagetype" goto="false" newquery="false" operator="=" or="false" value="23"/>
+        <filter_condition table="x_cio19_optus_ate_optus_ate_holding">messagetype=23^sys_updated_by!=OptusAte^csnsticketidISNOTEMPTY^EQ<item endquery="false" field="messagetype" goto="false" newquery="false" operator="=" or="false" value="23"/>
             <item endquery="false" field="sys_updated_by" goto="false" newquery="false" operator="!=" or="false" value="OptusAte"/>
+            <item endquery="false" field="csnsticketid" goto="false" newquery="false" operator="ISNOTEMPTY" or="false" value=""/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </filter_condition>
         <is_rest>false</is_rest>
@@ -74,7 +75,7 @@ instance=gs.getProperty('instance_name');
  s.setStringParameterNoEscape('instance.UniqueID', current.uniqueid);
  s.setStringParameterNoEscape('instance.PlannedEnd', current.plannedend);
  s.setStringParameterNoEscape('instance.DowntimeEnd', current.downtimeend);
- s.setStringParameterNoEscape('attachments.attachment', current.attachments);
+// s.setStringParameterNoEscape('attachments.attachment', current.attachments);
 	s.setStringParameterNoEscape('instance.CustomerTicketID',current.customerticketid);
 s.setStringParameterNoEscape('instance.CSNSTicketID',current.csnsticketid);
 s.setStringParameterNoEscape('instance.CustomerTicketStatus',current.customer_status);
@@ -135,7 +136,7 @@ catch(ex) {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>76fefea84f684f005596c61f0310c78f</sys_id>
-        <sys_mod_count>69</sys_mod_count>
+        <sys_mod_count>73</sys_mod_count>
         <sys_name>ATE_TCC_Update_23</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -144,7 +145,7 @@ catch(ex) {
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_76fefea84f684f005596c61f0310c78f</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-05-17 03:32:04</sys_updated_on>
+        <sys_updated_on>2018-05-21 05:36:40</sys_updated_on>
         <template/>
         <when>async</when>
     </sys_script>

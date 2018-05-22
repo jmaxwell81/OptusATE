@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>true</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>false</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>task</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="task">sys_class_name=incident^ORsys_class_name=sc_task^ORsys_class_name=change_request^EQ<item endquery="false" field="sys_class_name" goto="false" newquery="false" operator="=" or="false" value="incident"/>
+            <item endquery="false" field="sys_class_name" goto="false" newquery="false" operator="=" or="true" value="sc_task"/>
+            <item endquery="false" field="sys_class_name" goto="false" newquery="false" operator="=" or="true" value="change_request"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>ATE_Check_Attach</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+checkAttachment();
+
+function checkAttachment(){
+// if inserting then the task has an attachment
+if (current.operation() == 'insert') {
+hasAttachment('true');
+}
+
+// if updating attachment check for other attachments
+if (current.operation() == 'update') {
+var attachments = new GlideRecord('sys_attachment');
+attachments.addQuery('table_sys_id',current.table_sys_id);
+attachments.query();
+
+// if no other attachments task does not have attachment
+if (!attachments.next()) {
+hasAttachment('false');
+}
+}
+}
+
+function hasAttachment(answer) {
+var task = new GlideRecord('task');
+task.addQuery('sys_id',current.table_sys_id);
+task.query();
+
+if(task.next()) {
+task.u_has_attachments = answer;
+task.update();
+}
+}
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+        <sys_created_on>2018-05-21 23:39:48</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>62fb0694db16970073ab787dbf96190b</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>ATE_Check_Attach</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
+        <sys_update_name>sys_script_62fb0694db16970073ab787dbf96190b</sys_update_name>
+        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2018-05-22 00:00:16</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=62fb0694db16970073ab787dbf96190b"/>
+</record_update>

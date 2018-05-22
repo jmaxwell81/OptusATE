@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_fix">
+    <sys_script_fix action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <before>false</before>
+        <description/>
+        <flush_cache>false</flush_cache>
+        <name>Test status mapping</name>
+        <run_once>true</run_once>
+        <script><![CDATA[		var incident = new GlideRecord('incident');
+	incident.addQuery('number','INC0045026');
+	incident.query();
+
+var statmap=new GlideRecord('x_cio19_optus_ate_optus_ate_mapping');
+		statmap.addQuery('u_company','Optus');
+		statmap.addQuery('u_ticket_category','Incident');
+		statmap.addQuery('u_source_field','status');
+		statmap.addQuery('u_source_value','Pending Customer');
+		statmap.query();
+
+		//while(statmap.next()){
+		if(statmap.hasNext()){
+			while(statmap.next()){
+			incident.state=statmap.u_target_value;
+				gs.info('OPTUS ATE mapping status 24: Updated');
+			}
+			
+		}else{
+			incident.state=statmap.u_default;
+			
+				gs.info('OPTUS ATE mapping status 24: cant update default');
+		}
+		]]></script>
+        <sys_class_name>sys_script_fix</sys_class_name>
+        <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+        <sys_created_on>2018-05-22 03:28:46</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>72e00f54dbd6970073ab787dbf961958</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Test status mapping</sys_name>
+        <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
+        <sys_update_name>sys_script_fix_72e00f54dbd6970073ab787dbf961958</sys_update_name>
+        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2018-05-22 03:31:20</sys_updated_on>
+        <unloadable>false</unloadable>
+    </sys_script_fix>
+</record_update>
