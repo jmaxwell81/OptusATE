@@ -88,7 +88,7 @@ if(current.work_notes.changes()){
 		inc_att.addQuery('file_name','!=',inc.attachname);
 	var incuptime=new GlideDateTime();
 		//incuptime=current.sys_updated_on;
-		incuptime.addSeconds(-60);
+		incuptime.addSeconds(-2);
 		inc_att.addQuery('sys_created_on','>=',incuptime);	 
 		//inc_att.addQuery('sys_created_on','=>',current.sys_created_on);
 	inc_att.query();
@@ -179,7 +179,7 @@ var attachname = '';
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>ea52f1f5dbbc930073ab787dbf961930</sys_id>
-        <sys_mod_count>197</sys_mod_count>
+        <sys_mod_count>198</sys_mod_count>
         <sys_name>INC_Holding_23</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -188,7 +188,7 @@ var attachname = '';
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_ea52f1f5dbbc930073ab787dbf961930</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-05-22 05:11:03</sys_updated_on>
+        <sys_updated_on>2018-05-23 00:56:56</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

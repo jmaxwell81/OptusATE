@@ -52,7 +52,20 @@ try{
 	//inc_in.=current.cost_centre; NA
 	inc_in.parent=current.csnsparentid;
 	inc_in.u_third_party_reference=current.csnsticketid;
-	inc_in.state=current.csnsticketstatus;
+	
+	
+	//inc_in.state=current.csnsticketstatus; mapping
+		var mapstatus=new GlideRecord('x_cio19_optus_ate_optus_ate_mapping');
+		mapstatus.addQuery('u_company','Optus');
+		mapstatus.addQuery('u_ticket_category','Request');
+		mapstatus.addQuery('u_source_field','state');
+		mapstatus.addQuery('u_source_value',current.csnsticketstatus);
+		mapstatus.query();
+
+			while(mapstatus.next()){
+			inc_in.state=mapstatus.u_target_value;
+			}
+	
 	//inc_in.=current.customer_status;
 	//inc_in.=current.customerparentid;
 	//inc_in.=current.customerticketid;
@@ -63,14 +76,37 @@ try{
 	//inc_in.u_requestor=current.firstname+' '+current.lastname;
 	inc_in.u_requestor='Optus ATE';
 	//inc_in.managedticketid=current.managedticketid;
-	inc_in.impact=current.impact;
+	//inc_in.impact=current.impact;
+			var mapimpact=new GlideRecord('x_cio19_optus_ate_optus_ate_mapping');
+		mapimpact.addQuery('u_company','Optus');
+		mapimpact.addQuery('u_ticket_category','incident');
+		mapimpact.addQuery('u_source_field','Request');
+		mapimpact.addQuery('u_source_value',current.impact);
+		mapimpact.query();
+
+			while(mapimpact.next()){
+			inc_in.impact=mapimpact.u_target_value;
+			}
+	//inc_in.urgency=current.urgency;
+		var mapurg=new GlideRecord('x_cio19_optus_ate_optus_ate_mapping');
+		mapurg.addQuery('u_company','Optus');
+		mapurg.addQuery('u_ticket_category','Request');
+		mapurg.addQuery('u_source_field','urgency');
+		mapurg.addQuery('u_source_value',current.urgency);
+		mapurg.query();
+
+			while(mapimpact.next()){
+			inc_in.urgency=mapurg.u_target_value;
+			}
+	
+	
 	//inc_in.=current.lastname;
 	//inc_in.location=current.location;
 	//inc_in.company=current.messagecompany;
 	inc_in.company='Optus';
 	inc_in.u_third_party='37ffa4964f3e0300fe56ccce0310c763';
 	//inc_in.=current.messagedate;
-	inc_in.state=current.messagestatus;//mapping
+	//inc_in.state=current.messagestatus;//mapping
 	//inc_in.=current.messagetype;
 	//inc_in.=current.mobilenumber;
 	//current.number;
@@ -80,12 +116,35 @@ try{
 	//inc_in.=current.plannedstart;
 	//inc_in.priority=current.priority;
 	//inc_in.=current.problemtype;
-	inc_in.subcategory=current.producttype;
-	inc_in.u_category=current.subcategory;
-	inc_in.u_third_party_reference=current.csnsticketid;
+	
+	//inc_in.subcategory=current.producttype;//map
+	var mapsubcat=new GlideRecord('x_cio19_optus_ate_optus_ate_mapping');
+		mapsubcat.addQuery('u_company','Optus');
+		mapsubcat.addQuery('u_ticket_category','Request');
+		mapsubcat.addQuery('u_source_field','subcategory');
+		mapsubcat.addQuery('u_source_value',current.producttype);
+		mapsubcat.query();
+
+			while(mapsubcat.next()){
+			inc_in.subcategory=mapsubcat.u_target_value;
+			}
+	//inc_in.u_category=current.subcategory;//map
+	
+			var mapcat=new GlideRecord('x_cio19_optus_ate_optus_ate_mapping');
+		mapcat.addQuery('u_company','Optus');
+		mapcat.addQuery('u_ticket_category','Request');
+		mapcat.addQuery('u_source_field','u_category');
+		mapcat.addQuery('u_source_value',current.subcategory);
+		mapcat.query();
+
+		while(mapcat.next()){
+			inc_in.u_category=mapcat.u_target_value;
+			}
+			
+	//inc_in.u_third_party_reference=current.csnsticketid;
 	//inc_in.=current.uniqueid;
 	inc_in.work_notes=current.updatedescrption;
-	inc_in.urgency=current.urgency;
+	
 	//inc_in.work_notes=current.worklog;
 	//inc_in.=current.workstationport;
 	
@@ -273,7 +332,7 @@ gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_opt
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f87aad3edb8e130073ab787dbf96198d</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_name>ATE_OPT_OpenREQ_25</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -282,7 +341,7 @@ gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_opt
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_f87aad3edb8e130073ab787dbf96198d</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-05-18 05:20:16</sys_updated_on>
+        <sys_updated_on>2018-05-23 06:23:23</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

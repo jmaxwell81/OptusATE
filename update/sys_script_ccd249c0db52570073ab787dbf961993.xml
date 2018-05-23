@@ -41,7 +41,10 @@ updateRecordForAttachment();
 	}
 
 function updateRecordForAttachment(){   
-
+	var att_cnt=new GlideRecord('sys_attachment');
+	att_cnt.addQuery('table_sys_id',current.table_sys_id);
+	att_cnt.query();
+	var attached=att_cnt.getRowCount();
 
  var gr = new GlideRecord(current.table_name);   
 
@@ -69,7 +72,7 @@ gs.info("Attachment: " + current.file_name + " has been attached.");
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>ccd249c0db52570073ab787dbf961993</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>ATE_Update_attach</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -78,7 +81,7 @@ gs.info("Attachment: " + current.file_name + " has been attached.");
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_ccd249c0db52570073ab787dbf961993</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-05-21 23:18:52</sys_updated_on>
+        <sys_updated_on>2018-05-22 23:49:18</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
