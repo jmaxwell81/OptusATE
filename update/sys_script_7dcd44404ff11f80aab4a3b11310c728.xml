@@ -46,7 +46,7 @@ try{
 		inc.worklog=current.work_notes.getJournalEntry(1);
 	}
 	if(current.comments.changes()){
-		inc.updatedescrption=current.work_notes.getJournalEntry(1);
+		inc.updatedescrption=current.comments.getJournalEntry(1);
 	}
 		inc.assigned_to=current.assigned_to;
 		inc.impact=current.impact;
@@ -54,9 +54,9 @@ try{
 		inc.messagetype='23';
 		//inc.category='Incident';//change to sys_class_name?
 		var cap=new ATE_Helper_Functions();
-		inc.category=cap.titlecase(current.sys_class_name.toString());
-		
-		inc.subcategory=current.category;
+		//inc.category=cap.titlecase(current.sys_class_name.toString());
+		inc.category='Request';
+		inc.subcategory=current.u_category;
 		inc.customer_status=current.state;
 		inc.messagestatus='Pending';
 		inc.attachments=current.attachments;
@@ -68,7 +68,7 @@ try{
 		inc.uniqueid=current.sys_id;
 		
 					if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
-			gs.info('OPTUS ATE BR-23 Updated: '+current.number+', '+current.sys_id+', '+current.work_notes.toString()+', '+current.comments.toString()+', '+current.assigned_to+', '+ current.category +', '+ current.subcategory +', '+current.customer_status  +', '+current.messagestatus);
+			gs.info('OPTUS ATE BR-23 Updated: '+current.number+', '+current.sys_id+', '+current.work_notes.toString()+', '+current.comments.toString()+', '+current.assigned_to+', '+ current.u_category +', '+ current.subcategory +', '+current.customer_status  +', '+current.messagestatus);
 			
 		}
 	inc.insert();
@@ -76,11 +76,11 @@ try{
 	//Insert attachment name and  
 		var inc_att = new GlideRecord('sys_attachment');
 	inc_att.addQuery('table_sys_id',current.sys_id);
-	inc_att.addQuery('table_name', 'task');
+	inc_att.addQuery('table_name', 'sc_task');
 		inc_att.addQuery('file_name','!=',inc.attachname);
 		var incuptime=new GlideDateTime();
 		//incuptime=current.sys_updated_on;
-		incuptime.addSeconds(-120);
+		incuptime.addSeconds(-60);
 		inc_att.addQuery('sys_created_on','>=',incuptime);
 	inc_att.query();
 	var att_count=inc_att.getRowCount();
@@ -144,7 +144,7 @@ var attachname = '';
 		}
 		if (att_count>0){
 		inc.attachments="<ate:attachments>"+inc.attachments+"</ate:attachments>";
-		inc.worklog='New Attachment added '+inc.attachname;
+		//inc.worklog='New Attachment added '+inc.attachname;
 		inc.update();}
 	}
 	
@@ -172,7 +172,7 @@ var attachname = '';
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>7dcd44404ff11f80aab4a3b11310c728</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>20</sys_mod_count>
         <sys_name>REQ_Holding_23</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -181,7 +181,7 @@ var attachname = '';
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_7dcd44404ff11f80aab4a3b11310c728</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-05-18 05:33:23</sys_updated_on>
+        <sys_updated_on>2018-05-24 05:35:31</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
