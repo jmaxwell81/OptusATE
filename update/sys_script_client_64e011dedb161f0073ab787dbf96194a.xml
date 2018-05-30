@@ -4,40 +4,39 @@
         <active>false</active>
         <applies_extended>false</applies_extended>
         <condition/>
-        <description>Checks for new comment when updating incident, Change or request</description>
-        <field>sys_updated_on</field>
+        <description/>
+        <field>active</field>
         <global>true</global>
         <messages/>
-        <name>client</name>
+        <name>ATE_Check_OBINC</name>
         <order/>
         <script><![CDATA[function onSubmit() {
-	try{
    //Type appropriate comment here, and begin script below
-   g_form.setMandatory('work_notes',true);
-//	g_form.setMandatory('comments',true);
-	}
-	catch(e){
-		jslog('Optus ATE make work_notse mandatory: '+e);
-	}
+  var field1=g_form.getControl('u_third_party_reference');
+	
+	if(field1.changed==false && g_form.assignment_group=='3e053ac84f2e8b048767a3b11310c721'){
+		alert('Please wait for the Optus Number');
+	   return confirm("You have not yet recieved the Reference from Optus.\nDo you really want to save this record?");
+   }
 }]]></script>
         <sys_class_name>sys_script_client</sys_class_name>
         <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
-        <sys_created_on>2018-05-21 01:07:41</sys_created_on>
+        <sys_created_on>2018-05-28 00:40:06</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>aac615c8db92570073ab787dbf96194a</sys_id>
-        <sys_mod_count>14</sys_mod_count>
-        <sys_name>client</sys_name>
+        <sys_id>64e011dedb161f0073ab787dbf96194a</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>ATE_Check_OBINC</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
-        <sys_update_name>sys_script_client_aac615c8db92570073ab787dbf96194a</sys_update_name>
+        <sys_update_name>sys_script_client_64e011dedb161f0073ab787dbf96194a</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-05-28 00:27:17</sys_updated_on>
-        <table>incident</table>
+        <sys_updated_on>2018-05-28 01:00:43</sys_updated_on>
+        <table>task</table>
         <type>onSubmit</type>
         <ui_type>10</ui_type>
         <view/>
