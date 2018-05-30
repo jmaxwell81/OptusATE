@@ -77,7 +77,7 @@ while (inc.next()) {
 		//incident.work_notes="OPTUS work notes: "+current.worklog;
 		//incident.description=incident.description+' :OPTUS Update: '+current.updatedescrption;
 		incident.comments=current.updatedescrption;
-		
+		incident.short_description=current.brief_description;
 		if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
 				gs.info('OPTUS ATE Inserted comment journal: '+current.updatedescrption+', '+current.worklog);
 			}
@@ -139,9 +139,10 @@ while (inc.next()) {
 		}
 		
 			//inc_in.impact=current.impact;
+		if(current.impact){
 		var mapimpact=new GlideRecord('x_cio19_optus_ate_optus_ate_mapping');
 		mapimpact.addQuery('u_company','Optus');
-		mapimpact.addQuery('u_ticket_category','incident');
+		mapimpact.addQuery('u_ticket_category','Incident');
 		mapimpact.addQuery('u_source_field','impact');
 		mapimpact.addQuery('u_source_value',current.impact);
 		mapimpact.query();
@@ -149,20 +150,20 @@ while (inc.next()) {
 			while(mapimpact.next()){
 			incident.impact=mapimpact.u_target_value;
 			}
-	
+		}
 	//inc_in.urgency=current.urgency;
-	
+	if(current.urgency){
 			var mapurg=new GlideRecord('x_cio19_optus_ate_optus_ate_mapping');
 		mapurg.addQuery('u_company','Optus');
-		mapurg.addQuery('u_ticket_category','incident');
+		mapurg.addQuery('u_ticket_category','Incident');
 		mapurg.addQuery('u_source_field','urgency');
 		mapurg.addQuery('u_source_value',current.urgency);
 		mapurg.query();
 
-			while(mapimpact.next()){
+			while(mapurg.next()){
 			incident.urgency=mapurg.u_target_value;
 			}
-	
+	}
 		//incident.closure_code=current.closure_code; //mapping
 		//incident.closure_notes=current.closure_notes;
 		
@@ -259,7 +260,7 @@ if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>e68ffaa84f684f005596c61f0310c79c</sys_id>
-        <sys_mod_count>102</sys_mod_count>
+        <sys_mod_count>103</sys_mod_count>
         <sys_name>ATE_OPT_UpdateINC_24</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -268,7 +269,7 @@ if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_e68ffaa84f684f005596c61f0310c79c</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-05-23 23:07:47</sys_updated_on>
+        <sys_updated_on>2018-05-30 22:24:18</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
