@@ -16,7 +16,7 @@
         <condition/>
         <description/>
         <execute_function>false</execute_function>
-        <filter_condition table="sc_task">assignment_groupCHANGESTO3e053ac84f2e8b048767a3b11310c721^sys_class_name=sc_task^EQ<item display_table="sys_user_group" display_value="Optus PMSD" endquery="false" field="assignment_group" goto="false" newquery="false" operator="CHANGESTO" or="false" value="3e053ac84f2e8b048767a3b11310c721"/>
+        <filter_condition table="sc_task">assignment_groupCHANGESTO3ac476c84f2e8b048767a3b11310c72a^sys_class_name=sc_task^EQ<item display_table="sys_user_group" display_value="Optus PMSD" endquery="false" field="assignment_group" goto="false" newquery="false" operator="CHANGESTO" or="false" value="3ac476c84f2e8b048767a3b11310c72a"/>
             <item endquery="false" field="sys_class_name" goto="false" newquery="false" operator="=" or="false" value="sc_task"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </filter_condition>
@@ -231,13 +231,21 @@ var attachname = '';
 	inc21.customerticketid = current.number;
 	
 	//Get reference table for user detail
-	inc_requestor.get(current.uniqueid);
-	inc21.mobilenumber = inc_requestor.mobile_phone;
-	inc21.phonenumber = inc_requestor.phone;
-	inc21.emailaddress = inc_requestor.email;
-	inc21.firstname = inc_requestor.first_name;
-	inc21.lastname = inc_requestor.last_name;
+var gr = new GlideRecord('sys_user');
+gr.addQuery('sys_id',current.caller_id);
+//var caller = gr.caller_id.getRefRecord();
+gr.query();		
+		if(gr.next()){
+	inc21.mobilenumber = gr.mobile_phone;
+	inc21.phonenumber = gr.phone;
+	inc21.emailaddress = gr.email;
+	inc21.firstname = gr.first_name;
+	inc21.lastname = gr.last_name;
 		}
+		if (gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+		gs.info('OPTUS ATE 21 Contact detail: '+gr.mobile_phone+', '+gr.phone+', '+gr.email+', '+gr.first_name+', '+gr.last_name);	
+		}
+	}
 	
 	catch(det){
 		gs.error("OPTUS ATE 21: Insert Detail Failed ",det);
@@ -347,7 +355,7 @@ var attachname = '';
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>c0e9cc484fb11f80aab4a3b11310c749</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name>REQ_Holding_21</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -356,7 +364,7 @@ var attachname = '';
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_c0e9cc484fb11f80aab4a3b11310c749</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-05-23 23:19:43</sys_updated_on>
+        <sys_updated_on>2018-06-05 22:53:52</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

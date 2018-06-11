@@ -16,7 +16,7 @@
         <condition/>
         <description/>
         <execute_function>false</execute_function>
-        <filter_condition table="change_request">assignment_groupCHANGESTO3e053ac84f2e8b048767a3b11310c721^sys_class_name=change_request^EQ<item display_table="sys_user_group" display_value="Optus PMSD" endquery="false" field="assignment_group" goto="false" newquery="false" operator="CHANGESTO" or="false" value="3e053ac84f2e8b048767a3b11310c721"/>
+        <filter_condition table="change_request">assignment_groupCHANGESTO3ac476c84f2e8b048767a3b11310c72a^sys_class_name=change_request^EQ<item display_table="sys_user_group" display_value="Optus PMSD" endquery="false" field="assignment_group" goto="false" newquery="false" operator="CHANGESTO" or="false" value="3ac476c84f2e8b048767a3b11310c72a"/>
             <item endquery="false" field="sys_class_name" goto="false" newquery="false" operator="=" or="false" value="change_request"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </filter_condition>
@@ -34,12 +34,7 @@
         <script><![CDATA[/*
 Author: Leon Storey
 Purpose: On insert of record in Incident table where Assignment group is for Optus, Insert a new record into the holding table for transport to Optus ATE SOAP endpoint Business rule ATE_TCC_Open_21.
-*/
-//looks at url and sets Optus WSDL endpoint parameters
-//var env=''
-//env = x_cio19_optus_ate.TCC_Environment_Params
-
-	
+		*/
 
 //Checks if application is enabled, inserts record into the holding table else puts info in syslog
 var isenabled='';
@@ -47,167 +42,91 @@ isenabled=gs.getProperty('x_cio19_optus_ate.Enabled');
 if (isenabled == 'true'){
 
 	(function executeRule(current, previous /*null when async*/) {
-try{	
-	var chg21 = new GlideRecord('x_cio19_optus_ate_optus_ate_holding');
-	var chg_grp = new GlideRecord('sys_user_group');
-	var chg_requestor = new GlideRecord('sys_user');
-	var chg_location = new GlideRecord('cmn_location');
-	var chg_status = new GlideRecord('sys_choice');
-	var chg_configItem = new GlideRecord('cmdb_ci');
-	var chg_att = new GlideRecord('sys_attachment');
-	var chg_att_doc = new GlideRecord('sys_attachment_doc');
-	var chg_prob = new GlideRecord('problem');
-	var chg_chg = new GlideRecord('change_request');
-	var chg_map = new GlideRecord('x_cio19_optus_ate_optus_ate_mapping');
-	var chg_notes = new GlideRecord('task');
+	var inc21 = new GlideRecord('x_cio19_optus_ate_optus_ate_holding');
+	var inc_grp = new GlideRecord('sys_user_group');
+	var inc_requestor = new GlideRecord('sys_user');
+	var inc_location = new GlideRecord('cmn_location');
+	var inc_status = new GlideRecord('sys_choice');
+	var inc_configItem = new GlideRecord('cmdb_ci');
+	var inc_att = new GlideRecord('sys_attachment');
+	var inc_att_doc = new GlideRecord('sys_attachment_doc');
+	var inc_prob = new GlideRecord('problem');
+	var inc_chg = new GlideRecord('change_request');
+	var inc_map = new GlideRecord('x_cio19_optus_ate_optus_ate_mapping');
+	var inc_notes = new GlideRecord('task');
 	
-	chg21.initialize();
+	inc21.initialize();
+try{	
 	
 	// gets sys_id for current record and inserts the name of assignment group into the holding table
-	chg_grp.get(current.assignment_group);
-	chg21.assignmentgroup = chg_grp.name;
-
-try {
-	//Insert attachment name and  
-	chg_att.addQuery('table_sys_id',current.sys_id);
-	chg_att.addQuery('table_name', current.getTableName());
-	chg_att.query();
-	
-	while(chg_att.next()){
-	chg21.attachname = chg_att.file_name;
-var attachname = '';
-	attachname = chg_att.file_name;
-	var filetype = '';
-	filetype=chg_att.content_type;
-	var filesize ='';
-	filesize=chg_att.size_bytes;
-	var contentid='';
-	contentid=chg_att.getUniqueValue();
-		if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
-			gs.info('OPTUS ATE BR-21-Hold: #attachments= '+chg_att.getRowCount());
-		}
-			
-	//combine base64 encoded file and insert into holding table	
-	// see https://www.servicenowguru.com/integration/sending-attachments-3rdparty-service-desk/
-	var chg_docs = chg_att_doc.addJoinQuery('sys_attachment','sys_attachment');
-	chg_docs.addCondition('sys_attachment', chg_att.sys_id);
-	chg_att_doc.addQuery('sys_attachment', chg_att.sys_id);
-	chg_att_doc.orderBy('position');
-	chg_att_doc.query();
-		while(chg_att_doc.next()){
-			//chg21.attachments += chg_att_doc.toString();
-			
-		var sa = new GlideSysAttachment();
-       		var encData =   sa.getContentBase64(chg_att);
-			var att_bin_info = '';
-			att_bin_info += chg_att_doc.data;
-			chg21.attachment_binary_information +=att_bin_info;
-			var xml = "<ate:attachments><ate:attachment action=\"add\" charset=\"UTF-8\" ";
-                xml += "len=\"" + filesize + "\" name=\"" + attachname + "\" ";
-                xml += "type=\"" + filetype + "\" contentId=\"" + contentid + "\">";
-                xml += encData;
-                xml += "</ate:attachment></ate:attachments>";
-			
-			
-		if(chg_att.getRowCount()>1){
-		//		xml+=xml;
-				chg21.attachments+=xml;
-		}else{
-			chg21.attachments=xml;}
-		}
-		}
+	inc_grp.get(current.assignment_group);
+	inc21.assignmentgroup = inc_grp.name;
 
 
-}
-	catch(att_err){
-		gs.error("OPTUS ATE 21: insert attachment failed ",att_err);
-		
-	}
-	
 	try{
-	chg21.brief_description = current.short_description;
+	inc21.brief_description = current.short_description;
 		
 	/*	
 	var mapCategory = new table_mapping();
 	var cat = mapCategory.getMappedInBoundValue('TCC','category',current.category,'','Incident',current.sys_id);
-	//chg21.category = current.category;
+	//inc21.category = current.category;
 	//	var parser = new global.JSON();
 	//	var cat = parser.encode(mapCategory);
-		chg21.category=cat;
+		inc21.category=cat;
 		if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
-			gs.info('OPTUS ATE CHG-21: '+cat);
+			gs.info('OPTUS ATE INC-21: '+cat);
 		}
 		
 	*/
 	//String.prototype.toTitleCase = function () {
   //  return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 //};
-		//chg21.category='Incident';
+		inc21.category='change';
 		
 		
 		//var cap=new ATE_Helper_Functions();
-		//chg21.category=cap.titlecase(current.sys_class_name.toString());
-		chg21.category='change';
+		//inc21.category=cap.titlecase(current.sys_class_name.toString());
+		
 
-		chg21.subcategory=current.u_category;
+		inc21.subcategory=current.category;
 		
-		chg21.producttype=current.subcategory;
+		inc21.producttype=current.subcategory;
 			if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
-				gs.info('OPTUS ATE Insert Cats: '+current.sys_class_name+', '+chg21.subcategory);
+				gs.info('OPTUS ATE Insert Cats: '+current.sys_class_name+', '+inc21.subcategory);
 			}
-		//chg.category=current.category;
-		/*Map Category
-		chg_map.addQuery('u_company','TCC');
-		//chg_map.addQuery(u_category=current.category);
-		chg_map.addQuery('u_ticket_category','Incident');
-		chg_map.addQuery('u_source_field','category');
-		chg_map.addQuery('u_source_value',current.category);
-		chg_map.query();
-		while(chg_map.next()){
-		chg21.category=chg_map.u_target_value;
-		if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
-			gs.info('OPTUS ATE BR-21 Change Category: '+chg_map.u_target_value);
-		}}
-		*/
+		//inc.category=current.category;
+			
+		
+	//inc21.third_party_ticket_id = current.u_third_party_reference;
 	
-	
-	/*Map sub-category	
-		var map_subcat=new GlideRecord('x_cio19_optus_ate_optus_ate_mapping');
-		map_subcat.addQuery('u_company','TCC');
-		map_subcat.addQuery('u_ticket_category','Incident');
-		map_subcat.addQuery('u_source_field','subcategory');
-		map_subcat.addQuery('u_source_value',current.subcategory);
-		map_subcat.query();
-		while(map_subcat.next()){
-		chg21.subcategory=map_subcat.u_target_value;	
-			if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
-				gs.info('OPTUS ATE BR-21 Sub-Category: '+map_subcat.u_target_value);
-			}
-		}
-		*/
-	
+	//inc21.configitemid = current.cmdb_ci;
+	//inc21.contactkey = current.firstname +' '+current.lastname;
+	inc21.costcentre = '';
 		
 		
-		
-	//chg21.third_party_ticket_id = current.u_third_party_reference;
-	
-	//chg21.configitemid = current.cmdb_ci;
-	chg21.contactkey = current.firstname +' '+current.lastname;
-	chg21.costcentre = '';
+	inc21.csnsticketstatus = current.state;
 		
 		
-	chg21.csnsticketstatus = current.state;
-		
-		
-	chg21.customerticketid = current.number;
+	inc21.customerticketid = current.number;
 	
 	//Get reference table for user detail
-	chg_requestor.get(current.uniqueid);
-	chg21.mobilenumber = chg_requestor.mobile_phone;
-	chg21.phonenumber = chg_requestor.phone;
-	chg21.emailaddress = chg_requestor.email;
-	chg21.firstname = chg_requestor.first_name;
-	chg21.lastname = chg_requestor.last_name;
+		
+		//var inc_req = inc21.addJoinQuery('u_requestor','sys_id');
+var gr = new GlideRecord('sys_user');
+gr.addQuery('sys_id',current.u_requestor);
+//var caller = gr.caller_id.getRefRecord();
+gr.query();		
+		if(gr.next()){
+	inc21.mobilenumber = gr.mobile_phone;
+	inc21.phonenumber = gr.phone;
+	inc21.emailaddress = gr.email;
+	inc21.firstname = gr.first_name;
+	inc21.lastname = gr.last_name;
+		}
+		if (gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+		gs.info('OPTUS ATE 21 Contact detail: '+gr.mobile_phone+', '+gr.phone+', '+gr.email+', '+gr.first_name+', '+gr.last_name);	
+		}
+		
 		}
 	
 	catch(det){
@@ -215,31 +134,31 @@ var attachname = '';
 	}
 	
 	//Get Location from reference table
-	//chg_location.get(current.location);
-	chg21.location = current.location;
-	chg21.messagecompany = 'TCC';
-	chg21.messagedate = current.opened_at;
+	//inc_location.get(current.location);
+	inc21.location = current.location;
+	inc21.messagecompany = 'TCC';
+	inc21.messagedate = current.opened_at;
 	//try{
 	//Get Status Label
-//	chg_status.addQuery('name', 'incident');
-//	chg_status.addQuery('element', 'state');
-//	chg_status.addQuery('inactive',false);
-//	chg_status.addQuery('value', current.state);
-//	chg_status.query();
+//	inc_status.addQuery('name', 'incident');
+//	inc_status.addQuery('element', 'state');
+//	inc_status.addQuery('inactive',false);
+//	inc_status.addQuery('value', current.state);
+//	inc_status.query();
 	
-//	if (chg_status.next()){
-//		chg21.messagestatus = chg_status.label;
+//	if (inc_status.next()){
+//		inc21.messagestatus = inc_status.label;
 //	}
 //	else{
-		chg21.messagestatus =current.state;
+		inc21.messagestatus =current.state;
 //	}
 	
 	//Message Type 21 = New Incident to send to Optus
-	chg21.messagetype = 21;
-	chg21.opentime = current.opened_at;
+	inc21.messagetype = 21;
+	inc21.opentime = current.opened_at;
 
 	//Map Priority	
-	//chg21.priority = current.priority;
+	//inc21.priority = current.priority;
 		
 		
 
@@ -250,56 +169,128 @@ var attachname = '';
 	
 	try{
 	//Get Problem Label
-	//chg_prob.get(current.problem_id);
-	//chg21.problemtype =chg_prob.sys_class_name;
+	//inc_prob.get(current.problem_id);
+	//inc21.problemtype =inc_prob.sys_class_name;
 		
 		
-	//chg21.updatedescrption = current.comments;
+	//inc21.updatedescrption = current.comments;
 	
 	//var notes = current.comments_and_work_notes.getJournalEntry(-1); //gets all journal entries as a string where each entry is delimited by '\n\n'
 	//var na = notes.split("\n\n");                       //stores each entry into an array of strings
-	//chg21.worklog = current.work_notes;
+	//inc21.worklog = current.work_notes;
 		
 
 		
 		
-	chg21.worklog = current.work_notes.getJournalEntry(1);
-	chg21.updatedescrption=current.comments.getJournalEntry(1);
-	chg21.uniqueid = current.sys_id;
+	inc21.worklog = current.work_notes.getJournalEntry(1);
+		inc21.worklog=current.description;
+	//inc21.updatedescrption=current.comments.getJournalEntry(1);
+	inc21.uniqueid = current.sys_id;
 	//Get data from Change request table
-	chg_chg.get(current.caused_by);
-	chg21.DownTimeStart = chg_chg.u_outage_start;
-	chg21.DownTimeEnd = chg_chg.u_outage_end;
-	chg21.closure_code=current.close_code;
-	chg21.closetime = current.closed_at;
-	chg21.impact = current.impact;
-	chg21.urgency = current.urgency;
-	chg21.plannedstart = current.expected_start;
-	chg21.plannedend = current.due_date;
+	//inc_chg.get(current.caused_by);
+		inc_chg.addQuery('sys_id',current.sys_id);
+	inc21.DownTimeStart = inc_chg.u_outage_start;
+	inc21.DownTimeEnd = inc_chg.u_outage_end;
+	inc21.closure_code=current.close_code;
+	inc21.closetime = current.closed_at;
+	inc21.impact = current.impact;
+	inc21.urgency = current.urgency;
+	inc21.plannedstart = current.expected_start;
+	inc21.plannedend = current.due_date;
 	
 	//Get Reference table for ConfigurationItemID
-	chg_configItem.get(current.uniqueid);
-	chg21.configuration_item_id=chg_configItem.name;
+	inc_configItem.get(current.uniqueid);
+	inc21.configuration_item_id=inc_configItem.name;
 	}
 	catch(prob){
 		gs.error("OPTUS ATE 21: Problem insert failed",prob);
 	}
-	//chg21.CustomerParentID = '';
-	//chg21.CSNSParentID = '';
-	chg21.problemtype=current.type;
-	chg21.subcategory=current.subcategory;
-	//chg21.updateWithReferences();
-	chg21.insert();
+	//inc21.CustomerParentID = '';
+	//inc21.CSNSParentID = '';
 	
+	//inc21.updateWithReferences();
+	inc21.insert();
+	
+
 	
 	if (gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
-	gs.info('OPTUS ATE CHG 21: Change '+current.number+' inserted into holding table');
+	gs.info('OPTUS ATE 21: incident '+current.number+' inserted into holding table');
 	}
 }
 	
 	catch(ex)
 	{
 		gs.error('OPTUS ATE 21: Insert '+current.number+' into holding table failed?',ex);
+	}
+	try {
+	//Insert attachment name and  
+	inc_att.addQuery('table_sys_id',current.sys_id);
+	inc_att.addQuery('table_name', current.getTableName());
+		inc_att.addQuery('file_name','!=',inc21.attachname);
+	inc_att.query();
+	var inc_att_rows=inc_att.getRowCount();
+	while(inc_att.next()){
+	if(inc_att.file_name != inc21.attachname)
+		{inc21.attachname = inc_att.file_name;
+		// var att=inc_att.next();
+var attachname = '';
+	attachname = inc_att.file_name;
+	var filetype = '';
+	filetype=inc_att.content_type;
+	var filesize ='';
+	filesize=inc_att.size_bytes;
+	var contentid='';
+	contentid=inc_att.getUniqueValue();
+		if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+			gs.info('OPTUS ATE BR-21-Hold: #attachments= '+inc_att.getRowCount());
+		}
+			
+	//combine base64 encoded file and insert into holding table	
+	// see https://www.servicenowguru.com/integration/sending-attachments-3rdparty-service-desk/
+//	var inc_docs = inc_att_doc.addJoinQuery('sys_attachment','sys_attachment');
+//	inc_docs.addCondition('sys_attachment', inc_att.sys_id);
+//	inc_att_doc.addQuery('sys_attachment', inc_att.sys_id);
+//	inc_att_doc.orderBy('position');
+//	inc_att_doc.query();
+//		while(inc_att_doc.next()){
+			//inc21.attachments += inc_att_doc.toString();
+			
+		var sa = new GlideSysAttachment();
+       		//var encData =   sa.getContentBase64(inc_att);
+			var encData =   sa.getContentBase64(inc_att);
+//			var att_bin_info = '';
+//			att_bin_info += inc_att_doc.data;
+			inc21.attachment_binary_information =encData;
+			var xml1 = "<ate:attachments>";
+			var xml = "<ate:attachment action=\"add\" charset=\"UTF-8\" ";
+                xml += "len=\"" + filesize + "\" name=\"" + attachname + "\" ";
+                xml += "type=\"" + filetype + "\" contentId=\"" + contentid + "\">";
+                xml += encData;
+                xml += "</ate:attachment>";
+			var xml2 = "</ate:attachments>";
+			
+		//inc21.attachments=xml1+(xml+=xml)+xml2;
+		// var att_body='';
+		 //att_body+=xml;
+		 inc21.attachments+=xml;
+		// inc21.attachments=xml1+inc21.attachments+xml2;
+	//	if(inc_att.getRowCount()>1){
+		//		xml+=xml;
+		//		inc21.attachments=xml1+(xml+=xml)+xml2;
+	//	}else{
+	//		inc21.attachments=xml1+xml+xml2;}
+		inc21.update();
+		}
+		 
+		}if (inc_att_rows>0){
+		inc21.attachments="<ate:attachments>"+inc21.attachments+"</ate:attachments>";
+		inc21.update();}
+	}
+
+
+	catch(att_err){
+		gs.error("OPTUS ATE 21: insert attachment failed ",att_err);
+		
 	}
 		
 		
@@ -318,7 +309,7 @@ var attachname = '';
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>696e3caf4fd95f40aab4a3b11310c73b</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_name>CHG_Holding_21</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -327,7 +318,7 @@ var attachname = '';
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_696e3caf4fd95f40aab4a3b11310c73b</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-05-22 23:42:51</sys_updated_on>
+        <sys_updated_on>2018-06-11 00:52:48</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_ui_form_sections form_id="97a43895db2e530073ab787dbf96191e" sys_domain="global" table="sc_task" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-06-06 06:04:31</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>d7a43895db2e530073ab787dbf961921</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="sc_task" name="sc_task" sys_domain="global" view="30d13815db2e530073ab787dbf961966">97a43895db2e530073ab787dbf96191e</sys_ui_form>
+            <sys_ui_section caption="NULL" display_value="" name="sc_task" sys_domain="global" view="30d13815db2e530073ab787dbf961966">6e04b095db2e530073ab787dbf961946</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-06-06 06:04:31</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-06-06 06:04:31</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>d3a43895db2e530073ab787dbf961922</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="sc_task" name="sc_task" sys_domain="global" view="30d13815db2e530073ab787dbf961966">97a43895db2e530073ab787dbf96191e</sys_ui_form>
+            <sys_ui_section caption="New Section" display_value="New Section" name="sc_task" sys_domain="global" view="30d13815db2e530073ab787dbf961966">d3a43895db2e530073ab787dbf96191d</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-06-06 06:04:31</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>2</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-06-06 06:04:31</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>dba43895db2e530073ab787dbf961996</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="sc_task" name="sc_task" sys_domain="global" view="30d13815db2e530073ab787dbf961966">97a43895db2e530073ab787dbf96191e</sys_ui_form>
+            <sys_ui_section caption="New Section" display_value="New Section" name="sc_task" sys_domain="global" view="30d13815db2e530073ab787dbf961966">9ba43895db2e530073ab787dbf96191d</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-06-06 06:04:31</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>3</position>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-06-06 06:05:54</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>9ff4f895db2e530073ab787dbf961920</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="sc_task" name="sc_task" sys_domain="global" view="30d13815db2e530073ab787dbf961966">97a43895db2e530073ab787dbf96191e</sys_ui_form>
+            <sys_ui_section caption="New Section" display_value="New Section" name="sc_task" sys_domain="global" view="30d13815db2e530073ab787dbf961966">9ff4f895db2e530073ab787dbf96191d</sys_ui_section>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-06-06 06:05:54</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>sc_task</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+            <sys_created_on>2018-06-06 06:04:31</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>97a43895db2e530073ab787dbf96191e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>sc_task</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
+            <sys_update_name>sys_ui_form_sections_97a43895db2e530073ab787dbf96191e</sys_update_name>
+            <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+            <sys_updated_on>2018-06-06 06:04:31</sys_updated_on>
+            <sys_user/>
+            <view display_value="OptusATE" name="OptusATE">30d13815db2e530073ab787dbf961966</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
+</record_update>

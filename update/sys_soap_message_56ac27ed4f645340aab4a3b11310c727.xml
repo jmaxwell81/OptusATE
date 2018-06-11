@@ -4,7 +4,7 @@
         <access>package_private</access>
         <authentication_type>basic</authentication_type>
         <basic_auth_password/>
-        <basic_auth_profile display_value="OptusATE">1f7262064fd00700aab4a3b11310c70a</basic_auth_profile>
+        <basic_auth_profile display_value="OptusATE_PROD">1f7262064fd00700aab4a3b11310c70a</basic_auth_profile>
         <basic_auth_user/>
         <description/>
         <download_wsdl>true</download_wsdl>

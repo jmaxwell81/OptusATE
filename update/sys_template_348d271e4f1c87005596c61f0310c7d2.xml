@@ -29,7 +29,7 @@
         <table>x_cio19_optus_ate_optus_ate_holding</table>
         <template>messagecompany=TCC^messagetype=27^messagedate=javascript:gs.GlideDateTime().getDisplayValue()^messagestatus=Pending^assignmentgroup=Optus PSMD^brief_description=TEST HeartBeat^EQ</template>
         <u_pre_approved>false</u_pre_approved>
-        <user display_value="ATE Optus">14022ec24fd00700aab4a3b11310c790</user>
+        <user display_value="">0346a0bc4f121b4856ac98701310c71a</user>
         <view/>
     </sys_template>
 </record_update>

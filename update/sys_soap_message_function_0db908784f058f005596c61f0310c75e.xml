@@ -3,7 +3,7 @@
     <sys_soap_message_function action="INSERT_OR_UPDATE">
         <authentication_type>basic</authentication_type>
         <basic_auth_password/>
-        <basic_auth_profile display_value="OptusATE">1f7262064fd00700aab4a3b11310c70a</basic_auth_profile>
+        <basic_auth_profile display_value="OptusATE_PROD">1f7262064fd00700aab4a3b11310c70a</basic_auth_profile>
         <basic_auth_user/>
         <certificate/>
         <enable_mutual_auth>false</enable_mutual_auth>
@@ -119,11 +119,11 @@
                   <ate:UpdateDescription>${UpdateDescription.UpdateDescription}</ate:UpdateDescription>
                </ate:UpdateDescription>
                <!--Optional:-->
-               <ate:attachments>
+				 <!--<ate:attachments>-->
                   <!--Zero or more repetitions:-->
-                                    <!--<ate:attachment href="${href}" contentId="${contentId}" action="${action}" name="${name}" type="${type}" len="${len}" charset="${charset}" attachmentType="${attachmentType}"></ate:attachment>-->
-				   ${attachment}
-               </ate:attachments>
+
+                  ${attachment}
+               <!--</ate:attachments>-->
             </ate:instance>
             <!--Optional:-->
             <ate:messages>
@@ -150,7 +150,7 @@
         <sys_created_on>2017-09-04 03:54:28</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>0db908784f058f005596c61f0310c75e</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>sendTicketEvent</sys_name>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
         <sys_policy/>
@@ -158,7 +158,7 @@
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_soap_message_function_0db908784f058f005596c61f0310c75e</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-05-23 03:54:33</sys_updated_on>
+        <sys_updated_on>2018-05-25 10:33:51</sys_updated_on>
         <use_basic_auth>false</use_basic_auth>
         <use_mid_server/>
         <use_ws_security>false</use_ws_security>
