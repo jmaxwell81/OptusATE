@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sys_template">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_template">
     <sys_template action="INSERT_OR_UPDATE">
         <active>true</active>
         <global>false</global>

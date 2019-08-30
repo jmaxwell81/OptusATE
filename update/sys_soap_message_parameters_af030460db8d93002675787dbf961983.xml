@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sys_soap_message_parameters">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_soap_message_parameters">
     <sys_soap_message_parameters action="INSERT_OR_UPDATE">
         <name>instance.Category</name>
         <soap_function display_value="">d0150344db0593002675787dbf9619be</soap_function>

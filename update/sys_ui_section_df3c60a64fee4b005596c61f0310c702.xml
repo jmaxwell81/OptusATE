@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update>
+<?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_ui_section caption="" section_id="df3c60a64fee4b005596c61f0310c702" sys_domain="global" table="x_cio19_optus_ate_applicationvariables" version="3" view="">
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>environment</element>

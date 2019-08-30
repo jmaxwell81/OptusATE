@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<database>
+<?xml version="1.0" encoding="UTF-8"?><database>
     <element label="ApplicationVariables" max_length="40" name="x_cio19_optus_ate_applicationvariables" type="collection">
         <element choice="3" label="Environment" max_length="10" name="environment" type="choice">
             <choice>
-                <element label="DEV" value="DEV"/>
-                <element label="PROD" value="PROD"/>
-                <element label="UAT" value="UAT"/>
+                <element inactive_on_update="false" label="DEV" value="DEV"/>
+                <element inactive_on_update="false" label="PROD" value="PROD"/>
+                <element inactive_on_update="false" label="UAT" value="UAT"/>
             </choice>
         </element>
         <element label="OptusWSDL" max_length="255" name="optuswsdl" type="string"/>

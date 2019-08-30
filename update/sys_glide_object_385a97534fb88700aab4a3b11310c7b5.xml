@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sys_glide_object">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_glide_object">
     <sys_glide_object action="INSERT_OR_UPDATE">
         <attributes/>
         <class_name/>

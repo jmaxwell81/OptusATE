@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update sys_domain="global" table="sys_script">
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
     <sys_script action="INSERT_OR_UPDATE">
         <abort_action>false</abort_action>
         <access>package_private</access>
@@ -143,10 +142,9 @@ try{
 			
 	//inc_in.u_third_party_reference=current.csnsticketid;
 	//inc_in.=current.uniqueid;
-	inc_in.comments=current.updatedescrption;
+	inc_in.work_notes=current.updatedescrption;
 	
 	//inc_in.work_notes=current.worklog;
-	inc_in.description=current.worklog;
 	//inc_in.=current.workstationport;
 	
 
@@ -333,7 +331,7 @@ gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_opt
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f87aad3edb8e130073ab787dbf96198d</sys_id>
-        <sys_mod_count>19</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_name>ATE_OPT_OpenREQ_25</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -342,7 +340,7 @@ gs.eventQueue('x_cio19_optus_ate.alerterror',current,gs.getProperty('x_cio19_opt
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_f87aad3edb8e130073ab787dbf96198d</sys_update_name>
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-06-11 00:11:22</sys_updated_on>
+        <sys_updated_on>2018-05-23 06:23:23</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

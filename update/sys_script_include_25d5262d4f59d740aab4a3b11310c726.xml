@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sys_script_include">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
     <sys_script_include action="INSERT_OR_UPDATE">
         <access>package_private</access>
         <active>false</active>
         <api_name>x_cio19_optus_ate.XMLHelper</api_name>
+        <caller_access/>
         <client_callable>false</client_callable>
         <description>Helper methods for with XML.  Has the following methods:&#13;
     toObject:  converts an XML string (given in the constructor or as an argument) into a JavaScript object.&#13;

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update sys_domain="global" table="sys_script">
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
     <sys_script action="INSERT_OR_UPDATE">
         <abort_action>false</abort_action>
         <access>package_private</access>
@@ -82,11 +81,11 @@ try{
 	var inc_requestor = new GlideRecord('sys_user');
 	var inc_location = new GlideRecord('cmn_location');
 	var inc_status = new GlideRecord('sys_choice');
-	var inc_configItem = new GlideRecord('cmdb_ci');
+	//var inc_configItem = new GlideRecord('cmdb_ci');
 	var inc_att = new GlideRecord('sys_attachment');
 	var inc_att_doc = new GlideRecord('sys_attachment_doc');
-	var inc_prob = new GlideRecord('problem');
-	var inc_chg = new GlideRecord('change_request');
+	//var inc_prob = new GlideRecord('problem');
+	//var inc_chg = new GlideRecord('change_request');
 	var inc_map = new GlideRecord('x_cio19_optus_ate_optus_ate_mapping');
 	var inc_notes = new GlideRecord('task');
 	
@@ -178,12 +177,12 @@ var attachname = '';
 		//inc21.category=cap.titlecase(current.sys_class_name.toString());
 		inc21.category='Request';
 
-		inc21.subcategory=current.u_category;
+		//inc21.subcategory=current.u_category;
 		
-		inc21.producttype=current.subcategory;
-			if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
-				gs.info('OPTUS ATE Insert Cats: '+current.sys_class_name+', '+inc21.subcategory);
-			}
+		//inc21.producttype=current.subcategory;
+			//if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+				//gs.info('OPTUS ATE Insert Cats: '+current.sys_class_name+', '+inc21.subcategory);
+			//}
 		//inc.category=current.category;
 		/*Map Category
 		inc_map.addQuery('u_company','TCC');
@@ -221,8 +220,8 @@ var attachname = '';
 	//inc21.third_party_ticket_id = current.u_third_party_reference;
 	
 	//inc21.configitemid = current.cmdb_ci;
-	inc21.contactkey = current.firstname +' '+current.lastname;
-	inc21.costcentre = '';
+	//inc21.contactkey = current.firstname +' '+current.lastname;
+	//inc21.costcentre = '';
 		
 		
 	inc21.csnsticketstatus = current.state;
@@ -231,21 +230,14 @@ var attachname = '';
 	inc21.customerticketid = current.number;
 	
 	//Get reference table for user detail
-var gr = new GlideRecord('sys_user');
-gr.addQuery('sys_id',current.caller_id);
-//var caller = gr.caller_id.getRefRecord();
-gr.query();		
-		if(gr.next()){
-	inc21.mobilenumber = gr.mobile_phone;
-	inc21.phonenumber = gr.phone;
-	inc21.emailaddress = gr.email;
-	inc21.firstname = gr.first_name;
-	inc21.lastname = gr.last_name;
+	//inc_requestor.get(current.uniqueid);
+	inc_requestor = current.u_requestor;
+	inc21.mobilenumber = inc_requestor.mobile_phone;
+	inc21.phonenumber = inc_requestor.phone;
+	inc21.emailaddress = inc_requestor.email;
+	inc21.firstname = inc_requestor.first_name;
+	inc21.lastname = inc_requestor.last_name;
 		}
-		if (gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
-		gs.info('OPTUS ATE 21 Contact detail: '+gr.mobile_phone+', '+gr.phone+', '+gr.email+', '+gr.first_name+', '+gr.last_name);	
-		}
-	}
 	
 	catch(det){
 		gs.error("OPTUS ATE 21: Insert Detail Failed ",det);
@@ -253,6 +245,7 @@ gr.query();
 	
 	//Get Location from reference table
 	//inc_location.get(current.location);
+	inc_location = current.location;
 	inc21.location = current.location;
 	inc21.messagecompany = 'TCC';
 	inc21.messagedate = current.opened_at;
@@ -287,7 +280,7 @@ gr.query();
 	
 	try{
 	//Get Problem Label
-	inc_prob.get(current.problem_id);
+	//inc_prob.get(current.problem_id);
 	//inc21.problemtype =inc_prob.sys_class_name;
 		
 		
@@ -304,15 +297,15 @@ gr.query();
 	inc21.updatedescrption=current.comments.getJournalEntry(1);
 	inc21.uniqueid = current.sys_id;
 	//Get data from Change request table
-	inc_chg.get(current.caused_by);
-	inc21.DownTimeStart = inc_chg.u_outage_start;
-	inc21.DownTimeEnd = inc_chg.u_outage_end;
-	inc21.closure_code=current.close_code;
-	inc21.closetime = current.closed_at;
+	//inc_chg.get(current.caused_by);
+	//inc21.DownTimeStart = inc_chg.u_outage_start;
+	//inc21.DownTimeEnd = inc_chg.u_outage_end;
+	//inc21.closure_code=current.close_code;
+	//inc21.closetime = current.closed_at;
 	inc21.impact = current.impact;
 	inc21.urgency = current.urgency;
-	inc21.plannedstart = current.expected_start;
-	inc21.plannedend = current.due_date;
+	//inc21.plannedstart = current.expected_start;
+	//inc21.plannedend = current.due_date;
 	
 	//Get Reference table for ConfigurationItemID
 	inc_configItem.get(current.uniqueid);
@@ -355,7 +348,7 @@ gr.query();
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>c0e9cc484fb11f80aab4a3b11310c749</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_name>REQ_Holding_21</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -363,8 +356,8 @@ gr.query();
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_c0e9cc484fb11f80aab4a3b11310c749</sys_update_name>
-        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-06-05 22:53:52</sys_updated_on>
+        <sys_updated_by>a_C1A@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2019-08-26 23:41:43</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

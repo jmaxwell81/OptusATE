@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<database>
+<?xml version="1.0" encoding="UTF-8"?><database>
     <element extends="sys_import_set_row" label="ATEEventIn" max_length="40" name="x_cio19_optus_ate_ateeventin" type="collection">
         <element attributes="import_attribute_name=assignmentgroup,edge_encryption_enabled=true" label="Assignmentgroup" max_length="40" name="assignmentgroup" type="string"/>
         <element attributes="import_attribute_name=attachment_binary_information,edge_encryption_enabled=true" label="Attachment binary information" max_length="40" name="attachment_binary_information" type="string"/>

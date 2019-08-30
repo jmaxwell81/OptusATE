@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update sys_domain="global" table="sys_script">
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
     <sys_script action="INSERT_OR_UPDATE">
         <abort_action>false</abort_action>
         <access>package_private</access>
@@ -36,6 +35,8 @@
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 var inc=new GlideRecord('x_cio19_optus_ate_optus_ate_holding');	
+var inc_requestor = new GlideRecord('sys_user');
+var inc_location = new GlideRecord('cmn_location');
 try{
 
 	inc.initialize();
@@ -47,31 +48,39 @@ try{
 		inc.worklog=current.work_notes.getJournalEntry(1);
 	}
 	if(current.comments.changes()){
-		inc.updatedescrption=current.work_notes.getJournalEntry(1);
+		inc.updatedescrption=current.comments.getJournalEntry(1);
 	}
-		inc.brief_description = current.short_description;
+	inc.brief_description = current.short_description;
 	inc.assigned_to=current.assigned_to;
-		inc.impact=current.impact;
-		inc.urgency=current.urgency;
-		inc.messagetype='23';
-		//inc.category='Incident';//change to sys_class_name?
-		var cap=new ATE_Helper_Functions();
-		//inc.category=cap.titlecase(current.sys_class_name.toString());
-		inc.category='Incident';
-		inc.subcategory=current.u_category;
-		inc.customer_status=current.state;
-		inc.messagestatus='Pending';
-		inc.attachments=current.attachments;
-		inc.closure_code=current.close_code;
-		inc.csnsticketid=current.u_third_party_reference;
+	inc.impact=current.impact;
+	inc.urgency=current.urgency;
+	inc.messagetype='23';
+	//inc.category='Incident';//change to sys_class_name?
+	var cap=new ATE_Helper_Functions();
+	//inc.category=cap.titlecase(current.sys_class_name.toString());
+	inc.category='Incident';
+	//inc.subcategory=current.u_category;
+	inc.customer_status=current.state;
+	inc.messagestatus='Pending';
+	inc.attachments=current.attachments;
+	inc.closure_code=current.close_code;
+	inc.csnsticketid=current.u_third_party_reference;
 	inc.csnsticketstatus=current.state;
-		inc.customerticketid=current.sys_id;
-		inc.customerticketid=current.number;
-		inc.uniqueid=current.sys_id;
+	//inc.customerticketid=current.sys_id;
+	inc.customerticketid=current.number;
+	inc.uniqueid=current.sys_id;
 		
-					if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
-			gs.info('OPTUS ATE BR-23 Updated: '+current.number+', '+current.sys_id+', '+current.work_notes.toString()+', '+current.comments.toString()+', '+current.assigned_to+', '+ current.u_category +', '+ current.subcategory +', '+current.customer_status  +', '+current.messagestatus);
-			
+	inc_requestor = current.u_requestor;
+	inc.mobilenumber = inc_requestor.mobile_phone;
+	inc.phonenumber = inc_requestor.phone;
+	inc.emailaddress = inc_requestor.email;
+	inc.firstname = inc_requestor.first_name;
+	inc.lastname = inc_requestor.last_name;
+		
+	inc_location = current.location;
+	inc.location = inc_location.name;
+	if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+		gs.info('OPTUS ATE BR-23 Updated: '+current.number+', '+current.sys_id+', '+current.work_notes.toString()+', '+current.comments.toString()+', '+current.assigned_to+', '+ current.u_category +', '+ current.subcategory +', '+current.customer_status  +', '+current.messagestatus);	
 		}
 	inc.insert();
 	try {
@@ -174,7 +183,7 @@ var attachname = '';
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>ea52f1f5dbbc930073ab787dbf961930</sys_id>
-        <sys_mod_count>213</sys_mod_count>
+        <sys_mod_count>219</sys_mod_count>
         <sys_name>INC_Holding_23</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -182,8 +191,8 @@ var attachname = '';
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_ea52f1f5dbbc930073ab787dbf961930</sys_update_name>
-        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2018-05-30 05:32:13</sys_updated_on>
+        <sys_updated_by>a_C1A@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2019-08-26 00:00:18</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

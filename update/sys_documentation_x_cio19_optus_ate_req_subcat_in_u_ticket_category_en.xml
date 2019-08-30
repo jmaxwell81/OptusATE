@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update>
+<?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_documentation element="u_ticket_category" label="Ticket category" language="en" table="x_cio19_optus_ate_req_subcat_in">
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>u_ticket_category</element>
