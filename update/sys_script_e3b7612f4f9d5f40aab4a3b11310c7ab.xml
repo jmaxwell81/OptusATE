@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>false</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>change_request</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="change_request">assignment_group=3ac476c84f2e8b048767a3b11310c72a^ORassignment_group=f496c4454fa25600a0124c111310c778^sys_class_name=change_request^sys_updated_by!=OptusATE^u_third_party_referenceSTARTSWITHOBINC^EQ<item display_table="sys_user_group" display_value="Optus PMSD" endquery="false" field="assignment_group" goto="false" newquery="false" operator="=" or="false" value="3ac476c84f2e8b048767a3b11310c72a"/>
+            <item display_table="sys_user_group" display_value="Service Desk" endquery="false" field="assignment_group" goto="false" newquery="false" operator="=" or="true" value="f496c4454fa25600a0124c111310c778"/>
+            <item display_value="Change Request" endquery="false" field="sys_class_name" goto="false" newquery="false" operator="=" or="false" value="change_request"/>
+            <item endquery="false" field="sys_updated_by" goto="false" newquery="false" operator="!=" or="false" value="OptusATE"/>
+            <item endquery="false" field="u_third_party_reference" goto="false" newquery="false" operator="STARTSWITH" or="false" value="OBINC"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>CHG_Holding_23</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+var inc=new GlideRecord('x_cio19_optus_ate_optus_ate_holding');	
+try{
+
+	inc.initialize();
+			if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+			gs.info('OPTUS ATE BR-23 B4 Updated: '+current.number+', '+current.sys_id+', '+inc.getRowCount());
+			
+		}
+	if(current.work_notes.changes()){
+		inc.worklog=current.work_notes.getJournalEntry(1);
+	}
+	if(current.comments.changes()){
+		inc.updatedescrption=current.comments.getJournalEntry(1);
+	}
+		inc.assigned_to=current.assigned_to;
+		inc.impact=current.impact;
+		inc.urgency=current.urgency;
+		inc.messagetype='23';
+		//inc.category='Incident';//change to sys_class_name?
+		var cap=new ATE_Helper_Functions();
+		inc.category=cap.titlecase(current.sys_class_name.toString());
+		
+		inc.subcategory=current.u_category;
+		inc.customer_status=current.state;
+		inc.messagestatus='Pending';
+		inc.attachments=current.attachments;
+		inc.closure_code=current.close_code;
+		inc.csnsticketid=current.u_third_party_reference;
+	inc.csnsticketstatus=current.state;
+		inc.customerticketid=current.sys_id;
+		inc.customerticketid=current.number;
+		inc.uniqueid=current.sys_id;
+		
+					if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+			gs.info('OPTUS ATE BR-23 Updated: '+current.number+', '+current.sys_id+', '+current.work_notes.toString()+', '+current.comments.toString()+', '+current.assigned_to+', '+ current.u_category +', '+ current.subcategory +', '+current.customer_status  +', '+current.messagestatus);
+			
+		}
+	inc.insert();
+	try {
+	//Insert attachment name and  
+		var inc_att = new GlideRecord('sys_attachment');
+	inc_att.addQuery('table_sys_id',current.sys_id);
+	inc_att.addQuery('table_name', 'change_request');
+		inc_att.addQuery('file_name','!=',inc.attachname);
+		var incuptime=new GlideDateTime();
+		//incuptime=current.sys_updated_on;
+		incuptime.addSeconds(-120);
+		inc_att.addQuery('sys_created_on','>=',incuptime);
+	inc_att.query();
+	var att_count=inc_att.getRowCount();
+		if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+			gs.info('OPTUS ATE BR-23 Attachment Count: '+att_count);
+		}
+		
+	while(inc_att.next()){
+	if(att_count > 0)
+		{//inc.attachname = current.attachname;
+		// var att=inc_att.next();
+var attachname = '';
+	attachname = inc_att.file_name;
+	var filetype = '';
+	filetype=inc_att.content_type;
+	var filesize ='';
+	filesize=inc_att.size_bytes;
+	var contentid='';
+	contentid=inc_att.getUniqueValue();
+		if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+			gs.info('OPTUS ATE BR-23-Hold: #attachments= '+inc_att.getRowCount());
+		}
+			
+	//combine base64 encoded file and insert into holding table	
+	// see https://www.servicenowguru.com/integration/sending-attachments-3rdparty-service-desk/
+//	var inc_docs = inc_att_doc.addJoinQuery('sys_attachment','sys_attachment');
+//	inc_docs.addCondition('sys_attachment', inc_att.sys_id);
+//	inc_att_doc.addQuery('sys_attachment', inc_att.sys_id);
+//	inc_att_doc.orderBy('position');
+//	inc_att_doc.query();
+//		while(inc_att_doc.next()){
+			//inc21.attachments += inc_att_doc.toString();
+			
+		var sa = new GlideSysAttachment();
+       		//var encData =   sa.getContentBase64(inc_att);
+			var encData =   sa.getContentBase64(inc_att);
+//			var att_bin_info = '';
+//			att_bin_info += inc_att_doc.data;
+			inc.attachment_binary_information =encData;
+			var xml1 = "<ate:attachments>";
+			var xml = "<ate:attachment action=\"add\" charset=\"UTF-8\" ";
+                xml += "len=\"" + filesize + "\" name=\"" + attachname + "\" ";
+                xml += "type=\"" + filetype + "\" contentId=\"" + contentid + "\">";
+                xml += encData;
+                xml += "</ate:attachment>";
+			var xml2 = "</ate:attachments>";
+			
+		//inc.attachments=xml1+(xml+=xml)+xml2;
+		// var att_body='';
+		 //att_body+=xml;
+		 inc.attachments+=xml;
+		// inc21.attachments=xml1+inc21.attachments+xml2;
+	//	if(inc_att.getRowCount()>1){
+		//		xml+=xml;
+		//		inc21.attachments=xml1+(xml+=xml)+xml2;
+	//	}else{
+	//		inc21.attachments=xml1+xml+xml2;}
+		inc.update();
+		}
+		 
+		}
+		if (inc_att_rows>0){
+		inc.attachments="<ate:attachments>"+inc.attachments+"</ate:attachments>";
+		inc.worklog='New Attachment added '+inc.attachname;
+		inc.update();}
+	}
+	
+
+	catch(att_err){
+		gs.error("OPTUS ATE 23: insert attachment failed ",att_err);
+		
+	}
+	
+	
+		if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+			gs.info('OPTUS ATE BR-23 After Updated: '+current.number+', '+current.sys_id);
+			
+		}
+	
+}catch(update_err){
+	gs.error('OPTUS ATE Update BR-23: '+update_err);
+}	
+	
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>lzs@townsville.qld.gov.au</sys_created_by>
+        <sys_created_on>2018-04-12 06:18:01</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>e3b7612f4f9d5f40aab4a3b11310c7ab</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>CHG_Holding_23</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
+        <sys_update_name>sys_script_e3b7612f4f9d5f40aab4a3b11310c7ab</sys_update_name>
+        <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
+        <sys_updated_on>2018-05-24 23:26:07</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=e3b7612f4f9d5f40aab4a3b11310c7ab"/>
+</record_update>

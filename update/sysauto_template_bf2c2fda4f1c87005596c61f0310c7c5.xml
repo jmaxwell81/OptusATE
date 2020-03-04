@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_template">
     <sysauto_template action="INSERT_OR_UPDATE">
         <active>true</active>
+        <business_calendar/>
         <condition/>
         <conditional>false</conditional>
+        <entered_time/>
         <name>Optus_Heartbeat_27</name>
         <run_as display_value="Leon Storey">1d8b25ce4f6ee240a022c61f0310c7d4</run_as>
         <run_as_tz/>
@@ -27,6 +29,7 @@
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
         <sys_updated_on>2018-06-19 01:11:24</sys_updated_on>
         <template display_value="Optus_ATE_27">348d271e4f1c87005596c61f0310c7d2</template>
+        <time_zone/>
         <upgrade_safe>false</upgrade_safe>
     </sysauto_template>
 </record_update>

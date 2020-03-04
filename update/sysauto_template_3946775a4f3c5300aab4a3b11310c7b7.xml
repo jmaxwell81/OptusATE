@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_template">
     <sysauto_template action="INSERT_OR_UPDATE">
         <active>true</active>
+        <business_calendar/>
         <condition/>
         <conditional>false</conditional>
+        <entered_time/>
         <name>Scheduled Optus Test_ATE_New_25</name>
         <run_as display_value="Leon Storey">1d8b25ce4f6ee240a022c61f0310c7d4</run_as>
         <run_as_tz/>
@@ -27,6 +29,7 @@
         <sys_updated_by>lzs@townsville.qld.gov.au</sys_updated_by>
         <sys_updated_on>2018-03-14 22:54:52</sys_updated_on>
         <template display_value="Test_ATE_New_25">4103b7d64f3c5300aab4a3b11310c799</template>
+        <time_zone/>
         <upgrade_safe>false</upgrade_safe>
     </sysauto_template>
 </record_update>

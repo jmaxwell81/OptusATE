@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Optus_ATE_Mapping" max_length="40" name="x_cio19_optus_ate_optus_ate_mapping" type="collection">
+    <element label="Optus_ATE_Mapping" max_length="40" name="x_cio19_optus_ate_optus_ate_mapping" sizeclass="359" type="collection">
         <element choice="1" label="Company" max_length="50" name="u_company" type="string">
             <choice>
                 <element inactive_on_update="false" label="Optus" value="Optus"/>

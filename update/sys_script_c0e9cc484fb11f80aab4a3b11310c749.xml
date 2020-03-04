@@ -16,7 +16,7 @@
         <description/>
         <execute_function>false</execute_function>
         <filter_condition table="sc_task">assignment_groupCHANGESTO3ac476c84f2e8b048767a3b11310c72a^sys_class_name=sc_task^EQ<item display_table="sys_user_group" display_value="Optus PMSD" endquery="false" field="assignment_group" goto="false" newquery="false" operator="CHANGESTO" or="false" value="3ac476c84f2e8b048767a3b11310c72a"/>
-            <item endquery="false" field="sys_class_name" goto="false" newquery="false" operator="=" or="false" value="sc_task"/>
+            <item display_value="Catalog Task" endquery="false" field="sys_class_name" goto="false" newquery="false" operator="=" or="false" value="sc_task"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </filter_condition>
         <is_rest>false</is_rest>
@@ -81,11 +81,11 @@ try{
 	var inc_requestor = new GlideRecord('sys_user');
 	var inc_location = new GlideRecord('cmn_location');
 	var inc_status = new GlideRecord('sys_choice');
-	//var inc_configItem = new GlideRecord('cmdb_ci');
+	var inc_configItem = new GlideRecord('cmdb_ci');
 	var inc_att = new GlideRecord('sys_attachment');
 	var inc_att_doc = new GlideRecord('sys_attachment_doc');
-	//var inc_prob = new GlideRecord('problem');
-	//var inc_chg = new GlideRecord('change_request');
+	var inc_prob = new GlideRecord('problem');
+	var inc_chg = new GlideRecord('change_request');
 	var inc_map = new GlideRecord('x_cio19_optus_ate_optus_ate_mapping');
 	var inc_notes = new GlideRecord('task');
 	
@@ -126,7 +126,7 @@ var attachname = '';
 			//inc21.attachments += inc_att_doc.toString();
 			
 		var sa = new GlideSysAttachment();
-       		var encData =   sa.getContentBase64(inc_att);
+		var encData = sa.getContentBase64(inc_att);
 			var att_bin_info = '';
 			att_bin_info += inc_att_doc.data;
 			inc21.attachment_binary_information +=att_bin_info;
@@ -177,12 +177,12 @@ var attachname = '';
 		//inc21.category=cap.titlecase(current.sys_class_name.toString());
 		inc21.category='Request';
 
-		//inc21.subcategory=current.u_category;
+		inc21.subcategory=current.u_category;
 		
-		//inc21.producttype=current.subcategory;
-			//if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
-				//gs.info('OPTUS ATE Insert Cats: '+current.sys_class_name+', '+inc21.subcategory);
-			//}
+		inc21.producttype=current.subcategory;
+			if(gs.getProperty('x_cio19_optus_ate.Debug')=='true'){
+				gs.info('OPTUS ATE Insert Cats: '+current.sys_class_name+', '+inc21.subcategory);
+			}
 		//inc.category=current.category;
 		/*Map Category
 		inc_map.addQuery('u_company','TCC');
@@ -221,7 +221,7 @@ var attachname = '';
 	
 	//inc21.configitemid = current.cmdb_ci;
 	//inc21.contactkey = current.firstname +' '+current.lastname;
-	//inc21.costcentre = '';
+	inc21.costcentre = '';
 		
 		
 	inc21.csnsticketstatus = current.state;
@@ -230,8 +230,7 @@ var attachname = '';
 	inc21.customerticketid = current.number;
 	
 	//Get reference table for user detail
-	//inc_requestor.get(current.uniqueid);
-	inc_requestor = current.u_requestor;
+	inc_requestor.get(current.request_item.request.requested_for);
 	inc21.mobilenumber = inc_requestor.mobile_phone;
 	inc21.phonenumber = inc_requestor.phone;
 	inc21.emailaddress = inc_requestor.email;
@@ -245,7 +244,6 @@ var attachname = '';
 	
 	//Get Location from reference table
 	//inc_location.get(current.location);
-	inc_location = current.location;
 	inc21.location = current.location;
 	inc21.messagecompany = 'TCC';
 	inc21.messagedate = current.opened_at;
@@ -269,7 +267,7 @@ var attachname = '';
 	inc21.opentime = current.opened_at;
 
 	//Map Priority	
-	//inc21.priority = current.priority;
+	inc21.priority = current.priority;
 		
 		
 
@@ -280,7 +278,7 @@ var attachname = '';
 	
 	try{
 	//Get Problem Label
-	//inc_prob.get(current.problem_id);
+	inc_prob.get(current.problem_id);
 	//inc21.problemtype =inc_prob.sys_class_name;
 		
 		
@@ -297,15 +295,15 @@ var attachname = '';
 	inc21.updatedescrption=current.comments.getJournalEntry(1);
 	inc21.uniqueid = current.sys_id;
 	//Get data from Change request table
-	//inc_chg.get(current.caused_by);
-	//inc21.DownTimeStart = inc_chg.u_outage_start;
-	//inc21.DownTimeEnd = inc_chg.u_outage_end;
-	//inc21.closure_code=current.close_code;
-	//inc21.closetime = current.closed_at;
+	inc_chg.get(current.caused_by);
+	inc21.DownTimeStart = inc_chg.u_outage_start;
+	inc21.DownTimeEnd = inc_chg.u_outage_end;
+	inc21.closure_code=current.close_code;
+	inc21.closetime = current.closed_at;
 	inc21.impact = current.impact;
 	inc21.urgency = current.urgency;
-	//inc21.plannedstart = current.expected_start;
-	//inc21.plannedend = current.due_date;
+	inc21.plannedstart = current.expected_start;
+	inc21.plannedend = current.due_date;
 	
 	//Get Reference table for ConfigurationItemID
 	inc_configItem.get(current.uniqueid);
@@ -348,7 +346,7 @@ var attachname = '';
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>c0e9cc484fb11f80aab4a3b11310c749</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_name>REQ_Holding_21</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -357,7 +355,7 @@ var attachname = '';
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_c0e9cc484fb11f80aab4a3b11310c749</sys_update_name>
         <sys_updated_by>a_C1A@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2019-08-26 23:41:43</sys_updated_on>
+        <sys_updated_on>2020-03-04 04:41:19</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

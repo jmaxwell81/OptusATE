@@ -220,7 +220,7 @@
             <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
             <sys_update_name>sys_ui_list_syslog_transaction_client_transaction</sys_update_name>
             <sys_updated_by>system</sys_updated_by>
-            <sys_updated_on>2019-05-14 08:19:29</sys_updated_on>
+            <sys_updated_on>2019-07-02 07:24:26</sys_updated_on>
             <sys_user display_value="Leon Storey">1d8b25ce4f6ee240a022c61f0310c7d4</sys_user>
             <view display_value="Client_transaction" name="client_transaction">9b8a1952373130004f6a80f7bcbe5d61</view>
             <view_name/>
