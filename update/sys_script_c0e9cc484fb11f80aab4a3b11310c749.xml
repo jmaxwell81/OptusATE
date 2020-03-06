@@ -92,8 +92,9 @@ try{
 	inc21.initialize();
 	
 	// gets sys_id for current record and inserts the name of assignment group into the holding table
-	inc_grp.get(current.assignment_group);
-	inc21.assignmentgroup = inc_grp.name;
+	//inc_grp.get(current.assignment_group);
+	//inc21.assignmentgroup = inc_grp.name;
+	inc21.assignmentgroup = current.assignment_group;
 
 try {
 	//Insert attachment name and  
@@ -346,7 +347,7 @@ var attachname = '';
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>c0e9cc484fb11f80aab4a3b11310c749</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>17</sys_mod_count>
         <sys_name>REQ_Holding_21</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -355,7 +356,7 @@ var attachname = '';
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_c0e9cc484fb11f80aab4a3b11310c749</sys_update_name>
         <sys_updated_by>a_C1A@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2020-03-04 04:41:19</sys_updated_on>
+        <sys_updated_on>2020-03-06 00:49:21</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
