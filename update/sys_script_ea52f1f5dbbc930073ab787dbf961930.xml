@@ -127,7 +127,7 @@ var attachname = '';
 			//inc21.attachments += inc_att_doc.toString();
 			
 		var sa = new GlideSysAttachment();
-       		//var encData =   sa.getContentBase64(inc_att);
+			//var encData =   sa.getContentBase64(inc_att);
 			var encData =   sa.getContentBase64(inc_att);
 //			var att_bin_info = '';
 //			att_bin_info += inc_att_doc.data;
@@ -142,8 +142,8 @@ var attachname = '';
 			
 		//inc.attachments=xml1+(xml+=xml)+xml2;
 		// var att_body='';
-		 //att_body+=xml;
-		 inc.attachments+=xml;
+		//att_body+=xml;
+		inc.attachments+=xml;
 		// inc21.attachments=xml1+inc21.attachments+xml2;
 	//	if(inc_att.getRowCount()>1){
 		//		xml+=xml;
@@ -152,7 +152,7 @@ var attachname = '';
 	//		inc21.attachments=xml1+xml+xml2;}
 		inc.update();
 		}
-		 
+
 		}
 		if (att_count>0){
 		inc.attachments="<ate:attachments>"+inc.attachments+"</ate:attachments>";
@@ -184,7 +184,7 @@ var attachname = '';
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>ea52f1f5dbbc930073ab787dbf961930</sys_id>
-        <sys_mod_count>215</sys_mod_count>
+        <sys_mod_count>216</sys_mod_count>
         <sys_name>INC_Holding_23</sys_name>
         <sys_overrides/>
         <sys_package display_value="Optus ATE" source="x_cio19_optus_ate">9cf254e14fd8c3005596c61f0310c793</sys_package>
@@ -193,7 +193,7 @@ var attachname = '';
         <sys_scope display_value="Optus ATE">9cf254e14fd8c3005596c61f0310c793</sys_scope>
         <sys_update_name>sys_script_ea52f1f5dbbc930073ab787dbf961930</sys_update_name>
         <sys_updated_by>a_C1A@townsville.qld.gov.au</sys_updated_by>
-        <sys_updated_on>2020-03-06 04:11:20</sys_updated_on>
+        <sys_updated_on>2020-03-06 05:37:58</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

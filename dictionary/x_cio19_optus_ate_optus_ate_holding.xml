@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Optus_ATE_Holding" max_length="40" name="x_cio19_optus_ate_optus_ate_holding" sizeclass="344587" type="collection">
+    <element label="Optus_ATE_Holding" max_length="40" name="x_cio19_optus_ate_optus_ate_holding" sizeclass="363695" type="collection">
         <element label="AssignmentGroup" max_length="40" name="assignmentgroup" type="string"/>
         <element display="true" label="Assignment Group" max_length="80" name="assignment_group" type="string"/>
         <element label="Attachment1" max_length="32" name="attachment1" reference="sys_attachment" type="reference"/>
